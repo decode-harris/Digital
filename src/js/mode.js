@@ -23,6 +23,8 @@ mode.addEventListener('click', ()=> {
     // darkmode button icon selector
     let icon = document.querySelector('#mode_icon');
 
+    let land = document.querySelector('#information');
+
     // validate if page class is set to darkmode
     if (page.className != 'darkmode') {
 
@@ -40,7 +42,10 @@ mode.addEventListener('click', ()=> {
 
         // assign css var [ mode-overlay ] color to black [ darkmode ]
         root.style.setProperty('--mode-overlay', 'rgba(0,0,0,0.4)');
-        
+
+        // assign land background source to  darkmode
+        land.style.backgroundImage = `url('screens/landing-darkmode.PNG')`;
+    
     }
     // if conditions are not met, provide page with default styles
     else {
@@ -59,6 +64,9 @@ mode.addEventListener('click', ()=> {
 
         // assign css var [ mode-overlay ] color to white [ default ]
         root.style.setProperty('--mode-overlay', 'rgba(241,237,237,0.4)');
+
+        // assign land background source to default [ default ]
+        land.style.backgroundImage = `url('screens/landing-default.PNG')`;
         
     }
 });

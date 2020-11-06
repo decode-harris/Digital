@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap'); */
+/* 
+    font-family: 'Titillium Web', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Rubik:wght@300&display=swap');
+/* 
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Rubik', sans-serif;
+*/
+
 
 /* global reset */
 * {
@@ -21,6 +30,8 @@
 
     /* font style */
     --mainfont: 'Titillium Web', sans-serif;
+    --text-font: 'PT Sans Narrow', sans-serif;
+    --head-font: 'Rubik', sans-serif;
 
     /* light mode | darkmode */
     --mode: #000;
@@ -28,14 +39,49 @@
     --mode-overlay: rgba(241,237,237,0.4);
 }
 
-
 /* global html */
 html {
     /* page scroll props */
     scroll-behavior: smooth;
     
     /* page font props */
-    font-family: var(--mainfont);
+    font-family: var(--text-font);
+}
+
+/* global headings */
+h1 {
+    font-size: 1.85rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+}
+h2 {
+    font-size: 1.65rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    padding-bottom: var(--md);
+    padding-top: var(--md);
+}
+h3 {
+    font-size: 1.45rem;
+    letter-spacing: 0.2rem;
+    text-transform: capitalize;
+}
+h4 {
+    font-size: 1.25rem;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    text-decoration: underline;
+    padding-bottom: var(--md);
+    
+}
+h5 {
+    font-size: 1.05rem;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--head-font);
 }
 
 /* page wrapper */
@@ -174,6 +220,13 @@ section {
     width: 100%;
     height: 100%;
     min-height: 100vh;
+
+    /* background props [ information || landing ] */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     
     /* dev */
     border: var(--component);
@@ -191,34 +244,29 @@ section .elmnts {
     /* dev */
     border: var(--debugging);
 }
-section h1 {
-    font-size: 1.85rem;
-    text-transform: capitalize;
-    letter-spacing: 0.2rem;
+/* section [ lists ] */
+section ul {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+    /* dev */
+    border: var(--wireframe);
 }
-section h3 {
-    font-size: 1.55rem;
-    letter-spacing: 0.2rem;
+section li {
+    /* element styles */
+    list-style-type: none;
     text-transform: capitalize;
-}
-section h4 {
-    font-size: 1.25rem;
-    letter-spacing: 0.1rem;
-    text-transform: capitalize;
-    text-decoration: underline;
-    padding-bottom: var(--sm);
-}
-section .txt {
-    font-size: 1.12rem;
+    padding-left: var(--sm);
     line-height: 1.6;
-    padding: var(--sm);
-}
-section .tag {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    letter-spacing: 0.1rem;
-    text-transform: capitalize;
-    font-style: italic;
+    font-size: 0.85rem;
+    width: 100%;
+    
+    /* dev */
+    border: var(--debugging);
 }
 
 /* main [ slideshow ] component */
@@ -230,7 +278,7 @@ main {
     align-items: flex-start;
     height: 100%;
     width: 100%;
-    min-height: 80vh;
+    min-height: 70vh;
     
     /* position props [ relative ] */
     position: relative;
@@ -263,12 +311,33 @@ main article {
     /* dev */
     border: var(--component);
 }
+main button {
+    /* element dimensions */
+    height: 35px;
+    width: 50px;
+}
+main .view {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 120px;
+
+    /* element styles */
+    background: transparent;
+    border: 2px solid var(--mode);
+    color: var(--mode);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    padding-left: var(--sm);
+    z-index: 3;
+}
 /* control [ buttons ] container */
 main .controls {
     /* position props [ absolute ] */
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 2%;
+    left: 0%;
     width: 100%;
 
     /* display props [ flex ] */
@@ -282,19 +351,26 @@ main .controls {
     border: var(--wireframe);
     
 }
-main button {
+main .controls button {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+
     /* element styles */
     background: transparent;
     border: 2px solid var(--mode);
     color: var(--mode);
-    font-size: 1.1rem;
+    font-size: 1.23rem;
     font-weight: bold;
     z-index: 3;
     
-    /* element dimensions */
-    height: 35px;
-    width: 50px;
+    /* dev */
+    /* background: red; */
 }
+
+
 /* animation [ phase ] props */
 main .phase {
     /* phase animation */
@@ -317,7 +393,202 @@ main .phase {
     from{ opacity: 1; }
 }
 
-/* article [ slides ] component */
+/* footer component */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+}
+footer .elmnts {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    height: 100%;
+    width: 100%;
+
+    /* element styles */
+    padding: var(--md);
+    /* dev */
+    border: var(--component);
+}
+footer .elmnts:nth-child(4) {
+    justify-content: space-between;
+    align-items: center;
+}
+/* footer [ lists ] */
+footer ul {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    /* dev */
+    border: var(--wireframe);
+}
+footer li {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100px;
+    
+    /* element styles */
+    font-size: 0.85rem;
+    line-height: 1.6;
+    list-style-type: none;
+    margin: var(--sm);
+    text-transform: capitalize;
+    padding-left: var(--sm);
+    
+    /* dev */
+    border: var(--component);
+    /* background: lightskyblue; */
+}
+footer li button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: transparent;
+    min-height: 50px;
+    min-width: 120px;
+
+    /* element styles */
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: var(--mode);
+    margin: var(--sm);
+    
+    /* dev */
+    /* border: var(--wireframe); */
+}
+footer li button i {
+    font-size: 1.2rem;
+    color: var(--mode);
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+}
+footer .top {
+
+    border: 2px solid var(--mode);
+    color: var(--mode);
+    margin-top: var(--sm);
+    min-width: 160px;
+    
+}
+
+/* under development *//* under development *//* under development */
+/* form component */
+form {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    min-height: 60vh;
+
+    /* component styles */
+    border: 2px solid var(--mode);
+    color: var(--mode);
+    
+    /* dev */
+    /* border: var(--debugging);
+    background: lightskyblue; */
+}
+form div {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: space-between;
+    padding: var(--sm);
+    height: 100%;
+    width: 100%;
+
+    /* dev */
+    /* border: var(--component); */
+}
+form div:nth-child(1) {
+    border: var(--component);
+    flex-direction: column;
+    
+}
+form div:nth-child(5) {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+form span {
+    display: flex;
+    align-items: center;
+}
+form span i {
+    padding-left: var(--sm);
+    padding-right: var(--sm);
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+form p {
+    text-transform: capitalize;
+    padding-left: var(--sm);
+}
+form label {
+    font-size: 1.22rem;
+    text-transform: capitalize;
+    padding-left: var(--sm);
+}
+form input {
+    /* element styles */
+    border: 3px solid var(--mode);
+    background: var(--mode-background);
+    color: var(--mode);
+    min-width: 60%;
+    padding-left: var(--sm);
+    text-transform: uppercase;
+    
+}
+form textarea {
+    /* element styles */
+    border: 3px solid var(--mode);
+    background: var(--mode-background);
+    color: var(--mode);
+    min-height: 100px;
+    min-width: 60%;
+    padding-left: var(--sm);
+    text-transform: uppercase;
+    
+}
+form button {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    min-height: 50px;
+    min-width: 120px;
+
+    /* element styles */
+    color: var(--mode);
+    border: 3px solid var(--mode);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+/* under development *//* under development *//* under development */
+
+
+/* technical list ext links [ under dev ] */
+.page_button:hover {
+    cursor: pointer;
+}
+
+/* [ slides ] element */
 .slides .title {
     font-size: 2rem;
     letter-spacing: 0.3rem;
@@ -350,29 +621,18 @@ main .phase {
     background: var(--mode-overlay);
 }
 
-/* section [ lists ] */
-#technical ul {
-    /* display props [ flex ] */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    width: 100%;
-    /* dev */
-    border: var(--wireframe);
-}
-#technical li {
-    /* element styles */
-    list-style-type: none;
-    text-transform: capitalize;
-    padding-left: var(--sm);
+/* text elements */
+.txt {
+    font-size: 1.12rem;
     line-height: 1.6;
-    font-size: 0.85rem;
-    width: 100%;
-    
-    /* dev */
-    border: var(--debugging);
+    padding: var(--sm);
+}
+.tag {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    font-style: italic;
 }
 
 /* darkmode props */
@@ -396,6 +656,8 @@ main .phase {
 
 /* media [ tablet + ] */
 @media screen and (min-width:700px) {
+
+    /* under development *//* under development *//* under development */
     
     .images-mobile {
         /* display [ none ] on desktop */
@@ -405,6 +667,8 @@ main .phase {
         /* display [ flex ] on desktop */
         display: flex;
     }
+
+    /* under development *//* under development *//* under development */
    
 
 }

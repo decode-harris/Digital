@@ -58,6 +58,22 @@ link_technical.addEventListener('click', ()=> {
     console.log('scrolled to section [ technical ]');
 });
 
+// link footer selector
+let link_footer = document.querySelector('#link_footer');
+
+// event [ link footer ]
+link_footer.addEventListener('click', ()=> {
+    // add margin to top of section [ height of sticky nav ]
+    footer.style.paddingTop = '12vh';
+    // scroll the section into view
+    footer.scrollIntoView();
+    // assign nav to display propety none
+    nav.style.display = 'none';
+
+    // test
+    console.log('scrolled to section [ footer ]');
+});
+
 // project link buttons
 let plan_button = document.querySelector('#plan_button');
 // let nifl_button = document.querySelector('#nifl_button');
@@ -96,3 +112,51 @@ plan_button.addEventListener('click', ()=> {
 //     console.log('pro coffee : go to location');
 
 // });
+
+/*
+    [ footer component ] events
+
+        1. [ resume ] : open resume pdf file
+        2. [ github ] : open github profile
+        3. [ email  ] : open email client
+
+*/
+
+// resume selector
+let resume = document.querySelector('#contact_resume');
+
+// event [ resume ] : open resume file
+resume.addEventListener('click', ()=> {
+
+    // assign resume source file to pdf variable
+    let pdf = 'src/docs/ChristopherHarrisResume.pdf';
+    // open resume in a new window
+    window.open(pdf);
+
+});
+
+// github selector
+let github = document.querySelector('#contact_github');
+
+// event [ github ] : open github profile
+github.addEventListener('click', ()=> {
+
+    // assign github href to git variable
+    let git = 'https://github.com/decode-harris';
+    // open resume in a new window
+    window.open(git);
+
+});
+
+// email selector
+let email = document.querySelector('#contact_email');
+
+// event [ email ] : open email client
+email.addEventListener('click', ()=> {
+
+    // assign email address to mail variable
+    let mail = 'mailto:decode.harris@gmail.com';
+    // open mail in same window [ device email client ]
+    window.location = mail;
+
+});

@@ -26,7 +26,7 @@ scrollPositionProperties = () => {
             nav.style.top = '0';
     
             // test 
-            console.log('[ window IF ] :' + pos + 'px');
+            // console.log('[ window IF ] :' + pos + 'px');
         }
         else {
 
@@ -46,7 +46,7 @@ scrollPositionProperties = () => {
             nav.style.top = pos + 'px';
                         
             // test 
-            console.log('[ window Else ] :' + pos + 'px');
+            // console.log('[ window Else ] :' + pos + 'px');
         }
     
     });

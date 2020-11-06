@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="author" content="Christopher Harris">
+    <meta name="developer" content="Christopher Harris">
+    <title>Christopher Harris | Web Developer | Digital Folio</title>
+    
     <!-- css -->
     <link rel="stylesheet" href="src/css/index.css">
     
@@ -23,6 +26,11 @@
         <!-- sources -->
         <script defer src="src/js/sources.js"></script>
     <!-- scripts -->
+
+    <!-- scripts [ dev ] -->
+        <!-- dev builder -->
+        <script defer src="src/js/devBuilder.js"></script>
+    <!-- scripts [ dev ] -->
 
     <!-- libs -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
@@ -55,38 +63,45 @@
                 <ul class="links_int">
                     <!-- li int -->
                     <li>
+                        <!-- icon + link -->
                         <span>
                             <i class="fas fa-home"></i>
                             <a href="#page" id="link_homepage">homepage</a>
                         </span>
-                        
+                        <!-- icon + link -->
                     </li>
                     <li>
+                        <!-- icon + link -->
                         <span>
                             <i class="fas fa-info"></i>
                             <a href="#information" id="link_information">information</a>
                         </span>
+                        <!-- icon + link -->
                         
                     </li>
                     <li>
+                        <!-- icon + link -->
                         <span>
                             <i class="far fa-folder-open"></i>
                             <a href="#projects" id="link_projects">projects</a>
                         </span>
+                        <!-- icon + link -->
                     </li>
                     <li>
+                        <!-- icon + link -->
                         <span>
                             <i class="fas fa-desktop"></i>
                             <a href="#technical" id="link_technical">technical</a>
                         </span>
-                        
+                        <!-- icon + link -->
                     </li>
                     <li>
+                        <!-- icon + link -->
                         <span>
                             <i class="far fa-id-card"></i>
-                            <a href="#footer" id="link_contact">contact</a>
+                            <a href="#footer" id="link_footer">contact</a>
                         </span>
-                        
+                        <!-- icon + link -->
                     </li>
                     
                     <!-- li int -->
@@ -165,7 +180,7 @@
             <!-- elmnts -->
             <div class="elmnts">
                 <!-- title -->
-                <h3>Web Development</h3>
+                <h2>Web Development</h2>
                 <p class="tag">websites, projects, applications & designs</p>
                 <p class="txt" style="display: none;">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, quos?
@@ -181,24 +196,19 @@
                         <!-- project info -->
                         <h4 class="title">planets</h4>
                         <p class="tag">explore our solar system with informative documentation & accommodating images.</p>
-                        <button id="plan_button">view</button>
+                        <button id="plan_button" class="view">view</button>
                         <!-- project info -->
 
                         <!-- slide overlay -->
                         <div class="overlay"></div>
                         <!-- slide overlay -->
 
-                        <!-- project images -->
-                        <!-- <img src="screens/Planets-mobile.PNG" alt="planets homepage - mobile" class="images-mobile">
-                        <img src="screens/Planets-landing.PNG" alt="planets homepage - mobile" class="images-desktop"> -->
-                        <!-- project images -->
-
                     </article>
                     <article class="slides phase" id="nifl">
                         <!-- project info -->
-                        <h3 class="title">niflheim</h3>
+                        <h4 class="title">niflheim</h4>
                         <p class="tag">dashboard management system for monitoring & observing current development projects</p>
-                        <button id="nifl_button">view</button>
+                        <button id="nifl_button" class="view">view</button>
                         <!-- project info -->
                         
                         <!-- slide overlay -->
@@ -208,9 +218,9 @@
                     </article>
                     <article class="slides phase" id="rntl">
                         <!-- project info -->
-                        <h3 class="title">rntlpay</h3>
+                        <h4 class="title">rntlpay</h4>
                         <p class="tag">track rental property payments, calculates bill and utility costs & tracks shopping expenses.</p>
-                        <button id="rnlt_button">view</button>
+                        <button id="rnlt_button" class="view">view</button>
                         <!-- project info -->
 
                         <!-- slide overlay -->
@@ -220,15 +230,15 @@
                     </article>
                     <article class="slides phase" id="coff">
                         <!-- project info -->
-                        <h3 class="title">CoffeeShop</h3>
+                        <h4 class="title">CoffeeShop</h4>
                         <p class="tag">track rental property payments, calculates bill and utility costs & tracks shopping expenses.</p>
-                        <button id="coff_button">view</button>
+                        <button id="coff_button" class="view">view</button>
                         <!-- project info -->
 
                         <!-- slide overlay -->
                         <div class="overlay"></div>
                         <!-- slide overlay -->
-                    
+
                     </article>
                     <!-- article [ slides ] -->
 
@@ -254,7 +264,7 @@
             
             <!-- elmnts -->
             <div class="elmnts">
-                <h3>Technical Skills</h3>
+                <h2>Technical Skills</h2>
                 <p class="tag">web development, software, applications & technical experience</p>
                 <p class="txt" style="display: none">
                     Obtained an Advanced Diploma of Information Technology 
@@ -311,59 +321,109 @@
         <!-- footer -->
         <footer id="footer">
             <div class="elmnts">
-                <h5>christopher harris</h5>
-                <p class="tag">web developer & support specialist</p>
+                <!-- info -->
+                <h2>contact information</h2>
+                <h4>christopher harris</h4>
+                <p class="tag">
+                    Front End Web Developer <br>
+                    IT Support Specialist <br>
+                    Melbourne, Australia
+                </p>
+                <!-- info -->
             </div>
             <div class="elmnts">
+                <!-- contact info -->
                 <ul id="list_contact">
                     <li>
-                        <span>
+                        <!-- helper -->
+                        <p>
+                            view digital resume online or download a word document version.
+                        </p>
+                        <!-- helper -->
+
+                        <!-- resume open -->
+                        <button class="page_button" id="contact_resume">
                             <i class="fas fa-file-alt"></i>
-                            <p>resume</p>
-                        </span>
-                        
-                        <!-- resume open -->
-                        <button class="page_button">
-                            <a href="src/docs/ChristopherHarrisResume.pdf">view</a>
+                            resume
                         </button>
                         <!-- resume open -->
                     </li>
                     <li>
-                        <span>
+                        <!-- helper -->
+                        <p>
+                            explore my github to find a wide range of website & applications.
+                        </p>
+                        <!-- helper -->
+
+                        <!-- github open -->
+                        <button class="page_button" id="contact_github">
                             <i class="fab fa-github-square"></i>
-                            <p>github</p>
-                        </span>
-                        
-                        <!-- github open -->
-                        <button class="page_button">
-                            <a href="https://github.com/decode-harris">view</a>
+                            github
                         </button>
                         <!-- github open -->
                     </li>
                     <li>
-                        <span>
-                            <i class="fab fa-linkedin"></i>
-                            <p>linkedIn</p>
-                        </span>
-                        
-                        <!-- linkedIn open -->
-                        <button class="page_button">
-                            <a href="https://github.com/decode-harris">view</a>
+                        <!-- helper -->
+                        <p>
+                            feel free to get in touch for a friendly chat via sending an email.
+                        </p>
+                        <!-- helper -->
+
+                        <!-- email open -->
+                        <button class="page_button" id="contact_email">
+                            <i class="far fa-envelope"></i>
+                            email
                         </button>
-                        <!-- linkedIn open -->
+                        <!-- email open -->
                     </li>
-                    <li>name</li>
-                    <li>company</li>
-                    <li>maps</li>
-                    <li>email</li>
-                    <li>github</li>
-                    <!-- base -->
                 </ul>
+                <!-- contact info -->
+            </div>
+            <div class="elmnts">
+                <!-- form -->
+                <form action="" id="form">
+                    <!-- form div -->
+                    <div>
+                        <!-- form title -->
+                        <span>
+                            <i class="far fa-id-card"></i>
+                            <h5>get in touch</h5>
+                        </span>
+                        <p>always down for a chat</p>
+                        <!-- form title -->
+                    </div>
+                    <div>
+                        <label for="name">name</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div>
+                        <label for="mail">email</label>
+                        <input type="text" name="mail" id="mail">
+                    </div>
+                    <div>
+                        <label for="mesg">message</label>
+                        <textarea name="mesg" id="mesg"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">submit</button>
+                    </div>
+                    <!-- form div -->
+                </form>
+                <!-- form -->
             </div>
             <div class="elmnts">
                 <!-- form || signiture -->
-                
+                <p>The developer thanks you kindly for visiting this page.</p>
                 <!-- form || signiture -->
+                
+                <!-- back to top -->
+                <button class="top">
+                    <a href="#page">
+                        <i class="fas fa-caret-square-up"></i>
+                        Top
+                    </a>
+                </button>
+                <!-- back to top -->
             </div>
             <!-- elmnts -->
         </footer>
