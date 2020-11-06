@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="src/css/index.css">
+    
+    <!-- scripts -->
+        <!-- position helper -->
+        <script defer src="src/js/helper.js"></script>
+        <!-- lightmode || darkmode -->
+        <script defer src="src/js/mode.js"></script>
+        <!-- nav mobile -->
+        <script defer src="src/js/nav-mob.js"></script>
+        <!-- media query listener -->
+        <script defer src="src/js/mql.js"></script>
+        <!-- slideshow -->
+        <script defer src="src/js/slider.js"></script>
+        <!-- links -->
+        <script defer src="src/js/links.js"></script>
+        <!-- sources -->
+        <script defer src="src/js/sources.js"></script>
+    <!-- scripts -->
+
+    <!-- libs -->
+    <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- page -->
+    <div id="page">
+
+        <!-- nav component -->
+        <nav id="nav">
+            <!-- elmnts -->
+            <div class="elmnts">
+                <!-- span -->
+                <span>
+                    <!-- nav title -->
+                    <h4>christopher harris</h4>
+                    <p class="tag">web development</p>
+                    <!-- nav title -->
+                </span>
+                <span>
+                    <!-- nav exit -->
+                    <button id="exit"><i class="fas fa-times"></i></button>
+                    <!-- nav exit -->
+                </span>
+                <!-- span -->
+            </div>
+            <div class="elmnts">
+                <!-- links int -->
+                <ul class="links_int">
+                    <!-- li int -->
+                    <li>
+                        <span>
+                            <i class="fas fa-home"></i>
+                            <a href="#page" id="link_homepage">homepage</a>
+                        </span>
+                        
+                    </li>
+                    <li>
+                        <span>
+                            <i class="fas fa-info"></i>
+                            <a href="#information" id="link_information">information</a>
+                        </span>
+                        
+                    </li>
+                    <li>
+                        <span>
+                            <i class="far fa-folder-open"></i>
+                            <a href="#projects" id="link_projects">projects</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="fas fa-desktop"></i>
+                            <a href="#technical" id="link_technical">technical</a>
+                        </span>
+                        
+                    </li>
+                    <li>
+                        <span>
+                            <i class="far fa-id-card"></i>
+                            <a href="#footer" id="link_contact">contact</a>
+                        </span>
+                        
+                    </li>
+                    
+                    <!-- li int -->
+                </ul>
+                <!-- links int -->
+            </div>
+            <div class="elmnts">
+
+                <!-- links ext -->
+                <ul class="links_ext">
+                    <!-- li ext -->
+                    <li>
+                        <a href="https://github.com/decode-harris">
+                            <i class="fab fa-github-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:decode.harris@gmail.com">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                    <!-- li ext -->
+                </ul>
+                <!-- links ext -->
+            </div>
+            <!-- elmnts -->
+        </nav>
+        <!-- nav component -->
+
+        <!-- header component -->
+        <header id="header">
+            <!-- elmnts -->
+            <div class="elmnts">
+                <!-- menu button -->
+                <button id="menu" class="phase"><i class="fas fa-bars"></i></button>
+                <!-- menu button -->
+                
+                <!-- mode button -->
+                <button id="mode" class="phase"><i id="mode_icon" class="fas fa-toggle-off"></i></button>
+                <!-- mode button -->
+            </div>
+            <!-- elmnts -->
+        </header>
+        <!-- header component -->
+
+        <!-- intro -->
+        <section id="information">
+
+            <!-- elmnts -->
+            <div class="elmnts">
+                <!-- title -->
+                <h1>christopher harris</h1>
+                <p class="tag">web developer & IT support specialist</p>
+                <!-- title -->
+
+                <!-- img placement -->
+                <div class="box profile"></div>
+                <!-- img placement -->
+            </div>
+            <div class="elmnts">
+                <!-- info -->
+                <p class="txt">
+                    I am an ambitious technology enthusiast, a frontend web developer & hardware support specialist.
+                    I enjoy developing responsive, dynamic and interactive websites & web based applications.
+                </p>
+                <!-- info -->
+            </div>
+            <!-- elmnts -->
+
+        </section>
+        <!-- intro -->
+
+        <!-- projects -->
+        <section id="projects">
+            
+            <!-- elmnts -->
+            <div class="elmnts">
+                <!-- title -->
+                <h3>Web Development</h3>
+                <p class="tag">websites, projects, applications & designs</p>
+                <p class="txt" style="display: none;">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, quos?
+                </p>
+                <!-- title -->
+            </div>
+            <div class="elmnts">
+                <!-- slideshow -->
+                <main id="slideshow">
+
+                    <!-- article [ slides ] -->
+                    <article class="slides phase" id="plan">
+                        <!-- project info -->
+                        <h4 class="title">planets</h4>
+                        <p class="tag">explore our solar system with informative documentation & accommodating images.</p>
+                        <button id="plan_button">view</button>
+                        <!-- project info -->
+
+                        <!-- slide overlay -->
+                        <div class="overlay"></div>
+                        <!-- slide overlay -->
+
+                        <!-- project images -->
+                        <!-- <img src="screens/Planets-mobile.PNG" alt="planets homepage - mobile" class="images-mobile">
+                        <img src="screens/Planets-landing.PNG" alt="planets homepage - mobile" class="images-desktop"> -->
+                        <!-- project images -->
+
+                    </article>
+                    <article class="slides phase" id="nifl">
+                        <!-- project info -->
+                        <h3 class="title">niflheim</h3>
+                        <p class="tag">dashboard management system for monitoring & observing current development projects</p>
+                        <button id="nifl_button">view</button>
+                        <!-- project info -->
+                        
+                        <!-- slide overlay -->
+                        <div class="overlay"></div>
+                        <!-- slide overlay -->
+                        
+                    </article>
+                    <article class="slides phase" id="rntl">
+                        <!-- project info -->
+                        <h3 class="title">rntlpay</h3>
+                        <p class="tag">track rental property payments, calculates bill and utility costs & tracks shopping expenses.</p>
+                        <button id="rnlt_button">view</button>
+                        <!-- project info -->
+
+                        <!-- slide overlay -->
+                        <div class="overlay"></div>
+                        <!-- slide overlay -->
+
+                    </article>
+                    <article class="slides phase" id="coff">
+                        <!-- project info -->
+                        <h3 class="title">CoffeeShop</h3>
+                        <p class="tag">track rental property payments, calculates bill and utility costs & tracks shopping expenses.</p>
+                        <button id="coff_button">view</button>
+                        <!-- project info -->
+
+                        <!-- slide overlay -->
+                        <div class="overlay"></div>
+                        <!-- slide overlay -->
+                    
+                    </article>
+                    <!-- article [ slides ] -->
+
+                    <!-- slideshow controls -->
+                    <div class="controls">
+                        
+                        <!-- control buttons -->
+                        <button onclick="controls(-1)">-</button>
+                        <!-- <button class="projectBtn">project button</button> -->
+                        <button onclick="controls(1)">+</button>
+                        <!-- control buttons -->
+                    </div>
+                    <!-- slideshow controls -->
+                </main>
+                <!-- slideshow -->
+            </div>
+            <!-- elmnts -->
+        </section>
+        <!-- projects -->
+        
+        <!-- technical -->
+        <section id="technical">
+            
+            <!-- elmnts -->
+            <div class="elmnts">
+                <h3>Technical Skills</h3>
+                <p class="tag">web development, software, applications & technical experience</p>
+                <p class="txt" style="display: none">
+                    Obtained an Advanced Diploma of Information Technology 
+                    from RMIT School of Business, Melbourne City Campus in 2018.
+                    Acquired additional qualifications, Responsive Web Design certification
+                    from Free Code Camp in 2019.
+                </p>
+            </div>
+            <div class="elmnts">
+                <!-- sub-tech -->
+                <ul class="sub-tech">
+                    <!-- list title -->
+                    <h4>development</h4>
+                    <!-- list elmnts -->
+                    <li>Semantic HTML & Responsive CSS</li>
+                    <li>Javascript & jQuery</li>
+                    <li>Github, Xampp & firebase</li>
+                    <li>SEO Practices & Analytics</li>
+                    <!-- list elmnts -->
+                </ul>
+                <!-- sub-tech -->
+            </div>
+            <div class="elmnts">
+                <!-- sub-tech -->
+                <ul class="sub-tech">
+                    <!-- list title -->
+                    <h4>software</h4>
+                    <li>Visual Studio Code</li>
+                    <li>Adobe XD & Photoshop</li>
+                    <li>Microsoft Office 365</li>
+                    <li>Windows OS, Terminal, Directory</li>
+                    <!-- list elmnts -->
+                </ul>
+                <!-- sub-tech -->
+            </div>
+            <div class="elmnts">
+                <!-- sub-tech -->
+                <ul class="sub-tech">
+                    <!-- list title -->
+                    <h4>technical</h4>
+                    <!-- list elmnts -->
+                    <li>hardware build experience</li>
+                    <li>pixel perfect design implementation</li>
+                    <li>Code analysis, refactoring & debugging</li>
+                    <li>Adhering to technical standards & guidelines</li>
+                    <!-- list elmnts -->
+                </ul>
+                <!-- sub-tech -->
+            </div>
+            <!-- elmnts -->
+        </section>
+        <!-- technical -->
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="elmnts">
+                <h5>christopher harris</h5>
+                <p class="tag">web developer & support specialist</p>
+            </div>
+            <div class="elmnts">
+                <ul id="list_contact">
+                    <li>
+                        <span>
+                            <i class="fas fa-file-alt"></i>
+                            <p>resume</p>
+                        </span>
+                        
+                        <!-- resume open -->
+                        <button class="page_button">
+                            <a href="src/docs/ChristopherHarrisResume.pdf">view</a>
+                        </button>
+                        <!-- resume open -->
+                    </li>
+                    <li>
+                        <span>
+                            <i class="fab fa-github-square"></i>
+                            <p>github</p>
+                        </span>
+                        
+                        <!-- github open -->
+                        <button class="page_button">
+                            <a href="https://github.com/decode-harris">view</a>
+                        </button>
+                        <!-- github open -->
+                    </li>
+                    <li>
+                        <span>
+                            <i class="fab fa-linkedin"></i>
+                            <p>linkedIn</p>
+                        </span>
+                        
+                        <!-- linkedIn open -->
+                        <button class="page_button">
+                            <a href="https://github.com/decode-harris">view</a>
+                        </button>
+                        <!-- linkedIn open -->
+                    </li>
+                    <li>name</li>
+                    <li>company</li>
+                    <li>maps</li>
+                    <li>email</li>
+                    <li>github</li>
+                    <!-- base -->
+                </ul>
+            </div>
+            <div class="elmnts">
+                <!-- form || signiture -->
+                
+                <!-- form || signiture -->
+            </div>
+            <!-- elmnts -->
+        </footer>
+        <!-- footer -->
+    </div>
+    <!-- page -->
+    
+</body>
+</html>

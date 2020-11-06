@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+/* global reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* global variables */
+:root {
+    /* spacing */
+    --sm: 2%;
+    --md: 5%;
+    --lg: 10%;
+
+    /* dev borders */
+    /* --wireframe: 2px solid darkblue;
+    --debugging: 2px dotted darkred;
+    --component: 2px solid darkgreen; */
+
+    /* font style */
+    --mainfont: 'Titillium Web', sans-serif;
+
+    /* light mode | darkmode */
+    --mode: #000;
+    --mode-background: #FFF;
+    --mode-overlay: rgba(241,237,237,0.4);
+}
+
+
+/* global html */
+html {
+    /* page scroll props */
+    scroll-behavior: smooth;
+    
+    /* page font props */
+    font-family: var(--mainfont);
+}
+
+/* page wrapper */
+#page {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    /* position props [ relative ] */
+    position: relative;
+    z-index: 1;
+}   
+
+/* header component */
+header {
+    /* display props [ grid ] */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    height: 100%;
+    width: 100%;
+    max-height: 12vh;
+    z-index: 2;
+
+    /* dev */
+    border: var(--component);
+}
+header .elmnts {
+    /* display props [ flex ] */
+    /* grid placement [ header ] */
+    grid-column: span 6;
+    grid-row: span 1;
+
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    
+    /* element styles */
+    padding: var(--md);
+    
+    /* dev */
+    border: var(--debugging);
+}
+header h2 {
+    font-size: 1.35rem;
+    text-transform: capitalize;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* dev */
+    border: var(--wireframe);
+}
+
+header button {
+    background: transparent;
+    border: 2px solid var(--mode);
+    color: var(--mode);
+    font-size: 1.2rem;
+    padding: var(--sm);
+    width: 60px;
+}
+
+/* nav component */
+nav {
+    /* display props [ grid ] */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    
+    /* position props : absolute */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    max-height: 100vh;
+    z-index: 5;
+
+    /* component styles */
+    background: var(--mode-background);
+    color: var(--mode);
+    border-right: 3px solid var(--mode);
+
+}
+nav .elmnts {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    /* dev */
+    border: var(--debugging);
+}
+nav .elmnts:nth-child(1) {
+    /* grid placement [ nav ] */
+    grid-column: span 2;
+    grid-row: span 2;
+    flex-direction: row;
+}
+nav .elmnts:nth-child(2) {
+    /* grid placement [ nav ] */
+    grid-column: span 1;
+    grid-row: span 1;
+}
+nav .elmnts:nth-child(3) {
+    /* grid placement [ nav ] */
+    grid-column: span 2;
+    grid-row: span 2;
+}
+nav .elmnts:nth-child(4) {
+    /* grid placement [ nav ] */
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* section container */
+section {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    
+    /* dev */
+    border: var(--component);
+}
+section .elmnts {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    padding: var(--md);
+
+    /* dev */
+    border: var(--debugging);
+}
+section h1 {
+    font-size: 1.85rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+}
+section h3 {
+    font-size: 1.55rem;
+    letter-spacing: 0.2rem;
+    text-transform: capitalize;
+}
+section h4 {
+    font-size: 1.25rem;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    text-decoration: underline;
+    padding-bottom: var(--sm);
+}
+section .txt {
+    font-size: 1.12rem;
+    line-height: 1.6;
+    padding: var(--sm);
+}
+section .tag {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+/* main [ slideshow ] component */
+main {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    min-height: 80vh;
+    
+    /* position props [ relative ] */
+    position: relative;
+    /* z-index: 1; */
+
+}
+/* article [ slides ] component */
+main article {
+    /* display props [ none ==> flex ] */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    
+    /* position props [ absolute ] */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    /* background props [ slides ] */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /* component styles */
+    padding: var(--sm);
+    
+    /* dev */
+    border: var(--component);
+}
+/* control [ buttons ] container */
+main .controls {
+    /* position props [ absolute ] */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: space-between;
+
+    /* component styles */
+    padding: var(--sm);
+
+    /* dev */
+    border: var(--wireframe);
+    
+}
+main button {
+    /* element styles */
+    background: transparent;
+    border: 2px solid var(--mode);
+    color: var(--mode);
+    font-size: 1.1rem;
+    font-weight: bold;
+    z-index: 3;
+    
+    /* element dimensions */
+    height: 35px;
+    width: 50px;
+}
+/* animation [ phase ] props */
+main .phase {
+    /* phase animation */
+    animation-name: phase;
+    animation-duration: 1.5s;
+    transition: all ease-in 1s;
+
+    /* firefox -webkit- */
+    -webkit-animation-name: phase;
+    -webkit-animation-duration: 1.5s;
+}
+
+/* animation [ phase ] */
+@keyframes phase {
+    from{ opacity: 0.4; }
+    from{ opacity: 1; }
+}
+@-webkit-keyframes phase {
+    from{ opacity: 0.4; }
+    from{ opacity: 1; }
+}
+
+/* article [ slides ] component */
+.slides .title {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    text-transform: capitalize;
+    z-index: 2;
+}   
+.slides .tag {
+    line-height: 1.6;
+    font-size: 1.12rem;
+    text-transform: capitalize;
+    z-index: 2;
+    /* color: var(--mode); */
+}
+.slides .overlay {
+    /* position props [ absolute ] */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1;
+
+    /* element styles */
+    background: var(--mode-overlay);
+}
+
+/* section [ lists ] */
+#technical ul {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+    /* dev */
+    border: var(--wireframe);
+}
+#technical li {
+    /* element styles */
+    list-style-type: none;
+    text-transform: capitalize;
+    padding-left: var(--sm);
+    line-height: 1.6;
+    font-size: 0.85rem;
+    width: 100%;
+    
+    /* dev */
+    border: var(--debugging);
+}
+
+/* darkmode props */
+.darkmode {
+    background: black;
+    color: white;
+}
+.darkmode a {
+    color: white;
+}
+
+/* images [ device ] elements */
+.images-mobile {
+    /* display [ flex ] on mobile */
+    display: flex;
+}
+.images-desktop {
+    /* display [ none ] on mobile */
+    display: none;
+}
+
+/* media [ tablet + ] */
+@media screen and (min-width:700px) {
+    
+    .images-mobile {
+        /* display [ none ] on desktop */
+        display:none;
+    }
+    .images-desktop {
+        /* display [ flex ] on desktop */
+        display: flex;
+    }
+   
+
+}
