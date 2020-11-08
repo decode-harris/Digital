@@ -4,7 +4,7 @@ let nifl = document.querySelector('#nifl');
 let rntl = document.querySelector('#rntl');
 let coff = document.querySelector('#coff');
 
-let land = document.querySelector('#information');
+// let land = document.querySelector('#information');
 
 
 const addBackground = () => {
@@ -21,7 +21,7 @@ const addBackground = () => {
     nifl.style.backgroundImage = 'url(' + niflheim + ')';
     rntl.style.backgroundImage = 'url(' + rntlpay + ')';
     coff.style.backgroundImage = 'url(' + coffee + ')';
-    land.style.backgroundImage = 'url(' + landing + ')';
+    // land.style.backgroundImage = 'url(' + landing + ' )';
 
 }
 // init [ addBackground ] function

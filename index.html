@@ -25,6 +25,8 @@
         <script defer src="src/js/links.js"></script>
         <!-- sources -->
         <script defer src="src/js/sources.js"></script>
+        <!-- forms -->
+        <script defer src="src/js/forms.js"></script>
     <!-- scripts -->
 
     <!-- scripts [ dev ] -->
@@ -60,50 +62,38 @@
             </div>
             <div class="elmnts">
                 <!-- links int -->
-                <ul class="links_int">
+                <ul class="int">
                     <!-- li int -->
                     <li>
-                        <!-- icon + link -->
-                        <span>
+                        <a href="#page" id="link_homepage">
                             <i class="fas fa-home"></i>
-                            <a href="#page" id="link_homepage">homepage</a>
-                        </span>
-                        <!-- icon + link -->
+                            homepage
+                        </a>
                     </li>
                     <li>
-                        <!-- icon + link -->
-                        <span>
+                        <a href="#information" id="link_information">
                             <i class="fas fa-info"></i>
-                            <a href="#information" id="link_information">information</a>
-                        </span>
-                        <!-- icon + link -->
-                        
+                            information
+                        </a>
                     </li>
                     <li>
-                        <!-- icon + link -->
-                        <span>
+                        <a href="#projects" id="link_projects">
                             <i class="far fa-folder-open"></i>
-                            <a href="#projects" id="link_projects">projects</a>
-                        </span>
-                        <!-- icon + link -->
+                            projects
+                        </a>
                     </li>
                     <li>
-                        <!-- icon + link -->
-                        <span>
+                        <a href="#technical" id="link_technical">
                             <i class="fas fa-desktop"></i>
-                            <a href="#technical" id="link_technical">technical</a>
-                        </span>
-                        <!-- icon + link -->
+                            technical
+                        </a>
                     </li>
                     <li>
-                        <!-- icon + link -->
-                        <span>
+                        <a href="#footer" id="link_footer">
                             <i class="far fa-id-card"></i>
-                            <a href="#footer" id="link_footer">contact</a>
-                        </span>
-                        <!-- icon + link -->
+                            contact
+                        </a>
                     </li>
-                    
                     <!-- li int -->
                 </ul>
                 <!-- links int -->
@@ -111,7 +101,7 @@
             <div class="elmnts">
 
                 <!-- links ext -->
-                <ul class="links_ext">
+                <ul class="ext">
                     <!-- li ext -->
                     <li>
                         <a href="https://github.com/decode-harris">
@@ -196,7 +186,7 @@
                         <!-- project info -->
                         <h4 class="title">planets</h4>
                         <p class="tag">explore our solar system with informative documentation & accommodating images.</p>
-                        <button id="plan_button" class="view">view</button>
+                        <!-- <button id="planButton" class="view">view</button> -->
                         <!-- project info -->
 
                         <!-- slide overlay -->
@@ -208,7 +198,7 @@
                         <!-- project info -->
                         <h4 class="title">niflheim</h4>
                         <p class="tag">dashboard management system for monitoring & observing current development projects</p>
-                        <button id="nifl_button" class="view">view</button>
+                        <!-- <button id="niflButton" class="view">view</button> -->
                         <!-- project info -->
                         
                         <!-- slide overlay -->
@@ -220,7 +210,7 @@
                         <!-- project info -->
                         <h4 class="title">rntlpay</h4>
                         <p class="tag">track rental property payments, calculates bill and utility costs & tracks shopping expenses.</p>
-                        <button id="rnlt_button" class="view">view</button>
+                        <!-- <button id="rnltButton" class="view">view</button> -->
                         <!-- project info -->
 
                         <!-- slide overlay -->
@@ -232,7 +222,7 @@
                         <!-- project info -->
                         <h4 class="title">CoffeeShop</h4>
                         <p class="tag">track rental property payments, calculates bill and utility costs & tracks shopping expenses.</p>
-                        <button id="coff_button" class="view">view</button>
+                        <!-- <button id="coffButton" class="view">view</button> -->
                         <!-- project info -->
 
                         <!-- slide overlay -->
@@ -246,9 +236,9 @@
                     <div class="controls">
                         
                         <!-- control buttons -->
-                        <button onclick="controls(-1)">-</button>
-                        <!-- <button class="projectBtn">project button</button> -->
-                        <button onclick="controls(1)">+</button>
+                        <button id="controlsPrev" onclick="controls(-1)">-</button>
+                        <button class="viewButton">view</button>
+                        <button id="controlsNext" onclick="controls(1)">+</button>
                         <!-- control buttons -->
                     </div>
                     <!-- slideshow controls -->
@@ -333,7 +323,7 @@
             </div>
             <div class="elmnts">
                 <!-- contact info -->
-                <ul id="list_contact">
+                <ul id="list_contact" style="display: none;">
                     <li>
                         <!-- helper -->
                         <p>
@@ -380,36 +370,60 @@
                 <!-- contact info -->
             </div>
             <div class="elmnts">
+
                 <!-- form -->
-                <form action="" id="form">
-                    <!-- form div -->
-                    <div>
+                <form id="form">
+                    <!-- sub -->
+                    <div class="sub">
                         <!-- form title -->
-                        <span>
+                        <h5>
                             <i class="far fa-id-card"></i>
-                            <h5>get in touch</h5>
-                        </span>
-                        <p>always down for a chat</p>
+                            Contact
+                        </h5>
                         <!-- form title -->
                     </div>
-                    <div>
-                        <label for="name">name</label>
-                        <input type="text" name="name" id="name">
+                    <div class="sub">
+                        <!-- form name -->
+                        <label for="name" class="label">fullname</label>
+                        <input type="text" name="name" id="name" placeholder="fullname">
+                        <!-- form name -->
                     </div>
-                    <div>
-                        <label for="mail">email</label>
-                        <input type="text" name="mail" id="mail">
+                    <div class="sub">
+                        <!-- form email -->
+                        <label for="email" class="label">email</label>
+                        <input type="text" name="email" id="email" placeholder="email">
+                        <!-- form email -->
                     </div>
-                    <div>
-                        <label for="mesg">message</label>
-                        <textarea name="mesg" id="mesg"></textarea>
+                    <div class="sub">
+                        <!-- form message -->
+                        <label for="message" class="label">message</label>
+                        <textarea name="message" id="message" placeholder="message..."></textarea>
+                        <!-- form message -->
                     </div>
-                    <div>
-                        <button type="submit">submit</button>
+                    <div class="sub">
+                        <!-- form clear -->
+                        <button id="clear">clear</button>
+                        <!-- form clear -->
+                        <!-- form submit -->
+                        <button id="submit" type="submit">submit</button>
+                        <!-- form submit -->
                     </div>
-                    <!-- form div -->
+                    <!-- sub -->
                 </form>
                 <!-- form -->
+
+                <!-- form complete -->
+                <div id="complete">
+                    <!-- tick icon -->
+                    <i class="far fa-check-circle"></i>                    
+                    <!-- tick icon -->
+
+                    <!-- verification message -->
+                    <h5>message sent</h5>
+                    <!-- verification message -->
+                
+                </div>
+
             </div>
             <div class="elmnts">
                 <!-- form || signiture -->

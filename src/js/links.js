@@ -75,25 +75,27 @@ link_footer.addEventListener('click', ()=> {
 });
 
 // project link buttons
-let plan_button = document.querySelector('#plan_button');
+// let planButton = document.querySelector('#planButton');
 // let nifl_button = document.querySelector('#nifl_button');
 // let rntl_button = document.querySelector('#rntl_button');
 // let coff_button = document.querySelector('#coff_button');
 
 
 // events [ project_button ] : open live project in a new tab
-plan_button.addEventListener('click', ()=> {
+// planButton.addEventListener('click', ()=> {
 
-    // open planets live website [ new tab ]
-    window.open('https://decode-harris.github.io/planets/');
+//     // open planets live website [ new tab ]
+//     window.open('https://decode-harris.github.io/planets/');
 
-    // test
-    console.log('pro planets : go to location');
+//     // test
+//     console.log('pro planets : go to location');
 
-    // open planets live website [ direct tab ]
-    // window.location = 'https://decode-harris.github.io/planets/';
+//     // open planets live website [ direct tab ]
+//     // window.location = 'https://decode-harris.github.io/planets/';
 
-});
+// });
+
+
 // nifl_button.addEventListener('click', ()=> {
     
 //     // test
@@ -159,4 +161,4 @@ email.addEventListener('click', ()=> {
     // open mail in same window [ device email client ]
     window.location = mail;
 
-});
+}); 

@@ -191,24 +191,83 @@ nav .elmnts {
 nav .elmnts:nth-child(1) {
     /* grid placement [ nav ] */
     grid-column: span 2;
-    grid-row: span 2;
+    grid-row: span 1;
     flex-direction: row;
 }
 nav .elmnts:nth-child(2) {
     /* grid placement [ nav ] */
-    grid-column: span 1;
-    grid-row: span 1;
+    grid-column: span 2;
+    grid-row: span 2;
 }
 nav .elmnts:nth-child(3) {
     /* grid placement [ nav ] */
     grid-column: span 2;
-    grid-row: span 2;
-}
-nav .elmnts:nth-child(4) {
-    /* grid placement [ nav ] */
-    grid-column: span 2;
     grid-row: span 1;
 }
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--sm);
+    height: 100%;
+    width: 100%;
+}
+nav li {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    /* element styles */
+    list-style-type: none;
+    
+    
+    /* dev */
+    /* border: var(--component); */
+}
+nav a {
+    display: flex;
+    font-size: 1.25rem;
+    padding-left: var(--sm);
+    text-decoration: none;
+    color: var(--mode);
+    text-transform: capitalize;
+    letter-spacing: 0.15rem;
+
+    transition: 200ms all ease;
+}
+nav a:hover {
+    padding-left: var(--lg);
+    transition: 200ms all ease;
+}
+nav i {
+    font-size: 1.35rem;
+    color: var(--mode);
+}
+
+nav .int li {
+    justify-content: flex-start;
+    padding-left: var(--md);
+    width: 100%;
+    height: 100%;
+}
+nav .int i {
+    padding-right: var(--sm);
+}
+nav .ext {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+    height: 100%;
+    width: 100%;
+}
+
+
 
 /* section container */
 section {
@@ -417,6 +476,10 @@ footer .elmnts {
     /* dev */
     border: var(--component);
 }
+footer .elmnts:nth-child(3) {
+    padding: var(--md);
+    /* background: red; */
+}
 footer .elmnts:nth-child(4) {
     justify-content: space-between;
     align-items: center;
@@ -494,75 +557,94 @@ form {
     align-items: flex-start;
     width: 100%;
     height: 100%;
-    min-height: 60vh;
+    min-height: 40vh;
+
+    padding: var(--sm);
 
     /* component styles */
     border: 2px solid var(--mode);
     color: var(--mode);
     
     /* dev */
-    /* border: var(--debugging);
-    background: lightskyblue; */
 }
-form div {
+form .sub {
     /* display props [ flex ] */
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: var(--sm);
     height: 100%;
     width: 100%;
 
-    /* dev */
-    /* border: var(--component); */
-}
-form div:nth-child(1) {
-    border: var(--component);
-    flex-direction: column;
-    
-}
-form div:nth-child(5) {
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-form span {
-    display: flex;
-    align-items: center;
-}
-form span i {
-    padding-left: var(--sm);
-    padding-right: var(--sm);
+
 
     /* dev */
-    /* border: 2px solid red; */
+    border: var(--debugging);
 }
-form p {
-    text-transform: capitalize;
-    padding-left: var(--sm);
+
+form .sub:nth-child(5) {
+    /* align-items: flex-end; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
+
+#complete {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--wireframe);
+    background: lightskyblue;
+    height: 100%;
+    width: 100%;
+    min-height: 40vh;
+}
+#complete i {
+    font-size: 1.5rem;
+    padding-bottom: var(--sm);
+}
+
 form label {
-    font-size: 1.22rem;
+    font-size: 1.14rem;
     text-transform: capitalize;
-    padding-left: var(--sm);
+    letter-spacing: 0.1rem;
 }
 form input {
     /* element styles */
-    border: 3px solid var(--mode);
+    letter-spacing: 0.2rem;
+    text-align: center;
+    height: 50px;
+    /* max-width: 100%; */
+
+    /* mode styles */
+    border: 2px solid var(--mode);
     background: var(--mode-background);
     color: var(--mode);
-    min-width: 60%;
-    padding-left: var(--sm);
-    text-transform: uppercase;
-    
+}
+form input:focus{
+    /* background: var(--mode-background); */
 }
 form textarea {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+    /* max-width: 80%; */
+
     /* element styles */
-    border: 3px solid var(--mode);
+    letter-spacing: 0.2rem;
+    text-align: center;
+    padding:var(--sm);
+
+    /* mode styles */
+    border: 2px solid var(--mode);
     background: var(--mode-background);
     color: var(--mode);
-    min-height: 100px;
-    min-width: 60%;
-    padding-left: var(--sm);
-    text-transform: uppercase;
+}
+form textarea:focus {
+    background: var(--mode-background);
+
     
 }
 form button {
@@ -580,7 +662,12 @@ form button {
     text-transform: capitalize;
     letter-spacing: 2px;
 }
-/* under development *//* under development *//* under development */
+/* form #clear {
+    background: red;
+}
+form #submit {
+    background: green;
+} */
 
 
 /* technical list ext links [ under dev ] */
@@ -633,6 +720,29 @@ form button {
     letter-spacing: 0.1rem;
     text-transform: capitalize;
     font-style: italic;
+}
+.top {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    min-height: 50px;
+    min-width: 120px;
+
+    /* element styles */
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    
+    /* mode styles */
+    /* background: transparent; */
+    background: var(--mode-background);
+    border: 3px solid var(--mode);
+    color: var(--mode);
+}
+.top a {
+    color: var(--mode);
+    text-decoration: none;
 }
 
 /* darkmode props */

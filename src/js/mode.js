@@ -44,7 +44,7 @@ mode.addEventListener('click', ()=> {
         root.style.setProperty('--mode-overlay', 'rgba(0,0,0,0.4)');
 
         // assign land background source to  darkmode
-        land.style.backgroundImage = `url('screens/landing-darkmode.PNG')`;
+        // land.style.backgroundImage = `url('screens/landing-darkmode.PNG')`;
     
     }
     // if conditions are not met, provide page with default styles
@@ -66,7 +66,7 @@ mode.addEventListener('click', ()=> {
         root.style.setProperty('--mode-overlay', 'rgba(241,237,237,0.4)');
 
         // assign land background source to default [ default ]
-        land.style.backgroundImage = `url('screens/landing-default.PNG')`;
+        // land.style.backgroundImage = `url('screens/landing-default.PNG')`;
         
     }
 });
