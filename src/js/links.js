@@ -74,46 +74,124 @@ link_footer.addEventListener('click', ()=> {
     console.log('scrolled to section [ footer ]');
 });
 
-// project link buttons
-// let planButton = document.querySelector('#planButton');
-// let nifl_button = document.querySelector('#nifl_button');
-// let rntl_button = document.querySelector('#rntl_button');
-// let coff_button = document.querySelector('#coff_button');
+/*
+    [ project link ] events
+
+    1. [ alfheim ] : open alfheim website / application in a new tab
+    2. [ niflheim ] : open niflheim website / application in a new tab
+    3. [ jotunheim ] : open jotunheim website / application in a new tab
+    4. [ vanaheim ] : open vanaheim website / application in a new tab
 
 
-// events [ project_button ] : open live project in a new tab
-// planButton.addEventListener('click', ()=> {
+*/
 
-//     // open planets live website [ new tab ]
-//     window.open('https://decode-harris.github.io/planets/');
+let controlsView = document.querySelector('.controlsView');
 
-//     // test
-//     console.log('pro planets : go to location');
+controlsView.addEventListener('click', ()=> {
 
-//     // open planets live website [ direct tab ]
-//     // window.location = 'https://decode-harris.github.io/planets/';
+    if (controlsView.id == 'alfheim') {
+        
+        // open [ alfheim ] github hosted website
+        window.open('https://decode-harris.github.io/alfheim/');
 
-// });
+        // test
+        console.log('opening : [ ALFHEIM ]');
+    }
+    if (controlsView.id == 'niflheim') {
+        
+        // open [ niflheim ] github hosted website
+        window.open('https://decode-harris.github.io/niflheim/');
 
+        // test
+        console.log('opening : [ niflheim ]');
+    }
+    if (controlsView.id == 'jotunheim') {
 
-// nifl_button.addEventListener('click', ()=> {
+        // open [ jotunheim ] github hosted website
+        window.open('https://decode-harris.github.io/jotunheim/');        
+
+        // test
+        console.log('opening : [ jotunheim ]');
+    }
+    if (controlsView.id == 'vanaheim') {
+        
+        // open [ vanaheim ] github hosted website
+        window.open('https://decode-harris.github.io/vanaheim/');
+        
+        // test
+        console.log('opening : [ vanaheim ]');
+    }
+
+});
+
+// // project [ alfheim ] slide selector
+// let alfheim = document.querySelector('#alfheim');
+
+// // event [ alfheim ] : open live project in a new tab
+// alfheim.addEventListener('click', ()=> {
+
+//     // open [ alfheim ] github hosted website
+//     window.open('https://decode-harris.github.io/alfheim/');
     
 //     // test
-//     console.log('pro niflheim : go to location');
-
+//     console.log('opening...alfheim website');
+    
+//     // open planets live website [ direct tab ]
+//     // window.location = 'https://decode-harris.github.io/planets/';
+    
 // });
-// rntl_button.addEventListener('click', ()=> {
 
+// // project [ niflheim ] slide selector
+// let niflheim = document.querySelector('#niflheim');
+
+// // event [ niflheim ] : open live project in a new tab
+// niflheim.addEventListener('click', ()=> {
+
+//     // open [ niflheim ] github hosted website
+//     window.open('https://decode-harris.github.io/niflheim/');
+    
 //     // test
-//     console.log('pro rntlpay : go to location');
-
+//     console.log('opening...niflheim website');
+    
+//     // open planets live website [ direct tab ]
+//     // window.location = 'https://decode-harris.github.io/planets/';
+    
 // });
-// coff_button.addEventListener('click', ()=> {
 
+// // project [ jotunheim ] slide selector
+// let jotunheim = document.querySelector('#jotunheim');
+
+// // event [ jotunheim ] : open live project in a new tab
+// jotunheim.addEventListener('click', ()=> {
+
+//     // open [ jotunheim ] github hosted website
+//     window.open('https://decode-harris.github.io/jotunheim/');
+    
 //     // test
-//     console.log('pro coffee : go to location');
-
+//     console.log('opening...jotunheim website');
+    
+//     // open planets live website [ direct tab ]
+//     // window.location = 'https://decode-harris.github.io/planets/';
+    
 // });
+
+// // project [ vanaheim ] slide selector
+// let vanaheim = document.querySelector('#vanaheim');
+
+// // event [ vanaheim ] : open live project in a new tab
+// vanaheim.addEventListener('click', ()=> {
+
+//     // open [ vanaheim ] github hosted website
+//     window.open('https://decode-harris.github.io/vanaheim/');
+    
+//     // test
+//     console.log('opening...vanaheim website');
+    
+//     // open planets live website [ direct tab ]
+//     // window.location = 'https://decode-harris.github.io/planets/';
+    
+// });
+
 
 /*
     [ footer component ] events
@@ -132,6 +210,7 @@ resume.addEventListener('click', ()=> {
 
     // assign resume source file to pdf variable
     let pdf = 'src/docs/ChristopherHarrisResume.pdf';
+
     // open resume in a new window
     window.open(pdf);
 
@@ -145,6 +224,7 @@ github.addEventListener('click', ()=> {
 
     // assign github href to git variable
     let git = 'https://github.com/decode-harris';
+
     // open resume in a new window
     window.open(git);
 
@@ -158,6 +238,7 @@ email.addEventListener('click', ()=> {
 
     // assign email address to mail variable
     let mail = 'mailto:decode.harris@gmail.com';
+
     // open mail in same window [ device email client ]
     window.location = mail;
 

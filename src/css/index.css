@@ -376,11 +376,18 @@ main button {
     width: 50px;
 }
 main .view {
+
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -2%);
+    width: 100%;
+
     /* display props [ flex ] */
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    min-width: 120px;
+    /* min-width: 120px; */
 
     /* element styles */
     background: transparent;
@@ -388,8 +395,12 @@ main .view {
     color: var(--mode);
     font-size: 1.1rem;
     text-transform: capitalize;
-    padding-left: var(--sm);
     z-index: 3;
+    padding: var(--sm);
+    margin: var(--sm);
+
+    /* dev */
+    border: 3px solid #FFF;
 }
 /* control [ buttons ] container */
 main .controls {
@@ -407,7 +418,7 @@ main .controls {
     padding: var(--sm);
 
     /* dev */
-    border: var(--wireframe);
+   border: 3px solid red;
     
 }
 main .controls button {

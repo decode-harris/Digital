@@ -1,0 +1,27 @@
+#slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    min-height: 400px;
+    max-width: 400px;
+    border: 2px solid #000;
+
+    position: relative;
+}
+.slides {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    /* dev */
+    border: 2px solid red;
+}
+
+.hideSlides {
+    display: none;
+}
