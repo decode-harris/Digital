@@ -1,81 +1,80 @@
-let puppies = [
+let petsArray = [
 
-        {   
-            // set image value as image host href
-            img: 'https://i.ibb.co/nnWFmvY/IMG20171224114945.jpg',
-            name: 'marley'
-        },
-        {   
-            // set image value as image host href
-            img: 'https://i.ibb.co/r57LHhD/IMG20181121150545.jpg',
-            name: 'theodore'
-        },
-        {
-            img: 'https://i.ibb.co/RBdPDXV/IMG20181104134344.jpg',
-            name: 'pandora'
-        }
+    // web hosted pet image sources + pet name
+    {   
+        // set image value as image host href
+        img: 'https://i.ibb.co/nnWFmvY/IMG20171224114945.jpg',
+        name: 'marley'
+    },
+    {   
+        // set image value as image host href
+        img: 'https://i.ibb.co/r57LHhD/IMG20181121150545.jpg',
+        name: 'theodore'
+    },
+    {
+        img: 'https://i.ibb.co/RBdPDXV/IMG20181104134344.jpg',
+        name: 'pandora'
+    }
     
-    ];
+];
     
+let slideIndex = 1;
+
+currentSlide = (n) => {
+    slideshow(slideIndex=n);
+}
+controlSlide = (n) => {
+    slideshow(slideIndex+=n);
+}
+
+const slideshow = (n) => {
+
     let slides = document.getElementsByClassName('slides');
     
-    const gallery = () => {
+    let petName = document.getElementsByClassName('petName');
     
-        let names = document.getElementsByClassName('names');
-    
-        // loop [ puppies ] image array
-        for (i = 0; i < puppies.length; i++) {
-    
-            let puppyImage = document.createElement('div');
-            let puppyName = document.createElement('h2');
-    
-            puppyName.innerHTML = puppies[i].name;
-            puppyName.style.color = '#FFF';
-            
-            puppyImage.appendChild(puppyName);
-    
-            slides[i].style.backgroundImage = 'url(' + puppies[i].img + ')';
-    
-            console.log(puppies[i]);
-            
-            // assign images to slides background
-            slides[i].style.backgroundImage = 'url(' + puppies[i].img + ')';
-            slides[i].style.backgroundPosition = 'center';
-            slides[i].style.backgroundSize = 'cover';
-            
-        }
-    
-        // loop [ names ] class selector
-        for (i = 0; i < names.length; i++) {
-    
-            // assign names to puppies [ i ] : name
-            names[i].innerHTML = puppies[i].name;
-            
-            // test
-            // console.log(names);
-            // set button id to puppies [ slide index - 1 ] : name
-            btnView.id = puppies[slideIndex - 1].name;
-        }
-    
-        // // puppies array loop
-        for (let i = 0; i < puppies.length; i++) {
-    
+    if(n > slides.length) slideIndex = 1;
+    if(n < 1) slideIndex = slides.length;
+
+    for(i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+
+
+    // loop [ puppies ] image array
+    for (i = 0; i < petsArray.length; i++) {
+
+        // assign images to slides background
+        slides[i].style.backgroundImage = 'url(' + petsArray[i].img + ')';
+        slides[i].style.backgroundPosition = 'center';
+        slides[i].style.backgroundSize = 'cover';
         
-    
-            
-        }
-    
-        console.log(puppies[0].img);
-    
-            slider.style.width = '400px';
-            slider.style.height = '400px';
-            slider.style.border = '2px solid red';
-            slider.style.backgroundPosition = 'center';
-            slider.style.backgroundSize = 'cover';
-    
-            // remove to create element
-            slider.style.display = 'none';
-    
-        }
-    
-        gallery();
+        
+    }
+
+    for (i = 0; i < petName.length; i++) {
+        
+        // pet name assignment
+        petName[i].innerHTML = petsArray[ slideIndex - 1].name;
+        petName[i].style.color = '#FFF';
+    }
+
+    slides[ slideIndex - 1 ].style.display = 'flex';
+
+};
+
+// init slideshow test
+slideshow();
+
+// control btn selectors
+const prev = document.querySelector('#prev');
+const next = document.querySelector('#next');
+
+// events control btns
+prev.addEventListener('click', ()=> {
+    controlSlide(-1);
+});
+next.addEventListener('click', ()=> {
+    controlSlide(1);
+});
+

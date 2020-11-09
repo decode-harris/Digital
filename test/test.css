@@ -3,9 +3,8 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
-    min-height: 400px;
-    max-width: 400px;
+    width: 500px;
+    height: 450px;
     border: 2px solid #000;
 
     position: relative;
@@ -18,10 +17,18 @@
     height: 100%;
     width: 100%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     /* dev */
     border: 2px solid red;
 }
-
-.hideSlides {
-    display: none;
+h2 {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    text-transform: capitalize;
+    text-decoration: underline;
 }
+
+
