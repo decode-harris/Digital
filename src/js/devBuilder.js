@@ -20,7 +20,7 @@ const removeComponent = () => {
     
 }
 // init [ removeComponent ] function
-removeComponent();
+// removeComponent();
 
 
 
