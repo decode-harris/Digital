@@ -37,6 +37,8 @@
     --mode: #000;
     --mode-background: #FFF;
     --mode-overlay: rgba(241,237,237,0.4);
+    --mode-transparent: rgba(0,0,0,0.19);
+    /* --mode-transparent: rgba(255, 255, 255, 0.19); */
 }
 
 /* global html */
@@ -280,6 +282,9 @@ section {
     height: 100%;
     min-height: 100vh;
 
+    /* position props [ relative ] */
+    position: relative;
+
     /* background props [ information || landing ] */
     background-position: center;
     background-attachment: fixed;
@@ -333,43 +338,146 @@ main {
     /* display props [ flex ] */
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
-    min-height: 70vh;
-    
+    min-height: 100vh;
+
     /* position props [ relative ] */
     position: relative;
-    /* z-index: 1; */
+    z-index: 1;
 
-}
-/* article [ slides ] component */
-main article {
-    /* display props [ none ==> flex ] */
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    
-    /* position props [ absolute ] */
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-
-    /* background props [ slides ] */
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-    /* component styles */
-    padding: var(--sm);
-    
     /* dev */
     border: var(--component);
+
 }
+
+
+/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
+/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
+
+/* slide */
+main article {
+
+       
+    display: none;
+
+    /* display props [ flex ] */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    
+    /* set for mobile media query *//* set for mobile media query */
+    /* max-height: 600px;
+    max-width: 300px; */
+    /* set for mobile media query *//* set for mobile media query */
+    
+    /* position props [ relative ] */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    max-width: 350px;
+    
+    /* background props */
+    background-image: url('../../screens/Placeholders/alfheim-desktop.PNG');
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    
+    /* element props */
+    border-radius: 12px;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+    box-shadow: 0 4px 8px 0 var(--mode-transparent), 0 6px 20px 0 var(--mode-transparent);
+    transform-style: preserve-3d;
+
+    border: var(--wireframe);
+
+    padding: var(--sm);
+
+}
+
+article .front {
+    /* position props [ absolute ] */
+    position: absolute;
+    top: 35%;
+    left: 0;
+    height: 65%;
+    width: 100%;
+
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* element styles */
+    background: var(--mode-background);
+    border-radius: 0 0 12px 12px;
+    transition-delay: 100ms;
+}
+
+/* article [ box ] hover image component */
+article .box {
+    /* position props [ absolute ] */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 200px;
+    max-width: 200px;
+    width: 100%;
+    z-index: 2;
+    
+    /* add below props via javascript *//* add below props via javascript */
+    /* transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: perspective(500px) rotateY(0deg); */
+    /* add below props via javascript *//* add below props via javascript */
+    
+}
+article .box .small {
+    /* element styles */
+    border-radius: 50%;
+    border: 14px solid var(--mode-background);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+article h4 {
+    /* element style */
+    letter-spacing: 2px;
+    font-size: 2rem;
+    text-transform: capitalize;
+    padding-top: 25%;
+    text-transform: uppercase;
+    transform: perspective(500px) translateZ(50px);
+}
+article h6 {
+    padding: 0 2% 2% 2%;
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    text-transform: capitalize;
+
+    padding-bottom: 5%;
+}
+article p {
+    padding: 5%;
+}
+
+/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
+/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
+
 main button {
     /* element dimensions */
     height: 35px;
@@ -406,19 +514,21 @@ main .view {
 main .controls {
     /* position props [ absolute ] */
     position: absolute;
-    bottom: 2%;
-    left: 0%;
+    bottom: 4%;
+    left: 0;
     width: 100%;
-
+    
     /* display props [ flex ] */
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
-    /* component styles */
+    /* element styles */
+    /* background: rgba(0,0,0,0.12); */
     padding: var(--sm);
 
     /* dev */
-   border: 3px solid red;
+    /* border: var(--wireframe); */
     
 }
 main .controls button {
@@ -686,38 +796,7 @@ form #submit {
     cursor: pointer;
 }
 
-/* [ slides ] element */
-.slides .title {
-    font-size: 2rem;
-    letter-spacing: 0.3rem;
-    text-transform: capitalize;
-    z-index: 2;
-}   
-.slides .tag {
-    line-height: 1.6;
-    font-size: 1.12rem;
-    text-transform: capitalize;
-    z-index: 2;
-    /* color: var(--mode); */
-}
-.slides .overlay {
-    /* position props [ absolute ] */
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
 
-    /* display props [ flex ] */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    z-index: 1;
-
-    /* element styles */
-    background: var(--mode-overlay);
-}
 
 /* text elements */
 .txt {

@@ -6,7 +6,8 @@ let projectsArray = [
         imageMobile: 'https://i.ibb.co/8sZyK6G/alfheim-mobile.png',
         imageDesktop: 'https://i.ibb.co/9rqM43v/alfheim-desktop.png',
         title: 'alfheim',
-        desc: 'mobile responsive redesign',
+        tagline: 'mobile responsive redesign',
+        desc: 'responsive redesign of accomodation website located in Queenstown, New Zealand',
         
     },
     {
@@ -14,7 +15,8 @@ let projectsArray = [
         imageMobile: 'https://i.ibb.co/0VgbWnk/jotunheim-mobile.png',
         imageDesktop: 'https://i.ibb.co/w7DT24C/jotunheim-desktop.png',
         title: 'jotunheim',
-        desc: 'dashboard management system',
+        tagline: 'dashboard management system',
+        desc: 'projects spreadsheet, timeline, onboard tracking, production & hosting',
         
     },
     {
@@ -22,7 +24,8 @@ let projectsArray = [
         imageMobile: 'https://i.ibb.co/vs1y9Vs/niflheim-mobile.png',
         imageDesktop: 'https://i.ibb.co/54791xR/niflheim-desktop.png',
         title: 'niflheim',
-        desc: 'assistant application tracker',
+        tagline: 'assistant application tracker',
+        desc: 'personal expenses application tracking system with customization',
         
     },
     {
@@ -30,7 +33,8 @@ let projectsArray = [
         imageMobile: 'https://i.ibb.co/ZNzwys5/vanaheim-mobile.png',
         imageDesktop: 'https://i.ibb.co/YWkTLP5/vanaheim-desktop.png',
         title: 'vanaheim',
-        desc: 'interactive learning module',
+        tagline: 'interactive learning module',
+        desc: 'animated interactive solar system planets learning module',
         
     },
 
@@ -66,11 +70,13 @@ slideshow = (n) => {
 
     // project information variables
     let projectTitle;
+    let projectTag;
     let projectDesc;
     let projectImage;
 
     // project information output variables
     let slideTitle = document.getElementsByClassName('slideTitle');
+    let slideTag = document.getElementsByClassName('slideTag');
     let slideDesc = document.getElementsByClassName('slideDesc');
     
     // controls view button selector
@@ -91,6 +97,9 @@ slideshow = (n) => {
     
         // get current array projects desc & assign to projectDesc variable
         projectDesc = projectsArray[i].desc;
+
+        // get current array projects tag * assign to projectTag variable
+        projectTag = projectsArray[i].tagline;
     
         // get current array projects image & assign to projectImage variable [ mobile devices ]
         projectImage = projectsArray[i].imageMobile;
@@ -129,6 +138,13 @@ slideshow = (n) => {
         // assign slide title to project title value
         slideDesc[i].innerHTML = projectsArray[i].desc;
 
+    }
+
+    // loop [ tagline ] class selector
+    for (i = 0; i < slideTag.length; i++) {
+
+        // assign slide tagline to project tagline value
+        slideTag[i].innerHTML = projectsArray[i].tagline;
     }
 
     // loop [ slides ] class selector

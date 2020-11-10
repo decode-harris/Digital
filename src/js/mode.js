@@ -42,6 +42,12 @@ mode.addEventListener('click', ()=> {
 
         // assign css var [ mode-overlay ] color to black [ darkmode ]
         root.style.setProperty('--mode-overlay', 'rgba(0,0,0,0.4)');
+        
+        // assign css var [ mode-transparen ] border to white
+        root.style.setProperty('--mode-transparent', 'rgba(255, 255, 255, 0.19)')
+
+        
+        
 
         // assign land background source to  darkmode
         // land.style.backgroundImage = `url('screens/landing-darkmode.PNG')`;
@@ -64,6 +70,9 @@ mode.addEventListener('click', ()=> {
 
         // assign css var [ mode-overlay ] color to white [ default ]
         root.style.setProperty('--mode-overlay', 'rgba(241,237,237,0.4)');
+
+        // assign css var [ mode-transparent ] border to default
+        root.style.setProperty('--mode-transparent', 'rgba(0,0,0,0.19)');
 
         // assign land background source to default [ default ]
         // land.style.backgroundImage = `url('screens/landing-default.PNG')`;

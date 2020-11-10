@@ -5,8 +5,11 @@ const head = document.querySelector('#header');
 const proj = document.querySelector('#projects');
 const foot = document.querySelector('#footer');
 
+let bakc = document.getElementsByClassName('back');
 
-
+for (let i = 0; i < bakc.length; i++) {
+    bakc[i].style.display = 'none';
+}
 // [ removeComponent ] function
 const removeComponent = () => {
     
@@ -20,7 +23,7 @@ const removeComponent = () => {
     
 }
 // init [ removeComponent ] function
-// removeComponent();
+removeComponent();
 
 
 

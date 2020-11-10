@@ -1,0 +1,54 @@
+/* .slides:hover {
+    cursor: pointer;
+} */
+article .face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    display :flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    transition: 1s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+    background: var(--mode-background);
+    
+    
+    border: var(--wireframe);
+}
+/* slides [ front panel ] */
+.slides .face.front {
+    /* background: rgb(20, 175, 116); */
+    
+    
+}
+/* .slides:hover .face.front {
+    transform: perspective(500px) rotateY(180deg);
+} */
+
+/* slides [ back panel ] */
+.slides .face.back {
+    /* background: #3bc2ff; */
+    background: rgb(20, 175, 116);
+    color: #FFF;
+    transform: perspective(500px) rotateY(180deg);
+}
+
+/* .slides:hover .face.back {
+    transform: perspective(500px) rotateY(360deg);
+} */
+
+/* .slides .box {
+    transform: perspective(500px) rotateY(0deg);
+} */
+/* slides [ image ] back panel */
+.slides img {
+    height: 100%;
+    width: 100%;
+}
