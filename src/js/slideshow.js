@@ -217,3 +217,16 @@ controlsPrev.addEventListener('click', ()=> {
 });
 
 
+// let cardInfo = () => {
+
+//     let pjx0 = [
+//         {
+//             pjx_title: `${ projectsArray[i].title }`,
+//         }
+        
+//     ];
+
+//     console.log(pjx0[0]);
+
+// }
+// cardInfo();

@@ -374,7 +374,7 @@ main {
 main article {
     
     /* display props [ none ] default */
-    display: flex;
+    /* display: flex; */
     
     /* display props [ flex ] active */
     justify-content: center;
@@ -405,6 +405,7 @@ main article {
     border: var(--wireframe);
     /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
 }
+
 /* card [ card ] container */
 .card {
      /* position props */
@@ -461,7 +462,6 @@ main article {
     border-radius: 0 0 12px 12px;
     transition-delay: 100ms;
 }
-
 .card_face.back {
     /* display props [ flex ] */
     display: flex;
@@ -476,7 +476,11 @@ main article {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: scroll;
     border-radius: 12px 12px 0 0;
+
+    /* height: 100%;
+    width: 100%; */
     
     /* 3D transform props */
     transform: perspective(500px) rotateY(180deg);
@@ -485,7 +489,6 @@ main article {
     -webkit-backface-visibility: hidden;
 
 }
-
 .card .card_face.front,
 .card .card_face.back {
     /* element styles */
@@ -520,8 +523,6 @@ main article {
     -webkit-backface-visibility: hidden;
     
 }
-
-
 .card_face.box {
     /* position props [ absolute ] */
     position: absolute;
@@ -569,7 +570,6 @@ main article {
     border-radius: 0 0 12px 12px;
     z-index: 1;
 }
-
 /* card [ face : front ] element containers */
 .card_face .box,
 .card_face .info,
@@ -609,6 +609,7 @@ main article {
     max-width: 100%;
     
 }
+/* card [ info panel ] elements */
 .card .slideTitle {
     /* element styles */
     font-size: 2.6em;
@@ -636,8 +637,6 @@ main article {
      backface-visibility: hidden;
      -moz-backface-visibility: hidden;
      -webkit-backface-visibility: hidden;
-
-
 }
 .card .small {
     /* 3D transform props */
