@@ -78,6 +78,14 @@ slideshow = (n) => {
     let slideTitle = document.getElementsByClassName('slideTitle');
     let slideTag = document.getElementsByClassName('slideTag');
     let slideDesc = document.getElementsByClassName('slideDesc');
+
+    // card element element selectors
+    let cardBack = document.getElementsByClassName('back');
+    // let cardFront = document.getElementsByClassName('front');
+
+    let cardFront_bk = document.getElementsByClassName('bk');
+    let cardFront_img = document.getElementsByClassName('small');
+    
     
     // controls view button selector
     let controlsView = document.querySelector('.controlsView');
@@ -104,6 +112,7 @@ slideshow = (n) => {
         // get current array projects image & assign to projectImage variable [ mobile devices ]
         projectImage = projectsArray[i].imageMobile;
 
+        // projectImage = projectsArray.imageMobile;
         // get current array projects image & assign to projectImage variable [ desktop devices ]
         // let projectImage = projectsArray[i].imageDesktop;
         
@@ -111,17 +120,25 @@ slideshow = (n) => {
         // set media query listener here to switch between mobile & desktop images
 
         // assign current slide background image to project image value
-        slides[i].style.backgroundImage = 'url(' + projectImage + ')';
+        // bk[i].style.backgroundImage = 'url(' + projectImage + ')';
 
         // assign current slide id to project title value
         // controlsView.id = projectTitle;
 
-        
-        
+        cardBack[i].style.backgroundImage = 'url(' + projectImage + ')';
+        cardFront_bk[i].style.backgroundImage = 'url(' + projectImage + ')';
+        cardFront_img[i].src = projectImage;
         // // test
-        console.log(projectTitle, projectImage, projectDesc);
+        // console.log(projectTitle, projectImage, projectDesc);
     }
 
+    for (i = 0; i < cardFront_bk.length; i++) {
+
+    }
+    for (i = 0; i < cardFront_img.length; i++) {
+
+    }
+    
     // loop [ title ] class selector
     for (i = 0; i < slideTitle.length; i++) {
 
@@ -154,20 +171,23 @@ slideshow = (n) => {
         slides[i].style.display = 'none';
 
     }
+    // loop [ cardback ]
+    for (i = 0; i < cardBack.length; i++) {}
     
     // current slide is equal to slides [ slide index - 1 ]
     let current = slides[ slideIndex - 1];
     
     // set slides class to phase
     current.toggleAttribute('class', 'phase');
-    
+
     // set slides display to flex
     slides[ slideIndex - 1 ].style.display = 'flex';
-    // current.style.display = 'flex';
-
+    
+    
+    
+    
+    // set controls view button id as current projects array title
     controlsView.id = projectsArray[slideIndex - 1].title;
-    // test
-    console.log(controlsView);
 
 }
 
@@ -195,3 +215,5 @@ controlsPrev.addEventListener('click', ()=> {
     controlSlide(-1);
 
 });
+
+

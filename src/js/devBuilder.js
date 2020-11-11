@@ -7,12 +7,14 @@ const foot = document.querySelector('#footer');
 
 let bakc = document.getElementsByClassName('back');
 
-for (let i = 0; i < bakc.length; i++) {
-    bakc[i].style.display = 'none';
-}
+
 // [ removeComponent ] function
 const removeComponent = () => {
     
+    // for (let i = 0; i < bakc.length; i++) {
+    //     bakc[i].style.display = 'none';
+    // }
+
     // head.style.display = 'none';
     nav.style.display = 'none';
     info.style.display = 'none';

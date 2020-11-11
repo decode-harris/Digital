@@ -333,6 +333,24 @@ section li {
     border: var(--debugging);
 }
 
+
+/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
+/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
+
+
+
+
+
+
+/*
+    [ Projects Container ]
+
+    1. main [ slideshow ] container
+    2. article [ slides ] slide container
+    3. card [ card ] info container
+    4. card_face [ front | box | back ] elements
+
+*/
 /* main [ slideshow ] component */
 main {
     /* display props [ flex ] */
@@ -352,26 +370,15 @@ main {
     border: var(--component);
 
 }
-
-
-/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
-/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
-
-/* slide */
+/* article [ slides ] : main child element */
 main article {
-
-       
-    display: none;
-
-    /* display props [ flex ] */
-    /* display: flex; */
+    
+    /* display props [ none ] default */
+    display: flex;
+    
+    /* display props [ flex ] active */
     justify-content: center;
     align-items: center;
-    
-    /* set for mobile media query *//* set for mobile media query */
-    /* max-height: 600px;
-    max-width: 300px; */
-    /* set for mobile media query *//* set for mobile media query */
     
     /* position props [ relative ] */
     position: absolute;
@@ -383,31 +390,65 @@ main article {
     max-width: 350px;
     
     /* background props */
-    background-image: url('../../screens/Placeholders/alfheim-desktop.PNG');
+    /* background-image: url('../../screens/Placeholders/alfheim-desktop.PNG'); */
     background-position: center;
     background-size: cover;
     background-attachment: scroll;
     
     /* element props */
     border-radius: 12px;
-    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
-    box-shadow: 0 4px 8px 0 var(--mode-transparent), 0 6px 20px 0 var(--mode-transparent);
-    transform-style: preserve-3d;
-
-    border: var(--wireframe);
-
+    /* box-shadow: 0 4px 8px 0 var(--mode-transparent), 0 6px 20px 0 var(--mode-transparent); */
     padding: var(--sm);
+    transform-style: preserve-3d;
+    
+    /* dev */
+    border: var(--wireframe);
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}
+/* card [ card ] container */
+.card {
+     /* position props */
+     position: relative;
+     height: 100%;
+     width: 100%;
+     
+     /* element styles */
+     max-height: 600px;
+     max-width: 300px;
 
+     /* 3D transform props */
+     transform-style: preserve-3d;
+}
+.card_face {
+     /* position props [ absolute ] */
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     
+     /* display props [ flex ] */
+     display :flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+ 
+     /* element styles */
+     transition: 1s ease-in-out;
+     transform-style: preserve-3d;
+     backface-visibility: hidden;
+     /* border-radius: 0 0 12px 12px; */
+     /* border: 2px solid red; */
+     z-index: 2;
+     
+ 
+     /* mozilla & edge browser support */
+     -moz-backface-visibility: hidden;
+     -webkit-backface-visibility: hidden;
 }
 
-article .front {
-    /* position props [ absolute ] */
-    position: absolute;
-    top: 35%;
-    left: 0;
-    height: 65%;
-    width: 100%;
-
+.card_face .front {
     /* display props [ flex ] */
     display: flex;
     flex-direction: column;
@@ -421,69 +462,199 @@ article .front {
     transition-delay: 100ms;
 }
 
-/* article [ box ] hover image component */
-article .box {
+.card_face.back {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    /* element styles */
+    color: #FFF;
+    background: #000;
+    border-radius: 12px;
+    /* background-image: url('../../screens/Placeholders/alfheim-desktop.PNG'); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px 12px 0 0;
+    
+    /* 3D transform props */
+    transform: perspective(500px) rotateY(180deg);
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+}
+
+.card .card_face.front,
+.card .card_face.back {
+    /* element styles */
+    border-radius: 12px 12px;
+    box-shadow: 0 4px 8px 0 var(--mode-transparent), 0 6px 20px 0 var(--mode-transparent);
+
+    /* 3D transform props */
+    transform-style: preserve-3d;
+    transition-delay: 100ms;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.card_face button {
+    /* element styles */
+    background: white;
+    border: 2px solid var(--mode);
+    border-radius: 10px;
+    color: var(--mode);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 22%;
+    min-width: 200px;
+    /* padding: 2% 10%; */
+    text-transform: capitalize;
+
+    /* 3d transform props */
+    transform: translateZ(50px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    
+}
+
+
+.card_face.box {
     /* position props [ absolute ] */
     position: absolute;
-    top: 30%;
     left: 50%;
-    transform: translate(-50%, -30%);
-    
+    top: 25%;
+    transform: translate(-50%, -25%);
+    z-index: 2;
+    height: 160px;
+    width: 160px;
+
     /* display props [ flex ] */
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 200px;
-    max-width: 200px;
-    width: 100%;
-    z-index: 2;
     
-    /* add below props via javascript *//* add below props via javascript */
-    /* transform-style: preserve-3d;
-    backface-visibility: hidden;
-    transform: perspective(500px) rotateY(0deg); */
-    /* add below props via javascript *//* add below props via javascript */
-    
-}
-article .box .small {
     /* element styles */
     border-radius: 50%;
-    border: 14px solid var(--mode-background);
-    height: 150px;
-    width: 150px;
+    
+    /* 3D transform props */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+}
+.card_face .bk {
+    /* display props [ flex ] ( container = 25% ) */
+    width: 100%;
+    height: 100%;
+    flex: 35%;
+    border-radius: 12px 12px 0 0;
+}
+.card_face .info {
+    /* display props [ flex ] ( container = 75% ) */
+    display: flex;
+    flex: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* element styles */
+    text-align: center;
+    padding: 4%;
+    background: var(--mode-background);
+    border-radius: 0 0 12px 12px;
+    z-index: 1;
+}
+
+/* card [ face : front ] element containers */
+.card_face .box,
+.card_face .info,
+.card_face .bk {
+    /* 3D transform props */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.card .box .small {
+    /* element styles */
+    height: 160px;
+    width: 160px;
     border-radius: 50%;
+    border: 14px solid var(--mode-background);
+    
+    /* 3d transform props */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
-
-article h4 {
-    /* element style */
-    letter-spacing: 2px;
-    font-size: 2rem;
-    text-transform: capitalize;
-    padding-top: 25%;
+.box .small img {
+    /* image dimensions */
+    height: 100%;
+    width: 100%;
+    
+    /* 3D transform props */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.card .back img {
+    max-height: 100%;
+    max-width: 100%;
+    
+}
+.card .slideTitle {
+    /* element styles */
+    font-size: 2.6em;
+    text-decoration: none;
     text-transform: uppercase;
+    
+    /* 3D transform props */
+    transform-style: preserve-3d;
     transform: perspective(500px) translateZ(50px);
+    transition: 0.3s ease-in;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
-article h6 {
-    padding: 0 2% 2% 2%;
-    font-size: 1.2rem;
-    color: #a0a0a0;
-    text-transform: capitalize;
+.card .slideTag {
+     /* element styles */
+     padding-bottom: 25%; 
+     font-size: 0.8rem;
+     color: #a0a0a0;
+     text-transform: capitalize;
+ 
+     /* 3D transform props */
+     transform-style: preserve-3d;
+     transform: perspective(500px) translateZ(30px);
+     backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+     -webkit-backface-visibility: hidden;
 
-    padding-bottom: 5%;
+
 }
-article p {
-    padding: 5%;
+.card .small {
+    /* 3D transform props */
+    transform-style: preserve-3d;
+    transform: perspective(1000px) translateZ(70px);
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
-/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
-/* new slide panel - under development *//* new slide panel - under development *//* new slide panel - under development */
 
 main button {
     /* element dimensions */
     height: 35px;
     width: 50px;
 }
-main .view {
+/* main .view {
 
     position: absolute;
     bottom: 2%;
@@ -491,13 +662,13 @@ main .view {
     transform: translate(-50%, -2%);
     width: 100%;
 
-    /* display props [ flex ] */
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    /* min-width: 120px; */
+    min-width: 120px;
 
-    /* element styles */
+    
     background: transparent;
     border: 2px solid var(--mode);
     color: var(--mode);
@@ -507,9 +678,10 @@ main .view {
     padding: var(--sm);
     margin: var(--sm);
 
-    /* dev */
+    
     border: 3px solid #FFF;
-}
+} */
+
 /* control [ buttons ] container */
 main .controls {
     /* position props [ absolute ] */
