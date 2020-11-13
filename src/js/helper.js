@@ -34,13 +34,13 @@ scrollPositionProperties = () => {
             pos = window.scrollY;
             
             // assign header position to fixed [ from relative ]
-            header.style.position = 'fixed'; 
+            menu.style.position = 'fixed'; 
 
             // header props
-            header.style.top = '0';
-            header.style.left = '0';
-            header.style.background = 'var(--mode-background)';
-            header.style.zIndex = '4';
+            menu.style.top = '0';
+            menu.style.left = '0';
+            menu.style.background = 'var(--mode-background)';
+            menu.style.zIndex = '4';
 
             // nav component props
             nav.style.top = pos + 'px';

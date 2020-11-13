@@ -1,5 +1,3 @@
-
-
 // nav component selector
 const nav = document.querySelector('#nav');
 
@@ -27,13 +25,15 @@ navigationMobileOpen = () => {
         // test
         console.log('nav mob open : IF');
     }
-    
 
 }
 // function [ navigationMobileExit ]
 navigationMobileExit = () => {
     nav.classList.toggle('nav_active');
     // nav.style.width = '0%';
+
+    // reset menu button to default position
+    menu.style.marginLeft = '10px';
 
     // validate null class
     if (nav.className === '') {
@@ -47,16 +47,12 @@ navigationMobileExit = () => {
         console.log('nav mob exit : IF');
     }
 
-    // reset menu button to default position
-    menu.style.marginLeft = '10px';
-
 }
 
 // navigation menu button selector
 let menu = document.querySelector('#menu');
 // event [ menu ] init navigationMobileOpen function
 menu.addEventListener('click', navigationMobileOpen);
-
 
 // function [ navigationMobilePages ] 
 navigationMobilePages = () => {
@@ -75,16 +71,13 @@ navigationMobilePages = () => {
         sections[i].style.display = 'flex';
     }
 
-    // lopp [ links ]
-    for(i = 0; i < links.length; i++) {
-
-        console.log(links[i]);
-    }
-
+    // for each [ links ( item )]
     links.forEach(item => {
-
+        // add event [ sectionContentOpen ] via onclick
         item.addEventListener('click', sectionContentOpen);
 
+        // test
+        // console.log(item);
     });
 
 }
@@ -133,6 +126,7 @@ navigationDesktopPages = () => {
         console.log(links[i]);
     }
 
+    // for each [ links ( item ) ]
     links.forEach(item => {
 
         // event [ item ] click 
@@ -146,37 +140,59 @@ navigationDesktopPages = () => {
                 
                 // validate [ links ] id
                 if (item.id == 'link_homepage') {
-
-                    // set sections
-                    // sections[i].style.display = 'none';
+                    // assign [ home ] variable to section [ 0 ]
                     let home = sections[0];
+                    // display [ home ] as flex
                     home.style.display = 'flex';
-                    console.log(home);
+                    // append home to wrapper container
                     wrapper.appendChild(home);
+                    
+                    // test
+                    console.log(home);
                 }
                 if (item.id == 'link_about') {
+                    // assign [ home ] variable to section [ 1 ]
                     let abot = sections[1];
+                    // set abot container to flex
                     abot.style.display = 'flex';
-                    console.log(about);
+                    // append abot to wrapper container
                     wrapper.appendChild(abot);
+                    
+                    // test
+                    console.log(about);
                 }
                 if (item.id == 'link_projects') {
+                    // assign [ home ] variable to section [ 2 ]
                     let proj = sections[2];
+                    // set projects container to flex
                     proj.style.display = 'flex';
-                    console.log(proj);
+                    // append projects to wrapper container
                     wrapper.appendChild(proj);
+                    
+                    // test
+                    console.log(proj);
                 }
                 if (item.id == 'link_technical') {
+                    // assign [ home ] variable to section [ 3 ]
                     let tech = sections[3];
+                    // set tech container to grid
                     tech.style.display = 'grid';
-                    console.log(tech);
+                    // append tech to wrapper container
                     wrapper.appendChild(tech);
+                    
+                    // test
+                    console.log(tech);
                 }
                 if (item.id == 'link_footer') {
+                    // assign [ foot ] variable to section [ 4 ]
                     let foot = sections[4];
-                    foot.style.display = 'grid';
-                    console.log(foot);
+                    // set footer container display to grid
+                    foot.style.display = 'flex';
+                    // append footer to wrapper container
                     wrapper.appendChild(foot);
+                    
+                    // test
+                    console.log(foot);
                 }
             
             }

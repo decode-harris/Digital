@@ -336,8 +336,8 @@ main {
     align-items: center;
     height: 100%;
     width: 100%;
-    min-height: 100vh;
-
+    /* min-height: 100vh; */
+    min-height: 50vh;
     /* position props [ relative ] */
     position: relative;
     z-index: 1;
@@ -364,7 +364,7 @@ main article {
     height: 100%;
     width: 100%;
     max-width: 350px;
-    
+    min-height: 600px;
     /* background props */
     /* background-image: url('../../screens/Placeholders/alfheim-desktop.PNG'); */
     background-position: center;
@@ -1089,21 +1089,146 @@ form #submit {
         
     }
 
+    /* section [ homepage ] */
+    #homepage .elmnts {
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
+
+    /* section [ about ] props */
+    #about {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    #about .elmnts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* section [ technical ] props */
+    #technical {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+    }
+    #technical .elmnts {
+        grid-column: span 1;
+        grid-row: span 4;
+        justify-content: center;
+        align-items: center;
+    }
+    #technical .elmnts:nth-child(1) {
+        grid-column: span 3;
+        grid-row: span 1;
+    }
+    #technical ul {
+        height: 100%;
+        width: 100%;
+        
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+
+        padding-top: var(--md);
+        /* border: 2px solid red; */
+    }
+    #technical li {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        letter-spacing: 0.1rem;
+    }
+    #technical h4 {
+        font-size: 1.75rem;
+        font-weight: bold;
+    }
+
+    /* section [ projects ] props */
+    #projects {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+        /* dev */
+        /* background: lightcoral; */
+    }
+    #projects .elmnts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        /* border: 4px solid darkcyan; */
+    }
+    /* main [ slideshow ] component */
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 49vh;
+        max-height: 50vh;
+        position: relative;
+
+        /* background: red; */
+    }
+    /* main article [ slides ] element */
+    main article {
+        top: 0;
+        left: 0;
+        transform: translate(0,0);
+        position: relative;
+    }
+
+    /* footer [ footer ] props */
+    #footer {
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    #footer .elmnts {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+    #footer ul {
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+    }
+    #footer li {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+
+    .desktop_hidden {
+        display: none;
+    }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    #footer form {
+        max-width: 350px;
+        max-height: 600px;
+        
+        display: none;
+    }
 
 
     nav .elmnts {
@@ -1142,81 +1267,22 @@ form #submit {
     }
 
     
-    /* section component */
-    section {
-        /* position: absolute;
-        left: 300px;
-        top: 0;
-        width: calc(100% - 300px); */
-        /* overflow: hidden; */
+    
 
-        width: 100%;
-        height: 100%;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        border: var(--wireframe);
-    }
-
-    section#information {
+    #information {
         flex-direction: row;
-        background: red;
     }
-    section#information h1, 
-    section#information h6, 
-    section#information p {
+    #information h1, 
+    #information h6, 
+    #information p {
         color: var(--mode);
         color: #FFF;
     }
     
 
-    /* section [ technical ] props */
-    #technical {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-    }
-    #technical .elmnts {
-        grid-column: span 1;
-        grid-row: span 4;
-    }
-    #technical .elmnts:nth-child(1) {
-        grid-column: span 3;
-        grid-row: span 1;
-    }
+    
 
-    /* section [ technical ] props */
-    #projects {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-    }
-    #projects .elmnts {
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    #projects .elmnts:nth-child(1) {
-        grid-column: span 4;
-        grid-row: span 1;
-    }
-
-    /* footer [ footer ] props */
-    footer {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-    }
-    footer .elmnts {
-        grid-column: span 1;
-        grid-row: span 4;
-    }
-    footer .elmnts:nth-child(1),
-    footer .elmnts:nth-child(4) {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
+    
 
 
 
@@ -1240,6 +1306,7 @@ form #submit {
         display: flex;
     }
 
+    
     /* under development *//* under development *//* under development */
    
 
