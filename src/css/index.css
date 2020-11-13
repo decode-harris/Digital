@@ -24,9 +24,9 @@
     --lg: 10%;
 
     /* dev borders */
-    --wireframe: 2px solid darkblue;
+    /* --wireframe: 2px solid darkblue;
     --debugging: 2px dotted darkred;
-    --component: 2px solid darkgreen;
+    --component: 2px solid darkgreen; */
 
     /* font style */
     --mainfont: 'Titillium Web', sans-serif;
