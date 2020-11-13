@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Rubik:wght@300&display=swap');
+/* 
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Rubik', sans-serif;
+*/
+
+
+/* global reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* global variables */
+:root {
+    /* spacing */
+    --sm: 2%;
+    --md: 5%;
+    --lg: 10%;
+
+    /* dev borders */
+    --wireframe: 2px solid darkblue;
+    --debugging: 2px dotted darkred;
+    --component: 2px solid darkgreen;
+
+    /* font style */
+    --mainfont: 'Titillium Web', sans-serif;
+    --text-font: 'PT Sans Narrow', sans-serif;
+    --head-font: 'Rubik', sans-serif;
+
+    /* light mode | darkmode */
+    --mode: #000;
+    --mode-background: #FFF;
+    --mode-overlay: rgba(241,237,237,0.4);
+    --mode-transparent: rgba(0,0,0,0.19);
+    /* --mode-transparent: rgba(255, 255, 255, 0.19); */
+}
+
+/* global html */
+html {
+    /* page scroll props */
+    scroll-behavior: smooth;
+    
+    /* page font props */
+    font-family: var(--text-font);
+}
+
+#page {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+
+    background: rgb(19, 9, 54);
+    color: #FFF;
+}
+
+nav {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* dev */
+    border: var(--component);
+    background: lightcoral;
+    /* display: none; */
+}
+nav .elmnts {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    /* element styles */
+    list-style-type: none;
+    text-transform: capitalize;
+    
+    
+    /* dev */
+    border: 2px dotted #FFF;
+}
+nav .nav_ext,
+nav .nav_ctl {
+    flex-direction: row;
+}
+
+section {
+
+    position: absolute;
+    left: 300px;
+    height: 100%;
+    width: calc(100% - 300px);
+
+    /* dev */
+    border: var(--debugging);
+    background: lightgreen;
+}
+
+.active {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* loading page container */
+#load {
+    background: rgb(8, 27, 80);
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(11, 143, 88);
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 2;
+
+    position: relative;
+
+    display: none;
+}
+.loader {
+    border: 16px solid rgba(215, 209, 230, 0.308);
+    border-top: 16px solid rgb(11, 143, 88);
+    border-bottom: 16px solid rgb(11, 143, 88);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#load p {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: var(--debugging);
+}

@@ -1,5 +1,5 @@
 // current slide selector
-// let card = document.querySelectorAll('.card');
+let card = document.querySelectorAll('.card');
 
 // function [ flip ] : click for mobile devices
 let flip = () => {
@@ -154,7 +154,7 @@ card.forEach(item => {
     item.style.cursor = 'pointer';
 
     // test item output
-    console.log(item);
+    // console.log(item);
     
     });
 
@@ -171,11 +171,9 @@ card.forEach(item => {
     item.style.cursor = 'pointer';
 
     // test item output
-    console.log('mouse events : added');
+    // console.log('mouse events : added');
 
 });
-
-
 
 // deviceSpecificFlip = () => {
 

@@ -61,7 +61,7 @@ navigationEventsMobile = () => {
     
     // nav button selectors
     let menu = document.querySelector('#menu');
-    let exit = document.querySelector('#exit');
+    // let exit = document.querySelector('#exit');
 
     // event [ nav open ]
     menu.addEventListener('click', ()=> {
@@ -71,18 +71,18 @@ navigationEventsMobile = () => {
     
     });
     // even [ nav exit ]
-    exit.addEventListener('click', ()=> {
+    // exit.addEventListener('click', ()=> {
 
-        // init [ navigationPropertiesMobile ] function
-        navigationPropertiesMobileDefault();
+    //     // init [ navigationPropertiesMobile ] function
+    //     navigationPropertiesMobileDefault();
         
 
-    });
+    // });
 
 };
 
 // init [ navigationEventsMobile ] function
-navigationEventsMobile();
+
 
 
 

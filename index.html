@@ -18,21 +18,28 @@
         <!-- lightmode || darkmode -->
         <script defer src="src/js/mode.js"></script>
         <!-- nav mobile -->
-        <script defer src="src/js/nav-mob.js"></script>
+        <!-- <script defer src="src/js/nav-mob.js"></script> -->
+        <!-- nav -->
+        <script defer src="src/js/nav.js"></script>
+        <!-- minimize -->
+        <!-- <script defer src="src/js/minimize.js"></script> -->
         <!-- media query listener -->
         <script defer src="src/js/mql.js"></script>
         <!-- links -->
         <script defer src="src/js/links.js"></script>
         <!-- forms -->
-        <script defer src="src/js/forms.js"></script>
+        <!-- <script defer src="src/js/forms.js"></script> -->
         <!-- flips -->
         <script defer src="src/js/flips.js"></script>
+
+        <!-- content -->
+        <!-- <script defer src="src/js/content.js"></script> -->
         
     <!-- scripts -->
 
     <!-- scripts [ dev ] -->
         <!-- dev builder -->
-        <script defer src="src/js/devBuilder.js"></script>
+        <!-- <script defer src="src/js/devBuilder.js"></script> -->
     <!-- scripts [ dev ] -->
 
     <!-- libs -->
@@ -46,77 +53,144 @@
         <!-- nav component -->
         <nav id="nav">
             <!-- elmnts -->
-            <div class="elmnts">
-                <!-- span -->
-                <span>
-                    <!-- nav title -->
-                    <h4>christopher harris</h4>
-                    <p class="tag">web development</p>
-                    <!-- nav title -->
-                </span>
-                <span>
-                    <!-- nav exit -->
-                    <button id="exit"><i class="fas fa-times"></i></button>
-                    <!-- nav exit -->
-                </span>
-                <!-- span -->
+            <div class="elmnts mini">
+                <!-- nav title -->
+                <h4>christopher harris</h4>
+                <p>web developer & IT support specialist</p>
+                <!-- nav title -->
             </div>
             <div class="elmnts">
-                <!-- links int -->
-                <ul class="int">
-                    <!-- li int -->
+                <!-- nav_list -->
+                <ul class="nav_list">
+                    <!-- nav_list li -->
                     <li>
-                        <a href="#page" id="link_homepage">
+                        <!-- link -->
+                        <a href="#page" id="link_homepage" class="links">
+                            <!-- icon -->
                             <i class="fas fa-home"></i>
-                            homepage
+                            <!-- icon -->
+                            
+                            <!-- mini -->
+                            <span class="mini">
+                                home
+                            </span>
+                            <!-- mini -->
                         </a>
+                        <!-- link -->
                     </li>
                     <li>
-                        <a href="#information" id="link_information">
-                            <i class="fas fa-info"></i>
-                            information
+                        <!-- link -->
+                        <a href="#about" id="link_about" class="links">
+                            <!-- icon -->
+                            <!-- <i class="fas fa-info"></i> -->
+                            <i class="fas fa-info-circle"></i>
+                            <!-- icon -->
+                            
+                            <!-- mini -->
+                            <span class="mini">
+                                about
+                            </span>
+                            <!-- mini -->
                         </a>
+                        <!-- link -->
                     </li>
                     <li>
-                        <a href="#projects" id="link_projects">
+                        <!-- link -->
+                        <a href="#projects" id="link_projects" class="links">
+                            <!-- icon -->
                             <i class="far fa-folder-open"></i>
-                            projects
+                            <!-- icon -->
+
+                            <!-- mini -->
+                            <span class="mini">
+                                work
+                            </span>
+                            <!-- mini -->
                         </a>
+                        <!-- link -->
                     </li>
                     <li>
-                        <a href="#technical" id="link_technical">
+                        <!-- link -->
+                        <a href="#technical" id="link_technical" class="links">
+                            <!-- icon -->
                             <i class="fas fa-desktop"></i>
-                            technical
+                            <!-- icon -->
+
+                            <!-- mini -->
+                            <span class="mini">
+                                tech
+                            </span>
+                            <!-- mini -->
                         </a>
+                        <!-- link -->
                     </li>
                     <li>
-                        <a href="#footer" id="link_footer">
+                        <!-- link -->
+                        <a href="#footer" id="link_footer" class="links">
+                            <!-- icon -->
                             <i class="far fa-id-card"></i>
-                            contact
+                            <!-- icon -->
+
+                            <!-- mini -->
+                            <span class="mini">
+                            social
+                            </span>
+                            <!-- mini -->
                         </a>
+                        <!-- link -->
                     </li>
-                    <!-- li int -->
+                    <!-- nav_list li -->
                 </ul>
-                <!-- links int -->
+                <!-- nav_list -->
             </div>
             <div class="elmnts">
 
-                <!-- links ext -->
-                <ul class="ext">
-                    <!-- li ext -->
+                <!-- nav_btns -->
+                <ul class="nav_btns">
+                    <!-- nav-btn li -->
                     <li>
-                        <a href="https://github.com/decode-harris">
-                            <i class="fab fa-github-square"></i>
-                        </a>
+                        <!-- mode button -->
+                        <button id="mode" class="phase"><i id="mode_icon" class="fas fa-toggle-off"></i></button>
+                        <!-- mode button -->
                     </li>
                     <li>
-                        <a href="mailto:decode.harris@gmail.com">
-                            <i class="far fa-envelope"></i>
-                        </a>
+                        <!-- github button -->
+                        <button>
+                            <!-- link [ github] -->
+                            <a href="https://github.com/decode-harris">
+                                <!-- icon [ github ] -->
+                                <i class="fab fa-github-square"></i>
+                                <!-- icon [ github ] -->
+                            </a>
+                            <!-- link [ github] -->
+                        </button>
+                        <!-- github button -->
                     </li>
-                    <!-- li ext -->
+                    <li>
+                        <!-- mail button -->
+                        <button>
+                            <!-- link [ mail ] -->
+                            <a href="mailto:decode.harris@gmail.com">
+                                <!-- icon [ mail ] -->
+                                <i class="far fa-envelope"></i>
+                                <!-- icon [ mail ] -->
+                            </a>
+                            <!-- link [ mail ] -->
+                        </button>
+                        <!-- mail button -->
+                    </li>
+                    <li>
+                        <!-- mini button -->
+                        <button id="minimize">
+                            <!-- minifiy nav bar on dessktop, remove minimize class from view [ nav_list text ] -->
+                            <--
+                            <!-- minifiy nav bar on dessktop, remove minimize class from view [ nav_list text ] -->
+                        </button>
+                        <!-- mini button -->
+                    </li>
+                    <!-- nav-btn li -->
                 </ul>
-                <!-- links ext -->
+                <!-- nav_btns -->
             </div>
             <!-- elmnts -->
         </nav>
@@ -124,22 +198,19 @@
 
         <!-- header component -->
         <header id="header">
-            <!-- elmnts -->
-            <div class="elmnts">
-                <!-- menu button -->
-                <button id="menu" class="phase"><i class="fas fa-bars"></i></button>
-                <!-- menu button -->
-                
-                <!-- mode button -->
-                <button id="mode" class="phase"><i id="mode_icon" class="fas fa-toggle-off"></i></button>
-                <!-- mode button -->
-            </div>
-            <!-- elmnts -->
+            
+            <!-- menu button -->
+            <button id="menu" class="menu phase"><i class="fas fa-bars"></i></button>
+            <!-- menu button -->
+        
         </header>
         <!-- header component -->
 
+        <!-- wrapper -->
+        <section id="wrapper">
+
         <!-- intro -->
-        <section id="information">
+        <section id="homepage" class="wrapper_inner">
 
             <!-- elmnts -->
             <div class="elmnts">
@@ -165,8 +236,30 @@
         </section>
         <!-- intro -->
 
+        <!-- about -->
+        <section id="about" class="wrapper_inner">
+
+            <!-- elmnts -->
+            <div class="elmnts">
+                <h2>about myself</h2>
+            </div>
+            <div class="elmnts">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, impedit!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, impedit!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, impedit!
+            </div>
+            <div class="elmnts">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, impedit!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, impedit!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, impedit!
+            </div>
+            <!-- elmnts -->
+
+        </section>
+        <!-- about -->
+
         <!-- projects -->
-        <section id="projects">
+        <section id="projects" class="wrapper_inner">
             
             <!-- elmnts -->
             <div class="elmnts">
@@ -383,7 +476,7 @@
         <!-- projects -->
         
         <!-- technical -->
-        <section id="technical">
+        <section id="technical" class="wrapper_inner">
             
             <!-- elmnts -->
             <div class="elmnts">
@@ -442,7 +535,7 @@
         <!-- technical -->
 
         <!-- footer -->
-        <footer id="footer">
+        <footer id="footer" class="wrapper_inner">
             <div class="elmnts">
                 <!-- info -->
                 <h2>contact information</h2>
@@ -575,6 +668,9 @@
             <!-- elmnts -->
         </footer>
         <!-- footer -->
+    </section>
+    <!-- wrapper -->
+
     </div>
     <!-- page -->
     
