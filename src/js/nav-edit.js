@@ -83,13 +83,13 @@ navMenuFull = () => {
     nav.classList.remove('nav_small');
 
     
-    // // validate nav classname
-    // if (nav.className != 'nav_small') {
-    //     nav.style.width = '300px';
-    // }
-    // else {
-    //     nav.style.width = '100px';
-    // }
+    // validate nav classname
+    if (nav.className != 'nav_small') {
+        nav.style.width = '300px';
+    }
+    else {
+        nav.style.width = '100px';
+    }
  
     // ul nav_btns li all selector  
     let nav_btns = document.querySelectorAll('.nav_btns li');

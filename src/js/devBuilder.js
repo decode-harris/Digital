@@ -1,5 +1,5 @@
-const nav = document.querySelector('#nav');
-const info = document.querySelector('#information');
+// const nav = document.querySelector('#nav');
+const info = document.querySelector('#about');
 const tech = document.querySelector('#technical');
 const head = document.querySelector('#header');
 const proj = document.querySelector('#projects');
@@ -16,11 +16,12 @@ const removeComponent = () => {
     // }
 
     // head.style.display = 'none';
-    nav.style.display = 'none';
+    // nav.style.display = 'none';
     info.style.display = 'none';
-    // proj.style.display = 'none';
     tech.style.display = 'none';
-    foot.style.display = 'none';
+    // head.style.display = 'none';
+    proj.style.display = 'none';
+    // foot.style.display = 'none';
 
     
 }

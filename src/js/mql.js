@@ -23,7 +23,7 @@ window.onload = mql = (e)=> {
 
         // navMobileDefault();
 
-        // navigationState();
+        navigationState();
         // navMenuFull();
 
         // let links = document.querySelectorAll('.links');

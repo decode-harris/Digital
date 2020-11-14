@@ -52,3 +52,68 @@ article .face {
     height: 100%;
     width: 100%;
 }
+
+form label {
+    font-size: 1.14rem;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+}
+form input {
+    /* element styles */
+    letter-spacing: 0.2rem;
+    text-align: center;
+    height: 50px;
+    /* max-width: 100%; */
+
+    /* mode styles */
+    border: 2px solid var(--mode);
+    background: var(--mode-background);
+    color: var(--mode);
+}
+/* form input:focus{
+    
+} */
+form textarea {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+    /* max-width: 80%; */
+
+    /* element styles */
+    letter-spacing: 0.2rem;
+    text-align: center;
+    padding:var(--sm);
+
+    /* mode styles */
+    border: 2px solid var(--mode);
+    background: var(--mode-background);
+    color: var(--mode);
+}
+form textarea:focus {
+    background: var(--mode-background);
+
+    
+}
+form button {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    min-height: 50px;
+    min-width: 120px;
+
+    /* element styles */
+    color: var(--mode);
+    border: 3px solid var(--mode);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+/* form #clear {
+    background: red;
+}
+form #submit {
+    background: green;
+} */

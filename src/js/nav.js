@@ -202,6 +202,134 @@ navigationDesktopPages = () => {
     });
 }
 
+// nav [ minimize ] button selector
+let minimize = document.querySelector('#minimize');
+
+// function [ navMenuFull ] : nav component small props [ desktop ]
+navMenuSmall = () => {
+    
+    // nav component selector
+    let nav = document.querySelector('#nav');
+
+    // assign nav class to [ nav_small ]
+    nav.classList.toggle('nav_small');
+
+    // remove nav class [ nav_full ]
+    nav.classList.remove('nav_full');
+
+    // switch arrow to show content fold
+    minimize.innerHTML = '-->';
+
+    // minimize class all selector
+    let mini = document.querySelectorAll('.mini');
+
+    // loop iterator
+    let i;
+
+    // loop mini
+    for (i = 0; i < mini.length; i++) {
+
+        if (mini[i].style.display != 'none') {
+            mini[i].style.display = 'none';
+        }
+        else {
+            mini[i].style.display = 'flex';
+        }
+        
+        console.log(mini[i]);
+    }
+
+    // ul nav_btns li all selector  
+    let nav_btns = document.querySelectorAll('.nav_btns li');
+
+    // loop [ nav_btns ] li
+    for (i = 0; i < nav_btns.length; i++) {
+
+        if (nav_btns[i].style.gridColumn != 'span 2') {
+
+            nav_btns[i].style.gridColumn = 'span 2';
+        }
+        else {
+            nav_btns[i].style.gridColumn = 'span 1';
+        }
+
+    }
+    
+    // test
+    console.log('navigation container : small');
+}
+
+// function [ navMenuFull ] : nav component default props [ desktop ]
+navMenuFull = () => {
+    
+    // nav component selector
+    let nav = document.querySelector('#nav');
+    
+    // assign nav display to [ flex ]
+    nav.style.display = 'flex';
+    
+    // assign nav class to [ nav_full ]
+    nav.classList.toggle('nav_full');
+
+    // remove nav class [ nav_small ]
+    nav.classList.remove('nav_small');
+
+    // validate nav classname
+    if (nav.className != 'nav_small') {
+        nav.style.width = '300px';
+    }
+    else {
+        nav.style.width = '100px';
+    }
+ 
+    // ul nav_btns li all selector  
+    let nav_btns = document.querySelectorAll('.nav_btns li');
+
+    // loop [ nav_btns ] li
+    for (i = 0; i < nav_btns.length; i++) {
+
+        if (nav_btns[i].style.gridColumn != 'span 1') {
+
+            nav_btns[i].style.gridColumn = 'span 1';
+        }
+        else {
+            nav_btns[i].style.gridColumn = 'span 2';
+        }
+
+    }
+
+    // switch arrow to show content fold
+    minimize.innerHTML = '<--';
+    
+    // test
+    console.log('navigation container : full');
+
+}
+
+// function [ navigationState ] initiated via [ mql.js ] : media query listener
+navigationState = () => {
+    // nav component selector
+    let nav = document.querySelector('#nav');
+
+    // test if classlist has been assigned
+    if (nav.className == 'nav_small') {
+
+        // assign navMenuFull function to [ minimize ] button
+        minimize.addEventListener('click', navMenuFull);
+
+        // test
+        console.log('nav class :' + nav.className);
+    }
+    else {
+        
+        // assign navMenuSmall function to [ minimize ] button
+        minimize.addEventListener('click', navMenuSmall);
+
+        // test
+        console.log('nav class :' + nav.className);
+    }
+
+}
 
 // // assign nav classlist to [ nav_mobile ]
 // nav.classList.add('nav_active');
