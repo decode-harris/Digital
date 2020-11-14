@@ -1061,11 +1061,44 @@ form #submit {
     .nav_small {
         width: 100px;
     }
-    /* nav class - js assignments */
+    nav .elmnts {
+        height: 100%;
+        width: 100%;
+        border: var(--component);
+    }
+    
+    nav .nav_list {
+        border: var(--wireframe);
+    }
+    nav li {
+        border: var(--component);
+    }
 
-
-    #wrapper {
+    nav .nav_btns {
         
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+
+        /* dev */
+        border: var(--wireframe);
+    }
+    li {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .nav_btns button {
+        border: var(--wireframe);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* wrapper container */
+    #wrapper {
+        /* display props [ flex ] */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1073,12 +1106,9 @@ form #submit {
         height: 100%;
         
         position: relative;
-
-        /* background: #000;
-        color: #FFF; */
     }
 
-    #homepage, #projects, #technical, #contact {
+    #homepage, #about, #projects, #technical, #footer {
         /* background: rgba(128, 0, 128, 0.3); */
         position: absolute;
         top: 0;
@@ -1086,6 +1116,8 @@ form #submit {
 
         width: 100%;
         height: 100%;
+
+        border: 2px solid var(--mode);
         
     }
 
@@ -1112,31 +1144,29 @@ form #submit {
 
     /* section [ technical ] props */
     #technical {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: minmax(100px, auto);
+        display: flex;
+        flex-direction: row;
+
     }
     #technical .elmnts {
-        grid-column: span 1;
-        grid-row: span 4;
+        /* grid-column: span 1;
+        grid-row: span 2; */
         justify-content: center;
         align-items: center;
     }
     #technical .elmnts:nth-child(1) {
-        grid-column: span 3;
-        grid-row: span 1;
+        display: none;
     }
     #technical ul {
-        height: 100%;
+        min-height: 300px;
         width: 100%;
         
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         text-align: center;
 
         padding-top: var(--md);
-        /* border: 2px solid red; */
     }
     #technical li {
         font-size: 1.2rem;
@@ -1146,6 +1176,7 @@ form #submit {
     #technical h4 {
         font-size: 1.75rem;
         font-weight: bold;
+        text-decoration: none;
     }
 
     /* section [ projects ] props */
@@ -1189,14 +1220,22 @@ form #submit {
         position: relative;
     }
 
+    main .controls {
+        display: none;
+    }
+
     /* footer [ footer ] props */
     #footer {
-        justify-content: space-evenly;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        height: 100%;
+
+        /* height: 100vh; */
         width: 100%;
+        
     }
     #footer .elmnts {
+        display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -1204,16 +1243,59 @@ form #submit {
         height: 100%;
         width: 100%;
     }
-    #footer ul {
-        flex-direction: row;
-        height: 100%;
+    #footer .elmnts:nth-child(1) {
+        display: none;
+    }
+    #footer .elmnts:last-child {
+        justify-content: center;
+
+        font-size: 1.3rem;
+        line-height: 1.6;
+        letter-spacing: 2px;
+
+
+        position: absolute;
+        height: 10vh;
+        bottom: 0;
+        left: 0;
         width: 100%;
     }
-    #footer li {
-        flex-direction: column;
+        
+    
+    #footer ul {
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
+
+        max-height: 600px;
+        height: 100%;
+        width: 100%;
+
+        padding: var(--sm);
+    }
+    #footer li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
         text-align: center;
         align-items: center;
+
+        min-height: 500px;
+        max-width: 350px;
+
+        border: 2px solid var(--mode);
+        border-radius: 10px;
+        padding: var(--sm);
+        font-size: 1.23rem;
+        line-height: 1.6;
+        
+        /* dev */
+        /* background: red; */
+    }
+    #footer button {
+        border: 2px solid var(--mode);
     }
 
 
@@ -1223,48 +1305,7 @@ form #submit {
 
 
 
-    #footer form {
-        max-width: 350px;
-        max-height: 600px;
-        
-        display: none;
-    }
-
-
-    nav .elmnts {
-        height: 100%;
-        width: 100%;
-        border: var(--component);
-    }
     
-    nav .nav_list {
-        border: var(--wireframe);
-    }
-    nav li {
-        border: var(--component);
-    }
-
-    nav .nav_btns {
-        
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-
-        /* dev */
-        border: var(--wireframe);
-    }
-    li {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    .nav_btns button {
-        border: var(--wireframe);
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
     
     

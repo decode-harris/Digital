@@ -17,6 +17,7 @@ window.onload = mql = (e)=> {
         navigationDesktopPages();
         // nav.style.display = 'flex';
         
+        slidesDesktop();
         // homepageView();    
         // contentView();
 
@@ -44,6 +45,9 @@ window.onload = mql = (e)=> {
 
         // init [ navigationMobilePages ] function from [ nav.js ]
         navigationMobilePages();
+
+        // init [ slideshow ( slideIndex) ] function from [ slideshow.js ]
+        slideshow(slideIndex);
         
         // nav
         // test

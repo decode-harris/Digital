@@ -15,6 +15,8 @@
         <script defer src="src/js/helper.js"></script>
         <!-- slideshow -->
         <script defer src="src/js/slideshow.js"></script>
+        <!-- slides desktop -->
+        <script defer src="src/js/slidesDesktop.js"></script>
         <!-- lightmode || darkmode -->
         <script defer src="src/js/mode.js"></script>
         <!-- nav mobile -->
@@ -27,8 +29,6 @@
         <script defer src="src/js/mql.js"></script>
         <!-- links -->
         <script defer src="src/js/links.js"></script>
-        <!-- forms -->
-        <script defer src="src/js/forms.js"></script>
         <!-- flips -->
         <script defer src="src/js/flips.js"></script>
 
@@ -268,7 +268,7 @@
         <section id="projects" class="wrapper_inner">
             
             <!-- elmnts -->
-            <div class="elmnts">
+            <div class="elmnts" style="display: none;">
                 <!-- title -->
                 <h2>Web Development</h2>
                 <p class="tag">websites, projects, applications & designs</p>
@@ -285,50 +285,6 @@
                     <!-- UNDER DEVELOPMENT --><!-- UNDER DEVELOPMENT --><!-- UNDER DEVELOPMENT -->
 
                     <!-- slideshow [ slides ] -->
-                    <article class="slides">
-                        
-                        <!-- card -->
-                        <div class="card">
-
-                            <!-- card [ card_face ] [ front ] -->
-                            <div class="card_face front">
-                                <!-- card face front [ background ] top -->
-                                <div class="bk"></div>
-                                <!-- card face front [ background ] top -->
-
-                                <!-- card face front [ info ] -->
-                                <div class="info">
-                                    <!-- project info -->
-                                    <h4 class="slideTitle"></h4>
-                                    <h6 class="slideTag"></h6>
-                                    <p class="slideDesc"></p>
-                                    <!-- project info -->
-                                </div>
-                                <!-- card face front [ info ] -->
-                                
-                                <!-- card face front [ box ] -->
-                                <div class="card_face box">
-                                    <!-- project image [ small ] -->
-                                    <img src="screens/Placeholders/alfheim-desktop.PNG" alt="project : alfheim" class="small">
-                                    <!-- project image [ small ] -->
-                                </div>
-                                <!-- card face front [ box ] -->
-
-                            </div>
-                            <!-- card [ card_face ] [ front ] -->
-
-                            <!-- card [ card_face ] [ back ] -->
-                            <div class="card_face back">
-                                <!-- card face back [ view ] button -->
-                                <button class="view">view project</button>
-                                <!-- card face back [ view ] button -->
-                            </div>
-                            <!-- card [ card_face ] [ back ] -->
-
-                        </div>
-                        <!-- card -->
-
-                    </article>
                     <article class="slides">
                         
                         <!-- card -->
@@ -526,12 +482,15 @@
                 <!-- sub-tech -->
                 <ul class="sub-tech">
                     <!-- list title -->
-                    <h4>technical</h4>
+                    <h4>hardware</h4>
                     <!-- list elmnts -->
-                    <li>hardware build experience</li>
-                    <li>pixel perfect design implementation</li>
+                    <li>component build experience</li>
+                    <li>server installation & monitoring</li>
+                    <li>hardware configuration & debugging</li>
+                    <li>diagnose potential issues</li>
+                    <!-- <li>pixel perfect design implementation</li>
                     <li>Code analysis, refactoring & debugging</li>
-                    <li>Adhering to technical standards & guidelines</li>
+                    <li>Adhering to technical standards & guidelines</li> -->
                     <!-- list elmnts -->
                 </ul>
                 <!-- sub-tech -->
@@ -557,6 +516,10 @@
                 <!-- contact info -->
                 <ul id="list_contact">
                     <li>
+                        <!-- info title -->
+                        <h5>Digital Resume</h5>
+                        <!-- info title -->
+
                         <!-- helper -->
                         <p>
                             view digital resume online or download a word document version.
@@ -571,6 +534,10 @@
                         <!-- resume open -->
                     </li>
                     <li>
+                        <!-- info title -->
+                        <h5>Github Account</h5>
+                        <!-- info title -->
+
                         <!-- helper -->
                         <p>
                             explore my github to find a wide range of website & applications.
@@ -585,6 +552,10 @@
                         <!-- github open -->
                     </li>
                     <li>
+                        <!-- info title -->
+                        <h5>Personal Email</h5>
+                        <!-- info title -->
+
                         <!-- helper -->
                         <p>
                             feel free to get in touch for a friendly chat via sending an email.

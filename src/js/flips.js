@@ -89,38 +89,6 @@ let flip_desktop = () => {
     
     }
 
-
-
-
-    // // desktop [ front ] props
-    // let front = document.querySelectorAll('.front');
-
-    // // loop [ front ] 
-    // for (i = 0; i < front.length; i++) {
-        
-    //     if (front[i].style.transform != 'perspective(500px) rotateY(180deg)') {
-    //         // transform [ perspective ] & [ rotate ] front card element to inactive view [ 180 deg ]
-    //         front[i].style.transform = 'perspective(500px) rotateY(180deg)';
-
-    //         // test
-    //         console.log('front : rotating to back');
-    //     }
-    //     else {
-
-    //         // transform [ perspective ] & [ rotate ] front card element back to default position [ 0 deg ]
-    //         front[i].style.transform = 'perspective(500px) rotateY(0deg)';
-    //     }
-
-    // front.style.transform = 'perspective(500px) rotateY(180deg)';
-
-    // desktop [ back ] props
-    // let back = document.querySelector('.back');
-    // back.style.transform = 'perspective(500px) rotateY(360deg)';
-    
-    // desktop [ box ] props
-    // let box = document.querySelector('.box');
-    // box.style.transform = 'perspective(500px) roatateY(180deg) translate(0, 0, 85px)';
-
 };
 
 // event [ card ] : hover [ mouseleave ] state for laptop & desktop devices
@@ -149,6 +117,8 @@ card.forEach(item => {
 
     // assign item [ all cards ] to init flip function onclick
     item.addEventListener('click', flip);
+
+    // card.addEventListener('click', flip);
     
     // asssign item curssor style to pointer
     item.style.cursor = 'pointer';
@@ -214,3 +184,32 @@ card.forEach(item => {
 //     }
 // }
 // deviceSpecificFlip();
+
+// // desktop [ front ] props
+    // let front = document.querySelectorAll('.front');
+
+    // // loop [ front ] 
+    // for (i = 0; i < front.length; i++) {
+        
+    //     if (front[i].style.transform != 'perspective(500px) rotateY(180deg)') {
+    //         // transform [ perspective ] & [ rotate ] front card element to inactive view [ 180 deg ]
+    //         front[i].style.transform = 'perspective(500px) rotateY(180deg)';
+
+    //         // test
+    //         console.log('front : rotating to back');
+    //     }
+    //     else {
+
+    //         // transform [ perspective ] & [ rotate ] front card element back to default position [ 0 deg ]
+    //         front[i].style.transform = 'perspective(500px) rotateY(0deg)';
+    //     }
+
+    // front.style.transform = 'perspective(500px) rotateY(180deg)';
+
+    // desktop [ back ] props
+    // let back = document.querySelector('.back');
+    // back.style.transform = 'perspective(500px) rotateY(360deg)';
+    
+    // desktop [ box ] props
+    // let box = document.querySelector('.box');
+    // box.style.transform = 'perspective(500px) roatateY(180deg) translate(0, 0, 85px)';

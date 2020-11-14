@@ -28,15 +28,15 @@ let projectsArray = [
         desc: 'personal expenses application tracking system with customization',
         
     },
-    {
-        // project [ VANAHEIM ]
-        imageMobile: 'https://i.ibb.co/ZNzwys5/vanaheim-mobile.png',
-        imageDesktop: 'https://i.ibb.co/YWkTLP5/vanaheim-desktop.png',
-        title: 'vanaheim',
-        tagline: 'interactive learning module',
-        desc: 'animated interactive solar system planets learning module',
+    // {
+    //     // project [ VANAHEIM ]
+    //     imageMobile: 'https://i.ibb.co/ZNzwys5/vanaheim-mobile.png',
+    //     imageDesktop: 'https://i.ibb.co/YWkTLP5/vanaheim-desktop.png',
+    //     title: 'vanaheim',
+    //     tagline: 'interactive learning module',
+    //     desc: 'animated interactive solar system planets learning module',
         
-    },
+    // },
 
 ];
 
@@ -133,7 +133,7 @@ slideshow = (n) => {
     }
 
     for (i = 0; i < cardFront_bk.length; i++) {
-
+        console.log(cardBack[i]);
     }
     for (i = 0; i < cardFront_img.length; i++) {
 
@@ -192,7 +192,7 @@ slideshow = (n) => {
 }
 
 // init [ slideshow ( slideIndex ) ]
-slideshow(slideIndex);
+// slideshow(slideIndex);
 
 // [ controlsNext ] button selector
 const controlsNext = document.querySelector('#controlsNext');

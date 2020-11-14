@@ -176,7 +176,7 @@ navigationDesktopPages = () => {
                     // assign [ home ] variable to section [ 3 ]
                     let tech = sections[3];
                     // set tech container to grid
-                    tech.style.display = 'grid';
+                    tech.style.display = 'flex';
                     // append tech to wrapper container
                     wrapper.appendChild(tech);
                     
