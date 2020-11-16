@@ -1,67 +1,53 @@
 // nav component selector
-const nav = document.querySelector('#nav');
-
+let nav = document.querySelector('#nav');
 // wrapper container selector
 const wrapper = document.querySelector('#wrapper');
 
-// function [ navigationMobileOpen ]
-navigationMobileOpen = () => {
+// function [ menuMobileOpen ] button event
+menuMobileOpen = () => {
 
-    // set menu button left 300px [ nav width ]
-    menu.style.marginLeft = '300px';
+    // add nav class [ nav_active ]
+    nav.classList.add('nav_active');
     
-    // set nav class to [ nav_active ]
-    nav.classList.toggle('nav_active');
-    
-    // validate nav class [ nav_active]
-    if (nav.className === 'nav_active') {
-
-        // add event [ navigationMobileExit ]
-        menu.addEventListener('click', navigationMobileExit);
-
-        // remove [ navigationMobileOpen ] function
-        menu.removeEventListener('click', navigationMobileOpen);
-
-        // test
-        console.log('nav mob open : IF');
-    }
-
-}
-// function [ navigationMobileExit ]
-navigationMobileExit = () => {
-    nav.classList.toggle('nav_active');
-    // nav.style.width = '0%';
-
-    // reset menu button to default position
-    menu.style.marginLeft = '10px';
-
-    // validate null class
-    if (nav.className === '') {
-        // remove event [ navigationMobileExit ] function
-        menu.removeEventListener('click', navigationMobileExit);
-
-        // add event [ navigationMobileOpen ] function
-        menu.addEventListener('click', navigationMobileOpen);
-
-        // test
-        console.log('nav mob exit : IF');
-    }
+    // test
+    console.log(nav);
 
 }
 
-// navigation menu button selector
+// function [ menuMobileExit ] button event
+menuMobileExit = () => {
+
+    // remove nav class [ nav_active ]
+    nav.classList.remove('nav_active');
+    
+    // test
+    console.log(nav);
+
+}
+
+// menu button selector
 let menu = document.querySelector('#menu');
-// event [ menu ] init navigationMobileOpen function
-menu.addEventListener('click', navigationMobileOpen);
 
-// function [ navigationMobilePages ] 
-navigationMobilePages = () => {
+// menu button event
+menu.addEventListener('click', menuMobileOpen);
 
-    // section all [ wrapper inner ] selector
-    let sections = document.querySelectorAll('.wrapper_inner');
+// exit button selector
+let exit = document.querySelector('#exit');
 
-    // links all [ links ] selector
-    let links = document.querySelectorAll('.links');
+// exit button event
+exit.addEventListener('click', menuMobileExit);
+
+/* 
+
+    function [ menuMobileNavigation ]
+
+    selects all elements with classname [ wrapper_inner ( sections )]
+    selects all elements with classname [ links ( a tags )]
+    loops through [ wrapper_inner ] elements and assigns display flex 
+    for each link [ item ] on click remove nav classname [ nav_active ]
+
+*/
+menuMobileNavigation = () => {
 
     // loop iterator
     let i;
@@ -74,36 +60,27 @@ navigationMobilePages = () => {
     // for each [ links ( item )]
     links.forEach(item => {
         // add event [ sectionContentOpen ] via onclick
-        item.addEventListener('click', sectionContentOpen);
-
-        // test
-        // console.log(item);
+        item.addEventListener('click', ()=> {
+            // remove class [ nav_active ] from nav component
+            nav.classList.remove('nav_active');
+        });
+    
     });
 
 }
-// function [ sectionContenOpen ] : initiated via [ links ] event
-sectionContentOpen = (item) => {
 
-    // current item variable
-    let currentSection = item;
+/* 
+    function [ menuDesktopNavigation ]
+
+    selects all elements with classname [ wrapper_inner ( sections )]
+    selects all elements with classname [ links ( a tags )]
+    loops through [ wrapper_inner ] elements and assigns display none
+    assign [ wrapper_inner]  first child element ( sections[0] ) to flex : homepage || landing
+
+
+*/
+menuDesktopNavigation = () => {
     
-    // remove class [ nav_active ] from nav component
-    nav.classList.remove('nav_active');
-
-    // set menu button to default position
-    menu.style.marginLeft = '10px';
-
-    // test
-    console.log(currentSection);
-
-}
-
-// function [ navigationDesktopPages ]
-navigationDesktopPages = () => {
-    
-    // section all [ wrapper inner ] selector
-    let sections = document.querySelectorAll('.wrapper_inner');
-
     // loop iterator
     let i;
 
@@ -117,12 +94,10 @@ navigationDesktopPages = () => {
         sections[0].style.display = 'flex';
     }
 
-    // links all [ links ] selector
-    let links = document.querySelectorAll('.links');
-    
     // loop [ links ]
     for(i = 0; i < links.length; i++) {
 
+        // test
         console.log(links[i]);
     }
 
@@ -202,23 +177,46 @@ navigationDesktopPages = () => {
     });
 }
 
-// nav [ minimize ] button selector
-let minimize = document.querySelector('#minimize');
 
-// function [ navMenuFull ] : nav component small props [ desktop ]
-navMenuSmall = () => {
-    
-    // nav component selector
+// section all [ wrapper inner ] selector
+let sections = document.querySelectorAll('.wrapper_inner');
+// links all [ links ] selector
+let links = document.querySelectorAll('.links');
+
+
+
+
+
+
+
+
+// function [ minimizeNavigation ] : nav component small props [ desktop ]
+let minimizeNavigation = ()=> {
+
     let nav = document.querySelector('#nav');
 
-    // assign nav class to [ nav_small ]
-    nav.classList.toggle('nav_small');
+    
 
-    // remove nav class [ nav_full ]
-    nav.classList.remove('nav_full');
+    
+        // remove nav class [ nav_full ]
+        nav.classList.remove('nav_full');
 
-    // switch arrow to show content fold
-    minimize.innerHTML = '-->';
+    
+        
+        // assign nav class to [ nav_small ]
+        nav.classList.add('nav_small');
+
+
+        if (nav.className != 'nav_full') {
+            nav.classList = 'nav_full';
+        // } else {
+        //     nav.classList = 'nav_small';
+        // }
+
+        }
+
+
+
 
     // minimize class all selector
     let mini = document.querySelectorAll('.mini');
@@ -235,8 +233,9 @@ navMenuSmall = () => {
         else {
             mini[i].style.display = 'flex';
         }
-        
-        console.log(mini[i]);
+
+        // test
+        // console.log(mini[i]);
     }
 
     // ul nav_btns li all selector  
@@ -245,91 +244,119 @@ navMenuSmall = () => {
     // loop [ nav_btns ] li
     for (i = 0; i < nav_btns.length; i++) {
 
-        if (nav_btns[i].style.gridColumn != 'span 2') {
-
-            nav_btns[i].style.gridColumn = 'span 2';
-        }
-        else {
-            nav_btns[i].style.gridColumn = 'span 1';
-        }
+        nav_btns[i].classList.add('mi');
 
     }
+    
+    
+    
+    // if (minimize.innerHTML != '-->') {
+        
+    //     // switch arrow to show content fold
+    //     minimize.innerHTML = '-->';
+
+    //     // test
+    //     console.log(minimize.innerHTML);
+    // }
+
     
     // test
     console.log('navigation container : small');
+
 }
+
+
+// nav [ minimize ] button selector
+let minimize = document.querySelector('#minimize');
+minimize.addEventListener('click', minimizeNavigation);
+
+
+
+    
+    
+
+    
+
 
 // function [ navMenuFull ] : nav component default props [ desktop ]
-navMenuFull = () => {
+// navMenuFull = () => {
     
-    // nav component selector
-    let nav = document.querySelector('#nav');
+//     // nav component selector
+//     let nav = document.querySelector('#nav');
     
-    // assign nav display to [ flex ]
-    nav.style.display = 'flex';
+//     // assign nav display to [ flex ]
+//     nav.style.display = 'flex';
     
-    // assign nav class to [ nav_full ]
-    nav.classList.toggle('nav_full');
+//     // assign nav class to [ nav_full ]
+//     nav.classList.toggle('nav_full');
 
-    // remove nav class [ nav_small ]
-    nav.classList.remove('nav_small');
+//     // remove nav class [ nav_small ]
+//     nav.classList.remove('nav_small');
 
-    // validate nav classname
-    if (nav.className != 'nav_small') {
-        nav.style.width = '300px';
-    }
-    else {
-        nav.style.width = '100px';
-    }
+//     // validate nav classname
+//     if (nav.className != 'nav_small') {
+//         nav.style.width = '300px';
+//     }
+//     if (minimize.innerHTML == '-->') {
+
+//         // switch arrow to show content fold
+//         minimize.innerHTML = '<--';
+
+//         // test
+//         console.log(minimize.innerHTML);
+//     }
+//     else {
+//         nav.style.width = '100px';
+//     }
  
-    // ul nav_btns li all selector  
-    let nav_btns = document.querySelectorAll('.nav_btns li');
+//     // ul nav_btns li all selector  
+//     let nav_btns = document.querySelectorAll('.nav_btns li');
 
-    // loop [ nav_btns ] li
-    for (i = 0; i < nav_btns.length; i++) {
+//     // loop [ nav_btns ] li
+//     for (i = 0; i < nav_btns.length; i++) {
 
-        if (nav_btns[i].style.gridColumn != 'span 1') {
+//         if (nav_btns[i].style.gridColumn != 'span 1') {
 
-            nav_btns[i].style.gridColumn = 'span 1';
-        }
-        else {
-            nav_btns[i].style.gridColumn = 'span 2';
-        }
+//             nav_btns[i].style.gridColumn = 'span 1';
+//         }
+//         else {
+//             nav_btns[i].style.gridColumn = 'span 2';
+//         }
 
-    }
+//     }
 
-    // switch arrow to show content fold
-    minimize.innerHTML = '<--';
     
-    // test
-    console.log('navigation container : full');
 
-}
+//     // test
+//     console.log('navigation container : full');
 
-// function [ navigationState ] initiated via [ mql.js ] : media query listener
-navigationState = () => {
-    // nav component selector
-    let nav = document.querySelector('#nav');
+// }
 
-    // test if classlist has been assigned
-    if (nav.className == 'nav_small') {
+// // function [ navigationState ] initiated via [ mql.js ] : media query listener
+// navigationState = () => {
+//     // nav component selector
+//     let nav = document.querySelector('#nav');
 
-        // assign navMenuFull function to [ minimize ] button
-        minimize.addEventListener('click', navMenuFull);
+//     // test if classlist has been assigned
+//     if (nav.className == 'nav_small') {
 
-        // test
-        console.log('nav class :' + nav.className);
-    }
-    else {
+//         // assign navMenuFull function to [ minimize ] button
+//         // minimize.addEventListener('click', navMenuFull);
+
+//         // test
+//         console.log('nav class :' + nav.className);
+//     }
+//     else {
         
-        // assign navMenuSmall function to [ minimize ] button
-        minimize.addEventListener('click', navMenuSmall);
+//         // assign navMenuSmall function to [ minimize ] button
+//         // minimize.addEventListener('click', navMenuSmall);
 
-        // test
-        console.log('nav class :' + nav.className);
-    }
+//         // test
+//         console.log('nav class :' + nav.classList);
+//     }
 
-}
+// }
+
 
 // // assign nav classlist to [ nav_mobile ]
 // nav.classList.add('nav_active');

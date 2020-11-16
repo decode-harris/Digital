@@ -14,7 +14,7 @@ window.onload = mql = (e)=> {
 
     if (e.matches) {
         // init [ navigationDesktopPages ] function
-        navigationDesktopPages();
+        menuDesktopNavigation();
         // nav.style.display = 'flex';
         
         slidesDesktop();
@@ -23,7 +23,7 @@ window.onload = mql = (e)=> {
 
         // navMobileDefault();
 
-        navigationState();
+        // navigationState();
         // navMenuFull();
 
         // let links = document.querySelectorAll('.links');
@@ -44,7 +44,7 @@ window.onload = mql = (e)=> {
         // mobilepageView();
 
         // init [ navigationMobilePages ] function from [ nav.js ]
-        navigationMobilePages();
+        menuMobileNavigation();
 
         // init [ slideshow ( slideIndex) ] function from [ slideshow.js ]
         slideshow(slideIndex);

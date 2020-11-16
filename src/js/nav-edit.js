@@ -82,7 +82,6 @@ navMenuFull = () => {
     // remove nav class [ nav_small ]
     nav.classList.remove('nav_small');
 
-    
     // validate nav classname
     if (nav.className != 'nav_small') {
         nav.style.width = '300px';
