@@ -82,6 +82,8 @@ const slideshow = (n) => {
 
     // slides selector
     let slides = document.getElementsByClassName('slides');
+    // dots selector
+    let dots = document.getElementsByClassName('dot');
 
     // test number of slides
     if (n > slides.length) slideIndex = 1;
@@ -96,15 +98,24 @@ const slideshow = (n) => {
         
     }
     
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    
     
     // current slide variable
     let currentSlide = slides[ slideIndex - 1 ];
+
+    console.log(currentSlide);
     
     // toggles class phase on current slide [ animation ]
     currentSlide.toggleAttribute('class', ' phase');
 
     // display slideIndex - 1 [ current ] to display flex
     slides[slideIndex-1].style.display = 'flex';
+
+    dots[slideIndex-1].className += " active";
 
 };
 

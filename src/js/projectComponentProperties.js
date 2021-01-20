@@ -14,9 +14,9 @@ for ( i = 0; i < images.length; i++) {
     
     // images[i].style.background = '#FFF';
 
-    let project_01 = 'red';
-    let project_02 = 'green';
-    let project_03 = 'blue';
+    let project_01 = 'darkslategrey';
+    let project_02 = 'darkslategrey';
+    let project_03 = 'darkslategrey';
 
     // array [ projectsArray ]
     let projectsArray = [
@@ -69,3 +69,28 @@ for ( i = 0; i < images.length; i++) {
 
 }
 
+// [ profile ] image container
+let profile = document.querySelector('.profile');
+
+profileOverlay = () => {
+
+    // position profile as relative
+    profile.style.position = 'relative';
+
+    // overlay creator
+    let overlay = document.createElement('div');
+
+    overlay.style.height = '100%';
+    overlay.style.width = '100%';
+    overlay.style.position = 'absolute';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.background = 'darkslategrey';
+    overlay.style.borderRadius = '50%';
+
+    profile.appendChild(overlay);
+
+
+}
+
+profileOverlay();

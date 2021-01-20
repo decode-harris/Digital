@@ -47,7 +47,7 @@ scrollPositionProperties = () => {
             pos = window.scrollY;
 
             // test
-            console.log('current position : ' + pos);
+            // console.log('current position : ' + pos);
             
             // assign header position to fixed [ from relative ]
             menu.style.position = 'fixed';
