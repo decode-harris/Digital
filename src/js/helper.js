@@ -4,6 +4,11 @@ scrollPositionProperties = () => {
     // header selector
     let header = document.querySelector('#header');
 
+    // mode button selector
+    let mode = document.querySelector('.mode');
+    // test mode button
+    console.log(mode);
+
     // event [ window ] : scroll position listener
     window.addEventListener('scroll', ()=> {
         
@@ -37,13 +42,21 @@ scrollPositionProperties = () => {
             // console.log(pos);
             
             // assign header position to fixed [ from relative ]
-            menu.style.position = 'fixed'; 
+            menu.style.position = 'fixed';
+            mode.style.position = 'fixed';
 
             // header props
             menu.style.top = '0';
             menu.style.left = '0';
             menu.style.background = 'var(--mode-background)';
             menu.style.zIndex = '4';
+
+            mode.style.top = '0';
+            mode.style.right = '0';
+            mode.style.background = 'var(--mode-background)';
+            mode.style.zIndex = '4';
+
+            
 
             // nav component props
             nav.style.top = pos + 'px';

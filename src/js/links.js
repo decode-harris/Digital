@@ -10,44 +10,44 @@
 
 */
 
-let controlsView = document.querySelector('.controlsView');
+// let controlsView = document.querySelector('.controlsView');
 
-controlsView.addEventListener('click', ()=> {
+// controlsView.addEventListener('click', ()=> {
 
-    if (controlsView.id == 'alfheim') {
+//     if (controlsView.id == 'alfheim') {
         
-        // open [ alfheim ] github hosted website
-        window.open('https://decode-harris.github.io/alfheim/');
+//         // open [ alfheim ] github hosted website
+//         window.open('https://decode-harris.github.io/alfheim/');
 
-        // test
-        console.log('opening : [ ALFHEIM ]');
-    }
-    if (controlsView.id == 'niflheim') {
+//         // test
+//         console.log('opening : [ ALFHEIM ]');
+//     }
+//     if (controlsView.id == 'niflheim') {
         
-        // open [ niflheim ] github hosted website
-        window.open('https://decode-harris.github.io/niflheim/');
+//         // open [ niflheim ] github hosted website
+//         window.open('https://decode-harris.github.io/niflheim/');
 
-        // test
-        console.log('opening : [ niflheim ]');
-    }
-    if (controlsView.id == 'jotunheim') {
+//         // test
+//         console.log('opening : [ niflheim ]');
+//     }
+//     if (controlsView.id == 'jotunheim') {
 
-        // open [ jotunheim ] github hosted website
-        window.open('https://decode-harris.github.io/jotunheim/');        
+//         // open [ jotunheim ] github hosted website
+//         window.open('https://decode-harris.github.io/jotunheim/');        
 
-        // test
-        console.log('opening : [ jotunheim ]');
-    }
-    if (controlsView.id == 'vanaheim') {
+//         // test
+//         console.log('opening : [ jotunheim ]');
+//     }
+//     if (controlsView.id == 'vanaheim') {
         
-        // open [ vanaheim ] github hosted website
-        window.open('https://decode-harris.github.io/vanaheim/');
+//         // open [ vanaheim ] github hosted website
+//         window.open('https://decode-harris.github.io/vanaheim/');
         
-        // test
-        console.log('opening : [ vanaheim ]');
-    }
+//         // test
+//         console.log('opening : [ vanaheim ]');
+//     }
 
-});
+// });
 
 /*
     [ footer component ] events
@@ -65,7 +65,9 @@ let resume = document.querySelector('#contact_resume');
 resume.addEventListener('click', ()=> {
 
     // assign resume source file to pdf variable
-    let pdf = 'src/docs/ChristopherHarrisResume.pdf';
+    // let pdf = 'src/docs/ChristopherHarrisResume.pdf';
+
+    let pdf = 'src/docs/Resume.pdf';
 
     // open resume in a new window
     window.open(pdf);

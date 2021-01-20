@@ -10,27 +10,33 @@
     <!-- css -->
     <link rel="stylesheet" href="src/css/index.css">
     
+    <!-- js [ refactored ] -->
+    <script defer src="src/js/headerComponentProperties.js"></script>
+    <script defer src="src/js/projectComponentProperties.js"></script>
+    <!-- <script defer src="src/js/links.js"></script> -->
+    <!-- js [ refactored ] -->
+
     <!-- scripts -->
         <!-- position helper -->
-        <script defer src="src/js/helper.js"></script>
+        <!-- <script defer src="src/js/helper.js"></script> -->
+
         <!-- slideshow -->
-        <script defer src="src/js/slideshow.js"></script>
+        <!-- <script defer src="src/js/slideshow.js"></script> -->
         <!-- slides desktop -->
         <script defer src="src/js/slidesDesktop.js"></script>
         <!-- lightmode || darkmode -->
-        <script defer src="src/js/mode.js"></script>
+        <!-- <script defer src="src/js/mode.js"></script> -->
         <!-- nav mobile -->
         <!-- <script defer src="src/js/nav-mob.js"></script> -->
         <!-- nav -->
-        <script defer src="src/js/nav.js"></script>
+        <!-- <script defer src="src/js/nav.js"></script> -->
         <!-- minimize -->
         <!-- <script defer src="src/js/minimize.js"></script> -->
         <!-- media query listener -->
         <script defer src="src/js/mql.js"></script>
-        <!-- links -->
-        <script defer src="src/js/links.js"></script>
+        
         <!-- flips -->
-        <script defer src="src/js/flips.js"></script>
+        <!-- <script defer src="src/js/flips.js"></script> -->
 
         <!-- content -->
         <!-- <script defer src="src/js/content.js"></script> -->
@@ -50,189 +56,51 @@
     <!-- page -->
     <div id="page">
 
-        <!-- nav component -->
-        <nav id="nav" class="nav_full">
-
-            <!-- elmnts -->
-            <div class="elmnts mini">
-                <button id="exit">X</button>
-
-                <!-- nav title -->
-                <h4 class="tag" data-text="c-harris.dev">c-harris.dev</h4>
-                <p>web developer & IT support specialist</p>
-                <!-- nav title -->
-            </div>
-            <div class="elmnts">
-                <!-- nav_list -->
-                <ul class="nav_list">
-                    <!-- nav_list li -->
-                    <li>
-                        <!-- link -->
-                        <a href="#page" id="link_homepage" class="links">
-                            <!-- icon -->
-                            <i class="fas fa-home"></i>
-                            <!-- icon -->
-                            
-                            <!-- mini -->
-                            <span class="mini">
-                                home
-                            </span>
-                            <!-- mini -->
-                        </a>
-                        <!-- link -->
-                    </li>
-                    <li>
-                        <!-- link -->
-                        <a href="#about" id="link_about" class="links">
-                            <!-- icon -->
-                            <!-- <i class="fas fa-info"></i> -->
-                            <i class="fas fa-info-circle"></i>
-                            <!-- icon -->
-                            
-                            <!-- mini -->
-                            <span class="mini">
-                                about
-                            </span>
-                            <!-- mini -->
-                        </a>
-                        <!-- link -->
-                    </li>
-                    <li>
-                        <!-- link -->
-                        <a href="#projects" id="link_projects" class="links">
-                            <!-- icon -->
-                            <i class="far fa-folder-open"></i>
-                            <!-- icon -->
-
-                            <!-- mini -->
-                            <span class="mini">
-                                work
-                            </span>
-                            <!-- mini -->
-                        </a>
-                        <!-- link -->
-                    </li>
-                    <li>
-                        <!-- link -->
-                        <a href="#technical" id="link_technical" class="links">
-                            <!-- icon -->
-                            <i class="fas fa-desktop"></i>
-                            <!-- icon -->
-
-                            <!-- mini -->
-                            <span class="mini">
-                                tech
-                            </span>
-                            <!-- mini -->
-                        </a>
-                        <!-- link -->
-                    </li>
-                    <li>
-                        <!-- link -->
-                        <a href="#footer" id="link_footer" class="links">
-                            <!-- icon -->
-                            <i class="far fa-id-card"></i>
-                            <!-- icon -->
-
-                            <!-- mini -->
-                            <span class="mini">
-                            info
-                            </span>
-                            <!-- mini -->
-                        </a>
-                        <!-- link -->
-                    </li>
-                    <!-- nav_list li -->
-                </ul>
-                <!-- nav_list -->
-            </div>
-            <div class="elmnts">
-
-                <!-- nav_btns -->
-                <ul class="nav_btns">
-                    <!-- nav-btn li -->
-                    <li>
-                        <!-- mode button -->
-                        <button id="mode" class="phase"><i id="mode_icon" class="fas fa-toggle-off"></i></button>
-                        <!-- mode button -->
-                    </li>
-                    <li>
-                        <!-- github button -->
-                        <button>
-                            <!-- link [ github] -->
-                            <a href="https://github.com/decode-harris">
-                                <!-- icon [ github ] -->
-                                <i class="fab fa-github-square"></i>
-                                <!-- icon [ github ] -->
-                            </a>
-                            <!-- link [ github] -->
-                        </button>
-                        <!-- github button -->
-                    </li>
-                    <li>
-                        <!-- mail button -->
-                        <button>
-                            <!-- link [ mail ] -->
-                            <a href="mailto:decode.harris@gmail.com">
-                                <!-- icon [ mail ] -->
-                                <i class="far fa-envelope"></i>
-                                <!-- icon [ mail ] -->
-                            </a>
-                            <!-- link [ mail ] -->
-                        </button>
-                        <!-- mail button -->
-                    </li>
-                    <li>
-                        <!-- mini button -->
-                        <button id="minimize">
-                            <!-- minifiy nav bar on dessktop, remove minimize class from view [ nav_list text ] -->
-                            <--
-                            <!-- minifiy nav bar on dessktop, remove minimize class from view [ nav_list text ] -->
-                        </button>
-                        <!-- mini button -->
-                    </li>
-                    <!-- nav-btn li -->
-                </ul>
-                <!-- nav_btns -->
-            </div>
-            <!-- elmnts -->
-        </nav>
-        <!-- nav component -->
-
         <!-- header component -->
         <header id="header">
             
             <!-- menu button -->
-            <button id="menu" class="menu phase"><i class="fas fa-bars"></i></button>
+            <button id="menu" class="btn phase"><i class="fas fa-bars"></i></button>
             <!-- menu button -->
+
+            <!-- mode button -->
+            <button id="mode" class="btn phase"><i id="mode_icon" class="fas fa-toggle-off"></i></button>
+            <!-- mode button -->
         
         </header>
         <!-- header component -->
 
-        <!-- wrapper -->
-        <section id="wrapper">
-
-        <!-- intro -->
-        <section id="homepage" class="wrapper_inner">
+        <!-- nav component --><!-- nav component -->
+        
+        <!-- homepage -->
+        <section id="homepage">
             
-            <!-- elmnts -->
-            <div class="elmnts">
-                <!-- title -->
-                <h1>christopher harris</h1>
-                <p>web developer & IT support specialist</p>
-                <!-- title -->
-
-                <!-- img placement -->
-                <div class="box profile"></div>
-                <!-- img placement -->
+            <!-- img placement -->
+            <div class="box profile">
+                <img src="src/media/Mode.jpg" alt="mode-image">
             </div>
-            <!-- elmnts -->
+            <!-- img placement -->
+            
+            <!-- name -->
+            <h1>
+                <!-- initials & letters -->
+                <span class="initials">C</span><span class="letters">hristopher</span>
+                <span class="initials">H</span><span class="letters">arris</span>
+                <!-- initials & letters -->
+            </h1>
+            <!-- name -->
+
+            <!-- title -->
+            <p class="text-med">web developer & IT support specialist</p>
+            <!-- title -->
+            
+            
 
         </section>
-        <!-- intro -->
+        <!-- homepage -->
 
-        <!-- about -->
-        <section id="about" class="wrapper_inner">
+        <!-- information -->
+        <section id="information">
 
             <!-- elmnts -->
             <div class="elmnts">
@@ -250,7 +118,7 @@
                 </p>
                 <!-- info -->
             </div>
-            <div class="elmnts">
+            <div class="elmnts" style="display:none">
 
                 <!-- info -->
                 <p class="txt">
@@ -265,350 +133,170 @@
             <!-- elmnts -->
 
         </section>
-        <!-- about -->
+        <!-- information -->
 
-        <!-- projects -->
-        <section id="projects" class="wrapper_inner">
-            
-            <!-- elmnts -->
-            <div class="elmnts" style="display: none;">
-                <!-- title -->
+        <!-- development -->
+        <section id="development">
+
+            <!-- section description -->
+            <div class="description">
+
+                <!-- description elements -->
                 <h2>Web Development</h2>
                 <p class="tag">websites, projects, applications & designs</p>
                 <p class="txt" style="display: none;">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, quos?
                 </p>
-                <!-- title -->
+                <!-- description elements -->
+
             </div>
-            <div class="elmnts">
-                <!-- slideshow -->
-                <main id="slideshow">
+            <!-- section description -->
 
-                    <!-- UNDER DEVELOPMENT --><!-- UNDER DEVELOPMENT --><!-- UNDER DEVELOPMENT -->
-                    <!-- UNDER DEVELOPMENT --><!-- UNDER DEVELOPMENT --><!-- UNDER DEVELOPMENT -->
+            <!-- projects container -->
+            <div class="container">
 
-                    <!-- slideshow [ slides ] -->
-                    <article class="slides">
-                        
-                        <!-- card -->
-                        <div class="card">
+                <!-- projects -->
+                <article class="projects">
 
-                            <!-- card [ card_face ] [ front ] -->
-                            <div class="card_face front">
-                                <!-- card face front [ background ] top -->
-                                <div class="bk"></div>
-                                <!-- card face front [ background ] top -->
+                    <!-- elmnts -->
+                    <div class="elmnts">
+                        <!-- description -->
+                        <h3 class="projects-title">project title</h3>
+                        <h6 class="projects-tag">Lorem ipsum dolor sit amet consectetur.</h6>
+                        <!-- description -->
 
-                                <!-- card face front [ info ] -->
-                                <div class="info">
-                                    <!-- project info -->
-                                    <h4 class="slideTitle"></h4>
-                                    <h6 class="slideTag"></h6>
-                                    <p class="slideDesc"></p>
-                                    <!-- project info -->
-                                </div>
-                                <!-- card face front [ info ] -->
-                                
-                                <!-- card face front [ box ] -->
-                                <div class="card_face box">
-                                    <!-- project image [ small ] -->
-                                    <img src="screens/Placeholders/alfheim-desktop.PNG" alt="project : alfheim" class="small">
-                                    <!-- project image [ small ] -->
-                                </div>
-                                <!-- card face front [ box ] -->
-
-                            </div>
-                            <!-- card [ card_face ] [ front ] -->
-
-                            <!-- card [ card_face ] [ back ] -->
-                            <div class="card_face back">
-                                <!-- card face back [ view ] button -->
-                                <button class="view">view project</button>
-                                <!-- card face back [ view ] button -->
-                            </div>
-                            <!-- card [ card_face ] [ back ] -->
-
-                        </div>
-                        <!-- card -->
-
-                    </article>
-                    <article class="slides">
-                        
-                        <!-- card -->
-                        <div class="card">
-
-                            <!-- card [ card_face ] [ front ] -->
-                            <div class="card_face front">
-                                <!-- card face front [ background ] top -->
-                                <div class="bk"></div>
-                                <!-- card face front [ background ] top -->
-
-                                <!-- card face front [ info ] -->
-                                <div class="info">
-                                    <!-- project info -->
-                                    <h4 class="slideTitle"></h4>
-                                    <h6 class="slideTag"></h6>
-                                    <p class="slideDesc"></p>
-                                    <!-- project info -->
-                                </div>
-                                <!-- card face front [ info ] -->
-                                
-                                <!-- card face front [ box ] -->
-                                <div class="card_face box">
-                                    <!-- project image [ small ] -->
-                                    <img src="screens/Placeholders/alfheim-desktop.PNG" alt="project : alfheim" class="small">
-                                    <!-- project image [ small ] -->
-                                </div>
-                                <!-- card face front [ box ] -->
-
-                            </div>
-                            <!-- card [ card_face ] [ front ] -->
-
-                            <!-- card [ card_face ] [ back ] -->
-                            <div class="card_face back">
-                                <!-- card face back [ view ] button -->
-                                <button class="view">view project</button>
-                                <!-- card face back [ view ] button -->
-                            </div>
-                            <!-- card [ card_face ] [ back ] -->
-
-                        </div>
-                        <!-- card -->
-
-                    </article>
-                    <article class="slides">
-                        
-                        <!-- card -->
-                        <div class="card">
-
-                            <!-- card [ card_face ] [ front ] -->
-                            <div class="card_face front">
-                                <!-- card face front [ background ] top -->
-                                <div class="bk"></div>
-                                <!-- card face front [ background ] top -->
-
-                                <!-- card face front [ info ] -->
-                                <div class="info">
-                                    <!-- project info -->
-                                    <h4 class="slideTitle"></h4>
-                                    <h6 class="slideTag"></h6>
-                                    <p class="slideDesc"></p>
-                                    <!-- project info -->
-                                </div>
-                                <!-- card face front [ info ] -->
-                                
-                                <!-- card face front [ box ] -->
-                                <div class="card_face box">
-                                    <!-- project image [ small ] -->
-                                    <img src="screens/Placeholders/alfheim-desktop.PNG" alt="project : alfheim" class="small">
-                                    <!-- project image [ small ] -->
-                                </div>
-                                <!-- card face front [ box ] -->
-
-                            </div>
-                            <!-- card [ card_face ] [ front ] -->
-
-                            <!-- card [ card_face ] [ back ] -->
-                            <div class="card_face back">
-                                <!-- card face back [ view ] button -->
-                                <button class="view">view project</button>
-                                <!-- card face back [ view ] button -->
-                            </div>
-                            <!-- card [ card_face ] [ back ] -->
-
-                        </div>
-                        <!-- card -->
-
-                    </article>
-                    <!-- slideshow [ slides ] -->
-                    
-
-                    <!-- slideshow controls -->
-                     <div class="controls">
-                        <!-- control buttons -->
-                        <button id="controlsPrev"><</button>
-                        <button class="controlsView">view</button>
-                        <button id="controlsNext">></button>
-                        <!-- control buttons -->
+                        <!-- showcase img -->
+                        <!-- <img src="screens/coffee-desktop.PNG" alt="coffee-test" class="projects-show"> -->
+                        <img src="#" alt="" class="projects-show">
+                        <!-- showcase img -->
                     </div>
-                    <!-- slideshow controls -->
+                    <div class="elmnts">
+                        <!-- preview -->
+                        <img src="" alt="" class="projects-img">
+                        <!-- preview -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- preview -->
+                        <img src="" alt="" class="projects-img">
+                        <!-- preview -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- preview -->
+                        <img src="" alt="" class="projects-img">
+                        <!-- preview -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- information -->
+                        <p class="projects-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                        </p>
+                        <!-- information -->
 
-                </main>
-                <!-- slideshow -->
+                        <!-- live site -->
+                        <a href="#" class="link">live</a>
+                        <!-- live site -->
+                    </div>
+                    <!-- elmnts -->
+                
+                </article>
+                <article class="projects">
+
+                    <!-- elmnts -->
+                    <div class="elmnts">
+                        <!-- description -->
+                        <h3 class="projects-title">project title</h3>
+                        <h6 class="projects-tag">Lorem ipsum dolor sit amet consectetur.</h6>
+                        <!-- description -->
+
+                        <!-- showcase img -->
+                        <!-- <img src="screens/planets-desktop.png" alt="planets-test" class="projects-show"> -->
+                        <img src="#" alt="" class="projects-show">
+                        <!-- showcase img -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- preview -->
+                        <img src="" alt="" class="projects-img">
+                        <!-- preview -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- preview -->
+                        <img src="" alt="" class="projects-img">
+                        <!-- preview -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- preview -->
+                        <img src="" alt="" class="projects-img">
+                        <!-- preview -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- information -->
+                        <p class="projects-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                        </p>
+                        <!-- information -->
+
+                        <!-- live site -->
+                        <a href="#" class="link">live</a>
+                        <!-- live site -->
+                    </div>
+                    <!-- elmnts -->
+                
+                </article>
+                <article class="projects">
+
+                    <!-- elmnts -->
+                    <div class="elmnts">
+                        <!-- description -->
+                        <h3 class="projects-title">project title</h3>
+                        <h6 class="projects-tag">Lorem ipsum dolor sit amet consectetur.</h6>
+                        <!-- description -->
+
+                        <!-- showcase img -->
+                        <!-- <img src="screens/coffee-desktop.PNG" alt="coffee-test" class="projects-show"> -->
+                        <img src="#" alt="" class="projects-show">
+                        <!-- showcase img -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- preview -->
+                        <img src="" alt="" class="projects-img">
+                        <!-- preview -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- preview -->
+                        <img src="" alt="" class="projects-img">
+                        <!-- preview -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- preview -->
+                        <img src="" alt="" class="projects-img">
+                        <!-- preview -->
+                    </div>
+                    <div class="elmnts">
+                        <!-- information -->
+                        <p class="projects-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                        </p>
+                        <!-- information -->
+
+                        <!-- live site -->
+                        <a href="#" class="link">live</a>
+                        <!-- live site -->
+                    </div>
+                    <!-- elmnts -->
+                
+                </article>
+                <!-- projects -->
+
             </div>
-            <!-- elmnts -->
-        </section>
-        <!-- projects -->
+            <!-- projects container -->
         
-        <!-- technical -->
-        <section id="technical" class="wrapper_inner">
-            
-            <!-- elmnts -->
-            <div class="elmnts">
-                <h2>Technical Skills</h2>
-                <p class="tag">web development, software, applications & technical experience</p>
-                <p class="txt" style="display: none">
-                    Obtained an Advanced Diploma of Information Technology 
-                    from RMIT School of Business, Melbourne City Campus in 2018.
-                    Acquired additional qualifications, Responsive Web Design certification
-                    from Free Code Camp in 2019.
-                </p>
-            </div>
-            <div class="elmnts">
-                <!-- sub-tech -->
-                <ul class="sub-tech">
-                    <!-- list title -->
-                    <h4>development</h4>
-                    <!-- list elmnts -->
-                    <li>Semantic HTML & Responsive CSS</li>
-                    <li>Javascript & jQuery</li>
-                    <li>Github, Xampp & firebase</li>
-                    <li>SEO Practices & Analytics</li>
-                    <!-- list elmnts -->
-                </ul>
-                <!-- sub-tech -->
-            </div>
-            <div class="elmnts">
-                <!-- sub-tech -->
-                <ul class="sub-tech">
-                    <!-- list title -->
-                    <h4>software</h4>
-                    <li>Visual Studio Code</li>
-                    <li>Adobe XD & Photoshop</li>
-                    <li>Microsoft Office 365</li>
-                    <li>Windows OS, Terminal, Directory</li>
-                    <!-- list elmnts -->
-                </ul>
-                <!-- sub-tech -->
-            </div>
-            <div class="elmnts">
-                <!-- sub-tech -->
-                <ul class="sub-tech">
-                    <!-- list title -->
-                    <h4>hardware</h4>
-                    <!-- list elmnts -->
-                    <li>component build experience</li>
-                    <li>server installation & monitoring</li>
-                    <li>hardware configuration & debugging</li>
-                    <li>diagnose potential issues</li>
-                    <!-- <li>pixel perfect design implementation</li>
-                    <li>Code analysis, refactoring & debugging</li>
-                    <li>Adhering to technical standards & guidelines</li> -->
-                    <!-- list elmnts -->
-                </ul>
-                <!-- sub-tech -->
-            </div>
-            <!-- elmnts -->
         </section>
-        <!-- technical -->
-
-        <!-- footer -->
-        <footer id="footer" class="wrapper_inner">
-            <div class="elmnts">
-                <!-- info -->
-                <h2>christopher harris</h2>
-                
-                <p class="tag">
-                    Front End Web Developer <br>
-                    IT Support Specialist <br>
-                    Melbourne, Australia
-                </p>
-                <!-- info -->
-            </div>
-            <div class="elmnts">
-                <!-- resume ul -->
-                <ul>
-                    <!-- resume info -->
-                    <li>
-                        <!-- info title -->
-                        <h4>Digital Resume</h4>
-                        <!-- info title -->
-                    </li>
-                    <li>
-                        <!-- helper -->
-                        <p>view digital resume online or download a word document version.</p>
-                        <!-- helper -->
-                    </li>
-                    <li>
-                        <!-- resume open -->
-                        <button class="page_button" id="contact_resume">
-                            <i class="fas fa-file-alt"></i>
-                            resume
-                        </button>
-                        <!-- resume open -->
-                    </li>
-                    <!-- resume info -->
-                </ul>
-                <!-- resume ul -->
-            </div>
-            <div class="elmnts">
-                <!-- resume ul -->
-                <ul>
-                    <!-- resume info -->
-                    <li>
-                        <!-- info title -->
-                        <h4>Github Account</h4>
-                        <!-- info title -->
-                    </li>
-                    <li>
-                        <!-- helper -->
-                        <p>explore my github to find a wide range of website & applications.</p>
-                        <!-- helper -->
-                    </li>
-                    <li>
-                        <!-- github open -->
-                        <button class="page_button" id="contact_github">
-                            <i class="fab fa-github-square"></i>
-                            github
-                        </button>
-                        <!-- github open -->
-                    </li>
-                    <!-- resume info -->
-                </ul>
-                <!-- resume ul -->
-            </div>
-            <div class="elmnts">
-                <!-- resume ul -->
-                <ul>
-                    <li>
-                        <!-- info title -->
-                        <h4>Personal Email</h4>
-                        <!-- info title -->
-                    </li>
-                    <li>
-                        <!-- helper -->
-                        <p>feel free to get in touch for a friendly chat via sending an email.</p>
-                        <!-- helper -->
-                    </li>
-                    <li>
-                        <!-- email open -->
-                        <button class="page_button" id="contact_email">
-                            <i class="far fa-envelope"></i>
-                            email
-                        </button>
-                        <!-- email open -->
-                    </li>
-                    <!-- resume info -->
-                </ul>
-                <!-- resume ul -->
-            </div>
-            <div class="elmnts">
-                <!-- form || signiture -->
-                <p>The developer thanks you kindly for visiting this page.</p>
-                <!-- form || signiture -->
-                
-                <!-- back to top -->
-                <button id="top" class="desktop_hidden">
-                    <a href="#page">
-                        <i class="fas fa-caret-square-up"></i>
-                        <h5>Top</h5>
-                    </a>
-                </button>
-                <!-- back to top -->
-            </div>
-            <!-- elmnts -->
-        </footer>
-        <!-- footer -->
+        <!-- development -->
+       
+        
     </section>
     <!-- wrapper -->
 

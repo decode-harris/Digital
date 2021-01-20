@@ -9,15 +9,15 @@ window.onload = mql = (e)=> {
     e = mq;
 
     
-    const nav = document.querySelector('#nav');
+    // const nav = document.querySelector('#nav');
     // nav.style.display = 'grid';
 
     if (e.matches) {
         // init [ navigationDesktopPages ] function
-        menuDesktopNavigation();
+        // menuDesktopNavigation();
         // nav.style.display = 'flex';
         
-        slidesDesktop();
+        // slidesDesktop();
         // homepageView();    
         // contentView();
 
@@ -44,10 +44,10 @@ window.onload = mql = (e)=> {
         // mobilepageView();
 
         // init [ navigationMobilePages ] function from [ nav.js ]
-        menuMobileNavigation();
+        // menuMobileNavigation();
 
         // init [ slideshow ( slideIndex) ] function from [ slideshow.js ]
-        slideshow(slideIndex);
+        // slideshow(slideIndex);
         
         // nav
         // test

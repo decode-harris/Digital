@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap'); */
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+
+    --background: rgb(30, 18, 75);
+    --border: 2px solid #000;
+
+    --sm: 5%;
+    --md: 10%;
+    --lg: 20%;
+
+    --font-gothic: 'Nanum Gothic', sans-serif;
+    --font-poppin: 'Poppins', sans-serif;
+
+
+    --mode: rgb(0, 0, 0);
+
+    /* dev borders */
+    --wireframe: 2px solid darkblue;
+    --component: 2px solid darkgreen;
+    --debugging: 2px solid darkred;
+
+}
+html, body {
+    scroll-behavior: smooth;
+}
+
+/* page wrapper */
+.page {
+
+    /* display props [ flex ] */
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+
+    /* font-family: var(--font-gothic); */
+    font-family: var(--font-poppin);
+    
+    /* dev */
+    background: red;
+    
+}
+
+/* nav component */
+nav {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 300px;
+
+    background: var(--mode);
+    border-right: 1px solid #FFF;
+    /* dev */
+    /* border: var(--component); */
+    /* background: rgb(6, 45, 104); */
+}
+
+/* nav component : header */
+nav header {
+
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    
+
+    padding: var(--sm);
+
+    /* dev */
+    /* border: var(--debugging); */
+
+}
+nav header .profile {
+    /* image dimensions */
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    
+    /* background props */
+    background-image: url(profile.jpg);
+    background-image: url(src/media/Mode.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+
+}
+.profile .box {
+    height: 100%;
+    width: 100%;
+    /* background: rgba(0, 0, 0, 0.5); */
+}
+nav header h4 {
+    font-size: 1.35rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    color: #FFF;
+    text-align: center;
+
+    padding: var(--sm);
+}
+nav header p {
+    color: #FFF;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    text-decoration: underline;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+/* nav component : navigation list */
+nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+nav li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    padding: var(--sm);
+
+    /* dev */
+    /* border: var(--debugging); */
+}
+nav li:first-child {
+    margin-top: var(--sm);
+}
+nav a {
+    font-size: 1.35rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    line-height: 1.6;
+    color: #FFF;
+}
+nav li i {
+    font-size: 1.3rem;
+    color: #FFF;
+    padding-right: var(--sm);
+}
+/* nav component : footer */
+nav footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+}
+nav footer i {
+    font-size: 2rem;
+    color: #FFF;
+}
+
+/* video component */
+.video_container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#video {
+    /* position props [ absolute ] */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+}
+.video_overlay {
+    /* position props [ absolute ] */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* overlay props */
+    background: rgba(35, 27, 43, 0.705);
+}
+.video_overlay h1 {
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    letter-spacing: 0.3rem;
+}
+.video_overlay p {
+    font-size: 1.75rem;
+    letter-spacing: 0.1rem;
+    text-decoration: underline;
+}
+
+
+/* main component */
+main {
+    
+    /* position props [ relative ] */
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+/* section content layout */
+section {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* position props [ absolute ] */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    /* dev */
+    /* border: var(--debugging); */
+    background: #000;
+    color: #FFF;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    /* component props */
+    /* padding: var(--sm); */
+
+    width: 100%;
+    height: 100%;
+}
+.container .elmnts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    /* dev */
+    /* background: purple; */
+    border: var(--debugging);
+}
+.container .elmnts:nth-child(1) {
+    max-width: 200px;
+}
+.container h2 {
+    font-weight: bold;
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+    padding: var(--sm);
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+}
+.container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: var(--sm);
+}
+
+
+.gallery {
+    background: transparent;
+    position: absolute;
+}

@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Rubik:wght@300&display=swap');
+/* 
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Rubik', sans-serif;
+*/
+
+
+/* global reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* global variables */
+:root {
+    /* spacing */
+    --sm: 2%;
+    --md: 5%;
+    --lg: 10%;
+
+    /* dev borders */
+    --wireframe: 2px solid darkblue;
+    --debugging: 2px dotted darkred;
+    --component: 2px solid darkgreen;
+
+    /* font style */
+    --mainfont: 'Titillium Web', sans-serif;
+    --text-font: 'PT Sans Narrow', sans-serif;
+    --head-font: 'Rubik', sans-serif;
+
+    /* light mode | darkmode */
+    --mode: #000;
+    --mode-background: #FFF;
+    --mode-overlay: rgba(241,237,237,0.4);
+    --mode-transparent: rgba(0,0,0,0.19);
+    /* --mode-transparent: rgba(255, 255, 255, 0.19); */
+}
+
+/* page component */
+.page {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    /* dev */
+    background: var(--mode-transparent);
+}
+
+/* nav component */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 300px;
+    background: darkcyan;
+    /* visibility: hidden; */
+    /* dev */
+    border: var(--component);
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+}
+ul li {
+    list-style-type: none;
+}
+li a {
+    color: var(--mode);
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+/* wrapper component */
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: lightgreen;
+}
+
+.wrapper_inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* dev */
+    background: red;
+    border: 2px solid #FFF;
+}
+
+.phase {
+    animation: phase 800ms linear forwards;
+    transition: all 1s ease-in;
+
+}
+@keyframes phase {
+    0% {
+        opacity: 0.3;
+        left: 50px;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes phaseout {
+    0% {
+        opacity: 1;
+        left: 0;
+    }
+    100% {
+        opacity: 0.3;
+        left: 50px;
+    }
+}
