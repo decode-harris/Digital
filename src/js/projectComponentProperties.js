@@ -93,4 +93,40 @@ profileOverlay = () => {
 
 }
 
-profileOverlay();
+// profileOverlay();
+
+
+// function [ projectsCycler ]
+projectsCycler = () => {
+
+    // projects selector
+    let projects = document.querySelectorAll('.projects');
+
+    // for loop [ projects ]
+    for ( i = 0; i < projects.length; i++ ) {
+
+        projects[i].style.display = 'none';
+
+        projects[0].style.display = 'grid';
+
+        // test
+        console.log(projects[i]);
+    }
+
+}
+
+projectsMobileCycler = () => {
+
+    // projects selector
+    let projects = document.querySelectorAll('.projects');
+
+    // for loop [ projects ]
+    for ( i = 0; i < projects.length; i++ ) {
+
+        projects[i].style.display = 'grid';
+
+        // test
+        console.log(projects[i]);
+    }
+
+}
