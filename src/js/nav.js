@@ -267,8 +267,8 @@ let minimizeNavigation = ()=> {
 
 
 // nav [ minimize ] button selector
-let minimize = document.querySelector('#minimize');
-minimize.addEventListener('click', minimizeNavigation);
+// let minimize = document.querySelector('#minimize');
+// minimize.addEventListener('click', minimizeNavigation);
 
 
 

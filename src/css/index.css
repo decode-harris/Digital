@@ -3,6 +3,8 @@
     font-family: 'Titillium Web', sans-serif;
 */
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Rubik:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* 
     font-family: 'PT Sans Narrow', sans-serif;
     font-family: 'Rubik', sans-serif;
@@ -33,6 +35,8 @@
     --text-font: 'PT Sans Narrow', sans-serif;
     --head-font: 'Rubik', sans-serif;
 
+    --font: 'Poppins', sans-serif;
+
     /* colors */
     --green: #01fe87;
 
@@ -50,45 +54,11 @@
 html {
     /* page scroll props */
     scroll-behavior: smooth;
-    
-    /* page font props */
-    font-family: var(--text-font);
-}
-
-/* global headings */
-h1 {
-    font-size: 1.85rem;
-    text-transform: capitalize;
-    letter-spacing: 0.2rem;
-}
-h2 {
-    font-size: 1.65rem;
-    text-transform: capitalize;
-    letter-spacing: 0.2rem;
-    padding-bottom: var(--md);
-    padding-top: var(--md);
-}
-h3 {
-    font-size: 1.45rem;
-    letter-spacing: 0.2rem;
-    text-transform: capitalize;
-}
-h4 {
-    font-size: 1.25rem;
-    letter-spacing: 0.1rem;
-    text-transform: capitalize;
-    text-decoration: underline;
-    padding-bottom: var(--md);
-    
-}
-h5 {
-    font-size: 1.05rem;
-    letter-spacing: 0.1rem;
-    text-transform: capitalize;
-    text-decoration: underline;
-}
-h1,h2,h3,h4,h5,h6 {
     font-family: var(--head-font);
+
+    font-family: var(--font);
+    /* page font props */
+    
 }
 
 /* page wrapper */
@@ -103,12 +73,25 @@ h1,h2,h3,h4,h5,h6 {
 
     /* position props [ relative ] */
     position: relative;
-    z-index: 1;
 }   
 
-/* header component */
+/* 
+    header component
+
+    javascript function applies position
+    absolute [ top: 0, left: 0 ] to header 
+    element on scroll
+
+    contains :
+        1. btn [ menu ] navigation event button
+        2. btn [ mode ] colormode event button
+
+*/
 header {
-    
+    position: fixed;
+    background: darkslategrey;
+    color: #FFF;
+    top: 0; left: 0;
     /* display props [ flex ] */
     display: flex;
     align-items: center;
@@ -116,38 +99,69 @@ header {
     height: 100%;
     width: 100%;
     max-height: 10vh;
+
+
+    /* mobiel styles */
+    display: none;
+    
+    /* dev */
+    /* border: var(--component); */
+}
+header .btn {
+    /* position props [ fixed ] */
+    position: fixed;
+    right: 0;
+    top: 0;
+    
+    /* element styles */
+    background: var(--mode-background);
+    background: transparent;
+    color: var(--mode);
+    width: 60px;
+    padding: var(--sm);
+
     z-index: 2;
 
     /* dev */
-    border: var(--component);
+    
+    border: none;
+    white-space: nowrap;
+    /* background: transparent; */
+
+    /* border: 2px solid var(--mode); */
 }
-header .btn {
-    /* element styles */
-    background: transparent;
-    border: 2px solid var(--mode);
-    color: var(--mode);
-    font-size: 1.2rem;
-    width: 60px;
-    padding: var(--sm);
+header .btn i {
+    font-size: 1.65rem;
+    border: none;
+    color: #FFF;
 }
 header #menu {
+    
+    /* replace to mode side */
+    margin-right: 10px;
+    margin-top: 10px;
+}
+header .logo {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     /* spacing props */
     margin-left: 10px;
     margin-top: 10px;
-}
-header #mode {
-    /* spacing props */
-    margin-right: 10px;
-    margin-top: 10px;
+
+    font-weight: bold;
+    font-size: 1.65rem;
+    width: 60px;
 }
 
 
 /* global section properties */
-section#homepage,
-section#information,
-section#development,
-section#technical,
-section#contact {
+section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,10 +170,52 @@ section#contact {
     min-height: 100vh;
     width: 100%;
 
+    margin-top: 10vh;
+
     /* dev */
-    border: var(--wireframe);
+    /* border: var(--wireframe); */
 }
 
+    
+/* homepage [ introduction ] elements */
+.introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+
+    min-height: 100vh;
+    /* dev */
+    border: 14px solid var(--debugging);
+}
+.introduction h1 {
+    font-size: 2.60rem;
+    letter-spacing: 0.12rem;
+
+    padding-left: var(--sm);
+}
+.introduction .sign {
+    font-size: 1.63rem;
+    padding-left: var(--sm);
+    text-transform: capitalize;
+}
+.profile {
+    margin-left: var(--md);
+
+    /* dev */
+    /* border: var(--component); */
+}
+.profile img {
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    /* border: 1px solid #000; */
+
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(13, 119, 92, 0.829);
+    -moz-box-shadow:    0px 0px 10px 0px rgba(13, 119, 92, 0.829);
+    box-shadow:         0px 0px 10px 0px rgba(13, 119, 92, 0.829);
+}
 
 /* 
     [ description ] section element
@@ -170,109 +226,47 @@ section#contact {
             3. p    [ txt   ] :  section description
 */
 .description {
-    text-align: center;
     padding-top: calc(var(--md) * 2.5);
-    padding-bottom: calc(var(--lg) * 2.5);
+    padding-bottom: calc(var(--md) * 2.5);
+    text-align: left;
+    padding-left: var(--md);
+
+    border: var(--component);
     
-    /* dev */
-    border: 4px solid var(--wireframe);
 }
 .description h2 {
-    padding-top: calc(var(--md) * 2.5);
+    /* padding-top: calc(var(--md) * 2.5); */
     font-size: 2.25rem;
+    text-transform: capitalize;
 }
 .description .tag {
     font-size: 1.22rem;
-    padding-left: var(--md);
+    /* padding-left: var(--md); */
     padding-right: var(--md);
     padding-bottom: var(--lg);
 
+    
+
 }
 .description .txt {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    padding: var(--md);
-    
+    /* font-size: 1.05rem; */
+     line-height: 1.6;
+    padding-right: var(--md);
 }
-
+/*    padding: var(--md); /*
+    
 
 
 
 /* 
-    contact [ info ] data panels
-    
-    contains :
-            1. div [ info ] : data panel container
-            2. div [ wrapper ] : data wrapper
-            3. h4 [ title ] : info title
-            4. p [ helper ] : info user helper
-            5. btn [ btn ] : link to ext info [ git, resume, email ]
+    [ projects ] article component
+
+    contains : 
+            1. article [ projects ] 
+            2. 
+
 */
-.info {
-    /* display props [ flex ] */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 75vh;
-    width: 100%;
 
-    /* component props */
-    border-radius: 10px;
-    padding: var(--md);
-    margin-bottom: var(--lg);
-
-    /* dev */
-    border: var(--debugging);
-    border: 2px solid var(--mode);
-}
-.info .wrapper {
-    
-    
-    /* component props */
-    background: darkslategrey;
-    border: 2px solid var(--mode);
-    border-radius: 10px;
-    padding-top: var(--lg);
-    padding-bottom: var(--lg);
-
-    /* padding: var(--md) var(--lg); */
-    height: 100%;
-
-    color: #FFF;
-}
-.info h4 {
-    font-size: 1.45rem;
-    padding-bottom: var(--lg);
-    
-}
-.info p {
-    line-height: 1.6;
-    font-size: 1.15rem;
-    padding: var(--lg) var(--md);
-    /* color: var(--mode-background); */
-}
-article a,
-.info button {
-    min-width: 150px;
-    font-size: 1.15rem;
-    letter-spacing: 2px;
-    /* text-decoration: underline; */
-    text-transform: capitalize;
-    margin-top: var(--lg);
-    padding: var(--sm);
-
-    text-align: center;
-
-    background: var(--mode-background);
-    border: 2px solid var(--mode);
-    border-radius: 0px 0px 10px 0px;
-    color: var(--mode);
-    
-}
-
-/* development [ projects ] container */
 .projects {
     /* display props [ grid ] */
     display: grid;
@@ -302,27 +296,38 @@ article a,
     flex-direction: column;
     
     /* component props */
-    padding: var(--sm);
-    margin-top: var(--sm);
+    /* padding: var(--sm);
+    margin-top: var(--sm); */
     text-align: left;
 
     /* dev */
     border: var(--wireframe);
 }
-.projects .elmnts:first-child,
+
+/* projects [ elmnts ] showcase image */
+.projects .elmnts:nth-child(1) {
+    grid-column: span 6;
+}
+/* projects [ elmnts ] title panel */
+.projects .elmnts:nth-child(2) {
+    grid-column: span 6;
+}
+
+/* projects [ elmnts ] small images */
+.projects .elmnts:nth-child(3),
+.projects .elmnts:nth-child(4),
+.projects .elmnts:nth-child(5) {
+    padding: var(--sm);
+}
+
+/* projects [ elmnts ] info panel */
 .projects .elmnts:last-child {
     grid-column: span 6;
-    grid-row: span 2;
-}
-.projects .elmnts:nth-child(2), 
-.projects .elmnts:nth-child(3), 
-.projects .elmnts:nth-child(4) {
 
-    /* component props */
-    border-radius: 10px;
-    padding: 0;
-    padding: var(--sm) var(--md);
+    justify-content: center;
+    align-items: center;
 }
+
 /* projects content */
 .projects-title {
     margin-top: var(--lg);
@@ -334,31 +339,46 @@ article a,
     letter-spacing: 2px;
     font-style: italic;
     padding-top: var(--sm);
+    padding-bottom: var(--sm);
     padding-left: var(--sm);
 }
 .projects-text {
-    padding: var(--sm);
+    padding-top: var(--lg);
     line-height: 1.6;
     font-size: 0.85rem;
 }
 .projects-img {
-    border-radius: 10px;
     border: none;
     height: 100%;
     width: 100%;
 }
-.projects-show {
+.projects-showcase {
     height: 100%;
     width: 100%;
     min-height: 180px;
     max-height: 220px;
-    margin-top: var(--lg);
-    margin-bottom: var(--md);
+    
  
     /* dev */
     border: var(--debugging);
 }
+.projects a {
+    min-width: 150px;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    /* text-decoration: underline; */
+    text-transform: capitalize;
+    margin-top: var(--lg);
+    padding: var(--sm);
 
+    text-align: center;
+
+    background: var(--mode-background);
+    border: 2px solid var(--mode);
+    border-radius: 0px 0px 10px 0px;
+    color: var(--mode);
+    
+}
 
 
 /* tech unordered list */
@@ -370,6 +390,7 @@ article a,
     align-items: center;
     height: 100%;
     width: 100%;
+    min-width: 328px;
     /* dev */
     border: var(--wireframe);
 }
@@ -379,6 +400,7 @@ article a,
     text-transform: capitalize;
     
     padding-top: var(--sm);
+    padding-bottom: var(--sm);
     line-height: 1.6;
     font-size: 0.85rem;
     width: 100%;
@@ -388,8 +410,9 @@ article a,
 }
 .tech h4 {
     font-size: 1.45rem;
-    padding-top: calc(var(--lg) * 1.5);
-    padding-bottom: calc(var(--lg) * 1.5);
+    text-decoration: underline;
+    padding-top: calc(var(--md) * 1.5);
+    padding-bottom: calc(var(--md) * 1.5);
 }
 
 /* slider component */
@@ -408,6 +431,9 @@ article a,
 .slider .btn {
     position: absolute;
     top: 50%;
+
+    /* remove slider buttons for testing *//* remove slider buttons for testing */
+    display: none;
 }
 .slider #technical-prev {
     left: 10px;
@@ -470,6 +496,136 @@ article a,
     justify-items: center;
     align-items: center;
 }
+
+
+
+/* 
+    contact [ info ] list component
+    
+    contains :
+            1. ul [ info ] list container
+            2. li [ info-item ] element
+            3. btn [ btn ] link element
+            4. span [ btn-span ] content holders
+            5. info content [ i, h2, p ] elements
+*/
+.info {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    min-height: 75vh;
+    width: 100%;
+
+    /* component props */
+    border-radius: 10px;
+    padding: var(--md);
+    margin-bottom: var(--lg);
+
+    /* dev */
+    border: var(--debugging);
+    
+}
+.info i {
+    font-size: 2rem;
+    color: var(--mode);
+}
+.info h4 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: var(--mode);
+}
+.info p {
+    line-height: 1.4;
+    font-size: 0.85rem;
+
+    padding-right: var(--sm);
+    margin-bottom: var(--md);
+    color: var(--mode);
+    /* color: var(--mode-background); */
+}
+.info-item {
+    list-style-type: none;
+    width: 100%;
+    min-width: 100%;
+
+    /* dev */
+    /* border: var(--wireframe); */
+}
+.info-item .btn {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+
+    background: transparent;
+    border: 2px solid var(--mode);
+}
+.btn-span {
+    display: flex;
+
+    /* dev */
+    /* border: var(--debugging); */
+}
+.btn-span:nth-child(1) {
+    grid-column: span 1;
+    grid-row: span 2;
+
+    justify-content: center;
+    align-items: center;
+}
+.btn-span:nth-child(2),
+.btn-span:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 1;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    text-align: left;
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* nav component */
 nav {
@@ -642,12 +798,7 @@ nav .ext {
     }
 }
 
-.profile img {
-    border-radius: 50%;
-    width: 220px;
-    height: 220px;
-    border: 2px solid #000;
-}
+
 
 
 
@@ -688,49 +839,7 @@ main .phase {
 
 
 
-/* technical list ext links [ under dev ] */
-.page_button:hover {
-    cursor: pointer;
-}
 
-
-
-/* text elements */
-.txt {
-    font-size: 1.12rem;
-    line-height: 1.6;
-    padding: var(--sm);
-}
-.tag {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    letter-spacing: 0.1rem;
-    text-transform: capitalize;
-    font-style: italic;
-}
-.top {
-    /* display props [ flex ] */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    min-height: 50px;
-    min-width: 120px;
-
-    /* element styles */
-    text-transform: capitalize;
-    letter-spacing: 2px;
-    
-    /* mode styles */
-    /* background: transparent; */
-    background: var(--mode-background);
-    border: 3px solid var(--mode);
-    color: var(--mode);
-}
-.top a {
-    color: var(--mode);
-    text-decoration: none;
-}
 
 /* darkmode props */
 .darkmode {
@@ -741,17 +850,18 @@ main .phase {
     color: white;
 }
 
-/* images [ device ] elements */
+
+/* show mobile elements on mobile view */
 .images-mobile {
     /* display [ flex ] on mobile */
     display: flex;
 }
-.images-desktop {
-    /* display [ none ] on mobile */
+
+/* remove desktop elements from mobile view */
+.desktops {
     display: none;
 }
-
-.desktops {
+.images-desktop {
     display: none;
 }
 
@@ -798,8 +908,20 @@ main .phase {
         display: flex;
         height: 100%;
         max-width: 10vw;
-        width: 100%;
+        
+        /* width: 100%; */
+        width: 10vw;
         /* border: 2px solid red; */
+    }
+
+    nav #exit {
+        display: none;
+    }
+    /* main content component */
+    main {
+        background: lightcoral;
+        margin-left: 10vw;
+        height: 100%;
     }
 
     /* header component & footer removal */
@@ -809,184 +931,139 @@ main .phase {
     }
 
     /* section content removal */
-    section#homepage,
-    section#information,
-    section#development,
-    section#technical,
-    section#contact {
+    section {
         display: none;
-    }
-
-    /* homepage elements */
-    section#homepage,
-    /* development elements */
-    section#development,
-    /* information elements */
-    section#information,
-    /* technical elements */
-    section#technical,
-    /* contact elements */
-    section#contact {
-        position: relative;
-        
-        display: grid;
-        gap: 10px;
-        grid-template-columns: repeat(6, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-
-        min-height: 0;
-        height: 100vh;
-
-        margin-left: 10vw;
-        padding: var(--md);
-    }
     
-
-    /* description container */
-    .description {
-        grid-column: span 6;
-        grid-row: span 1;
+        position: relative;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        min-height: 0;
+        height: 100%;
+        width: 100%;
 
         margin: 0;
         padding: 0;
 
-        padding: var(--sm);
+        /* width of remaining window view */
+        width: 90vw;
 
-        /* dev */
-        border: var(--wireframe);
-        
+        /* margin-left: 10vw; */
     }
-    /* description elements */
+
+    /* section [ content ] 25% content description */
+    .description {
+        padding: 0;
+        margin: 0;
+
+        height: 100%;
+        width: 100%;
+
+        min-height: 25vh;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: var(--md);
+    }
     .description h2 {
         padding: 0;
         margin: 0;
-        /* padding-top: var(--sm); */
+        /* padding-top: var(--lg); */
     }
     .description .tag {
         padding: 0;
         margin: 0;
         font-size: 1.45rem;
-        
-        
     }
     .description .txt {
         
         /* mobile reset */
         padding: 0;
         margin: 0;
-        
+        padding-right: var(--lg);
+        padding-top: var(--sm);
         font-size: 1.05rem;
         
 
-        padding: calc( var(--md) / 2.5 );
+        
 
         /* dev */
         border: var(--wireframe);
     }
 
-    /* gallery */
-    .gallery {
-        /* grid placement [ development ] */
-        grid-column: span 6;
-        grid-row: span 1;
-        
+    /* section [ content ] 75% page content */
+    .content {
+        border: 10px solid #000;
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 75vh;
 
-        overflow-x: hidden;
-        
+        padding: var(--md);
 
-        height: 100%;
-        width: 100%;
-
-        max-height: 70vh;
-
-        padding: var(--lg);
-        
-        /* dev */
-        background: lightgray;
-    }
-
-    /* swipe [ gallery component ] */
-    .swiper1 {
-
-        /* image placement default [ 1 ] */
-        --n: 1;
-
-        /* display props [ flex ] */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        /* overflow y [ remove slider ] */
-        overflow-y: hidden;
-
-        /* component dimensions */
-        width: 100%;
-        width: calc(var(--n)*100%);
-        height: 100%;
-
-        /* height: 100vh;
-        max-height: 100vh; */
-
-        /* transform props [ translate ] */
-        transform: translate(calc(var(--i)/var(--n)*-100%));
-        transition: transform 0.5s ease-out;
-
-        /* component props */
-        padding: var(--md) 0;
-
-        /* dev */
-        border: var(--debugging);
-
-    }
-    /* image [ gallery element ] */
-    .swiper1 .projects1 {
-        /* mobile reset */
-        margin: 0;
-        padding: 0;
-        
-
-        /* dimensions */
-        height: 100%;
-        min-height: 40vh;
-        
-        width: 100%;
-        width: calc(100%/var(--n));
-        
         min-width: 100%;
-        /* pointer resets */
-        user-select: none;
-        pointer-events: none;
-        
-        /* component props */
-        padding: var(--sm);
-
-        background: purple;
-        
-        /* dev */
-        border: 2px solid var(--wireframe);
     }
+
+     
+    
+    
+    /* homepage properties */
+    #homepage {
+        flex-direction: row;
+    }
+    #homepage .introduction,
+    #homepage .description {
+        max-height: 100%;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        /* height: 100%; */
+        /* border: 2px solid red; */
+    }
+
+    #homepage .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    
+    
+
+
+   
+   
+
+  
+   
+    .gallery {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        
+    }
+    
+    
+    
     .projects {
         margin: 0;
         padding: 0;
+
+        max-height: 750px;
+        max-width: 350px;
+
+        border: 4px solid var(--mode);
     }
     .projects .elmnts {
         margin: 0;
         padding: 0;
-    }
-    /* project elements */
-    .projects .elmnts:first-child,
-    .projects .elmnts:last-child {
-        grid-column: span 6;
-        grid-row: span 2;
-    }
-    .projects .elmnts:nth-child(2),
-    .projects .elmnts:nth-child(3),
-    .projects .elmnts:nth-child(4) {
-        grid-column: span 2;
-        grid-row: span 2;
+
+        display: flex;
+        justify-content: center;
     }
     
     .projects-title {
@@ -1003,14 +1080,17 @@ main .phase {
     }
 
     
-    .projects-show {
+    .projects-showcase {
         
         margin: 0;
         padding: 0;
 
-        height: 100%;
-        width: 100%;
+        
+        
+        
         max-height: 200px;
+        max-width: 100%;
+        
         
 
         
@@ -1250,33 +1330,11 @@ main .phase {
     
     
     
-    .elmnts .split:nth-child(1) {
-        
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding-left: var(--sm);
-
-        /* dev */
-        border: 5px solid var(--wireframe);
-        
-    }
-    .elmnts .split:nth-child(2) {
-        
-        width: 100%;
-
-        /* display props [ flex-center ] */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     
-    }
+    
     
     /* contact [ info ] container */
-    .container {
+    .container-renewal {
 
         /* grid placement [ contact ] */
         grid-column: span 6;

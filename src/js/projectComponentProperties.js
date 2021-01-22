@@ -105,9 +105,9 @@ projectsCycler = () => {
     // for loop [ projects ]
     for ( i = 0; i < projects.length; i++ ) {
 
-        projects[i].style.display = 'none';
+        projects[i].style.display = 'grid';
 
-        projects[0].style.display = 'grid';
+        // projects[0].style.display = 'grid';
 
         // test
         console.log(projects[i]);

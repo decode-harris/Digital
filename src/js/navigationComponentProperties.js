@@ -1,4 +1,39 @@
-const nav = document.querySelector('#nav');
+// nav component selector
+let nav = document.querySelector('#nav');
+
+// function [ menuMobileOpen ] button event
+menuMobileOpen = () => {
+
+    // add nav class [ nav_active ]
+    nav.classList.add('nav_active');
+    
+    // test
+    console.log(nav);
+
+}
+
+// function [ menuMobileExit ] button event
+menuMobileExit = () => {
+
+    // remove nav class [ nav_active ]
+    nav.classList.remove('nav_active');
+    
+    // test
+    console.log(nav);
+
+}
+
+// menu button selector
+let menu = document.querySelector('#menu');
+
+// menu button event
+menu.addEventListener('click', menuMobileOpen);
+
+// exit button selector
+let exit = document.querySelector('#exit');
+
+// exit button event
+exit.addEventListener('click', menuMobileExit);
 
 // [ sections ] all selector
 let sections = document.querySelectorAll('section');
@@ -53,14 +88,12 @@ loadLandingPage = () => {
 
 // section container selectors
 let homepageSection = document.querySelector('#homepage');
-let informationSection = document.querySelector('#information');
 let developmentSection = document.querySelector('#development');
 let technicalSection = document.querySelector('#technical');
 let contactSection = document.querySelector('#contact');
 
 // navigation event button selectors
 const homepageButton = document.querySelector('#homepage-btn');
-const informationButton = document.querySelector('#information-btn');
 const developmentButton = document.querySelector('#development-btn');
 const technicalButton = document.querySelector('#technical-btn');
 const contactButton = document.querySelector('#contact-btn');
@@ -82,33 +115,16 @@ homepageButton.addEventListener('click', ()=> {
 
 });
 
-// event [ informationButton ]
-informationButton.addEventListener('click', ()=> {
-
-    // validate if element is display property flex
-    if (informationSection.style.display != 'flex') {
-
-        // init [ sectionReset ] function
-        sectionsDefaultView();
-
-        // assign homepage section to display property [ flex ]
-        informationSection.style.display = 'flex';
-    }
-    // test
-    console.log('information button clicked');
-
-});
-
 // event [ developmentButton ]
 developmentButton.addEventListener('click', ()=> {
 
-    // validate if element is display property grid
-    if (developmentSection.style.display != 'grid') {
+    // validate if element is display property flex
+    if (developmentSection.style.display != 'flex') {
 
         // init [ sectionReset ] function
         sectionsDefaultView();
 
-        developmentSection.style.display = 'grid';
+        developmentSection.style.display = 'flex';
     }
     // test
     console.log('development button clicked');
@@ -118,13 +134,13 @@ developmentButton.addEventListener('click', ()=> {
 // event [ technicalButton ]
 technicalButton.addEventListener('click', ()=> {
 
-    // validate if element is display property grid
-    if (technicalSection.style.display != 'grid') {
+    // validate if element is display property flex
+    if (technicalSection.style.display != 'flex') {
 
         // init [ sectionReset ] function
         sectionsDefaultView();
 
-        technicalSection.style.display = 'grid';
+        technicalSection.style.display = 'flex';
     }
     // test
     console.log('technical button clicked');
@@ -134,13 +150,13 @@ technicalButton.addEventListener('click', ()=> {
 // event [ contactButton ]
 contactButton.addEventListener('click', ()=> {
 
-    // validate if element is display property grid
-    if (contactSection.style.display != 'grid') {
+    // validate if element is display property flex
+    if (contactSection.style.display != 'flex') {
 
         // init [ sectionReset ] function
         sectionsDefaultView();
 
-        contactSection.style.display = 'grid';
+        contactSection.style.display = 'flex';
     }
     // test
     console.log('contact button clicked');

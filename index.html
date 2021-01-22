@@ -64,19 +64,23 @@
         <!-- header component -->
         <header id="header">
             
+            <span class="logo">
+                CH
+            </span>
+
             <!-- menu button -->
             <button id="menu" class="btn phase"><i class="fas fa-bars"></i></button>
             <!-- menu button -->
 
             <!-- mode button -->
-            <button id="mode" class="btn phase"><i id="mode_icon" class="fas fa-toggle-off"></i></button>
+            <!-- <button id="mode" class="btn phase"><i id="mode_icon" class="fas fa-toggle-off"></i></button> -->
             <!-- mode button -->
         
         </header>
         <!-- header component -->
 
         <!-- nav component -->
-        <nav class="nav">
+        <nav class="nav" id="nav">
 
             <!-- navigation -->
             <ul class="navigation">
@@ -84,7 +88,7 @@
                 <li class="navigation-links">
 
                     <!-- btn -->
-                    <button class="btn" id="homepage-btn">
+                    <button class="btn" id="homepage-btn" href="#homepage">
                         
                         <!-- devices -->
                         <span class="devices">
@@ -98,24 +102,6 @@
 
                     </button>
                     <!-- btn -->
-                </li>
-                <li class="navigation-links">
-                    <!-- btn -->
-                    <button class="btn" id="information-btn">
-
-                        <!-- devices -->
-                        <span class="devices">
-                            <i class="fas fa-info-circle"></i>    
-                        </span>
-                        <!-- devices -->
-
-                        <!-- desktops -->
-                        <span class="desktops">information</span>
-                        <!-- desktops -->
-
-                    </button>
-                    <!-- btn -->
-                
                 </li>
                 <li class="navigation-links">
                     
@@ -170,492 +156,511 @@
                     <!-- btn -->
                 </li>
                 <!-- navigation-links -->
+
+                <!-- btn -->
+                <button class="btn" id="exit">exit</button>
             </ul>
             <!-- navigation -->
         </nav>
         <!-- nav component -->
-        
-        <!-- homepage -->
-        <section id="homepage">
-            
-            <!-- img placement -->
-            <div class="profile">
-                <img src="src/media/Mode.jpg" alt="mode-image">
-                <!-- <img src="#" alt="mode-image"> -->
-            </div>
-            <!-- img placement -->
-            
-            <!-- name -->
-            <h1>
-                <!-- initials & letters -->
-                <span class="initials">C</span><span class="letters">hristopher</span>
-                <span class="initials">H</span><span class="letters">arris</span>
-                <!-- initials & letters -->
-            </h1>
-            <!-- name -->
 
-            <!-- title -->
-            <p class="tag">web developer & IT support specialist</p>
-            <!-- title -->
-            
-            
+        <!-- content component -->
+        <main class="main">
 
-        </section>
-        <!-- homepage -->
+            <!-- homepage -->
+            <section id="homepage">
 
-        <!-- information -->
-        <section id="information">
+                <!-- introduction -->
+                <div class="introduction">
 
-            <!-- description -->
-            <div class="description">
-                <!-- title -->
-                <h2>welcome</h2>
-                <h6 class="tag">A little about myself</h6>
-                <!-- title -->
+                    <!-- img placement -->
+                    <div class="profile">
+                        <img src="src/media/Mode.jpg" alt="mode-image">
+                        <!-- <img src="#" alt="mode-image"> -->
+                    </div>
+                    <!-- img placement -->
+                    
+                    <!-- name -->
+                    <h1>
+                        <!-- initials & letters -->
+                        <span class="initials">C</span><span class="letters">hristopher</span>
+                        <span class="initials">H</span><span class="letters">arris</span>
+                        <!-- initials & letters -->
+                    </h1>
+                    <!-- name -->
+
+                    <!-- title -->
+                    <p class="sign">frontend web developer <br> IT support specialist</p>
+                    <!-- title -->
+
+                </div>
+                <!-- introduction -->
                 
-                <!-- intro -->
-                <p class="txt">
-                    My name is Christopher Harris, an extremely enthusiastic technology specialist
-                    with over 25 years of hands-on personal experience as a hobbyist pc builder & video gamer,
-                    family, friends & colleagues desktop & electronic devices support technician & frontend web developer.
-                </p>
-                <!-- intro -->
-            
-            </div>
-            <!-- description -->
-            
-        </section>
-        <!-- information -->
-
-        <!-- development -->
-        <section id="development">
-
-            <!-- section description -->
-            <div class="elmnts description">
-
-                <!-- title -->
-                <h2>Development</h2>
-                <p class="tag">project websites & prototype applications</p>
-                <!-- title -->
-
-                <!-- info -->
-                <p class="txt">
-                    View a variety of design styles & programming technologies
-                    incorporated into my personally developed websites and applications.
-                </p>
-                <!-- info -->
+                <!-- description -->
+                <div class="description">
+                    <!-- title -->
+                    <h2>welcome</h2>
+                    <h6 class="tag">A little about myself</h6>
+                    <!-- title -->
+                    
+                    <!-- intro -->
+                    <p class="txt">
+                        My name is Christopher Harris, an extremely enthusiastic technology specialist
+                        with over 25 years of hands-on personal experience as a hobbyist pc builder & video gamer,
+                        family, friends & colleagues desktop & electronic devices support technician & frontend web developer.
+                    </p>
+                    <!-- intro -->
                 
+                </div>
+                <!-- description -->
+            
+            </section>
+            <!-- homepage -->
 
-            </div>
-            <!-- section description -->
+            <!-- development -->
+            <section id="development">
 
-            <!-- projects gallery -->
-            <main class="gallery">
+                <!-- section description -->
+                <div class="elmnts description">
 
-                <!-- swiper -->
-                <div class="swiper">
+                    <!-- title -->
+                    <h2>Development</h2>
+                    <h6 class="tag">Project websites & prototype applications</h6>
+                    <!-- title -->
 
-                    <!-- projects -->
-                    <article class="projects">
+                    <!-- info -->
+                    <p class="txt">
+                        View a variety of design styles & programming technologies
+                        incorporated into my personally developed websites and applications.
+                    </p>
+                    <!-- info -->
+                    
 
-                        <!-- elmnts -->
-                        <div class="elmnts">
+                </div>
+                <!-- section description -->
 
-                            <!-- split -->
-                            <span class="split">
+                <!-- content container -->
+                <div class="content">
 
-                                <!-- description -->
-                                <h3 class="projects-title">project title1</h3>
-                                <h6 class="projects-tag">Lorem ipsum dolor sit amet consectetur.</h6>
-                                <!-- description -->
+                    <!-- projects gallery -->
+                    <div class="gallery">
 
-                            </span>
-                            <span class="split">
+                        <!-- projects -->
+                        <article class="projects">
 
+                            <!-- elmnts -->
+                            <div class="elmnts">
                                 <!-- showcase img -->
-                                <img src="screens/coffee-desktop.PNG" alt="coffee-test" class="projects-show">
+                                <img src="src/img/c-0-lrg.jpeg" alt="coffeeshop-showcase" class="projects-showcase">
                                 <!-- <img src="#" alt="" class="projects-show"> -->
                                 <!-- showcase img -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- description -->
+                                <h3 class="projects-title">Coffeeshop</h3>
+                                <h6 class="projects-tag">Lorem ipsum dolor sit amet consectetur.</h6>
+                                <!-- description -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- preview -->
+                                <img src="src/img/c-1-sml.jpeg" alt="coffeeshop-view" class="projects-img">
+                                <!-- preview -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- preview -->
+                                <img src="src/img/c-2-sml.jpeg" alt="coffeeshop-view" class="projects-img">
+                                <!-- preview -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- preview -->
+                                <img src="src/img/c-3-sml.jpeg" alt="coffeeshop-view" class="projects-img">
+                                <!-- preview -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- information -->
+                                <p class="projects-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                                </p>
+                                <!-- information -->
 
-                            </span>
-                            <!-- split -->
+                                <!-- live site -->
+                                <a href="#" class="link">live</a>
+                                <!-- live site -->
+                            </div>
+                            <!-- elmnts -->
                         
-                        </div>
-                        <div class="elmnts">
-                            <!-- preview -->
-                            <img src="" alt="" class="projects-img">
-                            <!-- preview -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- preview -->
-                            <img src="" alt="" class="projects-img">
-                            <!-- preview -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- preview -->
-                            <img src="" alt="" class="projects-img">
-                            <!-- preview -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- information -->
-                            <p class="projects-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
-                            </p>
-                            <!-- information -->
+                        </article>
+                        <article class="projects">
 
-                            <!-- live site -->
-                            <a href="#" class="link">live</a>
-                            <!-- live site -->
-                        </div>
-                        <!-- elmnts -->
+                            <!-- elmnts -->
+                            <div class="elmnts">
+                                <!-- showcase img -->
+                                <img src="src/img/planet-1.png" alt="planets-showcase" class="projects-showcase">
+                                <!-- <img src="#" alt="" class="projects-show"> -->
+                                <!-- showcase img -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- description -->
+                                <h3 class="projects-title">Planets</h3>
+                                <h6 class="projects-tag">Lorem ipsum dolor sit amet consectetur.</h6>
+                                <!-- description -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- preview -->
+                                <img src="src/img/p-1-sml.jpeg" alt="planets-view" class="projects-img">
+                                <!-- preview -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- preview -->
+                                <img src="src/img/p-2-sml.jpeg" alt="planets-view" class="projects-img">
+                                <!-- preview -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- preview -->
+                                <img src="src/img/p-3-sml.jpeg" alt="planets-view" class="projects-img">
+                                <!-- preview -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- information -->
+                                <p class="projects-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                                </p>
+                                <!-- information -->
+
+                                <!-- live site -->
+                                <a href="#" class="link">live</a>
+                                <!-- live site -->
+                            </div>
+                            <!-- elmnts -->
+                        
+                        </article>
+                        <article class="projects">
+
+                            <!-- elmnts -->
+                            <div class="elmnts">
+                                <!-- showcase img -->
+                                <img src="src/img/travel-1.jpg" alt="travel-showcase" class="projects-showcase">
+                                <!-- <img src="#" alt="" class="projects-show"> -->
+                                <!-- showcase img -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- description -->
+                                <h3 class="projects-title">Destinations</h3>
+                                <h6 class="projects-tag">Lorem ipsum dolor sit amet consectetur.</h6>
+                                <!-- description -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- preview -->
+                                <img src="src/img/d-1-sml.jpeg" alt="travel-view" class="projects-img">
+                                <!-- preview -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- preview -->
+                                <img src="src/img/d-2-sml.jpeg" alt="travel-view" class="projects-img">
+                                <!-- preview -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- preview -->
+                                <img src="src/img/d-3-sml.jpeg" alt="travel-view" class="projects-img">
+                                <!-- preview -->
+                            </div>
+                            <div class="elmnts">
+                                <!-- information -->
+                                <p class="projects-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                                </p>
+                                <!-- information -->
+
+                                <!-- live site -->
+                                <a href="#" class="link">live</a>
+                                <!-- live site -->
+                            </div>
+                            <!-- elmnts -->
+                        
+                        </article>
+                        <!-- projects -->
                     
-                    </article>
-                    <article class="projects">
-
-                        <!-- elmnts -->
-                        <div class="elmnts">
-                            <!-- description -->
-                            <h3 class="projects-title">project title2</h3>
-                            <h6 class="projects-tag">Lorem ipsum dolor sit amet consectetur.</h6>
-                            <!-- description -->
-
-                            <!-- showcase img -->
-                            <img src="src/img/planet-1.png" alt="planets-test" class="projects-show">
-                            <!-- <img src="#" alt="" class="projects-show"> -->
-                            <!-- showcase img -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- preview -->
-                            <img src="" alt="" class="projects-img">
-                            <!-- preview -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- preview -->
-                            <img src="" alt="" class="projects-img">
-                            <!-- preview -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- preview -->
-                            <img src="" alt="" class="projects-img">
-                            <!-- preview -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- information -->
-                            <p class="projects-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
-                            </p>
-                            <!-- information -->
-
-                            <!-- live site -->
-                            <a href="#" class="link">live</a>
-                            <!-- live site -->
-                        </div>
-                        <!-- elmnts -->
-                    
-                    </article>
-                    <article class="projects">
-
-                        <!-- elmnts -->
-                        <div class="elmnts">
-                            <!-- description -->
-                            <h3 class="projects-title">project title3</h3>
-                            <h6 class="projects-tag">Lorem ipsum dolor sit amet consectetur.</h6>
-                            <!-- description -->
-
-                            <!-- showcase img -->
-                            <img src="src/img/travel-1.jpg" alt="travel-test" class="projects-show">
-                            <!-- <img src="#" alt="" class="projects-show"> -->
-                            <!-- showcase img -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- preview -->
-                            <img src="" alt="" class="projects-img">
-                            <!-- preview -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- preview -->
-                            <img src="" alt="" class="projects-img">
-                            <!-- preview -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- preview -->
-                            <img src="" alt="" class="projects-img">
-                            <!-- preview -->
-                        </div>
-                        <div class="elmnts">
-                            <!-- information -->
-                            <p class="projects-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
-                            </p>
-                            <!-- information -->
-
-                            <!-- live site -->
-                            <a href="#" class="link">live</a>
-                            <!-- live site -->
-                        </div>
-                        <!-- elmnts -->
-                    
-                    </article>
-                    <!-- projects -->
+                    </div>
+                    <!-- projects gallery -->
 
                 </div>
-                <!-- swiper -->
+                <!-- content container -->
             
-            </main>
-            <!-- projects gallery -->
+            </section>
+            <!-- development -->
+
+            <!-- technical -->
+            <section id="technical">
+
+                <!-- description -->
+                <div class="description">
+                    
+                    <!-- title -->
+                    <h2>Technical</h2>
+                    <h6 class="tag">Desktop expertise & software experience</h6>
+                    <!-- <p class="tag">web development, software, applications & technical experience</p> -->
+                    
+                    <!-- title -->
+
+                    <!-- info -->
+                    <p class="txt">
+                        Experience relating to web development & deployment, hardware installation & debugging, software support & monitoring
+                    </p>
+                    <!-- info -->
+
+                </div>
+                <!-- description -->
+
+                <!-- content container -->
+                <div class="content">
+
+                    <!-- slider -->
+                    <div class="slider">
+                        
+                        <!-- slides -->
+                        <div class="slides">
+
+                            <!-- tech -->
+                            <ul class="tech">
+                                <!-- list elmnts -->
+                                <li>
+                                    <!-- list title -->
+                                    <h4>development</h4>
+                                    <!-- list title -->
+                                </li>
+                                <li>Semantic HTML & Responsive CSS</li>
+                                <li>Javascript & jQuery</li>
+                                <li>JS Frameworks & CSS Preprocessors</li>
+                                <li>API Data Extraction & Manipulation</li>
+                                <li>SEO Practices & Analytics</li>
+                                <li>Code analysis, refactoring & debugging</li>
+                                <!-- list elmnts -->
+                            </ul>
+                            <!-- tech -->
+                        </div>
+                        <div class="slides">
+                            <!-- tech -->
+                            <ul class="tech">
+                                <!-- list elmnts -->
+                                <li>
+                                    <!-- list title -->
+                                    <h4>hardware</h4>
+                                    <!-- list title -->
+                                </li>
+                                <li>component build experience</li>
+                                <li>installing, upgrading & defragging</li>
+                                <li>server installation & diagnostics</li>
+                                <li>hardware configuration & rectification</li>
+                                <li>diagnose potential issues</li>
+                                <li>technical analysis & escalation procedures</li>
+                                <!-- list elmnts -->
+                            </ul>
+                            <!-- tech -->
+                        </div>
+                        <div class="slides">
+                            <!-- tech -->
+                            <ul class="tech">
+                                <!-- list elements -->
+                                <li>
+                                    <!-- list title -->
+                                    <h4>software</h4>
+                                    <!-- list title -->
+                                </li>
+                                <li>Hardware Monitoring Tools</li>
+                                <li>Software & Networking Protocols</li>
+                                <li>Github & Git Desktop, GitBash & Command Line</li>
+                                <li>Adobe XD & Photoshop</li>
+                                <li>Cloud Storage, Google Applications</li>
+                                <li>Relational & Online Databases</li>
+                                <!-- list elmnts -->
+                            </ul>
+                            <!-- tech -->
+                        </div>
+                        <div class="slides">
+                            <!-- tech -->
+                            <ul class="tech">
+                                <!-- list elmnts -->
+                                <li>
+                                    <!-- list title -->
+                                    <h4>general</h4>
+                                    <!-- list title -->
+                                </li>
+                                <li>Exposure to LAN/WAN/VLAN networks</li>
+                                <li>Remote Support, VoIP Technology</li>
+                                <li>Windows 10 OS & MacOS Profeciency</li>
+                                <li>Microsoft Office 365</li>
+                                <li>Windows Server, Active Directory</li>
+                                <li>Android & iOS Device Experience</li>
+                                <!-- list elmnts -->
+                            </ul>
+                            <!-- tech -->
+                        </div>
+                        <!-- slides -->
+
+                        <!-- tracks -->
+                        <div class="tracks">
+                            <!-- dot -->
+                            <span class="dot" onclick="current(1)"></span>
+                            <span class="dot" onclick="current(2)"></span>
+                            <span class="dot" onclick="current(3)"></span>
+                            <span class="dot" onclick="current(4)"></span>
+                            <!-- dot -->
+                        </div>
+                        <!-- tracks -->
+
+                        <!-- btn -->
+                        <button class="btn" id="technical-prev" onclick="controls(-1)">
+                            <!-- [ prev ] -->
+                            <i class="fas fa-caret-left"></i>
+                            <!-- [ prev ] -->
+                        </button>
+                        <button class="btn" id="technical-next" onclick="controls(+1)">
+                            <!-- [ next ] -->
+                            <i class="fas fa-caret-right"></i>
+                            <!-- [ next ] -->
+                        </button>
+                        <!-- btn -->
+
+                    </div>
+                    <!-- slider -->
+
+                </div>
+                <!-- content container -->
+            
+            </section>
+            <!-- technical -->
+
+            <!-- contact -->
+            <section id="contact">
+
+                <!-- section description -->
+                <div class="description">
+
+                    <!-- title -->
+                    <h2>Contact</h2>
+                    <h6 class="tag">Get in touch today</h6>
+                    <!-- title -->
+
+                    <!-- info -->
+                    <p class="txt">
+                        Personal contact information including downloadable
+                        PDF resume, overview of my Github account and a link to my
+                        email address. Very responsive and always down for a chat.
+                    </p>
+                    <!-- info -->
+                
+                </div>
+                <!-- section description -->
+
+                <!-- content container -->
+                <div class="content">
+
+                    <!-- contact [ info ] unordered list -->
+                    <ul class="info">
+
+                        <!-- info-item -->
+                        <li class="info-item">
+                            
+                            <!-- item btn -->
+                            <button class="btn" id="contact_resume">
+                            
+                                <!-- btn-span -->
+                                <span class="btn-span">
+                                    <!-- icon -->
+                                    <i class="fas fa-file-alt"></i>
+                                    <!-- icon -->
+                                </span>
+                                <span class="btn-span">
+                                    <!-- type -->
+                                    <h4>digital resume</h4>
+                                    <!-- type -->
+                                </span>
+                                <span class="btn-span">
+                                    <!-- helper -->
+                                    <p class="span-txt">View and download a PDF version of my resume.</p>
+                                    <!-- helper -->
+                                </span>
+                                <!-- btn-span -->
+                            
+                            </button>
+                            <!-- item btn -->
+
+                        </li>
+                        <li class="info-item">
+                            
+                            <!-- item btn -->
+                            <button class="btn" id="contact_github">
+                            
+                                <!-- btn-span -->
+                                <span class="btn-span">
+                                    <!-- icon -->
+                                    <i class="fab fa-github-square"></i>
+                                    <!-- icon -->
+                                </span>
+                                <span class="btn-span">
+                                    <!-- type -->
+                                    <h4>github account</h4>    
+                                    <!-- type -->
+                                </span>
+                                <span class="btn-span">
+                                    <!-- helper -->
+                                    <p class="span-txt">Explore my web development & coding practices</p>
+                                    <!-- helper -->
+                                </span>
+                                <!-- btn-span -->
+                            
+                            </button>
+                            <!-- item btn -->
+
+                        </li>
+                        <li class="info-item">    
+                            
+                            <!-- item btn -->
+                            <button class="btn" id="contact_email">
+                            
+                                <!-- btn-span -->
+                                <span class="btn-span">
+                                    <!-- icon -->
+                                    <i class="far fa-envelope"></i>
+                                    <!-- icon -->
+                                </span>
+                                <span class="btn-span">
+                                    <!-- type -->
+                                    <h4>contact email</h4>
+                                    <!-- type -->
+                                </span>
+                                <span class="btn-span">
+                                    <!-- helper -->
+                                    <p>Feel free to send an email if you want to get in touch</p>
+                                    <!-- helper -->
+                                </span>
+                                <!-- btn-span -->
+                            
+                            </button>
+                            <!-- item btn -->
+
+                        </li>
+                        <!-- info-item -->
+
+                    </ul>
+                    <!-- contact [ info ] unordered list -->
+
+
+                </div>
+                <!-- content container -->
+            
+            </section>
+            <!-- contact -->
+
+        </main>
+        <!-- content component -->
+
+
         
-        </section>
-        <!-- development -->
-
-        <!-- technical -->
-        <section id="technical">
-
-            <!-- description -->
-            <div class="description">
-                
-                <!-- title -->
-                <h2>Technical</h2>
-                <h6 class="tag">desktop expertise & software experience</h6>
-                <!-- <p class="tag">web development, software, applications & technical experience</p> -->
-                
-                <!-- title -->
-
-                <!-- info -->
-                <p class="txt">
-                    Obtained an Advanced Diploma of Information Technology 
-                    from RMIT School of Business, Melbourne. And acquired an online qualifications,
-                    Responsive Web Design certification from Free Code Camp.
-                </p>
-                <!-- info -->
-
-            </div>
-            <!-- description -->
-
-            <!-- slider -->
-            <div class="slider">
-                
-                <!-- slides -->
-                <div class="slides">
-
-                    <!-- tech -->
-                    <ul class="tech">
-                        <!-- list elmnts -->
-                        <li>
-                            <!-- list title -->
-                            <h4>development</h4>
-                            <!-- list title -->
-                        </li>
-                        <li>Semantic HTML & Responsive CSS</li>
-                        <li>Javascript & jQuery</li>
-                        <li>JS Frameworks & CSS Preprocessors</li>
-                        <li>API Data Extraction & Manipulation</li>
-                        <li>SEO Practices & Analytics</li>
-                        <li>Code analysis, refactoring & debugging</li>
-                        <!-- list elmnts -->
-                    </ul>
-                    <!-- tech -->
-                </div>
-                <div class="slides">
-                    <!-- tech -->
-                    <ul class="tech">
-                        <!-- list elmnts -->
-                        <li>
-                            <!-- list title -->
-                            <h4>hardware</h4>
-                            <!-- list title -->
-                        </li>
-                        <li>component build experience</li>
-                        <li>installing, upgrading & defragging</li>
-                        <li>server installation & diagnostics</li>
-                        <li>hardware configuration & rectification</li>
-                        <li>diagnose potential issues</li>
-                        <li>technical analysis & escalation protocols</li>
-                        <!-- list elmnts -->
-                    </ul>
-                    <!-- tech -->
-                </div>
-                <div class="slides">
-                    <!-- tech -->
-                    <ul class="tech">
-                        <!-- list elements -->
-                        <li>
-                            <!-- list title -->
-                            <h4>software</h4>
-                            <!-- list title -->
-                        </li>
-                        <li>Hardware Monitoring Tools</li>
-                        <li>Programming Text Editors, Visual Studio Code</li>
-                        <li>Github & Git Desktop</li>
-                        <li>Adobe XD & Photoshop</li>
-                        <li>Cloud Storage, Google Applications</li>
-                        <li>Relational & Online Databases</li>
-                        <!-- list elmnts -->
-                    </ul>
-                    <!-- tech -->
-                </div>
-                <div class="slides">
-                    <!-- tech -->
-                    <ul class="tech">
-                        
-                        <li>
-                            <!-- list title -->
-                        <h4>general</h4>
-                        <!-- list title -->
-                        </li>
-                        
-                        
-                        <!-- list elmnts -->
-                        <li>Exposure to LAN/WAN/VLAN</li>
-                        <li>Citrix & Team Viewer Technology</li>
-                        <li>Windows 10 OS, MacOS</li>
-                        <li>Microsoft Office 365</li>
-                        <li>Windows Server, Active Directory</li>
-                        <li>Android & iOS Devices</li>
-                        <!-- list elmnts -->
-                    </ul>
-                    <!-- tech -->
-                </div>
-                <!-- slides -->
-
-                <!-- tracks -->
-                <div class="tracks">
-                    <!-- dot -->
-                    <span class="dot" onclick="current(1)"></span>
-                    <span class="dot" onclick="current(2)"></span>
-                    <span class="dot" onclick="current(3)"></span>
-                    <span class="dot" onclick="current(4)"></span>
-                    <!-- dot -->
-                </div>
-                <!-- tracks -->
-
-                <!-- btn -->
-                <!-- [ prev ] -->
-                <button class="btn" id="technical-prev" onclick="controls(-1)">
-                    <!-- [ prev ] -->
-                    <i class="fas fa-caret-left"></i>
-                    <!-- [ prev ] -->
-                </button>
-                <button class="btn" id="technical-next" onclick="controls(+1)">
-                    <!-- [ next ] -->
-                    <i class="fas fa-caret-right"></i>
-                    <!-- [ next ] -->
-                </button>
-                <!-- btn -->
-
-            </div>
-            <!-- slider -->
         
-        </section>
-        <!-- technical -->
-
-        <!-- contact -->
-        <section id="contact">
-
-            <!-- section description -->
-            <div class="description">
-
-                <!-- title -->
-                <h2>Contact</h2>
-                <h6 class="tag">Get in touch today</h6>
-                <!-- title -->
-
-                <!-- info -->
-                <p class="txt">
-                    Personal contact information including downloadable
-                    PDF resume, overview of my Github account and a link to my
-                    email address. Very responsive and always down for a chat.
-                </p>
-                <!-- info -->
-                
-
-            </div>
-            <!-- section description -->
-
-            <!-- container -->
-            <div class="container">
-
-                <!-- info -->
-                <div class="info">
-
-                    <!-- wrapper -->
-                    <div class="wrapper">
-                        
-                        <!-- type -->
-                        <h4>digital resume</h4>
-                        <!-- type -->
-
-                        <!-- helper -->
-                        <p>View and download a PDF version of my resume.</p>
-                        <!-- helper -->
-
-                        <!-- resume open -->
-                        <button class="page_button" id="contact_resume">
-                            <i class="fas fa-file-alt"></i>
-                            resume
-                        </button>
-                        <!-- resume open -->
-
-                    </div>
-                    <!-- wrapper -->
-                
-                </div>
-                <div class="info">
-
-                    <!-- wrapper -->
-                    <div class="wrapper">
-
-                        <!-- type -->
-                        <h4>github account</h4>
-                        <!-- type -->
-
-                        <!-- helper -->
-                        <p>Explore my web development & coding practices</p>
-                        <!-- helper -->
-
-                        <!-- github open -->
-                        <button class="page_button" id="contact_github">
-                            <i class="fab fa-github-square"></i>
-                            github
-                        </button>
-                        <!-- github open -->
-
-                    </div>
-                    <!-- wrapper -->
-                
-                </div>
-                <div class="info">
-
-                    <!-- wrapper -->
-                    <div class="wrapper">
-                        <!-- type -->
-                        <h4>contact email</h4>
-                        <!-- type -->
-
-                        <!-- helper -->
-                        <p>Feel free to send an email if you want to get in touch</p>
-                        <!-- helper -->
-
-                        <!-- email open -->
-                        <button class="page_button" id="contact_email">
-                            <i class="far fa-envelope"></i>
-                            email
-                        </button>
-                        <!-- email open -->
-
-                    </div>
-                    <!-- wrapper -->
-                
-                </div>
-                <!-- info -->
-
-            </div>
-            <!-- container -->
-
-        </section>
-        <!-- contact -->
 
         <!-- footer -->
         <footer id="footer">

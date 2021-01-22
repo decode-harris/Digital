@@ -2,14 +2,13 @@
     function [ scrollPositionProperties ] 
 
     initiated on page load
-    sets header component display props to relative
     validates scrollY position against section hight variable
     
 
 */
 
 // button mode selector
-let mode = document.querySelector('#mode');
+// let mode = document.querySelector('#mode');
 
 // [ scrollPositionProperties ] function
 scrollPositionProperties = () => {
@@ -32,9 +31,6 @@ scrollPositionProperties = () => {
             // get current position
             pos = window.scrollY;
             
-            // assign header position prop to relative [ native placement ]
-            header.style.position = 'relative'; 
-
             // assign nav position prop to top of header [ native placement ]
             nav.style.top = '0';
     
@@ -50,23 +46,23 @@ scrollPositionProperties = () => {
             // console.log('current position : ' + pos);
             
             // assign header position to fixed [ from relative ]
-            menu.style.position = 'fixed';
-            mode.style.position = 'fixed';
+            // menu.style.position = 'fixed';
+            // mode.style.position = 'fixed';
 
             // header [ menu ] button position props
             menu.style.top = '0';
-            menu.style.left = '0';
-            menu.style.background = 'var(--mode-background)';
-            menu.style.zIndex = '4';
+            menu.style.right = '0';
+            // menu.style.background = 'var(--mode-background)';
+            // menu.style.zIndex = '4';
 
             // header [ mode ] button position props
-            mode.style.top = '0';
-            mode.style.right = '0';
-            mode.style.background = 'var(--mode-background)';
-            mode.style.zIndex = '4';
+            // mode.style.top = '0';
+            // mode.style.right = '0';
+            // mode.style.background = 'var(--mode-background)';
+            
             
             // nav component props
-            // nav.style.top = pos + 'px';
+            nav.style.top = pos + 'px';
                         
             // test 
             // console.log('[ window Else ] :' + pos + 'px');
