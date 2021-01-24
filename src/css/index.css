@@ -867,19 +867,19 @@ main .phase {
 
 
 /* media [ tablet || iPad ] */
-@media (min-width: 760px) {
+/* @media (min-width: 760px) {
     .swipe article {
         max-height: 50vh;
         
     }
-}
+} */
 /* media [ laptop || desktop ] */
-@media (min-width: 960px) {
+/* @media (min-width: 960px) {
     .swipe article {
         max-height: 50vh;
         
     }
-}
+} */
 
 /* media [ tablet + ] */
 @media screen and (min-width:700px) {
@@ -919,7 +919,6 @@ main .phase {
     }
     /* main content component */
     main {
-        background: lightcoral;
         margin-left: 10vw;
         height: 100%;
     }
@@ -930,40 +929,72 @@ main .phase {
          display: none;
     }
 
-    /* section content removal */
+    
+    /* 
+        global section properties
+
+        contains :
+                
+                1. section [ sectionName ] container
+                2/ div [ introduction ] element
+                3. div [ description ] element
+                4. div [ content ] element
+    */
     section {
+
+        /* section content removal */
         display: none;
     
         position: relative;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         
         min-height: 0;
-        height: 100%;
+        min-height: 100%;
         width: 100%;
 
         margin: 0;
         padding: 0;
+        /* border: 10px solid #000; */
 
         /* width of remaining window view */
         width: 90vw;
 
-        /* margin-left: 10vw; */
+        
+    
     }
 
-    /* section [ content ] 25% content description */
+    /* section [ introduction ] properties */
+    .introduction {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .introduction h1,
+    .introduction .sign {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* section [ description ] properties */
     .description {
+        /* section [ description ] 25% content description */
+        min-height: 25vh;
+        
+        /* mobile reset */
         padding: 0;
         margin: 0;
 
+        /* dimensions */
         height: 100%;
         width: 100%;
 
-        min-height: 25vh;
-        
+        /* display props [ flex ] */
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        /* component props */
         padding-left: var(--md);
     }
     .description h2 {
@@ -981,36 +1012,43 @@ main .phase {
         /* mobile reset */
         padding: 0;
         margin: 0;
+        
+        /* component props */
         padding-right: var(--lg);
         padding-top: var(--sm);
         font-size: 1.05rem;
         
-
-        
-
         /* dev */
         border: var(--wireframe);
     }
 
-    /* section [ content ] 75% page content */
+    /* section [ content ] properties */
     .content {
-        border: 10px solid #000;
+        /* section [ content ] 75% page content */
+        min-height: 75vh;
+        
+        /* display props [ flex ] */
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 75vh;
-
+        
+        /* component props */
         padding: var(--md);
-
         min-width: 100%;
+
+        /* dev */
+        border: 10px solid var(--wireframe);
     }
 
-     
+    .desktops {
+        display: flex;
+    }
     
     
     /* homepage properties */
     #homepage {
         flex-direction: row;
+        max-height: 50vh;
     }
     #homepage .introduction,
     #homepage .description {
@@ -1018,17 +1056,69 @@ main .phase {
         max-width: 100%;
         height: 100%;
         width: 100%;
-        /* height: 100%; */
-        /* border: 2px solid red; */
-    }
-
-    #homepage .description {
+        
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        /* dev */
+        /* border: 2px solid red; */
     }
 
+    #homepage .introduction {
+        text-align: left;    
+        padding-left: var(--sm);
+        padding-right: var(--sm);
+
+        /* dev */
+        /* border: 2px solid red;
+        background: purple; */
+    }
+    .introduction h1 {
+        font-size: 2.25rem;
+        
+    }
+    .introduction .sign {
+        font-size: 1.45rem;
+        margin-bottom: var(--sm);
+        
+    }
+    .introduction .profile {
+        margin-bottom: var(--sm);
+
+        border: 2px solid red;
+    }
+    .introduction .profile img {
+        /* display: none; */
+        height: 80px;
+        width: 80px;
+
+        border: none;
+        box-shadow: none;
+        /* padding: var(--sm); */
+    }
+    .introduction span {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        border: 2px solid green;
+        min-width: 100%;
+
+        padding: 0;
+        margin: 0;
+        
+    }
+    /* .introduction span {
+        min-width: 100%;
+        background: #FFF;
+        
+        justify-content: flex-start;
+        align-items: center;
+
+    } */
+
     
     
 
@@ -1036,7 +1126,19 @@ main .phase {
    
    
 
-  
+    /* 
+        sectiion [ projects ] properties
+
+        contains :
+
+                1. div [ gallery ] container 
+                2. article [ projects ] grid container
+                    2a. title
+                    2b. tag
+                    2c. text
+                    2d. image
+                3. div [ elmnts ] project elements wrapper
+    */
    
     .gallery {
         display: flex;
@@ -1046,8 +1148,6 @@ main .phase {
         height: 100%;
         
     }
-    
-    
     
     .projects {
         margin: 0;
@@ -1065,7 +1165,6 @@ main .phase {
         display: flex;
         justify-content: center;
     }
-    
     .projects-title {
         margin: 0;
         padding: 0;
@@ -1078,33 +1177,20 @@ main .phase {
         padding-top: var(--sm);
         padding-bottom: var(--sm);
     }
-
-    
-    .projects-showcase {
-        
-        margin: 0;
-        padding: 0;
-
-        
-        
-        
-        max-height: 200px;
-        max-width: 100%;
-        
-        
-
-        
-        
-    }
     .projects-text {
         margin: 0;
         padding: 0;
     }
+    .projects-showcase {
+        
+        margin: 0;
+        padding: 0;
+        
+        max-height: 200px;
+        max-width: 100%;
     
-    
-
-
-    article a {
+    }
+    .projects a {
         /* mobile reset */
         padding: 0;
         margin: 0;
