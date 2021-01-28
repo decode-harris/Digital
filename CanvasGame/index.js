@@ -25,10 +25,10 @@ const player = {
     frameX: 1,
     frameY: 1,
 
-    // animation speed
+    // movement speed of element
     speed: -5,
 
-    // animation actiond
+    // animation action
     moving: false,
 
 };
@@ -54,10 +54,25 @@ const enemy = {
     width: 343,
     height: 343,
 
+    // movement speed of element
     speed: -3,
-    
 
 };
+// object [ attack ] properties
+const attack = {
+
+    // attack start position
+    x: player.x,
+    y: player.y,
+
+    // dimensions [ resize image in photoshop ]
+    width: 25,
+    height: 25,
+
+    // movement speed of element
+    speed: -3,
+
+}
 
 // animated player element
 const playerSprite = new Image();
@@ -66,6 +81,9 @@ playerSprite.src = 'wizard.png';
 // animated action element
 const playerAction = new Image();
 playerAction.src = 'magic.png';
+
+const playerAttack = new Image();
+playerAttack.src = ' attack.png';
 
 // animated enemy [ 1 ] element
 const enemySprite = new Image();
@@ -123,7 +141,7 @@ function movePlayer() {
         player.y += player.speed;
 
         // test directions
-        console.log('MOVE UPWARDS : ' + keys);
+        console.log('MOVE UPWARDS : ' + keys[0]);
     }
     if (keys[0] == 'ArrowDown') {
 
@@ -147,6 +165,11 @@ function movePlayer() {
         // test directions
         console.log('MOVE LEFT : ' + keys[0]);
     }
+    if (keys[0] == 'm') {
+
+        // init [ pauseGame ] function
+        pauseGame();
+    }
 
 };
 
@@ -167,6 +190,9 @@ function startAnimation(fps) {
     animate();
 }
 
+// init [ startAnimation ] function at 60 fps
+startAnimation(60);
+
 // function [ animate ]
 function animate() {
 
@@ -179,8 +205,47 @@ function animate() {
     // assign [ elasped ] as now minus then values
     elasped = now - then;
 
+    
+    if (keys[0] == 's') {
+
+        // // calculate then time value
+        then = now - ( elasped % fpsInterval );
+
+        // clear canvas element
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // draw background canvas image
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+        // // draw the player animation
+        // drawSprite(playerSprite, 0, 0, player.width, player.height, player.x, player.y, player.width, player.height);
+
+        // // init [ movePlayer ] function
+        // movePlayer();
+
+        // // draw the enemy animation
+        // drawSprite(enemySprite, 0, 0, enemy.width, enemy.height, enemy.x, enemy.y, enemy.width, enemy.height);
+
+        // // init [ moveEnemy ] function
+        // moveEnemy();
+
+        // draw the action animation
+        drawSprite(playerAction, 0, 0, action.width, action.height, player.x, player.y, action.width, action.height)
+
+        // produce an attack action / projectile to interact with enemy sprite
+        drawSprite(playerAttack, 0, 0, action.width, action.height, attack.x, attack.y, action.width, action.height);
+
+        // init [ attackEnemy ] function
+        attackEnemy();
+
+        
+        
+        // test directions
+        console.log('SHOOT : ' + keys[0]);
+        
+    }
     // validate fpsInterval against time elasped
-    if (elasped > fpsInterval) {
+    else if (elasped > fpsInterval) {
 
         // calculate then time value
         then = now - ( elasped % fpsInterval );
@@ -200,30 +265,34 @@ function animate() {
         // draw the enemy animation
         drawSprite(enemySprite, 0, 0, enemy.width, enemy.height, enemy.x, enemy.y, enemy.width, enemy.height);
 
+        // init [ moveEnemy ] function
         moveEnemy();
+    }
+    // if (keys[0] == 's') {
+
+    //     // reset player canvas
+    //     ctx.clearRect(0, 0, player.width, player.height);
+
+    //     // redraw background behind new image
+    //     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
         
-    }
-    if (keys[0] == 's') {
 
-        // reset player canvas
-        ctx.clearRect(0, 0, player.width, player.height);
+    //     // init [ attackEnemy ] function
+    //     // attackEnemy();
 
-        // redraw background behind new image
-        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    //     // init [ collusionDetection ] function
+    //     // collusionDetection();
 
-        // draw the action animation
-        drawSprite(playerAction, 0, 0, action.width, action.height, player.x, player.y, action.width, action.height)
         
-        // test directions
-        console.log('SHOOT : ' + keys[0]);
-    }
+    // }
 
-    if (keys[0] == 'm') {
-        pauseGame();
-    }
+    
 };
 
-startAnimation(60);
+
+// enemt position variable
+let currentEnemyPosition;
 
 // function [ moveEnemy ]
 function moveEnemy() {
@@ -238,12 +307,67 @@ function moveEnemy() {
     console.log('ENEMY ENCOUNTER');
 }
 
+function attackEnemy() {
 
-let enemyPositionX = enemy.x;
-let enemyPositionY = enemy.y;
+    
+
+    // get current position of enemy
+    currentEnemyPosition = enemy.x;
+
+    // validate attack position against current enemy position
+    if (attack.x < currentEnemyPosition) {
+
+        // init attack movement across [ x ] axis
+        attack.x -= (attack.speed) * 2.5;
+
+        // test
+        console.log('attack enemy : ' + currentEnemyPosition);
+    }
+    
+}
+
+
+function resetAttackProjectile() {
+
+    let resetAttack = player.x;
+} 
+
+
+// function [ collusionDetection ]
+function collusionDetection() {
+    
+    
+
+    // draw attack / projectile element
+    drawSprite(playerAttack, 0, 0, action.width, action.height, player.x, player.y, action.width, action.height);
+    
+    // init [ moveAttack ] function
+    
+
+    // // validate attack position
+    // if (attack.x < currentEnemyPosition) {
+
+    //     attack.x += attack.speed;
+
+        
+        
+    //     // test
+    //     console.log('enemy has not been attacked : ' + currentEnemyPosition);
+    // }
+    // else {
+    //     attack.x += attack.speed;
+
+    //     // test
+    //     console.log('player is attacking : ' + currentEnemyPosition);
+    // }
+}
+
+
 
 function pauseGame() {
-
+    // enemy position variables
+    let enemyPositionX = enemy.x;
+    let enemyPositionY = enemy.y;
     
 
     // test
