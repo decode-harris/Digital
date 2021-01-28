@@ -4,8 +4,8 @@ const canvas = document.querySelector('#game');
 const ctx = canvas.getContext('2d');
 
 // canvas properties
-canvas.width = 800;
-canvas.height = 500;
+canvas.width = 1920;
+canvas.height = 1080;
 
 // array [ keys ]
 let keys = [];
@@ -14,21 +14,21 @@ let keys = [];
 const player = {
 
     // start position
-    x: 1,
-    y: 100,
+    x: -60,
+    y: 665,
 
     // dimensions [ resize image in photoshop ]
     width: 402,
     height: 343,
 
     // animation frames
-    frameX: 12,
+    frameX: 1,
     frameY: 1,
 
     // animation speed
     speed: -5,
 
-    // animation action
+    // animation actiond
     moving: false,
 
 };
@@ -36,13 +36,28 @@ const player = {
 const action = {
 
     // animation frames
-    frameX: 12,
-    frameY: 1,
+    frameX: 0,
+    frameY: 0,
 
     // dimensions [ resize image in photoshop ]
     width: 618,
     height: 391,
 }
+// object [ enemy ] properties
+const enemy = {
+
+    // enemy encounter start position
+    x: 1715,
+    y: 665,
+    
+    // dimensions [ resize image in photoshop ]
+    width: 343,
+    height: 343,
+
+    speed: -3,
+    
+
+};
 
 // animated player element
 const playerSprite = new Image();
@@ -52,6 +67,10 @@ playerSprite.src = 'wizard.png';
 const playerAction = new Image();
 playerAction.src = 'magic.png';
 
+// animated enemy [ 1 ] element
+const enemySprite = new Image();
+enemySprite.src = 'enemy1.png';
+
 // animated background element
 const background = new Image();
 background.src = 'forest.png';
@@ -60,43 +79,6 @@ background.src = 'forest.png';
 function drawSprite(img, sourceX, sourceY, sourceWidth, sourceHeight, destinationX, destinationY, destinationWidth, destinationHeight) {
     ctx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, destinationX, destinationY, destinationWidth, destinationHeight);
 };
-
-// function [ animate ]
-function animate() {
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
-    if (keys[0] == 's') {
-
-        // reset player canvas
-        ctx.clearRect(0, 0, player.width, player.height);
-
-        // redraw background behind new image
-        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
-        // draw the action animation
-        drawSprite(playerAction, 0, 0, action.width, action.height, player.x, player.y, action.width, player.height)
-        
-        // test directions
-        console.log('SHOOT : ' + keys[0]);
-    }
-    else {
-
-        // draw the player animation
-        drawSprite(playerSprite, 0, 0, player.width, player.height, player.x, player.y, player.width, player.height);
-    
-    }
-
-    // init [ movePlayer ] function
-    movePlayer();
-
-    // callback [ animate ] function
-    requestAnimationFrame(animate);
-
-}
-// init [ animate ] function
-animate();
 
 // event [ keydown ] : add array keystroke
 window.addEventListener('keydown', function(e) {
@@ -166,17 +148,143 @@ function movePlayer() {
         console.log('MOVE LEFT : ' + keys[0]);
     }
 
-    // if (keys[0] == 's') {
-
-    //     // ctx.clearRect(0, 0, player.width, player.height);
-    //     // drawSprite(playerMagic, 0, 0, player.width, player.height, player.x, player.y, player.width, player.height)
-    //     // move player along the [ x ] axis in a backwards direction
-    //     // player.x += player.speed;
-    //     // test directions
-    //     console.log('SHOOT : ' + keys[0]);
-    // }
-    
-    // test [ keys ] array output
-    // console.log(keys);
-
 };
+
+// start animation variables
+let fps, fpsInterval, startTime, now, then, elasped;
+
+// function [ startAnimation ( fps ) ]
+function startAnimation(fps) {
+    fpsInterval = 1000 / fps;
+
+    // get date information and assign to then variable
+    then = Date.now();
+
+    // assign startTime to then value
+    startTime = then;
+
+    // init [ animate ] function
+    animate();
+}
+
+// function [ animate ]
+function animate() {
+
+    // request animation frame
+    requestAnimationFrame(animate);
+
+    // get date information and assign to now variable
+    now = Date.now();
+
+    // assign [ elasped ] as now minus then values
+    elasped = now - then;
+
+    // validate fpsInterval against time elasped
+    if (elasped > fpsInterval) {
+
+        // calculate then time value
+        then = now - ( elasped % fpsInterval );
+
+        // clear canvas element
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // draw background canvas image
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+        // draw the player animation
+        drawSprite(playerSprite, 0, 0, player.width, player.height, player.x, player.y, player.width, player.height);
+
+        // init [ movePlayer ] function
+        movePlayer();
+
+        // draw the enemy animation
+        drawSprite(enemySprite, 0, 0, enemy.width, enemy.height, enemy.x, enemy.y, enemy.width, enemy.height);
+
+        moveEnemy();
+        
+    }
+    if (keys[0] == 's') {
+
+        // reset player canvas
+        ctx.clearRect(0, 0, player.width, player.height);
+
+        // redraw background behind new image
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+        // draw the action animation
+        drawSprite(playerAction, 0, 0, action.width, action.height, player.x, player.y, action.width, action.height)
+        
+        // test directions
+        console.log('SHOOT : ' + keys[0]);
+    }
+
+    if (keys[0] == 'm') {
+        pauseGame();
+    }
+};
+
+startAnimation(60);
+
+// function [ moveEnemy ]
+function moveEnemy() {
+
+    // change validation value to move enemy
+    if (enemy.x < 1) {
+        // move enemy sprite along the x axis at 2.5 times the speed
+        enemy.x += (enemy.speed) / 2.5;
+    }
+
+    // test
+    console.log('ENEMY ENCOUNTER');
+}
+
+
+let enemyPositionX = enemy.x;
+let enemyPositionY = enemy.y;
+
+function pauseGame() {
+
+    
+
+    // test
+    console.log(enemyPositionX);
+    console.log(enemyPositionY);
+}
+
+
+// function [ animate ]
+// function animate() {
+
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+//     if (keys[0] == 's') {
+
+//         // reset player canvas
+//         ctx.clearRect(0, 0, player.width, player.height);
+
+//         // redraw background behind new image
+//         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+//         // draw the action animation
+//         drawSprite(playerAction, 0, 0, action.width, action.height, player.x, player.y, action.width, action.height)
+        
+//         // test directions
+//         console.log('SHOOT : ' + keys[0]);
+//     }
+//     else {
+
+//         // draw the player animation
+//         drawSprite(playerSprite, 0, 0, player.width, player.height, player.x, player.y, player.width, player.height);
+    
+//     }
+
+//     // init [ movePlayer ] function
+//     movePlayer();
+
+//     // callback [ animate ] function
+//     requestAnimationFrame(animate);
+
+// }
+// // init [ animate ] function
+// // animate();
