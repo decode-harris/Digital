@@ -166,9 +166,12 @@ contactButton.addEventListener('click', ()=> {
 // // function [ mql ] : media query listener
 window.onload = mql = (e)=> {
     
+    // media query [ mq ] variable for devices greater than 700px
     let mq = window.matchMedia('(min-width: 700px)');
 
+    // assign event [ e ] to match media [ mq ] value
     e = mq;
+
     // init [ sectionsDefaultView ] function
     sectionsDefaultView();
     
@@ -186,6 +189,7 @@ window.onload = mql = (e)=> {
         
         // test
         console.log('[ mql ] : desktop media query');
+
     }
     // default functions for switching to non matched media query [ mobile ]
     else {
@@ -199,13 +203,12 @@ window.onload = mql = (e)=> {
         // init [ projectsMobileCycler ] function
         projectsMobileCycler();
         
-        
         // test
         console.log('[ mql ] : mobile media query');
 
     }
 
-    // event [ mq ] on change of view
+    // event [ mq ] listener, run mql function on [ mq ] change
     mq.addEventListener('change', mql);
     
 };

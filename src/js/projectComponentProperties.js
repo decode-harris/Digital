@@ -62,11 +62,6 @@ for ( i = 0; i < images.length; i++) {
     projectsArray[2].img_x10.style.background = project_03;
     projectsArray[2].img_x11.style.background = project_03;
 
-    
-
-    
-    
-
 }
 
 // [ profile ] image container
