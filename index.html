@@ -25,7 +25,7 @@
     
     <!-- libs -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
-    
+
 </head>
 <body>
 
@@ -144,13 +144,6 @@
                 <!-- description -->
                 <div class="description">
 
-                    <!-- img placement -->
-                    <div class="profile" style="display:none;"> 
-                        <img src="src/media/Mode.jpg" alt="mode-image">
-                        <!-- <img src="#" alt="mode-image"> -->
-                    </div>
-                    <!-- img placement -->
-                        
                     <!-- name -->
                     <h1>
                         <!-- initials & letters -->
@@ -234,9 +227,9 @@
                     
                     <!-- intro -->
                     <p class="txt">
-                        My name is Christopher Harris, an extremely enthusiastic technology specialist
-                        with over 25 years of hands-on personal experience as a hobbyist pc builder & video gamer,
-                        family, friends & colleagues desktop & electronic devices support technician & frontend web developer.
+                        My name is Christopher Harris, an enthusiastic technology specialist
+                        with over 25 years of hands-on personal experience. As a hobbyist pc builder & frontend web developer,
+                        I have aquired a knowledgable skillset in the field of information technology.
                     </p>
                     <!-- intro -->
                 
@@ -259,8 +252,8 @@
 
                     <!-- info -->
                     <p class="txt">
-                        View a variety of design styles & programming technologies
-                        incorporated into my personally developed websites and applications.
+                        Explore a variety of programming technologies incorporated
+                        into my personally developed websites and applications.
                     </p>
                     <!-- info -->
 
@@ -436,7 +429,7 @@
                             </div>
                             <div class="elmnts">
                                 <!-- live btn -->
-                                <button class="live">
+                                <button id="live" class="modal-links">
                                     <!-- link -->
                                     <a id="modal-live" href="">
                                         live
@@ -446,7 +439,7 @@
                                 <!-- live btn -->
 
                                 <!-- repo btn -->
-                                <button class="repo">
+                                <button id="repo" class="modal-links">
                                     <!-- link -->
                                     <a id="modal-repo" href="">
                                         repo
@@ -476,14 +469,14 @@
                     
                     <!-- title -->
                     <h2>Technical</h2>
-                    <h6 class="tag">Desktop expertise & software experience</h6>
+                    <h6 class="tag">desktop hardware, software & support experience</h6>
                     <!-- <p class="tag">web development, software, applications & technical experience</p> -->
                     
                     <!-- title -->
 
                     <!-- info -->
                     <p class="txt">
-                        Experience relating to web development & deployment, hardware installation & debugging, software support & monitoring
+                        Technical skills include web development, hardware installation & software support
                     </p>
                     <!-- info -->
 
@@ -582,10 +575,10 @@
                                 </li>
                                 <li>component build experience</li>
                                 <li>installing, upgrading & defragging</li>
-                                <li>server installation & diagnostics</li>
-                                <li>hardware configuration & rectification</li>
+                                <li>server installation & monitoring</li>
+                                <li>hardware configuration & diagnostics</li>
                                 <li>diagnose potential issues</li>
-                                <li>technical analysis & escalation procedures</li>
+                                <li>technical analysis & support</li>
                                 <!-- list elmnts -->
                             </ul>
                             <!-- tech -->
@@ -601,7 +594,7 @@
                                 </li>
                                 <li>Hardware Monitoring Tools</li>
                                 <li>Software & Networking Protocols</li>
-                                <li>Github & Git Desktop, GitBash & Command Line</li>
+                                <li>Github, Git Desktop & Terminal</li>
                                 <li>Adobe XD & Photoshop</li>
                                 <li>Cloud Storage, Google Applications</li>
                                 <li>Relational & Online Databases</li>
@@ -671,14 +664,13 @@
 
                     <!-- title -->
                     <h2>Contact</h2>
-                    <h6 class="tag">Get in touch today</h6>
+                    <h6 class="tag">personal email, digital resume & github account</h6>
                     <!-- title -->
 
                     <!-- info -->
                     <p class="txt">
-                        Personal contact information including downloadable
-                        PDF resume, overview of my Github account and a link to my
-                        email address. Very responsive and always down for a chat.
+                        Download my digital resume, view my github repositories or feel
+                        free to send an email
                     </p>
                     <!-- info -->
 
@@ -747,63 +739,66 @@
 
                         <!-- info-item -->
                         <li class="info-item">
-                            
-                            <!-- 
-                                [ refactor button markup ]
-                            -->
 
+                            <!-- profile -->
+                            <div class="profile"> 
+                                <!-- img -->
+                                <img src="src/media/Mode.jpg" alt="mode-image">
+                                <!-- img -->
+                            </div>
+                            <!-- profile -->
+
+                            <!-- title -->
+                            <h4>Christopher Harris</h4>
+                            <!-- title -->
+
+                            <!-- tag -->
+                            <h6>
+                                frontend web developer
+                                <br>
+                                IT support specialist
+                            </h6>
+                            <!-- tag -->
+
+                        </li>
+                        <li class="info-item">
+                            
                             <!-- item btn -->
                             <button class="btn" id="contact_resume">
                             
-                                <!-- btn-span -->
-                                <span class="btn-span">
-                                    <!-- icon -->
-                                    <i class="fas fa-file-alt"></i>
-                                    <!-- icon -->
-                                </span>
-                                <span class="btn-span">
-                                    <!-- type -->
-                                    <h4>digital resume</h4>
-                                    <!-- type -->
-                                </span>
-                                <span class="btn-span">
-                                    <!-- helper -->
-                                    <p class="span-txt">View and download a PDF version of my resume.</p>
-                                    <!-- helper -->
-                                </span>
-                                <!-- btn-span -->
+                                <!-- icon -->
+                                <i class="fas fa-file-alt"></i>
+                                <!-- icon -->
                             
+                                <!-- type -->
+                                <p>digital resume</p>
+                                <!-- type -->
+                                
+                                <!-- helper -->
+                                <p class="span-txt" style="display: none;">View and download a PDF version of my resume.</p>
+                                <!-- helper -->
+                                
                             </button>
                             <!-- item btn -->
-
-                            <!-- 
-                                [ refactor button markup ]
-                            -->
-
+                        
                         </li>
                         <li class="info-item">
                             
                             <!-- item btn -->
                             <button class="btn" id="contact_github">
                             
-                                <!-- btn-span -->
-                                <span class="btn-span">
-                                    <!-- icon -->
-                                    <i class="fab fa-github-square"></i>
-                                    <!-- icon -->
-                                </span>
-                                <span class="btn-span">
-                                    <!-- type -->
-                                    <h4>github account</h4>    
-                                    <!-- type -->
-                                </span>
-                                <span class="btn-span">
-                                    <!-- helper -->
-                                    <p class="span-txt">Explore my web development & coding practices</p>
-                                    <!-- helper -->
-                                </span>
-                                <!-- btn-span -->
+                                <!-- icon -->
+                                <i class="fab fa-github-square"></i>
+                                <!-- icon -->
                             
+                                <!-- type -->
+                                <p>github account</p>
+                                <!-- type -->
+                            
+                                <!-- helper -->
+                                <p class="span-txt" style="display: none;">Explore my web development & coding practices</p>
+                                <!-- helper -->
+                                
                             </button>
                             <!-- item btn -->
 
@@ -813,24 +808,18 @@
                             <!-- item btn -->
                             <button class="btn" id="contact_email">
                             
-                                <!-- btn-span -->
-                                <span class="btn-span">
-                                    <!-- icon -->
-                                    <i class="far fa-envelope"></i>
-                                    <!-- icon -->
-                                </span>
-                                <span class="btn-span">
-                                    <!-- type -->
-                                    <h4>contact email</h4>
-                                    <!-- type -->
-                                </span>
-                                <span class="btn-span">
-                                    <!-- helper -->
-                                    <p>Feel free to send an email if you want to get in touch</p>
-                                    <!-- helper -->
-                                </span>
-                                <!-- btn-span -->
+                                <!-- icon -->
+                                <i class="far fa-envelope"></i>
+                                <!-- icon -->
                             
+                                <!-- type -->
+                                <p>contact email</p>
+                                <!-- type -->
+                            
+                                <!-- helper -->
+                                <p style="display: none;">Feel free to send an email if you want to get in touch</p>
+                                <!-- helper -->
+                                
                             </button>
                             <!-- item btn -->
 
