@@ -167,7 +167,10 @@ section {
     min-height: 100vh;
     width: 100%;
 
+    /* margin top with navigation bar */
     margin-top: 10vh;
+
+    margin: 0;
 
     /* dev */
     border: var(--wireframe);
@@ -180,9 +183,9 @@ section {
     text-align: left;
 
     position: relative;
-
+    
     /* dimensions */
-    min-height: 90vh;
+    min-height: 100vh;
 
     /* element styles */
     padding-left: var(--md);
@@ -197,9 +200,15 @@ section {
 
     /* dimensions */
     min-height: 90vh;
+    width: 100%;
 
     /* element styles */
     padding-left: var(--md);
+    padding-right: var(--sm);
+
+    background: transparent;
+
+    z-index: 200;
 
 
 }
@@ -218,6 +227,7 @@ section {
     font-size: 2.25rem;
     text-transform: uppercase;
     padding-bottom: var(--sm);
+    padding-right: var(--md);
 }
 .description h2 {
     font-size: 2.25rem;
@@ -282,6 +292,24 @@ section {
     box-shadow:         0px 0px 10px 0px rgba(96, 99, 98, 0.829);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 
     [ blobs ] svg containers
 
@@ -296,6 +324,7 @@ section {
 .blobs {
     /* position props [ absolute ] */
     position: absolute;
+    /* z-index: 100; */
 
     /* dimensions */
     width: 250px;
@@ -309,24 +338,32 @@ section {
     right: 0;
     /* transform props */
     transform: translate( /* x value */55%, /* y value */40%);
+
+    /* z-index: 100; */
 }
 .blobs-bottomleft {
     bottom: 0;
     left: 0;
     /* transform props */
     transform: translate(-55%, 40%);
+
+    /* z-index: 100; */
 }
 .blobs-topleft {
     top: 0;
     left: 0;
     /* transform props */
     transform: translate(-55%, -50%);
+
+    /* z-index: 100; */
 }
 .blobs-topright {
     top: 0;
     right: 0;
     /* transform props */
     transform: translate( /* x value */55%, /* y value */-40%);
+
+    /* z-index: 100; */
 }
 
 
@@ -426,9 +463,7 @@ section {
     font-size: 1.05rem;
     padding-bottom: var(--md);
 }
-.projects .showcaseimg {
-    max-height: 200px;
-}
+
 .projects .txt {
     padding-top: var(--md);
 }
@@ -450,9 +485,280 @@ section {
     
 }
 
+
+
 /* dev *//* dev *//* dev */
 /* .projects h3, .projects h6 { border: 2px solid red;} */
 /* dev *//* dev *//* dev */
+
+
+/* [ swiper ] content styles */
+.swiper-container h3 {
+    font-size: 1.35rem;
+    padding-bottom: var(--sm);
+    /* dev */
+    /* border: 2px solid red; */
+}
+.swiper-container h6 {
+    font-size: 0.85rem;
+    letter-spacing: 0.099rem;
+    text-decoration: underline;
+
+    padding-right: var(--md);
+    
+    /* dev */
+    /* border: 2px solid blue; */
+}
+
+/* 
+    [ swiper ] library component styles
+*/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+
+    min-height: 600px;
+    max-width: 300px;
+
+    
+    padding: var(--sm);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    
+    
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    
+    
+    
+}
+.swiper-slide {
+    
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    
+    background: #FFF;
+    /* display props [ grid ] */
+    /* display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows:minmax(50px, auto); */
+
+    /* component props */
+    /* padding: var(--sm); */
+
+}
+
+.swiper-slide .elmnts {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    text-align: left;
+    height: 100%;
+    width: 100%;
+
+    padding-left: var(--sm);
+    text-transform: capitalize;
+
+    z-index: 3;
+
+    /* dev */
+    border: 2px solid var(--wireframe);
+    
+}
+.swiper-slide .elmnts:last-child {
+    align-items: center;
+}
+/* project navigation buttons */
+#prev-prj,
+#next-prj {
+    display: none;
+}
+
+
+/* swiper slide elements */
+
+.swiper-slide .showcase {
+    padding-left: var(--sm);
+    padding: var(--sm);
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+.showcase img {
+    height: 100%;
+    min-height: 200px;
+    max-height: 200px;
+    width: 100%;
+}
+
+
+
+
+
+
+/* modal component */
+#modal {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    background: rgba(41, 41, 41, 0.875);
+    color: #FFF;
+    z-index: 99;
+
+}
+#modal .elmnts {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+    /* component props */
+    padding-left: var(--sm);
+    padding-right: var(--sm);
+    width: 100%;
+    height: 100%;
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+.modal {
+    /* inactive props */
+    display: none;
+    height: 0%;
+}
+.modal_active {
+    /* active props */
+    display: flex;
+    height: 100%;
+}
+#modal-exit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    min-height: 50px;
+    min-width: 50px;
+
+    padding: var(--sm);
+
+    background: transparent;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1.45rem;
+    
+}
+#modal-title {
+    /* element props */
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    letter-spacing: 0.25rem;
+    padding-bottom: var(--sm);
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+#modal-tag {
+    text-transform: capitalize;
+
+    /* dev */
+    /* border: 2px solid blue; */
+}
+#modal-info,
+#modal-tech {
+    font-size: 0.85rem;
+    padding: var(--sm);
+    text-transform: capitalize;
+    
+    
+    /* dev */
+    /* border: 2px solid black; */
+}
+
+.modal-btn {
+    
+    /* dimensions */
+    min-width: 140px;
+    min-height: 65px;
+
+    /* component props */
+    border: none;
+    border-radius: 0px 0px 4px 0px;
+    color: #FFF;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: var(--sm);
+
+    /* gradient colors */
+    background: rgb(21,86,171);
+    background: linear-gradient(119deg, rgba(21,86,171,1) 35%, rgba(29,185,56,1) 65%);
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+}
+
+/* modal open animation */
+@keyframes modalopen {
+
+    0%, 10%, 100%
+    {
+        height: 0;
+    }
+    70%, 90%
+    {
+        height: 100%;
+    }
+}
+
+.svgclr-buttons {
+
+    /* base colors */
+    color:rgba(29, 185, 56, 1);
+    color: rgba(21, 86, 171, 1);
+
+    /* gradient colors */
+    background: rgb(21,86,171);
+    background: linear-gradient(119deg, rgba(21,86,171,1) 35%, rgba(29,185,56,1) 65%);
+}
+
+
+
+
+
+
+
+
 
 
 /* tech unordered list */
@@ -570,6 +876,24 @@ section {
     justify-items: center;
     align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -954,6 +1278,38 @@ main .phase {
         
     }
 } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* media [ tablet + ] */
 @media screen and (min-width:700px) {

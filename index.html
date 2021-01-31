@@ -9,6 +9,9 @@
     
     <!-- css -->
     <link rel="stylesheet" href="src/css/index.css">
+
+    <!-- lib [ swiper js ] -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     
     <!-- js [ refactored ] -->
     <script defer src="src/js/headerComponentProperties.js"></script>
@@ -19,6 +22,10 @@
     <script defer src="src/js/navigationComponentProperties.js"></script>
     <script defer src="src/js/slider.js"></script>
     <script defer src="src/js/links.js"></script>
+    <script defer src="src/js/swiper.js"></script>
+
+    <script defer src="src/js/modal.js"></script>
+
     <!-- js [ refactored ] -->
 
     <!-- scripts -->
@@ -353,168 +360,147 @@
                 <!-- content container -->
                 <div class="content">
 
-                    <!-- projects gallery -->
-                    <div class="gallery">
-
-                        <!-- place floating svg animation between project elements on mobile --><!-- place floating svg animation between project elements on mobile -->
-                        <!-- place floating svg animation between project elements on mobile --><!-- place floating svg animation between project elements on mobile -->
-
-                        <!-- projects -->
-                        <article class="projects">
-
-                            <!-- elmnts -->
-                            <div class="elmnts title">
-                                <!-- description -->
-                                <h3>Coffeeshop</h3>
-                                <h6>A modern coffees house website styled in a minimalistic design pattern</h6>
-                                <!-- description -->
-                            </div>
-                            <div class="elmnts showcase">
-                                <!-- showcase img -->
-                                <img src="src/img/c-0-lrg.jpeg" alt="coffeeshop-showcase" class="showcaseimg">
-                                <!-- <img src="#" alt="" class="projects-show"> -->
-                                <!-- showcase img -->
-                            </div>
-                            <div class="elmnts images">
-                                <!-- preview -->
-                                <img src="src/img/c-1-sml.jpeg" alt="coffeeshop-view" class="projects-img">
-                                <!-- preview -->
-                            </div>
-                            <div class="elmnts images">
-                                <!-- preview -->
-                                <img src="src/img/c-2-sml.jpeg" alt="coffeeshop-view" class="projects-img">
-                                <!-- preview -->
-                            </div>
-                            <div class="elmnts images">
-                                <!-- preview -->
-                                <img src="src/img/c-3-sml.jpeg" alt="coffeeshop-view" class="projects-img">
-                                <!-- preview -->
-                            </div>
-                            <div class="elmnts desc">
-                                <!-- information -->
-                                <p class="txt">
-                                    A single page application prototype website simulating a modern coffeeshop.
-                                    Developed utilizing HTML6 semantic element tags & [ ... ] CSS pre-processor.
-                                </p>
-                                <p class="txt">
-                                    Basic website functionality includes mobile responsive components, landing page
-                                    slideshow banner, order form validation & confirmation.
-                                </p>
-                                <!-- information -->
-
-                                <!-- live site -->
-                                <a href="#" class="live">live</a>
-                                <!-- live site -->
-                            </div>
-                            <!-- elmnts -->
+                    <!-- Swiper -->
+                    <div class="swiper-container">
                         
-                        </article>
+                        <!-- wrapper -->
+                        <div class="swiper-wrapper">
 
-                        <!-- place floating svg animation between project elements on mobile --><!-- place floating svg animation between project elements on mobile -->
-                        <!-- place floating svg animation between project elements on mobile --><!-- place floating svg animation between project elements on mobile -->
+                            <!-- swiper-slide -->
+                            <div class="swiper-slide" id="coffee">
 
-                        <article class="projects">
+                                <!-- elmnts -->
+                                <div class="elmnts title">
+                                    <!-- description -->
+                                    <h3>CoffeeHaus</h3>
+                                    <h6>A modern cafe website styled in a minimalistic design pattern</h6>
+                                    <!-- description -->
+                                </div>
+                                <div class="elmnts showcase">
+                                    <!-- showcase img -->
+                                    <img src="src/img/c-0-lrg.jpeg" alt="coffeeshop-showcase" class="showcaseimg">
+                                    <!-- showcase img -->
+                                </div>
+                                <div class="elmnts">
+                                    <!-- btn -->
+                                    <button class="modal-btn" id="modal-coffee">info</button>
+                                    <!-- btn -->
+                                </div>
+                                
+                                <!-- elmnts -->
 
-                            <!-- elmnts -->
-                            <div class="elmnts title">
-                                <!-- description -->
-                                <h3>Planets</h3>
-                                <h6>A animation & education web application utilizing the GSAP library</h6>
-                                <!-- description -->
                             </div>
-                            <div class="elmnts showcase">
-                                <!-- showcase img -->
-                                <img src="src/img/planet-1.png" alt="planets-showcase" class="showcaseimg">
-                                <!-- <img src="#" alt="" class="projects-show"> -->
-                                <!-- showcase img -->
-                            </div>
-                            <div class="elmnts images">
-                                <!-- preview -->
-                                <img src="src/img/p-1-sml.jpeg" alt="planets-view" class="projects-img">
-                                <!-- preview -->
-                            </div>
-                            <div class="elmnts images">
-                                <!-- preview -->
-                                <img src="src/img/p-2-sml.jpeg" alt="planets-view" class="projects-img">
-                                <!-- preview -->
-                            </div>
-                            <div class="elmnts images">
-                                <!-- preview -->
-                                <img src="src/img/p-3-sml.jpeg" alt="planets-view" class="projects-img">
-                                <!-- preview -->
-                            </div>
-                            <div class="elmnts desc">
-                                <!-- information -->
-                                <p class="txt">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
-                                </p>
-                                <!-- information -->
+                            <div class="swiper-slide" id="planets">
 
-                                <!-- live site -->
-                                <a href="#" class="live">live</a>
-                                <!-- live site -->
+                                <!-- elmnts -->
+                                <div class="elmnts title">
+                                    <!-- description -->
+                                    <h3>Planets</h3>
+                                    <h6>A animation & education web application utilizing the GSAP library</h6>
+                                    <!-- description -->
+                                </div>
+                                <div class="elmnts showcase">
+                                    <!-- showcase img -->
+                                    <img src="src/img/planet-1.png" alt="planets-showcase" class="showcaseimg">
+                                    <!-- showcase img -->
+                                </div>
+                                <div class="elmnts">
+                                    <!-- btn -->
+                                    <button class="modal-btn" id="modal-planets">info</button>
+                                    <!-- btn -->
+                                </div>
+                                <!-- elmnts -->
+
                             </div>
-                            <!-- elmnts -->
+                            <div class="swiper-slide" id="travel">
+
+                                <!-- elmnts -->
+                                <div class="elmnts title">
+                                    <!-- description -->
+                                    <h3>Destinations</h3>
+                                    <h6>Personalized travel application used to upload images via vanilla Javascript</h6>
+                                    <!-- description -->
+                                </div>
+                                <div class="elmnts showcase">
+                                    <!-- showcase img -->
+                                    <img src="src/img/travel-1.jpg" alt="travel-showcase" class="showcaseimg">
+                                    <!-- showcase img -->
+                                </div>
+                                <div class="elmnts">
+                                    <!-- btn -->
+                                    <button class="modal-btn" id="modal-travel">info</button>
+                                    <!-- btn -->
+                                </div>
+                                <!-- elmnts -->
+
+                            </div>
+                            <!-- swiper-slide -->
+
+                        </div>
+                        <!-- wrapper -->
+
+                        <!-- navigation -->
+                        <div class="swiper-button-prev" id="prev-prj"></div>
+                        <div class="swiper-button-next" id="next-prj"></div>
+                        <!-- navigation -->
                         
-                        </article>
+                        <!-- pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- pagination -->
 
-                        <!-- place floating svg animation between project elements on mobile --><!-- place floating svg animation between project elements on mobile -->
-                        <!-- place floating svg animation between project elements on mobile --><!-- place floating svg animation between project elements on mobile -->
-
-                        <article class="projects">
-
-                            <!-- elmnts -->
-                            <div class="elmnts title">
-                                <!-- description -->
-                                <h3>Destinations</h3>
-                                <h6>Personalized travel gallery to upload & view my previous trips</h6>
-                                <!-- description -->
+                        <!-- modal -->
+                        <div id="modal">
+                            <button id="modal-exit">x</button>
+                            <div class="elmnts">
+                                <!-- modal title -->
+                                <h4 id="modal-title">modal title</h4>
+                                <h6 id="modal-tag">modal tag</h6>
+                                <!-- modal title -->
                             </div>
-                            <div class="elmnts showcase">
-                                <!-- showcase img -->
-                                <img src="src/img/travel-1.jpg" alt="travel-showcase" class="showcaseimg">
-                                <!-- <img src="#" alt="" class="projects-show"> -->
-                                <!-- showcase img -->
-                            </div>
-                            <div class="elmnts images">
-                                <!-- preview -->
-                                <img src="src/img/d-1-sml.jpeg" alt="travel-view" class="projects-img">
-                                <!-- preview -->
-                            </div>
-                            <div class="elmnts images">
-                                <!-- preview -->
-                                <img src="src/img/d-2-sml.jpeg" alt="travel-view" class="projects-img">
-                                <!-- preview -->
-                            </div>
-                            <div class="elmnts images">
-                                <!-- preview -->
-                                <img src="src/img/d-3-sml.jpeg" alt="travel-view" class="projects-img">
-                                <!-- preview -->
-                            </div>
-                            <div class="elmnts desc">
-                                <!-- information -->
-                                <p class="txt">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, similique.
+                            <div class="elmnts">
+                                <!-- modal info -->
+                                <p id="modal-info">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, quis?
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, quis?
+                                    
                                 </p>
-                                <!-- information -->
-
-                                <!-- live site -->
-                                <a href="#" class="live">live</a>
-                                <!-- live site -->
+                                <p id="modal-tech">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, quis?
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, quis?
+                                </p>
+                                <!-- modal info -->
                             </div>
-                            <!-- elmnts -->
-                        
-                        </article>
-                        <!-- projects -->
-                    
+                            <div class="elmnts">
+                                <!-- live btn -->
+                                <button class="live">
+                                    <!-- link -->
+                                    <a id="modal-live" href="">
+                                        live
+                                    </a>
+                                    <!-- link -->
+                                </button>
+                                <!-- live btn -->
+                                
+                                <!-- repo btn -->
+                                <button class="repo">
+                                    <!-- link -->
+                                    <a id="modal-repo" href="">
+                                        repo
+                                    </a>
+                                    <!-- link -->
+                                </button>
+                                <!-- repo btn -->
+
+                            </div>
+
+                        </div>
+                        <!-- modal -->
+
                     </div>
-                    <!-- projects gallery -->
+                    <!-- Swiper -->
 
                 </div>
-                <!-- content container -->
-            
+                <!-- content -->
             </section>
             <!-- development -->
 
@@ -785,10 +771,11 @@
 
                     </div>
                     <!-- blobs -->
+
                 </div>
                 <!-- section description -->
 
-                <!-- content container -->
+                <!-- section content -->
                 <div class="content">
 
                     <!-- contact [ info ] unordered list -->
@@ -797,6 +784,10 @@
                         <!-- info-item -->
                         <li class="info-item">
                             
+                            <!-- 
+                                [ refactor button markup ]
+                            -->
+
                             <!-- item btn -->
                             <button class="btn" id="contact_resume">
                             
@@ -820,6 +811,10 @@
                             
                             </button>
                             <!-- item btn -->
+
+                            <!-- 
+                                [ refactor button markup ]
+                            -->
 
                         </li>
                         <li class="info-item">
@@ -904,24 +899,19 @@
                             </path>
                         </svg>
                         <!-- svg -->
-
+                    
                     </div>
                     <!-- blobs -->
-
-
+                
                 </div>
-                <!-- content container -->
+                <!-- section content -->
             
             </section>
             <!-- contact -->
-
+        
         </main>
         <!-- content component -->
-
-
         
-        
-
         <!-- footer -->
         <footer id="footer">
             <!-- send-off -->
@@ -932,6 +922,9 @@
         
     </div>
     <!-- page -->
+
+    <!-- js [ swiper js ] -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
 </body>
 </html>
