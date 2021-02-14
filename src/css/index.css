@@ -26,9 +26,9 @@
     --lg: 10%;
 
     /* dev borders */
-    /* --wireframe: 2px solid darkblue;
+    --wireframe: 2px solid darkblue;
     --debugging: 2px dotted darkred;
-    --component: 2px solid darkgreen; */
+    --component: 2px solid darkgreen;
 
     /* font style */
     --mainfont: 'Titillium Web', sans-serif;
@@ -173,7 +173,7 @@ section {
     margin: 0;
 
     /* dev */
-    border: var(--wireframe);
+    /* border: var(--wireframe); */
 }
 .description {
     /* display props [ flex-content-center ] */
@@ -236,9 +236,10 @@ section {
     padding-bottom: var(--sm);
 }
 .description .tag {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-transform: capitalize;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
+    padding-right: var(--md);
 }
 .description .txt {
     font-size: 1.05rem;
@@ -263,6 +264,7 @@ section {
 }
 .content .tag {
     font-size: 1.22rem;
+    letter-spacing: 0.25rem;
     padding-right: var(--md);
     padding-bottom: var(--lg);
 }
@@ -311,14 +313,24 @@ section {
     [ blobs ] svg containers
 
     relative to parent element 
-        [ section ]
-            [ description ]
-            [ content ]
-            [ gallery ]
-            [ article ]
+    main
     
 */
+.blobs-container {
+    /* position props [ fixed ] */
+    position: fixed;
+
+    height: 100vh;
+    width: 100%;
+    
+
+    /* dev */
+    /* border: var(--wireframe); */
+    /* background: purple; */
+
+}
 .blobs {
+    
     /* position props [ absolute ] */
     position: absolute;
     /* z-index: 100; */
@@ -328,39 +340,32 @@ section {
     height: 250px;
     
     /* dev */
-    /* border: 2px solid red; */
+    /* border: var(--debugging); */
 }
-.blobs-bottomright {
-    bottom: 0;
-    right: 0;
-    /* transform props */
-    transform: translate( /* x value */55%, /* y value */40%);
 
-    /* z-index: 100; */
-}
-.blobs-bottomleft {
+.blobs-botleft {
+    
     bottom: 0;
     left: 0;
     /* transform props */
-    transform: translate(-55%, 40%);
+    transform: translate(/* x value */ -25%, /* y value */ 30%);
 
     /* z-index: 100; */
-}
-.blobs-topleft {
-    top: 0;
-    left: 0;
-    /* transform props */
-    transform: translate(-55%, -50%);
 
-    /* z-index: 100; */
+    /* dev */
+    /* background: green; */
 }
 .blobs-topright {
+
     top: 0;
     right: 0;
     /* transform props */
-    transform: translate( /* x value */55%, /* y value */-40%);
+    transform: translate( /* x value */45%, /* y value */-35%);
 
     /* z-index: 100; */
+
+    /* dev */
+    /* background: red; */
 }
 
 
@@ -1401,15 +1406,89 @@ main .phase {
         width: 10vw;
         /* border: 2px solid red; */
     }
+    nav ul {
+        border: 2px solid purple;
+        background: rgb(14, 2, 66);
 
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+
+
+    }
+    nav ul li {
+
+        border: var(--wireframe);
+        max-height: 100px;
+        background: red;
+        
+    }
+    nav ul button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 1.20rem;
+        text-transform: capitalize;
+        
+        height: 100%;
+        width: 100%;
+        background: #000;
+        border: none;
+        color: #FFF;
+
+        /* dev */
+        /* border: var(--debugging); */
+    }
+    nav ul button i {
+        color: #FFF;
+
+        /* dev */
+        border: var(--debugging);
+    }
     nav #exit {
         display: none;
     }
+
+
     /* main content component */
     main {
         margin-left: 10vw;
-        height: 100%;
+        height: 100vw;
+        /* width: 100%; */
+        /* dev */
+        border: var(--wireframe);
+        background: lightcoral;
     }
+    
+    .blobs-topright {
+
+        top: 0;
+        right: 0;
+        /* transform props */
+        transform: translate( /* x value */1%, /* y value */-35%);
+    
+        /* z-index: 100; */
+    
+        /* dev */
+        /* background: red; */
+    }
+
+
+    #homepage .description,
+    #mobile-description {
+        display: none;
+    }
+
+
+
+
+
+
+
+
 
     /* header component & footer removal */
     header,
@@ -1451,12 +1530,17 @@ main .phase {
         
     
     }
-
+    .blogs-container {
+        display: flex;
+        position: fixed;
+    }
     /* section [ introduction ] properties */
     .introduction {
         justify-content: center;
         align-items: center;
         text-align: center;
+
+        display: none;
     }
     .introduction h1,
     .introduction .sign {
@@ -1484,6 +1568,8 @@ main .phase {
 
         /* component props */
         padding-left: var(--md);
+
+        
     }
     .description h2 {
         padding: 0;
@@ -1535,11 +1621,10 @@ main .phase {
     
     /* homepage properties */
     #homepage {
-        flex-direction: row;
         max-height: 50vh;
     }
-    #homepage .introduction,
-    #homepage .description {
+    
+     /* {
         max-height: 100%;
         max-width: 100%;
         height: 100%;
@@ -1550,9 +1635,9 @@ main .phase {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        /* dev */
-        /* border: 2px solid red; */
-    }
+    
+        border: 2px solid red;
+    } */
 
     
     /* 
