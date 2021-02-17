@@ -1,39 +1,35 @@
 // nav component selector
 let nav = document.querySelector('#nav');
 
-// function [ menuMobileOpen ] button event
-menuMobileOpen = () => {
-
-    // add nav class [ nav_active ]
-    nav.classList.add('nav_active');
-    
-    // test
-    console.log(nav);
-
-}
-
-// function [ menuMobileExit ] button event
-menuMobileExit = () => {
-
-    // remove nav class [ nav_active ]
-    nav.classList.remove('nav_active');
-    
-    // test
-    console.log(nav);
-
-}
-
 // menu button selector
 let menu = document.querySelector('#menu');
+let icon = document.querySelector('#menu i');
 
 // menu button event
-menu.addEventListener('click', menuMobileOpen);
+menu.addEventListener('click', ()=> {
 
-// exit button selector
-let exit = document.querySelector('#exit');
+    if (icon.classList != 'fas fa-times') {
+        
+        // change icon class list to [ X ] close 
+        icon.classList = 'fas fa-times';
+    }
+    if (nav.style.width != '100%') {
 
-// exit button event
-exit.addEventListener('click', menuMobileExit);
+        // nav.style.display = 'flex';
+        nav.style.width = '100%';
+    }
+    else {
+        // change icon class list to [ bars ] menu
+        icon.classList = 'fas fa-bars';
+
+        // nav.style.display = 'none';
+        nav.style.width = '0%';
+
+
+    }
+    
+});
+
 
 // [ sections ] all selector
 let sections = document.querySelectorAll('section');

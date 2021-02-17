@@ -63,6 +63,8 @@ scrollPositionProperties = () => {
             
             // nav component props
             nav.style.top = pos + 'px';
+            nav.style.marginTop = '10vh';
+            nav.style.zIndex = '999';
                         
             // test 
             // console.log('[ window Else ] :' + pos + 'px');
