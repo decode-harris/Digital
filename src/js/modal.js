@@ -27,8 +27,8 @@ let projects = [
         tag: 'a site to see',
         info: 'a personal travel application used to upload and view previous holiday moments.  ...',
         tech: 'Document upload validation, image grouping tools, display grouped items',
-        href: '',
-        repo: '',
+        href: 'https://decode-harris.github.io/travel/',
+        repo: 'https://github.com/decode-harris/travel',
 
     },
     // project objects [ games ]
@@ -46,6 +46,10 @@ let projects = [
 // modal element selector
 let modal = document.querySelector('#modal');
 modal.setAttribute('class', 'modal');
+
+const repo = document.querySelector('#modal-repo');
+const live = document.querySelector('#modal-live');
+
 
 // modal content id selectors & onclick events
 const modal_coffee = document.querySelector('#modal-coffee');
@@ -78,7 +82,7 @@ modal_planets.addEventListener('click', ()=> {
         modal_info.innerHTML = projects[1].info;
         modal_tech.innerHTML = projects[1].tech;
 
-        modal_repo.setAttribute('href', projects[1].href);
+        repo.href = projects[1].repo;
     }
     
 });
@@ -94,6 +98,9 @@ modal_travel.addEventListener('click', ()=> {
         modal_tag.innerHTML = projects[2].tag;
         modal_info.innerHTML = projects[2].info;
         modal_tech.innerHTML = projects[2].tech;
+
+        repo.href = projects[2].repo;
+        live.href = projects[2].href;
     }
 });
 

@@ -8,6 +8,8 @@ let i;
 
 console.log(images);
 
+const modal_repo = document.querySelector('.#modal_repo');
+const modal_live = document.querySelector('#modal_live');
 
 
 for ( i = 0; i < images.length; i++) {
