@@ -1966,14 +1966,21 @@ main .phase {
     
     
     
+    /* DEVELOPER REMOVAL */
+    .blobs {
+        display: none;
+    }
+    .navigation-span {
+        display: none;
+    }
     
     
     
     
-    
-    
-    
-    
+    .swiper-container {
+        min-height: 20vh;
+        height: 60vh;
+    }
     
     
     
