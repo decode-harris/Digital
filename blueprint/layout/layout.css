@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* 
+    font-family: 'Poppins', sans-serif;
+*/
+
+/* global reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* global variables */
+:root {
+    /* spacing */
+    --sm: 2%;
+    --md: 5%;
+    --lg: 10%;
+
+    /* dev borders */
+    --wireframe: 2px solid darkblue;
+    --debugging: 2px dotted darkred;
+    --component: 2px solid darkgreen;
+
+    /* font style */
+    --font: 'Poppins', sans-serif;
+
+    /* colors */
+    --darkblue: #01fe87;
+
+    /* light mode | darkmode */
+    --mode: #000;
+    --mode-background: #FFF;
+    --mode-overlay: rgba(241,237,237,0.4);
+    --mode-transparent: rgba(0,0,0,0.19);
+    /* --mode-transparent: rgba(255, 255, 255, 0.19); */
+
+    --color: var(--mode);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 
+
+    page component
+
+    desktop view
+
+    100% view width 
+    100% min height
+
+*/
+.page {
+    
+    min-height: 100vh;
+    width: 100vw;
+
+    /* display: flex; */
+    /* flex-direction: column; */
+    position: relative;
+    
+
+    font-family: var(--font);
+    
+    /* dev */
+    background: lightcoral;
+
+
+}
+
+/* 
+    nav component
+
+    mobile view
+
+    0% view width
+*/
+nav {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* position props : absolute */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    max-height: 100vh;
+    
+    z-index: 500;
+
+    overflow-x: hidden;
+
+    /* component styles */
+    background: #FFF;
+    
+    /* transition props */
+    transition: 0.3s;
+
+    /* dev */
+    border: 2px solid red;
+
+    /* dev animate */
+
+}
+
+header {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* dev */
+    border: 2px solid var(--wireframe);
+}
+header h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 0.15rem;
+}
+header .elmnts {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+header .elmnts:nth-child(2) {
+    align-items: flex-start;
+    padding-left: var(--md);
+}
+    
+header .pro {
+
+    height: 100%;
+    width: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.pro img {
+    height: 100%;
+    width: 100%;
+
+    max-height: 130px;
+    max-width: 130px;
+
+    border-radius: 50%;
+}
+
+/* nav [ unordered list container ] */
+.navbar {
+    min-height: 400px;
+        
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.navbar li {
+    width: 100%;
+
+    border: 2px solid red;
+}
+.navbar li button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 145px;
+
+}
+.navbar li button i {
+    font-size: 2.35rem;
+    margin-right: var(--sm);
+}
+
+.link {
+    background: #000;
+    color: #FFF;
+    height: 100%;
+    width: 100%;
+}
+.details {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+
+
+/* nav [ mobile navigation btns ] */
+.menu,
+.exit {
+
+    /* strict dimensions */
+    min-height: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    width: 100%;
+    
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    
+    
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.05rem;
+    text-align: center;
+
+    padding: 2%;
+    
+
+    
+    
+
+    border: 2px solid #000;
+    background: #FFF;
+}
+
+/* nav [ assigned class via js ] */
+nav.active {
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease-in;
+    
+}
+
+
+/* 
+    main mobile component
+
+    section wrapper
+
+    snap scroll y axis
+    overflow y axis [ contained sections ]
+
+*/
+
+main {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    background: #FFF;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+/* 
+    section mobile component
+
+    min height full device height
+    width full device width
+
+    contained to main component via overflow y
+
+*/
+section {
+
+    scroll-snap-align: center;
+    
+    /* dimensions */
+    /* height: 100vh; */
+    min-height: 100vh;
+    width: 100%;
+
+    /* display props [ flex - column - center - center ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* dev */
+    border: 2px solid darkblue;
+}
+section#homepage,
+section#project,
+section#contact {background: rgb(59, 59, 59);}
+
+
+article {
+    overflow:hidden;
+
+    /* display props [ flex - column - center - center ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--md);
+
+    
+    text-align: left;
+
+
+    /* min-height: 50vh; */
+    height: 100%;
+    max-height: 100vh;
+
+    /* dev */
+    border: var(--debugging);
+    
+}
+
+article h3 {
+    font-size: 3.24rem;
+    text-transform: capitalize;
+}
+article h6 {
+    font-size: 1.45rem;
+    letter-spacing: 0.16rem;
+    padding-top: var(--sm);
+    padding-bottom: var(--sm);
+    text-transform: capitalize;
+}
+article p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    padding-bottom: var(--md);
+}
+article .list {
+
+    list-style-type: none;
+    
+
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    min-height: 385px;
+    width: 100%;
+    
+    /* dev */
+    border: var(--wireframe);
+}
+.swiper-container {
+    height: 100%;
+    width: 100%;
+}
+/* 
+    [ swiper ] library component styles
+*/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+
+    max-height: 300px;
+
+    max-width: 90%;
+
+    /* padding: var(--sm); */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: #FFF;
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    
+    overflow: hidden;
+    
+}
+.swiper-wrapper {
+    width: 100%;
+    max-width: 288px;
+    height: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    
+    
+    
+}
+.swiper-slide {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    
+    background: #FFF;
+    
+    /* component props */
+    /* padding: var(--sm); */
+
+}
+
+.swiper-slide .elmnts {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* dimensions */
+    height: 100%;
+    width: 100%;
+
+    /* component props */
+    padding-left: var(--sm);
+    text-transform: capitalize;
+    
+    z-index: 3;
+
+    /* dev */
+    border: 2px solid var(--wireframe);
+    
+}
+
+section#skills .list {
+    background: purple;
+    position: relative;
+    
+}
+#skills .list .tech {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+article .tech {
+    
+    background: #000;
+    color: #FFF;
+    height: 100%;
+    width: 100%;
+}
+.list i {
+    color: #FFF;
+    font-size: 2.5rem;
+}
+
+/* remove desktop elements */
+.des {display: none;}
+
+/* enable mobile elements */
+.mob {display: flex;}
+
+
+@media (min-width: 700px) {
+
+    /* 
+
+        page component
+
+        desktop view
+
+        100% view width 
+        100% view height
+
+    */
+    .page {
+        
+        /* strict dimensions */
+        height: 100vh !important;
+        width: 100vw !important;
+        max-height: 100vh !important;
+        max-width: 100vw !important;
+
+        overflow: hidden;
+
+        /* display props [ flex - column - center - center ] */
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    
+        /* dev */
+        background: lightcoral;
+    }
+
+    /* 
+
+        nav component
+
+        desktop view
+
+        25% - 30% view width 
+
+    */
+    nav {
+        height: 100%;
+        width: 15vw;
+        /* max-width: 230px; */
+
+        position: relative;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /* dev */
+        border: 2px solid darkblue;
+        background: red;
+    }
+
+    /* 
+        nav header component
+
+        provides visual info to potential clients
+
+    */
+    header {
+        position: relative;
+        
+        max-height: 50%;
+        width: 100%;
+    
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    
+        border: 2px solid darkcyan;
+    }
+    header h2 {
+        padding-top: var(--md);
+        padding-bottom: var(--md);
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        letter-spacing: 0.15rem;
+    }
+
+    .navbar {
+
+        min-height: 400px;
+        
+        list-style-type: none;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+
+        
+        
+        /* dev */
+        background: #000;
+    }
+    .navbar li {
+        width: 100%;
+
+        border: 2px solid red;
+    }
+    .details {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    .menu, .exit {display: none;}
+
+    
+    /* 
+
+        main component
+
+        desktop view
+
+        85vw view width || 85% screen width
+
+    */
+    main {
+        height: 100%;
+        width: 85vw;
+
+        position: relative;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+
+        /* dev */
+        background: #FFF;
+        border: 2px solid red;
+
+    }
+
+    /* 
+
+        section component
+
+        desktop view
+
+        75% - 70% view width 
+
+    */
+    section {
+
+        height: 100%;
+        width: 100%;
+
+        /* position: absolute; */
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /* dev */
+        background: #FFF;
+    }
+    section#homepage,
+    section#project,
+    section#contact {background: #FFF;}
+
+    article {
+        justify-content: space-evenly;
+
+        align-items: center;
+    }
+    article .list {
+        min-height: 50vh;
+
+        align-items: center;
+    }
+    .list i {
+        font-size: 4rem;
+        color: #000;
+    }
+
+    
+
+    /* enable desktop elements */
+    .des {display: flex;}
+
+    /* remove mobile elements */
+    .mob {display: none;}
+
+}

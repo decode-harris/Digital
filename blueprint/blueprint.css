@@ -15,9 +15,9 @@
     --lg: 10%;
 
     /* dev borders */
-    --wireframe: 2px solid darkblue;
+    /* --wireframe: 2px solid darkblue;
     --debugging: 2px dotted darkred;
-    --component: 2px solid darkgreen;
+    --component: 2px solid darkgreen; */
 
     /* font style */
     --font: 'Poppins', sans-serif;
@@ -30,7 +30,27 @@
     /* --mode-transparent: rgba(255, 255, 255, 0.19); */
 }
 
+/* html page properties */
+html {
+    scroll-behavior: smooth;
+}
+/* 
+    page component
+    
+    global background styles
 
+    relative element for nav / aside attachment
+
+*/
+.page {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    background: #000;
+    
+}
 /*  
     header component
     
@@ -40,90 +60,395 @@
 
 */
 header {
-    /* min height [ 100% ] */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+
+    height: 100vh;
+    width: 100%;
 
     /* dev */
     border: var(--wireframe);
 }
+header .content {
 
-
-
-section {
-    /* min height [ 100% ] */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* dev */
-    border: var(--wireframe);
-}
-
-main {
-    /* min height [ 100% ] */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* dev */
-    border: var(--wireframe);
-}
-
-/* developer removal */
-/* main, section, footer {display: none;} */
-
-footer {
-
-    /* min height [ 50% ] */
-    min-height: 50vh;
-
+    /* display props [ flex - center - center ] */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
-    background: #000;
+    height: 100%;
+    width: 100%;
+    
     color: #FFF;
     /* dev */
-    border: var(--wireframe);
+    border: var(--debugging);
+    
+}
+
+/* 
+    fixed nav-bar component
+
+    always displayed at the top of the page
+*/
+.nav-bar {
 
     font-family: var(--font);
-}
-footer h5 {
 
-    font-size: 1.65rem;
-    text-transform: uppercase;
+    /* position props [ absolute ] */
+    position: fixed;
+    height: 10vh;
+    top: 0;
+    left: 0;
 
-    letter-spacing: 0.25rem;
-    /* dev */
-    border: var(--component);
-}
-footer h6 {
-    font-size: 1.45rem;
-    text-align: center;
-    
-    /* dev */
-    border: var(--component);
-}
-footer p {
-    font-size: 0.95rem;
+    /* display props [ flex - center - center ] */
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    /* dev */
-    border: var(--component);
-}
-footer p span {
-
-    font-size: 1.25rem;
-    text-transform: capitalize;
-    letter-spacing: 0.18rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #FFF;
+    padding: var(--md);
     
     /* dev */
     border: var(--wireframe);
+    background: transparent;
+}
+.nav-bar button {
+    font-size: 1.35rem;
+    background: transparent;
+    border: none;
+}
+.nav-bar i {
+    color: #FFF;
+}
+.nav-bar h5 {
+    font-size: 1.65rem;
+    letter-spacing: 0.25rem;
+}
+
+.desktop-title {display: none;}
+nav {
+
+    font-family: var(--font);
+    
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    height: 100%;
+    max-height: 90vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* dev */
+    background: red;
+}
+nav ul {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    list-style-type: none;
+
+    border: var(--component);
+    width: 100%;
+    height: 100%;
+
+    
+    
+}
+
+nav a  {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    
+    width: 100%;
+
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #000;
+
+    /* dev */
+    /* border: var(--component); */
+
+}
+nav a i {
+    font-size: 1.65rem;
+    margin-right: var(--lg);
+    /* dev */
+    border: var(--wireframe);
+}
+
+/* nav component */
+nav {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* position props : absolute */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    max-height: 90vh;
+    margin-top: 10vh;
+    
+    z-index: 500;
+
+    overflow-x: hidden;
+
+    /* component styles */
+    background: #FFF;
+    color: var(--mode);
+    
+
+    /* transition props */
+    transition: 0.3s;
+
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--sm);
+    height: 100%;
+    width: 100%;
+}
+nav li {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    /* element styles */
+    list-style-type: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+    padding: var(--sm);
+    
+    
+    /* dev */
+    /* border: var(--component); */
+    border: var(--debugging);
+}
+
+nav li .desktop {
+    border: var(--wireframe);
+    height: 100%;
+    width: 80%;
+}
+nav li .icon {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    
+    max-width: 20%;
+
+    /* dev */
+    /* border: var(--wireframe); */
+}
+
+
+
+
+section,
+main,
+footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    text-align: center;
+
+    min-height: 100vh;
+    color: #FFF;
+}
+
+/* .desktop {display: none;} */
+
+
+
+
+
+@media (min-width: 700px) {
+    
+    
+
+    /* 
+        fixed icons element
+
+        always display at the side of the page on desktop view
+    */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        max-width: 5vw;
+        height: 100%;
+        max-height: 100vh;
+
+        background: red;
+        
+    }
+    nav ul {
+        color: #FFF;
+        list-style-type: none;
+
+        width: 100%;
+
+
+    }
+    nav li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        padding: var(--sm);
+
+        
+        width: 100%;
+        min-height: 50px;
+
+        /* dev */
+        
+    }
+    nav li a {
+        display: flex;
+        flex-direction: column;
+        color: #FFF;
+
+        padding-top: var(--md);
+        padding-bottom: var(--md);
+    }
+    nav i {
+        
+        font-size: 1.75rem;
+        color: #FFF;
+    }
+    .nav-bar .mobile {display: none;}
+    .nav-bar .desktop {display: flex;}
+
+    .nav-bar {
+        padding: 0;
+        z-index: 100;
+        padding-left: var(--sm);
+        padding-right: var(--sm);
+
+        
+    }
+    .nav-bar h5 {
+        text-transform: uppercase;
+        font-size: 0.95rem;
+        letter-spacing: 0.45rem;
+
+    }
+
+    section {
+        /* min height [ 100% ] */
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        max-width: 95vw;
+        margin-left: 5vw;
+
+        /* dev */
+        border: var(--wireframe);
+    }
+
+    main {
+        /* min height [ 100% ] */
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* dev */
+        border: var(--wireframe);
+    }
+
+    /* developer removal */
+    /* main, section, footer {display: none;} */
+
+    footer {
+
+        /* min height [ 50% ] */
+        min-height: 50vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        background: #000;
+        color: #FFF;
+        /* dev */
+        border: var(--wireframe);
+
+        font-family: var(--font);
+    }
+    footer h5 {
+
+        font-size: 1.65rem;
+        text-transform: uppercase;
+
+        letter-spacing: 0.25rem;
+        /* dev */
+        border: var(--component);
+    }
+    footer h6 {
+        font-size: 1.45rem;
+        text-align: center;
+        
+        /* dev */
+        border: var(--component);
+    }
+    footer p {
+        font-size: 0.95rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        /* dev */
+        border: var(--component);
+    }
+    footer p span {
+
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        letter-spacing: 0.18rem;
+        
+        /* dev */
+        border: var(--wireframe);
+    }
+
+    .desktop {
+        display:none;
+    }
+
 }

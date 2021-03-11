@@ -8,53 +8,199 @@
     <!-- css -->
     <link rel="stylesheet" href="blueprint.css">
 
+    <!-- js -->
+    <script defer src="blueprint.js"></script>
+
+    <!-- libs -->
+    <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
+
 </head>
-<body>
-
-    <!-- header [ header ] -->
-    <header class="header">header</header>
-    <!-- header [ header ] -->
+<body>  
+<!-- page -->
+    <div class="page">
     
-    <!-- content [ overview ] ] -->
-    <section class="content">overview / introduction</section>
-    <!-- content [ overview ] ] -->
-    
-    <!-- main [ projects ] -->
-    <main class="main">main projects gallery</main>
-    <!-- main [ projects ] -->
+        <!-- header [ header ] -->
+        <header class="header" id="homepage">
 
-    <!-- content  [ information ] -->
-    <section class="content">contact information</section>
-    <!-- content  [ information ] -->
+            <!-- nav bar -->
+            <div class="nav-bar">
 
-    <!-- footer [ footer ] -->
-    <footer class="footer">
+                <!-- menu -->
+                <button id="menu">
+                    <!-- icon -->
+                    <i id="icon" class="fas fa-bars"></i>
+                    <!-- icon -->
+                </button>
+                <!-- menu -->
 
-        <h5>christopher harris</h5>
+                <!-- title -->
+                <h5 id="head">
+                    <!-- mobile title -->
+                    <span class="mobile">CH</span>
+                    <!-- mobile title -->
 
-        <!-- tag -->
-        <h6>
-            frontend web developer
-            <br>
-            IT support specialist
-        </h6>
-        <!-- tag -->
+                    <!-- desktop title -->
+                    <span class="desktop-title">christopher harris</span>
+                    <!-- desktop title -->
 
-        <!-- developer -->
-        <p>designed & developed by
-            <!-- signiture -->
-            <span class="signiture">
-                christopher harris
-            </span>
-            <!-- signiture -->
-        </p>
-        <!-- developer -->
+                </h5>
+                <!-- title -->
 
-        <!-- icons?? --><!-- icons?? --><!-- icons?? -->
+                <!-- contact email -->
+                <button id="mail">
+                    <!-- icon -->
+                    <i class="fas fa-envelope"></i>
+                    <!-- icon -->
+                </button>
+                <!-- contact email -->
+            
+            </div>
+            <!-- nav bar -->
+
+            <!-- content -->
+            <div class="content">
+
+                <!-- content heading -->
+                <h1>christopher harris</h1>
+                <!-- content heading -->
+
+                <!-- content tag -->
+                <h6>
+                    Frontend Web Developer
+                    <br>
+                    IT Support Specialist
+                </h6>
+                <!-- content tag -->
+
+            </div>
+            <!-- content -->
+
+            
+        </header>
+        <!-- header [ header ] -->
+
+        <!-- nav [ nav ] -->
+        <nav class="nav" id="nav">
+
+            <!-- nav list -->
+            <ul class="nav-list">
+
+                <!-- items -->
+                <li class="items">
+                    <!-- internal load anchor -->
+                    <a href="#homepage" id="link-homepage">
+                        <!-- icon -->
+                        <span class="icon">
+                            <i class="fas fa-home"></i>
+                        </span>
+                        <!-- icon -->
+
+                        <!-- desktop view -->
+                        <span class="desktop">homepage</span>
+                        <!-- desktop view -->
+
+                    </a>
+                    <!-- internal load anchor -->
+                </li>
+                <li class="items">
+                    <!-- internal load anchor -->
+                    <a href="#overview" id="link-overview">
+                        
+                        <!-- icon -->
+                        <span class="icon">
+                            <!-- <i class="fas fa-layer-group"></i> -->
+                            <i class="fas fa-dice-d6"></i>
+                        </span>
+                        <!-- icon -->
+
+                        <!-- desktop view -->
+                        <span class="desktop">overview</span>
+                        <!-- desktop view -->
+
+                    </a>
+                    <!-- internal load anchor -->
+                </li>
+                <li class="items">
+                    <!-- internal load anchor -->
+                    <a href="#introduction" id="link-introduction">
+
+                        <!-- icon -->
+                        <span class="icon">
+                            <i class="fab fa-dev"></i>
+                        </span>
+                        <!-- icon -->
+
+                        <!-- desktop view -->
+                        <span class="desktop">introduction</span>
+                        <!-- desktop view -->
+                        
+                    </a>
+                    <!-- internal load anchor -->
+                </li>
+                <li class="items">
+                    <!-- internal load anchor -->
+                    <a href="#projects" id="link-projects">
+
+                        <!-- icon -->
+                        <span class="icon">
+                            <i class="fab fa-github-square"></i>
+                        </span>
+                        <!-- icon -->
+
+                        <!-- desktop view -->
+                        <span class="desktop">projects</span>
+                        <!-- desktop view -->
+                        
+                    </a>
+                    <!-- internal load anchor -->
+                </li>
+                <!-- items -->
+                <li class="items">
+                    <!-- ext anchor link -->
+                    <a href="#information" id="link-information">
+                        
+                        <!-- icon -->
+                        <span class="icon">
+                            <i class="fas fa-envelope-square"></i>
+                        </span>
+                        <!-- icon -->
+
+                        <!-- desktop view -->
+                        <span class="desktop">contact</span>
+                        <!-- desktop view -->
+                    
+                    </a>
+                    <!-- ext anchor link -->
+                </li>
+                <!-- items -->
+
+            </ul>
+            <!-- nav list -->
+
+        </nav>
+        <!-- nav [ nav ] -->
+
+        <!-- content [ overview ] -->
+        <section class="content" id="overview">overview</section>
+        <!-- content [ overview ] -->
+
+        <!-- content [ introduction ] -->
+        <section class="content" id="introduction">introduction</section>
+        <!-- content [ introduction ] -->
         
-    </footer>
-    <!-- footer [ footer ] -->
+        <!-- main [ projects ] -->
+        <main class="main" id="projects">main projects gallery</main>
+        <!-- main [ projects ] -->
 
-    
+        <!-- content  [ information ] -->
+        <section class="content" id="information">contact information</section>
+        <!-- content  [ information ] -->
+
+        <!-- footer [ footer ] -->
+        <footer class="footer">footer component</footer>
+        <!-- footer [ footer ] -->
+
+    </div>
+    <!-- page -->
 </body>
 </html>
