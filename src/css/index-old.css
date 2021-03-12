@@ -1,0 +1,2062 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap'); */
+/* 
+    font-family: 'Titillium Web', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Rubik:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* 
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Rubik', sans-serif;
+*/
+
+
+/* global reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* global variables */
+:root {
+    /* spacing */
+    --sm: 2%;
+    --md: 5%;
+    --lg: 10%;
+
+    /* dev borders */
+    /* --wireframe: 2px solid darkblue;
+    --debugging: 2px dotted darkred;
+    --component: 2px solid darkgreen; */
+
+    /* font style */
+    --mainfont: 'Titillium Web', sans-serif;
+    --text-font: 'PT Sans Narrow', sans-serif;
+    --head-font: 'Rubik', sans-serif;
+
+    --font: 'Poppins', sans-serif;
+
+    /* colors */
+    --green: #01fe87;
+
+    /* light mode | darkmode */
+    --mode: #000;
+    --mode-background: #FFF;
+    --mode-overlay: rgba(241,237,237,0.4);
+    --mode-transparent: rgba(0,0,0,0.19);
+    /* --mode-transparent: rgba(255, 255, 255, 0.19); */
+
+    --color: var(--mode);
+}
+
+/* global html */
+html {
+    /* page scroll props */
+    scroll-behavior: smooth;
+    font-family: var(--head-font);
+
+    font-family: var(--font);
+    /* page font props */
+    
+}
+
+/* page wrapper */
+#page {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+
+    /* position props [ relative ] */
+    position: relative;
+    overflow: hidden;
+}   
+
+/* 
+    header component
+
+    javascript function applies position
+    absolute [ top: 0, left: 0 ] to header 
+    element on scroll
+
+    contains :
+        1. btn [ menu ] navigation event button
+        2. btn [ mode ] colormode event button
+
+*/
+header {
+    position: fixed;
+    background: darkslategrey;
+    color: #FFF;
+    top: 0; left: 0;
+    /* display props [ flex ] */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-height: 10vh;
+    z-index: 100;
+
+
+    /* mobile styles */
+    display: none;
+}
+header .btn {
+
+    /* position props [ fixed ] */
+    position: fixed;
+    right: 0;
+    top: 0;
+    
+    /* element styles */
+    border: none;
+    background: var(--mode-background);
+    background: transparent;
+    color: var(--mode);
+    padding: var(--sm);
+    width: 60px;
+    white-space: nowrap;
+
+    /* z index placement */
+    z-index: 2;
+
+    /* dev */
+    /* background: transparent; */
+    /* border: 2px solid var(--mode); */
+}
+header .btn i {
+    font-size: 1.65rem;
+    border: none;
+    color: #FFF;
+}
+header #menu {
+    
+    /* replace to mode side */
+    margin-right: 10px;
+    margin-top: 10px;
+}
+header .logo {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* spacing props */
+    margin-left: 10px;
+    margin-top: 10px;
+
+    font-weight: bold;
+    font-size: 1.65rem;
+    width: 60px;
+}
+
+
+/* global section properties */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    width: 100%;
+
+    /* margin top with navigation bar */
+    margin-top: 10vh;
+
+    margin: 0;
+
+    /* dev */
+    /* border: var(--wireframe); */
+}
+.content,
+.description {
+    /* display props [ flex-content-center ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+    position: relative;
+    
+    /* dimensions */
+    min-height: 100vh;
+    width: 100%;
+
+    /* element styles */
+    z-index: 200;
+}
+.content {
+    align-items: center;
+}
+.description {
+    padding-left: var(--md);
+}
+/* 
+    [ description ] section child element
+    
+    contains :
+            1. h1 [ name ] homepage title
+            2. h2 [ title ] section title
+            3. h6 [ tag ] section tagline
+            4. p [ txt ] section description
+
+*/
+.description h1 {
+    font-size: 2.25rem;
+    text-transform: capitalize;
+    letter-spacing: 0.25rem;
+    padding-bottom: var(--sm);
+    padding-right: var(--md);
+
+    
+
+    
+}
+.description h2 {
+    font-size: 2.25rem;
+    text-transform: capitalize;
+    padding-bottom: var(--sm);
+}
+.description .tag {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    /* letter-spacing: 1px; */
+    padding-right: var(--md);
+}
+.description .txt {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding-top: var(--md);
+    padding-right: var(--md);
+
+    color: rgb(133, 127, 127);
+}
+
+/* 
+    [ content ] section child element
+
+    contains : 
+            1. h2 [ title ]
+            2. h6 [ tag ]
+            3. p [ txt ]
+*/
+.content h2 {
+    font-size: 2.25rem;
+    text-transform: capitalize;
+}
+.content .tag {
+    font-size: 1.22rem;
+    letter-spacing: 0.25rem;
+    padding-right: var(--md);
+    padding-bottom: var(--lg);
+}
+.content .txt {
+    padding-top: var(--md);
+    padding-right: var(--lg);
+
+    color: rgb(133, 127, 127);
+}
+
+    
+
+
+
+/* section [ homepage ] specific styles */
+#homepage {
+    /* position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left; */
+    width: 100%;
+    position: relative;
+}
+#homepage .content {
+    padding-left: var(--md);
+}
+#homepage .description {
+    height: 100%;
+    
+    /* justify-content: flex-start;
+    align-items: flex-start; */
+    width: 100%;
+    /* padding: 0; */
+    /* border: 2px solid green; */
+    
+}
+/* #homepage .description h1 {
+    font-size: 3rem;
+    
+    
+    border: 2px solid red;
+    transform: rotate(-90deg) translate(-65%, -45%);
+    
+
+    
+    text-decoration: underline;
+}
+#homepage .description .tag {
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, 175%);
+} */
+#homepage .content {
+    align-items: flex-start;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* footer component */
+footer {
+    min-height: 10vh;
+
+    z-index: 200;
+    
+    font-size: 1.85rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* text-transform: capitalize; */
+}
+
+.bubble-text {
+    color: #FFF;
+}
+
+
+
+
+
+
+
+
+/* 
+    [ blobs ] svg containers
+
+    relative to parent element 
+    main
+    
+*/
+.blobs-container {
+    /* position props [ fixed ] */
+    position: fixed;
+
+    height: 100vh;
+    width: 100%;
+    
+
+    /* dev */
+    /* border: var(--wireframe); */
+    /* background: purple; */
+
+}
+.blobs {
+    
+    /* position props [ absolute ] */
+    position: absolute;
+    /* z-index: 100; */
+
+    /* dimensions */
+    width: 250px;
+    height: 250px;
+
+    width: 400px;
+    height: 400px;
+    
+    /* dev */
+    /* border: var(--debugging); */
+}
+
+.blobs-botleft {
+    
+    bottom: 0;
+    left: 0;
+    /* transform props */
+    transform: translate(/* x value */ -25%, /* y value */ 40%);
+
+    /* z-index: 100; */
+
+    /* dev */
+    /* background: green; */
+}
+.blobs-topright {
+
+    top: 0;
+    right: 0;
+    /* transform props */
+    transform: translate( /* x value */45%, /* y value */-35%);
+
+    /* z-index: 100; */
+
+    /* dev */
+    /* background: red; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+    [ projects ] article component
+
+    contains : 
+            1. article [ projects ]  grid component
+            2. div [ elmnts , type ] content wrapper
+            3. img [ showcase, images ] gallery preview
+            4. content [ title, showcase, images, desc, live ]
+
+*/
+.projects {
+    /* display props [ grid ] */
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    
+    /* component props */
+    padding-right: var(--md);
+    margin-top: calc(var(--lg) * 3);
+    margin-bottom: calc(var(--lg) * 4);
+    
+    /* dimensions */
+    width: 100%;
+    height: 100%;
+    
+    /* dev */
+    border: var(--component);
+}
+.projects .elmnts {
+    /* grid placement [ projects ] */
+    grid-column: span 2;
+    grid-row: span 1;
+    
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    
+    /* component props */
+    text-align: left;
+
+    /* dev */
+    border: var(--wireframe);
+}
+.projects .title {
+    grid-column: span 6;
+}
+.projects .showcase {
+    grid-column: span 6;
+}
+.projects .images {
+    max-height: 100px;
+}
+.projects .desc {
+    grid-column: span 6;
+
+    /* places live button into the center while keeping description text to the left */
+    justify-content: center;
+    align-items: center;
+}
+/* projects [ elmnts ] children styles */
+.projects img {
+    width: 100%;
+    height: 100%;
+}
+.projects h3 {
+    font-size: 1.65rem;
+    padding-bottom: var(--sm);
+}
+.projects h6 {
+    font-size: 1.05rem;
+    padding-bottom: var(--md);
+}
+
+.projects .txt {
+    padding-top: var(--md);
+}
+.projects .live {
+    min-width: 150px;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: calc(var(--lg) * 1.5);
+    padding: var(--sm);
+
+    text-align: center;
+
+    background: var(--mode-background);
+    border: 2px solid var(--mode);
+    border-radius: 0px 0px 10px 0px;
+    color: var(--mode);
+    
+}
+
+
+
+/* dev *//* dev *//* dev */
+/* .projects h3, .projects h6 { border: 2px solid red;} */
+/* dev *//* dev *//* dev */
+
+
+/* [ swiper ] content styles */
+.swiper-container h3 {
+    font-size: 1.35rem;
+    padding-bottom: var(--sm);
+    text-align: center;
+    /* dev */
+    /* border: 2px solid red; */
+}
+.swiper-container h6 {
+    font-size: 0.85rem;
+    letter-spacing: 0.099rem;
+    text-decoration: underline;
+    text-align: center;
+
+    
+    
+    /* dev */
+    /* border: 2px solid blue; */
+}
+
+/* 
+    [ swiper ] library component styles
+*/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+
+    min-height: 90vh;
+    max-width: 90%;
+
+    /* padding: var(--sm); */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: #FFF;
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    
+    
+}
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    
+    max-width: 338px;
+}
+.swiper-slide {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    
+    background: #FFF;
+    
+    /* component props */
+    /* padding: var(--sm); */
+
+}
+
+.swiper-slide .elmnts {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* dimensions */
+    height: 100%;
+    width: 100%;
+
+    /* component props */
+    padding-left: var(--sm);
+    text-transform: capitalize;
+    
+    z-index: 3;
+
+    /* dev */
+    border: 2px solid var(--wireframe);
+    
+}
+.swiper-slide .elmnts:last-child {
+    align-items: center;
+}
+/* project navigation buttons */
+#prev-prj,
+#next-prj {
+    display: none;
+}
+
+.swiper-slide .showcase {
+    padding-left: var(--sm);
+    padding: var(--sm);
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+.showcase img {
+    height: 100%;
+    min-height: 200px;
+    max-height: 200px;
+    width: 100%;
+}
+
+
+
+
+
+
+/* modal component */
+#modal {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    background: rgba(41, 41, 41, 0.875);
+    color: #FFF;
+    z-index: 99;
+
+}
+#modal .elmnts {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+    /* component props */
+    padding-left: var(--sm);
+    padding-right: var(--sm);
+    width: 100%;
+    height: 100%;
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+#modal .elmnts:last-child {
+
+    flex-direction: row;
+    align-items: center;
+}
+.modal {
+    /* inactive props */
+    display: none;
+    height: 0%;
+}
+.modal_active {
+    /* active props */
+    display: flex;
+    height: 100%;
+}
+#modal-exit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    min-height: 50px;
+    min-width: 50px;
+
+    padding: var(--sm);
+
+    background: transparent;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1.45rem;
+    
+}
+#modal-title {
+    /* element props */
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    letter-spacing: 0.25rem;
+    padding-bottom: var(--sm);
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+#modal-tag {
+    text-transform: capitalize;
+
+    /* dev */
+    /* border: 2px solid blue; */
+}
+#modal-info,
+#modal-tech {
+    font-size: 0.85rem;
+    padding: var(--sm);
+    text-transform: capitalize;
+    
+    
+    /* dev */
+    /* border: 2px solid black; */
+}
+
+.modal-btn {
+    
+    /* dimensions */
+    min-width: 140px;
+    min-height: 65px;
+
+    /* component props */
+    border: none;
+    border-radius: 0px 0px 4px 0px;
+    color: #FFF;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: var(--sm);
+
+    /* gradient colors */
+    background: rgb(21,86,171);
+    background: linear-gradient(119deg, rgba(21,86,171,1) 35%, rgba(29,185,56,1) 65%);
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+
+    
+    border: none;
+    background: rgba(119, 119, 119, 0.875);
+    color: #FFF;
+}
+.modal-links {
+    /* dimensions */
+    width: 100%;
+    height: 65px;
+
+    /* component props */
+    border: 2px solid #FFF;
+    border-radius: 0px 0px 4px 0px;
+    background: transparent;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: var(--sm);
+    margin: var(--sm);
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+}
+.modal-links a {
+    color: #FFF;
+    text-decoration: none;
+}
+/* modal open animation */
+@keyframes modalopen {
+
+    0%, 10%, 100%
+    {
+        height: 0;
+    }
+    70%, 90%
+    {
+        height: 100%;
+    }
+}
+
+.svgclr-buttons {
+
+    /* base colors */
+    color:rgba(29, 185, 56, 1);
+    color: rgba(21, 86, 171, 1);
+
+    /* gradient colors */
+    background: rgb(21,86,171);
+    background: linear-gradient(119deg, rgba(21,86,171,1) 35%, rgba(29,185,56,1) 65%);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* slider component */
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    
+    min-height: 90vh;
+    max-width: 90%;
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+
+    background: #FFF;
+
+    z-index: 101;
+
+}
+.slider .slides {
+    
+    width: 100%;
+}
+.slider .btn {
+    position: absolute;
+    top: 50%;
+
+    /* remove slider buttons for testing *//* remove slider buttons for testing */
+    display: none;
+}
+
+/* slider tech unordered list */
+.tech {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+    /* dev */
+    border: var(--wireframe);
+
+}
+.tech li {
+    /* element styles */
+    list-style-type: none;
+    text-transform: capitalize;
+    
+    padding-top: var(--sm);
+    padding-bottom: var(--sm);
+    line-height: 1.6;
+    font-size: 0.85rem;
+    width: 100%;
+
+    padding-left: var(--sm);
+    /* text-align: left; */
+    text-align: center;
+
+    /* dev */
+    border: var(--debugging);
+}
+.tech h4 {
+    font-size: 1.45rem;
+    text-decoration: underline;
+    padding-top: calc(var(--md) * 1.5);
+    padding-bottom: calc(var(--md) * 1.5);
+    /* text-align: left; */
+    text-align: center;
+
+}
+
+/* technical component */
+#technical {
+    position: relative;
+}
+
+#technical .btn {
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 1.24rem;
+    color: darkslategrey;
+    border: 2px solid darkslategrey;
+}
+
+/* slider tracks slide placement */
+.tracks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    min-height: 50px;
+    width: 100%;
+    
+    margin-top: var(--lg);
+    margin-bottom: var(--lg);
+    
+    /* dev */
+    border: var(--debugging);
+}
+.dot {
+    /* component props */
+    border: 2px solid darkslategrey;
+    background: var(--mode-background);
+    border-radius: 50%;
+    margin: var(--sm);
+    padding: var(--sm);
+    height: 10px;
+    width: 10px;
+    
+}
+.dot:hover {
+    background-color: darkslategrey;
+  }
+
+.dot.active {
+    background-color: darkslategrey;
+}
+
+/* global properties [ flex-center ] */
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+    contact [ info ] list component
+    
+    contains :
+            1. ul [ info ] list container
+            2. li [ info-item ] element
+            3. div [ profile ] image element
+            4. h4, h6 [ title ] info title
+            x. btn [ btn ] link element
+            x. btn content [ i, p ] elements
+*/
+.info {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    width: 100%;
+
+    min-height: 90vh;
+    max-width: 90%;
+
+    /* component props */
+    /* border-radius: 10px; */
+    padding: var(--md);
+    margin-bottom: var(--lg);
+
+    background: #FFF;
+
+    z-index: 101;
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+
+    /* dev */
+    border: var(--debugging);
+    
+}
+.info-item {
+
+    border: 2px solid red;
+    list-style-type: none;
+    width: 100%;
+    min-width: 100%;
+    text-align: center;
+
+    /* dev */
+    border: var(--wireframe);
+}
+.info h4 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    padding-top: var(--sm);
+    padding-bottom: var(--sm);
+    font-weight: normal;
+    color: var(--mode);
+}
+.info .btn {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding-left: var(--sm);
+    background: transparent;
+
+    height: 50px;
+    width: 100%;
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    
+    border: none;
+    background: rgba(119, 119, 119, 0.875);
+    color: #FFF;
+}
+.info p {
+
+    
+
+    font-size: 1.05rem;
+    text-transform: capitalize;
+    letter-spacing: 0.05rem;
+    padding-left: var(--md);
+    /* padding-top: var(--sm);
+    padding-bottom: var(--sm); */
+
+    /* dev */
+    /* border: 2px solid blue; */
+}
+.info i {
+    font-size: 1.25rem;
+    text-align: center;
+    /* dev */
+    /* border: 2px solid purple; */
+}
+.profile img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-top: var(--sm);
+    margin-bottom: var(--sm);
+
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow:    0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow:         0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* nav component */
+nav {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* position props : absolute */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    max-height: 100vh;
+    
+    z-index: 5;
+
+    overflow-x: hidden;
+
+    /* component styles */
+    background: var(--mode-background);
+    color: var(--mode);
+    border-right: 3px solid var(--mode);
+
+    transition: 0.3s;
+
+    /* DEVELOPER REMOVAL */
+    /* DISPLAY: NONE; */
+}
+nav .elmnts {
+    /* display props [ flex ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--sm);
+    height: 100%;
+    width: 100%;
+}
+nav li {
+    /* display props [ flex ] */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    /* element styles */
+    list-style-type: none;
+    
+    
+    /* dev */
+    /* border: var(--component); */
+}
+nav ul.nav_btns {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    max-height: 100px;
+    /* border: 2px solid var(--mode); */
+    
+}
+nav ul.nav_btns li:last-child {
+    display: none;
+}
+.nav_btns button {
+    background: transparent;
+    border: 1px solid var(--mode);
+    /* border: none; */
+    height: 60px;
+    width: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--mode);
+}
+nav a {
+    display: flex;
+    font-size: 1.25rem;
+    padding-left: var(--sm);
+    text-decoration: none;
+    color: var(--mode);
+    text-transform: capitalize;
+    letter-spacing: 0.15rem;
+
+    transition: 200ms all ease;
+}
+nav a span {
+    margin-left: var(--lg);
+    /* dev */
+    border: var(--wireframe);
+}
+nav a:hover {
+    padding-left: var(--lg);
+    transition: 200ms all ease;
+}
+nav i {
+    font-size: 1.35rem;
+    color: var(--mode);
+}
+
+nav .int li {
+    justify-content: flex-start;
+    padding-left: var(--md);
+    width: 100%;
+    height: 100%;
+}
+nav .int i {
+    padding-right: var(--sm);
+}
+nav .ext {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+#nav .tag {
+    position: relative;
+    font-size: 1.5rem;
+    color: var(--color);
+    -webkit-text-stroke: 0.2vw var(--mode);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+#nav .tag::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    color: var(--green);
+    -webkit-text-stroke: 0vw #383d52;
+    /* border-right: 2px solid var(--green); */
+    overflow: hidden;
+
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+
+    0%, 10%, 100%
+    {
+        width: 0;
+    }
+    70%, 90%
+    {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+/* animation [ phase ] props */
+main .phase {
+    /* phase animation */
+    animation-name: phase;
+    animation-duration: 1.5s;
+    transition: all ease-in 1s;
+
+    /* firefox -webkit- */
+    -webkit-animation-name: phase;
+    -webkit-animation-duration: 1.5s;
+}
+
+/* animation [ phase ] */
+@keyframes phase {
+    from{ opacity: 0.4; }
+    from{ opacity: 1; }
+}
+@-webkit-keyframes phase {
+    from{ opacity: 0.4; }
+    from{ opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+/* darkmode props */
+.darkmode {
+    background: black;
+    color: white;
+}
+.darkmode a {
+    color: white;
+}
+
+
+/* show mobile elements on mobile view */
+.images-mobile {
+    /* display [ flex ] on mobile */
+    display: flex;
+}
+
+/* remove desktop elements from mobile view */
+.desktops {
+    display: none;
+}
+.images-desktop {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media [ tablet || iPad ] */
+/* @media (min-width: 760px) {
+    .swipe article {
+        max-height: 50vh;
+        
+    }
+} */
+/* media [ laptop || desktop ] */
+/* @media (min-width: 960px) {
+    .swipe article {
+        max-height: 50vh;
+        
+    }
+} */
+
+/* media [ tablet + ] */
+@media screen and (min-width:700px) {
+    
+    /*
+        default desktop view
+        1. remove header component
+        2. display nav component
+        3. display page as flex-row
+        4. remove all sections from view
+    */
+
+    /* page component */
+    #page {
+        position: relative;
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    /* navigation component */
+    nav {
+        
+        display: flex;
+        height: 100%;
+        max-width: 10vw;
+        
+        /* width: 100%; */
+        width: 10vw;
+        /* border: 2px solid red; */
+    }
+    nav ul {
+        border: 2px solid purple;
+        background: rgb(14, 2, 66);
+
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+
+
+    }
+    nav ul li {
+
+        border: var(--wireframe);
+        max-height: 100px;
+        background: red;
+        
+    }
+    nav ul button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 1.20rem;
+        text-transform: capitalize;
+        
+        height: 100%;
+        width: 100%;
+        background: #000;
+        border: none;
+        color: #FFF;
+
+        /* dev */
+        /* border: var(--debugging); */
+    }
+    nav ul button i {
+        color: #FFF;
+
+        /* dev */
+        border: var(--debugging);
+    }
+    nav #exit {
+        display: none;
+    }
+
+
+    /* main content component */
+    main {
+        margin-left: 10vw;
+        height: 100vw;
+        /* width: 100%; */
+        /* dev */
+        border: var(--wireframe);
+        /* background: lightcoral; */
+    }
+    
+    .blobs-topright {
+
+        top: 0;
+        right: 0;
+        /* transform props */
+        transform: translate( /* x value */1%, /* y value */-35%);
+    
+        /* z-index: 100; */
+    
+        /* dev */
+        /* background: red; */
+    }
+
+
+    #homepage .description,
+    #mobile-description {
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+    /* header component & footer removal */
+    header,
+    footer {
+         display: none;
+    }
+
+    
+    /* 
+        global section properties
+
+        contains :
+                
+                1. section [ sectionName ] container
+                2/ div [ introduction ] element
+                3. div [ description ] element
+                4. div [ content ] element
+    */
+    section {
+
+        /* section content removal */
+        display: none;
+    
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        
+        min-height: 0;
+        min-height: 100%;
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+        /* border: 10px solid #000; */
+
+        /* width of remaining window view */
+        width: 90vw;
+
+        
+    
+    }
+    .blogs-container {
+        display: flex;
+        position: fixed;
+    }
+    /* section [ introduction ] properties */
+    .introduction {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        display: none;
+    }
+    .introduction h1,
+    .introduction .sign {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* section [ description ] properties */
+    .description {
+        /* section [ description ] 25% content description */
+        min-height: 25vh;
+        
+        /* mobile reset */
+        padding: 0;
+        margin: 0;
+
+        /* dimensions */
+        height: 100%;
+        width: 100%;
+
+        /* display props [ flex ] */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        /* component props */
+        padding-left: var(--md);
+
+        
+    }
+    .description h2 {
+        padding: 0;
+        margin: 0;
+        /* padding-top: var(--lg); */
+    }
+    .description .tag {
+        padding: 0;
+        margin: 0;
+        font-size: 1.45rem;
+    }
+    .description .txt {
+        
+        /* mobile reset */
+        padding: 0;
+        margin: 0;
+        
+        /* component props */
+        color: lightslategray;
+        padding-right: var(--lg);
+        padding-top: var(--sm);
+        font-size: 1.05rem;
+        
+        /* dev */
+        border: var(--wireframe);
+    }
+
+    /* section [ content ] properties */
+    .content {
+        /* section [ content ] 75% page content */
+        min-height: 75vh;
+        
+        /* display props [ flex ] */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        /* component props */
+        padding: var(--md);
+        min-width: 100%;
+
+        /* dev */
+        border: 10px solid var(--wireframe);
+    }
+
+    .desktops {
+        display: flex;
+    }
+    
+    
+    /* homepage properties */
+    #homepage {
+        max-height: 50vh;
+    }
+    
+     /* {
+        max-height: 100%;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    
+        border: 2px solid red;
+    } */
+
+    
+    /* 
+        sectiion [ projects ] properties
+
+        contains :
+
+                1. div [ gallery ] container 
+                2. article [ projects ] grid container
+                    2a. title
+                    2b. tag
+                    2c. text
+                    2d. image
+                3. div [ elmnts ] project elements wrapper
+    */
+   
+    .gallery {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        
+    }
+    
+    .projects {
+        margin: 0;
+        padding: 0;
+
+        max-height: 750px;
+        max-width: 350px;
+
+        border: 4px solid var(--mode);
+    }
+    .projects .elmnts {
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        justify-content: center;
+    }
+    .projects-title {
+        margin: 0;
+        padding: 0;
+
+        padding-top: var(--sm);
+    }
+    .projects-tag {
+        margin: 0;
+        padding: 0;
+        padding-top: var(--sm);
+        padding-bottom: var(--sm);
+    }
+    .projects-text {
+        margin: 0;
+        padding: 0;
+    }
+    .projects-showcase {
+        
+        margin: 0;
+        padding: 0;
+        
+        max-height: 200px;
+        max-width: 100%;
+    
+    }
+    .projects a {
+        /* mobile reset */
+        padding: 0;
+        margin: 0;
+        
+        max-width: 100px;
+
+        padding-top: calc( var(--sm) / 2.5 );
+        padding-bottom: calc( var(--sm) / 2.5 );
+        padding-left: var(--sm);
+
+        text-align: left;
+    }
+
+    
+    /* 
+        [ slider] slides container
+
+        contains : 
+                1. slider [ slider ] component
+                2. slides [ slides ] swipe elements
+                3. button [ btn ] manual navigation
+        
+    
+    */
+    .slider {
+        grid-column: span 6;
+        grid-row: span 1;
+
+        max-height: 100%;
+        min-height: 50vh;
+
+        margin: 0;
+        padding: 0;
+
+        /* dev */
+        border: var(--component);
+
+    }
+    
+    .slides {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: var(--md);
+    }
+    .slider .btn {
+        display: none;
+    }
+    
+    
+    /*
+    
+        technical [ tech ] list
+
+        contains : 
+
+                1. ul [ tech ] unordered list : grid element
+                2. li [ list ] list element : tech content
+                3. li:nth-child [ 1 - 7 ] sequencial list elements
+    
+    */
+    .tech {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+
+        padding: var(--md);
+
+        max-width: 900px;
+    }
+    .tech li {
+        /* grid placement [ tech ] */
+        grid-column: span 1;
+        grid-row: span 1;
+        
+        /* display props [ flex ] */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* dimensions */
+        min-height: 100%;
+        min-width: 100%;
+        width: 100%;
+
+        /* component props */
+        font-size: 0.85rem;
+        letter-spacing: 0.11rem;
+        padding: var(--sm);
+        margin-bottom: var(--sm);
+        
+        /* dev */
+        border: 2px solid #000;
+    
+    }
+    
+    .tech li:nth-child(1) {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-start: 2;
+
+        min-width: 220px;
+
+        /* dev */
+        background: darkslategrey;
+    
+    }
+
+    .tech li:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 0;
+        grid-row-start: 1;
+
+        /* background: red; */
+        
+    }
+
+    .tech li:nth-child(3) {
+        grid-column-start: 4;
+        grid-column-end: 6;
+        grid-row-start: 0;
+        grid-row-start: 1;
+
+        /* background: blue; */
+        
+    }
+
+    .tech li:nth-child(4) {
+        grid-column-start: 4;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-start: 3;
+
+        /* background: purple; */
+        
+    }
+
+    .tech li:nth-child(4) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-start: 3;
+
+        /* background: orangered; */
+        
+    }
+
+    .tech li:nth-child(5) {
+        grid-column-start: 4;
+        grid-column-end: 6;
+        grid-row-start: 2;
+        grid-row-start: 3;
+
+        /* background: darkgreen; */
+        
+    }
+
+    .tech li:nth-child(6) {
+        grid-column-start: 4;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-start: 2;
+
+        /* background: darkslateblue; */
+        
+    }
+
+    .tech li:nth-child(7) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-start: 2;
+
+        /* background: yellowgreen; */
+        
+    }
+
+    .tech h4 {
+        /* mobile reset */
+        margin: 0;
+        padding: 0;
+
+        /* component props */
+        color: var(--mode-background);
+        font-size: 1.55rem;
+        letter-spacing: 0.15rem;
+    
+    }
+    
+    /* slider [ tracks ] panel */
+    .tracks {
+
+        /* mobile reset */
+        margin: 0;
+        padding: 0;
+
+        /* component props */
+        max-width: 400px;
+
+        /* dev */
+        border: 2px solid var(--debugging);
+
+    }
+    .dot {
+        /* padding: calc(var(--sm) / 2) */
+        padding: calc(var(--sm) / 2.5);
+    }
+    
+    
+    
+    
+    
+    /* DEVELOPER REMOVAL */
+    .blobs {
+        display: none;
+    }
+    .navigation-span {
+        display: none;
+    }
+    
+    
+    
+    
+    .swiper-container {
+        min-height: 20vh;
+        height: 60vh;
+    }
+    
+    
+    
+    
+    /* contact [ info ] container */
+    .container-renewal {
+
+        /* grid placement [ contact ] */
+        grid-column: span 6;
+        grid-row: span 1;
+
+        /* display props [ flex-center-evenly ] */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        /* dimensions */
+        height: 100%;
+        width: 100%;
+        max-height: 50vh;
+
+        /* component props */
+        padding: var(--md);
+
+        /* dev */
+        border: 2px solid var(--component);
+    }
+    .info {
+        position: relative;
+        grid-column: span 2;
+        grid-row: span 1;
+
+        
+        min-height: 185px;
+        max-height: 300px;
+        max-width: 200px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+        /* dev */
+        border: 2px solid var(--component);
+    }
+    .info .wrapper {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-height: 100%;
+        height: 100%;
+        width: 100%;
+        
+        /* dev */
+        /* border: 10px solid var(--mode); */
+    }
+    .info h4 {
+        padding: var(--sm);
+        margin: 0;
+
+        /* dev */
+        /* border: 10px solid var(--mode); */
+    }
+    .info p {
+        padding: var(--md);
+        margin: 0;
+
+        /* dev */
+        /* border: 10px solid var(--mode); */
+    }
+    .info button {
+        padding: 0;
+        margin: 0;
+
+        /* dev */
+        /* border: 10px solid var(--mode); */
+    }
+
+} /* === media [ tablet ] end === */
