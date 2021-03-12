@@ -557,6 +557,7 @@ section#skills .list {
 }
 .list {
     min-height: 450px;
+    background: none;
 }
 /* swiper tech list */
 .tech {
