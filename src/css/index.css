@@ -647,6 +647,7 @@ article h4 i {
 article button {
 
     border: none;
+    
     border-radius: 3px;
     color: #FFF;
     font-size: 1.05rem;
@@ -657,13 +658,13 @@ article button {
     background: #000;
     min-height: 34px;
 
-    /* background: #FFF; */
-    border: none;
+    background: #FFF;
+    border: 2px solid #000;
     border-radius: 3px;
-    /* color: rgb(26, 5, 75); */
+    color: rgb(26, 5, 75);
     font-size: 1.04rem;
     
-    font-weight: bold;
+    /* font-weight: bold; */
     text-transform: capitalize;
     
 
@@ -707,11 +708,7 @@ article .helper {
     
 } */
 
-#contact .swiper-slide p {
-    font-size: 2rem;
-    text-transform: capitalize;
-    text-decoration: underline;
-}
+
 
 
 /* .modal-btn {
