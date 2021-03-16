@@ -422,18 +422,19 @@ article .elmnts {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     /* dev */
     border: var(--debugging);
 }
-article .elmnts:nth-child(1) {
+/* article .elmnts:nth-child(1) {
     height: 20%;
     text-align: left;
     align-items: flex-start;
-}
-article .elmnts:nth-child(2) {
+} */
+/* article .elmnts:nth-child(2) {
     height: 80%;
-}
+} */
 
 #introduction article .elmnts:nth-child(1) {
     height: 100%;
