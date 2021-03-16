@@ -469,6 +469,7 @@ article p {
 
 .items {
     position: relative;
+    /* padding: var(--sm); */
 }
 
 /* 
@@ -478,16 +479,14 @@ article p {
 */
 .smartphone-wrapper {
     position: absolute;
-    right: 0;
+    right: 3%;
     bottom: -3%;
 }
 /* The device with borders */
 .smartphone {
     position: relative;
-    right: 0;
-    bottom: 0;
-    width: 100px;
-    height: 180px;
+    width: 65px;
+    height: 130px;
 
     display: flex;
     justify-content: center;
