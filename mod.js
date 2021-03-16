@@ -1,5 +1,6 @@
 // array [ projects ]
 let projects = [
+    
 
     // project objects [ coffeehaus ]
     {
@@ -21,6 +22,8 @@ let projects = [
         repo: '',
 
     },
+
+
     // project objects [ management ]
     {
         title: 'management',
@@ -41,6 +44,8 @@ let projects = [
         repo: 'https://decode-harris.github.io/planets/',
 
     },
+
+    
     // project objects [ destinations ]
     {
         title: 'destinations',
