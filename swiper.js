@@ -15,6 +15,8 @@ var swiper = new Swiper('.swiper-container', {
     pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true,
+        background: 'black',
+        color: 'black',
     },
 
     // if animation effects are required

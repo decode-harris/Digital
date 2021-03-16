@@ -558,15 +558,32 @@ section#skills .list {
     
 }
 .list {
-    min-height: 450px;
+    min-height: 400px;
+    max-height: 400px;
     background: none;
 }
+
+
 /* swiper tech list */
+.swiper-slide {
+    height: 400px;
+    min-height: 400px;
+    max-height: 400px;
+}
+/* .swiper-pagination-bullets-dynamic {} */
+
+.swiper-pageomation-bullet-active {
+    /* background: black; */
+    background: none;
+    
+}
 .tech {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
+
+    text-align: center;
 
     padding: var(--sm);
 
@@ -574,45 +591,96 @@ section#skills .list {
 
     
     height: 100%;
-    width: 100%;
-    min-height: 450px;
+    
+    /* min-height: 400px; */
 
-    /* dev */
-    /* border: 2px solid red; */
+    
 }
 
 .tech li {
-    
+    text-align: left;
     font-size: 0.75rem;
-
-    
-    
-    
+    line-height: 1.6;
 
     /* dev */
     /* border: 2px solid red; */
 }
 
-.tech h4 {
 
-    padding-bottom: var(--sm);
-    /* dev */
-    
-}
-/* .tech h4 {
+.tech h4 {
     font-size: 1.2rem;
     text-transform: uppercase;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: space-around;
     text-decoration: underline;
     padding-bottom: var(--md);
-} */
+
+    /* border: 2px solid red; */
+    width: 100%;
+    max-width: 200px;
+
+}
+
 .tech i {
-    font-size: 2rem;
+    font-size: 1.75rem;
     
 }
 
+article h4 {
 
+    width:  100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: var(--lg);
+    text-decoration: underline;
+    /* dev */
+    /* border: 2px solid red; */
+}
+article h4 i {
+    padding-right: var(--sm);
+    color: linear-gradient(45deg, #1a2f3f, #7094ce);
+    
+}
+article button {
+
+    border: none;
+    border-radius: 3px;
+    color: #FFF;
+    font-size: 1.05rem;
+    padding: var(--md);
+    min-width: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+    background: #000;
+    min-height: 34px;
+
+    /* background: #FFF; */
+    border: none;
+    border-radius: 3px;
+    /* color: rgb(26, 5, 75); */
+    font-size: 1.04rem;
+    
+    font-weight: bold;
+    text-transform: capitalize;
+    
+
+    padding: var(--sm);
+}
+article .helper {
+    font-size: 0.85rem;
+    font-style: italic;
+    min-height: 100px;
+
+    padding: var(--sm);
+    
+    margin-bottom: var(--md);
+
+    /* dev */
+    /* border: 2px solid blue; */
+}
 /* #modal-exit {
     position: absolute;
     top: 10px;
@@ -638,6 +706,12 @@ section#skills .list {
     font-size: 1.45rem;
     
 } */
+
+#contact .swiper-slide p {
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
 
 
 /* .modal-btn {
@@ -775,6 +849,8 @@ section#skills .list {
 #modal {
     text-align: center;
     background: rgba(18, 18, 77, 0.904);
+
+    background: linear-gradient(45deg, #1a2f3f, #7094ce);
 }
 #modal .list {
     color: #FFF;
@@ -979,9 +1055,9 @@ section#skills .list {
     
     
 }
-.landing .card img::after {
+/* .landing .card img::after {
     left: 50%;
-}
+} */
 
 .card .content {
 
