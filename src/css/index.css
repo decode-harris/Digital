@@ -682,6 +682,12 @@ article .helper {
     /* dev */
     /* border: 2px solid blue; */
 }
+#contact {
+    background: linear-gradient(45deg, #1a2f3f, #7094ce);
+}
+#contact .elmnts:nth-child(1) {
+    color: #FFF;
+}
 /* #modal-exit {
     position: absolute;
     top: 10px;
@@ -845,9 +851,11 @@ article .helper {
 
 #modal {
     text-align: center;
-    background: rgba(18, 18, 77, 0.904);
+    
 
     background: linear-gradient(45deg, #1a2f3f, #7094ce);
+
+    background: rgba(22, 24, 24, 0.904);
 }
 #modal .list {
     color: #FFF;
