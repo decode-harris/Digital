@@ -178,7 +178,7 @@ function stateChange(e) {
 
         // apply default desktop display props
         nav.style.display = 'flex';
-        nav.style.width = '15vw';
+        nav.style.width = '10vw';
         exit.style.display = 'none';
 
         // apply default desktop class name
