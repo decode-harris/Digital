@@ -189,9 +189,9 @@ function stateChange(e) {
             
             element.addEventListener('click', ()=> {
                 // validate nav display type
-                if (nav.style.width != '15vw') {
+                if (nav.style.width != '10vw') {
                     // nav.style.display = 'flex';
-                    nav.style.width = '15vw';
+                    nav.style.width = '10vw';
                 }
 
             });

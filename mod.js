@@ -149,9 +149,9 @@ modal_management.addEventListener('click', ()=> {
         modal_info.innerHTML = projects[1].info;
         modal_tech.innerHTML = projects[1].tech;
 
-        modal_tech_0.setAttribute('class', projects[1].tech0);
-        modal_tech_1.setAttribute('class', projects[1].tech1);
-        modal_tech_2.setAttribute('class', projects[1].tech2);
+        // modal_tech_0.setAttribute('class', projects[1].tech0);
+        // modal_tech_1.setAttribute('class', projects[1].tech1);
+        // modal_tech_2.setAttribute('class', projects[1].tech2);
         
         repo.href = projects[1].repo;
         live.href = projects[1].href;
