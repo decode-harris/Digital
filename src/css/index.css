@@ -1224,11 +1224,7 @@ article .modal-btn {
     color: rgb(26, 5, 75);
 }
 
-.card123 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 /* remove desktop elements */
 .desktop {display: none;}
