@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
 /* 
     font-family: 'Poppins', sans-serif;
 */
@@ -25,17 +31,15 @@
     /* font style */
     --font: 'Poppins', sans-serif;
 
+    --title: 'Dela Gothic One', cursive;
+
+    --items: 'Poiret One', cursive;
+
     /* colors */
-    --darkblue: #01fe87;
+    --background: rgb(3, 3, 31);
+    
 
-    /* light mode | darkmode */
-    --mode: #000;
-    --mode-background: #FFF;
-    --mode-overlay: rgba(241,237,237,0.4);
-    --mode-transparent: rgba(0,0,0,0.19);
-    /* --mode-transparent: rgba(255, 255, 255, 0.19); */
-
-    --color: var(--mode);
+    
 }
 
 html {
@@ -48,6 +52,67 @@ html {
     justify-content: center;
     align-items: center;
 }
+
+
+/* global titles */
+
+/* landing title */
+h1 {
+    font-family: var(--title);
+}
+
+
+h2 {
+    font-size: 1.5rem;
+    font-family: var(--items);
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    padding-bottom: var(--sm);
+}
+h3 {
+    font-family: var(--items);
+}
+h5 {
+
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+    padding-top: var(--sm);
+
+    font-family: var(--items);
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+h6 {
+    font-size: 1rem;
+    text-transform: capitalize;
+    text-decoration: underline;
+    padding-bottom: var(--md);
+
+    font-family: var(--items);
+}
+li, p {
+    font-family: var(--font);
+}
+
+.txt {
+
+    font-size: 0.8rem;
+    color: #000;
+    
+
+    
+
+    padding-right: var(--md);
+    margin-bottom: var(--md);
+
+    
+    /* dev */
+    /* border: 2px solid red; */
+}
+
 
 /* 
 
@@ -67,11 +132,13 @@ html {
 
     /* position props [ relative ] */
     position: relative;
-    
-    /* font family [ font : poppins ] */
+
     font-family: var(--font);
+
     
 }
+
+
 
 /* 
     nav component
@@ -118,7 +185,11 @@ nav {
     /* dev */
     border: var(--debugging);
 
+    /* font family [ font : poppins ] */
+    
+    
 }
+
 
 header {
     position: relative;
@@ -132,17 +203,6 @@ header {
 
     /* dev */
     border: 2px solid var(--wireframe);
-}
-header h2 {
-    text-transform: uppercase;
-    font-size: 2rem;
-    letter-spacing: 0.15rem;
-}
-header .tag {
-    
-    font-size: .75rem;
-    text-transform: capitalize;
-    padding: var(--sm)
 }
 header .elmnts {
     height: 100%;
@@ -389,7 +449,7 @@ section {
 article {
     /* overflow:hidden; */
 
-    position: relative;
+    /* position: relative; */
 
     /* display props [ flex - column - center - center ] */
     display: flex;
@@ -427,15 +487,22 @@ article .elmnts {
     /* dev */
     border: var(--debugging);
 }
-
+article .elmnts:nth-child(1) {
+    text-align: left;
+    align-items: flex-start;
+    /* border: 2px solid red; */
+}
 
 
 /* article elements */
 .content-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 0.15rem;
     padding: var(--sm);
     text-transform: uppercase;
+
+    /* font family [ Dela Gothic One ] */
+    font-family: var(--title);
 }
 .content-tag {
 
@@ -464,8 +531,13 @@ article .elmnts {
 
 
 
+
 #introduction article .elmnts:nth-child(1) {
     height: 100%;
+}
+/* article h2 {
+    
+    border: 2px solid purple;
 }
 article h3 {
     font-size: 2.05rem;
@@ -478,14 +550,20 @@ article h4 {
     padding: var(--sm);
 }
 article h5 {
-    font-size: 1.30rem;
+    
     text-transform: capitalize;
     padding-bottom: var(--sm);
+
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    border: 2px solid red;
+    text-transform: uppercase;
 }
 article h6 {
-    font-size: 1.15rem;
-    /* letter-spacing: 0.16rem; */
-    /* padding-top: var(--sm); */
+    font-size: 1rem;
+    text-decoration: underline;
+    letter-spacing: 0.16rem;
+    padding-top: var(--sm);
     padding-bottom: var(--md);
     text-transform: capitalize;
 }
@@ -493,7 +571,7 @@ article p {
     font-size: 0.75rem;
     line-height: 1.6;
     padding-bottom: var(--md);
-}
+} */
 .list {
     padding: var(--sm);
 }
@@ -784,21 +862,28 @@ section#skills .list {
     
 
 }
-.panels .technical-title {
+.panels .technical-title,
+.panels .contact-title {
     position: absolute;
     top: 0;
     left: 0;
+    max-height: 25%;
 }
-.panels .tech {
+.panels .tech,
+.panels .cont {
     position: absolute;
     left: 0;
     bottom: 0;
     max-height: 75%;
     /* justify-content: space-evenly; */
-    align-items: flex-start;
-    text-align: left;
+    
+    
     padding-left: var(--md);
     
+}
+.panels .tech {
+    align-items: flex-start;
+    text-align: left;
 }
 .panels .tech li {
     padding-bottom: var(--sm);
@@ -829,19 +914,13 @@ section#skills .list {
     background: rgb(3, 3, 31);
     border: 1px solid #000;
 
-}
-.contact-title h5,
-.technical-title h5 {
-    font-size: 1.25rem;
-    padding-top: var(--sm);
-
     color: #FFF;
 }
 .contact-title i,
 .technical-title i {
     
     color: #FFF;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 
@@ -890,13 +969,13 @@ article button {
     padding: var(--sm);
 }
 article .helper {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-style: italic;
-    min-height: 100px;
+    /* min-height: 100px; */
 
     padding: var(--sm);
     
-    margin-bottom: var(--md);
+    margin-bottom: var(--lg);
 
     /* dev */
     /* border: 2px solid blue; */
@@ -980,8 +1059,15 @@ article .helper {
     display current modal information from javascript data objects
     load modal
 
+    contains :
+
+        modal action button
+        modal container
+        modal information list
+
 */
 
+/* modal action button */
 article .modal-btn {
     border: none;
     
@@ -993,6 +1079,7 @@ article .modal-btn {
     font-size: 1rem;
 }
 
+/* modal container */
 #modal {
     text-align: center;
     
@@ -1000,14 +1087,30 @@ article .modal-btn {
     background: linear-gradient(45deg, #1a2f3f, #7094ce);
 
     background: rgba(22, 24, 24, 0.904);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
 }
+
+/* modal information list */
 #modal .list {
     color: #FFF;
     
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     
     height: 100%;
     width: 100%;
@@ -1049,10 +1152,7 @@ article .modal-btn {
     
 }
 #modal {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
 
     color: #FFF;
 }
@@ -1070,18 +1170,7 @@ article .modal-btn {
     width: 100%;
     min-height: 20%;
 }
-.modal_active {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
 
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.85);
-}
 #modal .elmnts:last-child {
     justify-content: space-around;
     flex-direction: row;
@@ -1310,6 +1399,10 @@ article .modal-btn {
 
 
 @media (min-width: 700px) {
+
+
+    
+
 
     /* panels [ for : technical & contact pages ] */
     .panels {
