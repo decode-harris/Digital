@@ -436,7 +436,7 @@ article .helper {
     
     attached a keyframe animation to the landing image element
     provided a different background color than the [ document ] pages
-    
+
     
 */
 .landing {
@@ -994,17 +994,21 @@ article .modal-btn {
 
 
 
+/* 
+
+    media queries
+
+    tablet :
+
+        applies the entire mobile styles library
+        but provides the swiper slide element to stretch
+        to 100% height of user device
+
+    desktop :
 
 
 
-
-
-
-
-
-
-
-
+*/
 
 
 /* media query [ mobile & tablets ] */
@@ -1054,14 +1058,9 @@ article .modal-btn {
     }
 
     /* global content */
-    nav h6 {
-     font-size: 1.2rem;   
+    .buttons {
+        margin-top: var(--md);
     }
-    nav .txt {
-        font-size: 0.75rem;
-        text-align: left;
-    }
-
     .txt {
         padding: 0;
         margin: 0;
@@ -1073,325 +1072,7 @@ article .modal-btn {
         /* dev */
         border: 2px solid red;
     }   
-
     
-    
-    .nav-list {
-
-        min-height: 550px;
-        
-    }
-    nav .btn {
-        max-width: 130px;
-
-        transition: 200ms all ease;
-        border: 1px solid #FFF;
-    }
-    nav .btn a:hover {
-        background: #FFF;
-        color: #000;
-    }
-    
-    
-
-    
-
-    #contact .elmnts:nth-child(1) {
-        color: #000;
-    }
-    
-    
-    
-    /* show desktop elements */
-    .desktop {
-        display: flex;
-        width: 100%;
-        justify-content: space-evenly;
-    }
-
-    /* remove mobile elements */
-    .mobile {display: none;}
-    
-
-    
-    /* 
-        project list elements
-
-        contains
-
-            list [ unordered list ]
-            items [ list items ]
-            items [ nth child 1 - 3 ]
-
-
-    */
-    .list {
-        display:grid;
-
-        /* create grid list component */
-        grid-template-columns: repeat(5, 1fr);
-
-        grid-auto-rows: minmax(50px, auto);
-
-        width: 100%;
-
-        /* padding: var(--md); */
-        
-        
-        /* dev */
-        /* border: 1px solid #000; */
-    }
-    .list .items {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        padding: var(--sm);
-
-        min-height: 100%;
-        min-width: 100%;
-        max-height: 100%;
-        max-width: 100%;
-
-        /* dev */
-        /* border: 2px solid purple; */
-    }
-    .list .items:nth-child(1) {
-        
-        /* project image */
-        
-        grid-column-start: 2;
-        grid-column-end: 4;
-
-        grid-row-start: 1;
-        grid-row-end: 3;
-    
-    }
-    .list .items:nth-child(2) {
-
-        /* project title */
-
-        grid-column-start: 1;
-        grid-column-end: 2;
-
-        grid-row-start: 1;
-        grid-row-end: 3;
-    
-    }
-    .list .items:nth-child(3) {
-
-        /* project information */
-        grid-column-start: 4;
-        grid-column-end: 6;
-
-        grid-row-start: 1;
-        grid-row-end: 3;
-    }
-    .list .items {
-
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        padding: var(--md);
-        height: 100%;
-        width: 100%;
-
-        /* border: 2px solid red; */
-    }
-
-    #technical .list .items:nth-child(1) {
-        
-        /* title panel */
-                
-        grid-column-start: 1;
-        grid-column-end: 2;
-
-        grid-row-start: 1;
-        grid-row-end: 3;
-    
-
-    }
-
-    #technical .list .items:nth-child(2) {
-
-        /* sublist panel */
-
-        grid-column-start: 2;
-        grid-column-end: 4;
-
-        grid-row-start: 1;
-        grid-row-end: 3;
-
-        
-        
-    }
-    
-    #technical .list .items:nth-child(3) {
-
-        /* information panel */
-
-        grid-column-start: 4;
-        grid-column-end: 6;
-
-        grid-row-start: 1;
-        grid-row-end: 3;
-
-        
-        
-    }
-    
-    #contact .list .items:nth-child(1) {
-
-        /* title panel */
-                        
-        grid-column-start: 1;
-        grid-column-end: 2;
-
-        grid-row-start: 1;
-        grid-row-end: 3;
-
-    }
-    #contact .list .items:nth-child(2) {
-
-        /* information panel */
-
-        grid-column-start: 2;
-        grid-column-end: 6;
-
-        grid-row-start: 1;
-        grid-row-end: 3;
-
-        /* border: 2px solid red; */
-    }
-    
-    #contact .txt {
-        color: #000;
-    }
-    #contact .list .items i {
-
-        font-size: 3rem;
-    }
-    #project .list .items img {
-        position: relative;
-    }
-
-
-
-    /* sublist */
-    .sublist {
-        margin: 0;
-        padding: 0;
-        
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        
-        padding-left: var(--lg);
-
-        list-style-type: circle;
-
-        /* dev */
-        /* border: 2px solid purple; */
-        
-    }
-    .sublist li {
-        /* reset mobile styles */
-        padding: 0;
-        margin: 0;
-        
-        /* dev */
-        /* border: 2px solid purple; */
-    }
-    
-
-    #introduction article .elmnts {
-        
-        height: 100%;
-        width: 100%;
-        max-height: 40%;
-    }
-
-    /* article */
-    article .elmnts:nth-child(1) {
-        align-items: center;
-        justify-content: space-evenly;
-        text-align: center;
-
-        padding: var(--sm);
-        /* dev */
-        /* border: 2px solid red; */
-    }
-  
-    /* 
-    
-        project list content
-        
-        contains :
-
-            project heading
-            display image
-            smartphone element
-            technology list
-            buttons container
-        
-    */
-
-    /* project display props */
-   
-
-    /* project image */
-    #project img { 
-        max-height: 300px;
-    }
-
-    /* smartphone element */
-    .smartphone {
-        width: 85px;
-        height: 160px;
-    }
-    .smartphone-wrapper {
-        
-        right: 50px;
-        bottom: 100px;
-    }
-
-    /* buttons container */
-    .buttons {
-
-        margin-top: var(--md);
-        /* dev */
-        /* border: 2px solid purple; */
-    }
-    
-    
-    /* swiper library components */
-    .swiper-container {
-
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        min-height: 65vh;
-    }
-    .swiper-slide {
-        height: 100%;
-        width: 100%;
-
-        min-height: 100%;
-    }
-
-    .landing {
-        height: 100%;
-        min-width: 100%;
-    }
-    .landing .card img {
-        bottom: 0;
-        max-width: 400px;
-        width: 400px;
-    }
 
     /* 
 
@@ -1401,6 +1082,10 @@ article .modal-btn {
 
         100% view width 
         100% view height
+
+        change page display properties from column to row
+        page with contain 2 child elements
+        nav : main
 
     */
     .page {
@@ -1421,10 +1106,7 @@ article .modal-btn {
         /* dev */
         background: lightcoral;
     }
-
     
-    
-
     /* 
         nav header component
 
@@ -1432,91 +1114,30 @@ article .modal-btn {
 
         10 view width || 10% screen width
 
-        contains :
-
-            nav [ sidebar ]
-            header [ profile ]
-
-            ul [ navbar ]
+        navigation element is positioned to the left of the webpage
+        maximum width is 10vw [ 10 % screen width ]
+        provides users with quick access to internal sections
             
-                li [ navbar li ]
-                    btn [ btn ]
-                    btn link
-                    btn icon
-                    btn details
-
-
-
-            btn [ exit ] : display none
     */
     nav {
-        height: 100%;
-        width: 10vw;
         
-
+        /* position [ relative ] */
         position: relative;
         
+        /* display props [ flex - col - space-ar - center ] */
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
 
+        /* dimensions & spacing */
+        height: 100%;
+        width: 10vw;
+
         /* component props */
         background: rgb(3, 3, 31);
     }
-
-    header {
-        position: relative;
-        
-        
-        width: 100%;
     
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    header h5 {
-        
-        /* element styles */
-        font-size: 1rem;
-        letter-spacing: 0.15rem;
-        text-align: center;
-        text-transform: uppercase;
-
-        width: 100%;
-        
-        /* dev */
-        /* border: 2px solid red; */
-    }
-    header .tag {
-
-        /* element styles */
-        text-align: center;
-        font-size: 0.7rem;
-        padding: var(--md);
-
-        width: 100%;
-        
-        /* dev */
-        /* border: 2px solid red; */
-    }
-
-    /* header profile image */
-    header .pro {
-
-        max-height: 50px;
-        max-width: 50px;
-
-        /* dev */
-        /* border: 2px solid red; */
-    }
-    header .pro img {
-        height: 100%;
-        width: 100%;
-    }
-
     /* navbar un-ordered list */
     .navbar {
 
@@ -1535,18 +1156,21 @@ article .modal-btn {
 
         /* element props */
         background: transparent;
-    
     }
     .navbar li {
-
         width: 100%;
         text-align: center;
-        
         border-bottom: 0.1rem solid lightgray;
     }
     .navbar li:nth-child(1) {
         border-top: 0.1rem solid lightgray;
-    
+    }
+    nav h6 {
+        font-size: 1.2rem;   
+    }
+    nav .txt {
+        font-size: 0.75rem;
+        text-align: left;
     }
 
     /* navbar link button */
@@ -1556,22 +1180,16 @@ article .modal-btn {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
         height: 85%;
         width: 90%;
-
-        border: none;
-
         margin: var(--sm);
 
-        /* dev */
-        /* border: 2px solid purple; */
-
-        transition: 200ms all ease-in;
-
+        border: none;
         opacity: 0.7;
+        transition: 200ms all ease-in;
     }
     .navbar .btn:hover {
-        
         opacity: 1;
         background: #FFF;
     }
@@ -1589,12 +1207,24 @@ article .modal-btn {
     }
     .navbar .details {
         font-size: 0.85rem;
-        /* text-transform: uppercase; */
-
         border: none;
     }
 
-    
+    .nav-list {
+
+        min-height: 550px;
+        
+    }
+    nav .btn {
+        max-width: 130px;
+
+        transition: 200ms all ease;
+        border: 1px solid #FFF;
+    }
+    nav .btn a:hover {
+        background: #FFF;
+        color: #000;
+    }
     .hover-txt {
         display: none;
 
@@ -1621,19 +1251,20 @@ article .modal-btn {
 
         90 view width || 90% screen width
 
+        main scroll section wrapper
+        minimum & maximum width is 90% user device width
+        fills the rest of the page with the main component
+    
     */
     main {
-        height: 100%;
-        width: 90vw;
-
+        
         position: relative;
         overflow-y: scroll;
         scroll-behavior: smooth;
 
-        /* dev */
+        height: 100%;
+        width: 90vw;
         background: #FFF;
-        /* border: 2px solid red; */
-
     }
 
     /* 
@@ -1642,7 +1273,9 @@ article .modal-btn {
 
         desktop view
 
-        75% - 70% view width 
+        height & width 100% of parent container
+        contains article content 
+        specific styles can be applied via section ID's
 
     */
     section {
@@ -1650,8 +1283,6 @@ article .modal-btn {
         height: 100%;
         width: 100%;
 
-        /* position: absolute; */
-        
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1665,29 +1296,242 @@ article .modal-btn {
     section#project,
     section#contact {background: #FFF;}
 
+    /* section [ introduction ] elements */
+    #introduction article .elmnts {
+        height: 100%;
+        width: 100%;
+        max-height: 40%;
+    }
+    
+    /* section [ project ] elements */
+    #project .list .items img {
+        position: relative;
+    }
+    /* project image */
+    #project img { 
+        max-height: 300px;
+    }
+    /* smartphone element */
+    .smartphone {
+        width: 85px;
+        height: 160px;
+    }
+    .smartphone-wrapper {
+        
+        right: 50px;
+        bottom: 100px;
+    }
+    
+    /* section [ contact ] elements */
+    #contact .txt {
+        color: #000;
+    }
+    #contact .list .items i {
+
+        font-size: 3rem;
+    }
+    #contact .elmnts:nth-child(1) {
+        color: #000;
+    }
+
+    /* 
+        article component
+
+        desktop view
+
+        move article content into the center of the container element
+        space the content inside the container element evenly
+
+    */
     article {
         justify-content: space-evenly;
-
         align-items: center;
+    }
+    article .elmnts:nth-child(1) {
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        padding: var(--sm);
     }
     article .list {
         min-height: 60vh;
-
         align-items: center;
+    }
+
+    /* landing component */
+    .landing {
+        height: 100%;
+        min-width: 100%;
+    }
+    .landing .card img {
+        bottom: 0;
+        max-width: 400px;
+        width: 400px;
+    }
+    
+
+    /* 
+        project list elements
+
+        contains
+
+            list [ unordered list ]
+            items [ list items ]
+            items [ nth child 1 - 3 ]
+
+
+    */
+    .list {
+        display:grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: minmax(50px, auto);
+        width: 100%;
+    }
+    .list .items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: var(--sm);
+
+        min-height: 100%;
+        min-width: 100%;
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .list .items {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+        width: 100%;
+        padding: var(--md);
     }
     .list i {
         font-size: 4rem;
         color: #000;
     }
 
+    /* list items [ 1 - 3 ] */
+    .list .items:nth-child(1) { /* project image */
+        /* grid placement */
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .list .items:nth-child(2) { /* project title */
+        /* grid placement */
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .list .items:nth-child(3) { /* project information */
+        /* grid placement */
+        grid-column-start: 4;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    /* technical list items [ 1 - 3 ] */
+    #technical .list .items:nth-child(1) {  /* title panel */
+        /* grid placement */
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    #technical .list .items:nth-child(2) {  /* sublist panel */
+        /* grid placement */
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    #technical .list .items:nth-child(3) {  /* information panel */
+        /* grid placement */    
+        grid-column-start: 4;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    /* contact list items [ 1 - 2 ] */
+    #contact .list .items:nth-child(1) {    /* title panel */
+        /* grid placement */
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    #contact .list .items:nth-child(2) {    /* information panel */
+        /* grid placement */
+        grid-column-start: 2;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    /* technical sublist */
+    .sublist {
+        /* reset mobile styles */
+        margin: 0;
+        padding: 0;
+
+        /* display props [ flex -col - center - center ] */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        /* dimensions & spacing */
+        padding-left: var(--lg);
+
+        /* component props */
+        list-style-type: circle;
+    }
+    .sublist li {
+        /* reset mobile styles */
+        padding: 0;
+        margin: 0;
+    }
+    
+
+    /* swiper library components */
+    .swiper-container {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-height: 65vh;
+    }
+    .swiper-slide {
+        height: 100%;
+        width: 100%;
+
+        min-height: 100%;
+    }
 
     
-    
-
     /* enable desktop elements */
     .des {display: flex;}
 
     /* remove mobile elements */
     .mob {display: none;}
+
+    /* show desktop elements */
+    .desktop {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    /* remove mobile elements */
+    .mobile {display: none;}
 
 }
