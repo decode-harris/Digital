@@ -27,6 +27,17 @@ function stateChange(e) {
         // change nav width to active [ 100% ] 
         nav.style.width = '0';
         exit.style.display = 'none';
+
+        let icon = document.querySelectorAll('.icon');
+
+        icon.forEach(element => {
+            if (element.style.display != 'none') {
+                element.style.display = 'none';
+            }    
+        });
+        
+
+        console.log(icon);
         
         // event [ window ] : scroll position listener
         window.addEventListener('scroll', ()=> {
@@ -169,7 +180,7 @@ function stateChange(e) {
 };
   
 //   mobile media query
-var mob = window.matchMedia("(max-width: 900px)");
+var mob = window.matchMedia("(max-width: 1000px)");
   
 stateChange(mob); // Call listener function at run time
 

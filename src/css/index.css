@@ -2,11 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
-/* 
-    font-family: 'Poppins', sans-serif;
-*/
-
 /* global reset */
 * {
     box-sizing: border-box;
@@ -20,30 +15,22 @@
     --sm: 2%;
     --md: 5%;
     --lg: 10%;
-
-    /* dev borders */
-    /* --wireframe: 2px solid darkblue;
-    --debugging: 2px dotted darkred;
-    --component: 2px solid darkgreen; */
-
+    
     /* font style */
     --font: 'Poppins', sans-serif;
-
     --title: 'Dela Gothic One', cursive;
-
     --items: 'Poiret One', cursive;
 
     /* colors */
     --background: rgb(3, 3, 31);
-    
-
-    
 }
 
+/* global html */
 html {
     scroll-behavior: smooth;
 }
 
+/* global flex element */
 .elmnts {
     display: flex;
     flex-direction: column;
@@ -51,29 +38,10 @@ html {
     align-items: center;
 }
 
-
 /* global titles */
-/* article elements */
-.content-title {
-    font-size: 1.5rem;
-    letter-spacing: 0.15rem;
-    padding: var(--sm);
-    text-transform: uppercase;
-
-    /* font family [ Dela Gothic One ] */
-    font-family: var(--title);
-}
-
-
-
-
-
-/* landing title */
 h1 {
-    font-family: var(--title);
+    border: 2px solid white;
 }
-
-
 h2 {
     font-size: 1.5rem;
     font-family: var(--items);
@@ -82,85 +50,47 @@ h2 {
     padding-bottom: var(--sm);
 }
 h3 {
-    font-family: var(--items);
-
     font-size: 1.4rem;
     letter-spacing: 0.35rem;
     text-transform: uppercase;
     text-decoration: underline;
-    
-    
     margin-top: var(--md);
     margin-bottom: var(--md);
-
-    /* font-family: var(--title); */
-
-
-    /* dev */
-    /* border: 2px solid red; */
 }
 h5 {
 
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-
     padding-top: var(--sm);
-
-    font-family: var(--items);
-
-    /* dev */
-    /* border: 2px solid red; */
 }
 h6 {
     font-size: 1rem;
     text-transform: capitalize;
     text-decoration: underline;
     padding-bottom: var(--md);
-
-    font-family: var(--items);
+    
 }
 
-
+/* global content */
 .txt {
-
-    font-size: 1rem;
     color: #000;
-     line-height: 1.6;
-
-    font-family: var(--items);
-
+    font-size: 1rem;
+    line-height: 1.6;
     padding-right: var(--md);
     margin-bottom: var(--md);
-
-    
-    /* dev */
-    /* border: 2px solid red; */
+}
+.icon {
+    border: 2px solid red;
+    display: none;
 }
 
-
-/* 
-
-    page component
-
-    desktop view
-
-    100% view width 
-    100% min height
-
-*/
+/* page wrapper */
 .page {
-    
-    /* dimensions */
     min-height: 100vh;
     width: 100vw;
-
-    /* position props [ relative ] */
     position: relative;
-
-    font-family: var(--font);
-
-    
+    font-family: var(--items);
 }
 
 
@@ -176,6 +106,12 @@ h6 {
         header [ header ]
         ul     [ navbar ]
 
+
+    navigation element is styled with a starting width of 0% [ hidden ]
+    when a user interacts with the mobile navigation button [ click ]
+    the navigation element will be styled via javascript to width 100%
+    an css transition will be applied onclick to ensure a smooth entry
+    onto the device
 
 */
 nav {
@@ -193,140 +129,100 @@ nav {
     height: 100%;
     max-height: 100vh;
     
-    z-index: 500;
-
-    overflow-x: hidden;
-
     /* component styles */
-    background: rgb(8, 8, 59);
-    /* linear gradient */
-    background: rgb(3, 3, 31);
+    background: rgb(3, 3, 31); /* linear gradient */
     color: #FFF;
+    overflow-x: hidden;
+    z-index: 500;
     
     /* transition props */
     transition: 0.3s;
-
-    /* font family [ font : poppins ] */
-
-
+    
     /* dev */
     border: var(--debugging);
-    
-    
+}
+nav h6 {
+    font-size: 2rem;
+    margin-bottom: var(--md);
+    text-align: center;
+}
+nav .txt {
+    color: #FFF;
+    font-family: var(--items);
+    font-size: 1.25rem;
+    text-align: center;
+    text-transform: capitalize;
 }
 nav .pro {
     /* dimensions & spacing */
     margin-top: var(--lg);
     margin-bottom: var(--lg);
-
 }
 nav .pro,
 nav .pro img {
-     
     /* dimensions & spacing */
-    border-radius: 50%;
     max-height: 50px;
     max-width: 50px;
-
     height: 100%;
     width: 100%;
+    border-radius: 50%;
 }
-
-nav h6 {
-    margin-bottom: var(--md);
-    text-align: center;
-
-    font-size: 2rem;
-}
-nav .txt {
-    color: #FFF;
-
-    font-size: 1.25rem;
-    text-transform: capitalize;
-    font-family: var(--items);
-    text-align: center;
-}
-
 /* nav [ unordered list container ] */
 nav ul {
-    height: 100%;
-    width: 100%;
-        
-    list-style-type: none;
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
-    /* dev */
-    /* border: 2px solid #FFF; */
-
+    
+    height: 100%;
+    width: 100%;
     max-height: 300px;
     margin-top: var(--lg);
     
-    
+    list-style-type: none;
 }
 nav li {
-    width: 100%;
-    /* height: 100%; */
-
     display: flex;
     justify-content: center;
-    
-    
-    /* dev */
-    /* border: 2px solid red; */
+    width: 100%;
 }
 nav .btn {
-
-    width: 100%;
-    background: transparent;
-
     border: none;
-    /* dev */
-    border: 0.5px solid #FFF;
-
+    background: transparent;
+    
+    width: 100%;
     max-width: 200px;
     min-height: 30px;
+
+    /* dev */
+    border: 0.5px solid #FFF;
 }
 
 nav .btn a {
-    
-    font-family: var(--items);
-    
     display: flex;
     justify-content: center;
     align-items: center;
     color: #FFF;
     
-    text-decoration: none;
     height: 100%;
     width: 100%;
-
     padding: var(--sm);
 
+    font-family: var(--items);
     text-align: left;
+    text-decoration: none;
 
-    /* dev */
-    /* border: 2px solid orange; */
 }
 nav .btn i {
     font-size: 1.45rem;
-
     display: none;
 }
 nav .btn span {
-
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
     padding-left: var(--md);
     text-transform: capitalize;
-    letter-spacing: 0.2rem;
-    font-size: 1rem;
-    
-    /* dev */
-    /* border: 2px solid lightgreen; */
 }
-
 /* nav [ mobile navigation btns ] */
 .menu,
 .exit,
@@ -366,7 +262,6 @@ nav .btn span {
 .exit i {
     color: #FFF;
 }
-
 .modal-exit {
     background: transparent;
     border: 1px solid #FFF;
@@ -374,14 +269,6 @@ nav .btn span {
 }
 .modal-exit i {
     color: #FFF;
-}
-
-/* nav [ assigned class via js ] */
-nav.active {
-    height: 100%;
-    width: 100%;
-    transition: all 0.3s ease-in;
-    
 }
 
 
@@ -393,8 +280,13 @@ nav.active {
     snap scroll y axis
     overflow y axis [ contained sections ]
 
-*/
 
+    the main container for wrapping section layout elements
+    styled with 100% height & width of user device
+    ensures the main element will have a scroll snap property
+    applies scroll behaviour smooth to device [ mobile main element ]
+
+*/
 main {
     width: 100%;
     height: 100%;
@@ -414,104 +306,453 @@ main {
 
     contained to main component via overflow y
 
+    section layout element contained inside the main scroll container
+    styled 100% height & width of parent element
+    applies scroll snap align : center to display section content
+    in the center of the users screen
+
 */
 section {
+    /* display props [ flex - column - center - center ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    scroll-snap-align: center;
-    
-    /* dimensions */
-    /* height: 100vh; */
+    /* dimensions & spacing */
     min-height: 100vh;
     width: 100%;
 
-    /* display props [ flex - column - center - center ] */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    /* dev */
-    /* border: 2px solid darkblue; */
+    /* scroll properties */
+    scroll-snap-align: center;
 }
 
-
 /* 
-    article content component
+    article content wrapper
 
-    contains :
+    min height full evice height
+    width full device width
 
-        div [ elmnts ]
-        lib [ swiper ]
-        ul  [ list || tech ||  ]
-*/  
+    article content contained inside a section wrapper
+    provides a container wrapper for display content
+    display content : information text, document text, project images, project information
 
+*/
 article {
-    /* overflow:hidden; */
-
-    /* position: relative; */
-
     /* display props [ flex - column - center - center ] */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     
-    padding: var(--md);
-
-    
-    text-align: left;
-
-
-    
+    /* dimensions & spacing */
     height: 100%;
     width: 100%;
     min-height: 100%;
     min-height: 100vh;
+    padding: var(--md);
 
-    /* dev */
-    border: var(--debugging);
-    /* background: lightgrey; */
-    
+    /* component props */
+    text-align: left;
 }
+article .elmnts {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+article .elmnts:nth-child(1) {
+    text-align: left;
+    align-items: flex-start;
+}
+/* article button elements */
 article button {
-
+    /* dimensions & spacing */
     min-width: 150px;
+    padding: var(--sm);
+
+    /* componet props */
+    border: none;
     background: var(--background);
     color: #FFF;
     font-size: 1rem;
-    text-transform: capitalize;
     letter-spacing: 0.1rem;
-    padding: var(--sm);
-
-    border: none;
+    text-transform: capitalize;
 }
 article button a {
     color: #FFF;
     text-decoration: none;
 }
-article .elmnts {
-    width: 100%;
+article .helper {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: var(--lg);
+    padding: var(--sm);
+
+    font-size: 1.15rem;
+    font-family: var(--items);
+}
+
+/* section [ introduction ] elements */
+#introduction article .elmnts:nth-child(1) {
     height: 100%;
+}
+#introduction article .elmnts {
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+}
+
+/* section [ contact ] elements */
+#contact {
+    background: linear-gradient(45deg, #1a2f3f, #7094ce);
+}
+/* contact list title */
+#contact h4 {display: none;}
+#contact h5 {display: none;}
+#contact .txt {color: #FFF;}
+/* contact elmnts */
+#contact .elmnts:nth-child(1) {
+    color: #FFF;
+}
+
+/* contact list items */
+#contact .list li:first-child {
+    margin-top: var(--lg);
+    padding: var(--sm);
+}
+#contact .list li:last-child {
+    justify-content: space-evenly;
+    height: 100%;
+    margin-bottom: var(--lg);
+}
+.title i {
+    font-size: 1.5rem;
+}
+
+/* 
+    landing page 
+
+    animation welcome element
+    
+    attached a keyframe animation to the landing image element
+    provided a different background color than the [ document ] pages
+    
+    
+*/
+.landing {
+
+    /* position props [ relative ] */
+    position: relative;
+
+    /* display props [ flex - column - center - center ] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+.landing .card {
+    /* position props [ relative ] */
+    position: relative;
+    
+    /* display props [ flex - flexstart - center ] */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    /* dimensions & spacing */
+    min-height: 450px;
+    height: 100%;
+    min-width: 300px;
+    width: 100%;
+    
+    /* linear gradient */
+    background: linear-gradient(45deg, #1a2f3f, #7094ce);
+
+    /* padding: var(--sm); */
+}
+.landing .card img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    opacity: 0.8;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+
+    overflow: hidden;
+    
+    transition: 0.5s;
+
+    animation-name: slide-in;
+    animation-duration: 0.85s;
+    
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+.card .content {
+
+    /* position props [ absolute ] */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* display props [ flex - column - center - center ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* dimensions & spacing */
+    height: 100%;
+    width: 100%;
+
+    /* component props */
+    color: #FFF;
+    padding: var(--sm);
+    text-align: center;
+    z-index: 2;
+}
+.card .content h2 {
+    font-size: 2rem;
+    letter-spacing: 0.12rem;
+    text-shadow: 2px 2px rgb(13, 5, 51);
+}
+.card .content p {
+    line-height: 1.6;
+    padding-top: var(--md);
+    padding-bottom: var(--md);
+}
+.card .content button {
+    background: #FFF;
+    border: none;
+    border-radius: 3px;
+    color: rgb(26, 5, 75);
+    font-size: 1.04rem;
+    font-weight: bold;
+    min-width: 100px;
+    text-transform: capitalize;
+    padding: var(--sm);
+}
+.card .content button a {
+    text-decoration: none;
+    color: rgb(26, 5, 75);
+}
+
+/* 
+    global list properties
+
+    un-ordered list
+
+    contains
+        ul [ list ]
+        li [ items ]
+
+            ul [ sublist ]
+            li [ items ]
+*/
+.list {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 400px;
+    max-height: 400px;
+    padding: var(--sm);
+
+
+    list-style-type: none;
+    background: none;
+}
+.list .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    width: 100%;
+}
+.list img {
+    height: 100%;
+    width: 100%;
+    max-height: 175px;
+    margin: 0;
+
+    border: 2px solid rgb(0, 0, 0);
+}
+
+/*  technical sublist */
+.sublist {
+
+    /* display props [ flex - col - center - center ] */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    /* dimensions & spacing */
+    height: 100%;
+    width: 100%;
+    margin-top: var(--md);
+    
+    /* component props  */
+    text-align: center;
+    
+    /* list props */
+    list-style-type: none;
+}
+.sublist li {
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    font-family: var(--items);
+    text-align: left;
+    text-transform: capitalize;
+
+    padding-bottom: var(--sm);
+    width: 100%;
+
+    /* dev */
+    /* border: 2px solid red; */
+}
+.sublist h4 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    text-decoration: underline;
+    padding-bottom: var(--md);
+
+    /* border: 2px solid red; */
+    width: 100%;
+    max-width: 200px;
+
+}
+.sublist i {
+    font-size: 1.75rem;
+    
+}
+
+/* 
+    [ swiper ] library component styles
+*/
+.swiper-container {
+
+    /* display props [ flex - col - center - center ] */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 
-    /* dev */
-    border: var(--debugging);
-}
-article .elmnts:nth-child(1) {
-    text-align: left;
-    align-items: flex-start;
-    /* border: 2px solid red; */
-}
+    /* dimensions & spacing */
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    min-height: 60vh;
 
-
-#introduction article .elmnts:nth-child(1) {
+    /* component props */
+    background: #FFF;
+    
+    /* box shadow */
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
+    
+    /* overflow props */
+    overflow: hidden;
+    
+}
+.swiper-wrapper {
+    width: 100%;
     height: 100%;
 }
+.swiper-slide {
+    /* display props [ flex - col - sp even - center ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
 
+    /* component props */
+    background: #FFF;
+}
+
+.swiper-slide .elmnts {
+    /* display props [ flex - col - center - center ] */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* dimensions & spacing */
+    height: 100%;
+    width: 100%;
+    padding-left: var(--sm);
+    
+    /* component props */
+    text-transform: capitalize;
+    z-index: 3;
+
+}
+/* swiper tech list */
+.swiper-slide {
+    height: 400px;
+    min-height: 400px;
+    max-height: 400px;
+}
+.swiper-pagination-bullet-active {
+    color: #000;
+}
+
+
+/* 
+    
+    projects [ showcase ] component
+
+*/
+.showcase {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: var(--sm);
+
+    height: 100%;
+    width: 100%;
+}
+.showcase button {
+    border: 1px solid #000;
+    background: transparent;
+    min-width: 100px;
+    font-size: 0.85rem;
+    letter-spacing: 0.17rem;
+    text-transform: uppercase;
+    padding: var(--sm);
+    margin-top: var(--md);
+
+    transition: all 0.3s ease-in;
+}
+.showcase button:hover {
+    background: #000;
+    color: #FFF;
+}
 
 /* 
 
@@ -535,8 +776,6 @@ article .elmnts:nth-child(1) {
 
     border: 4px black solid;
     border-radius: 3px;
-
-    /* padding: var(--sm); */
 }
 /* The horizontal line on the top of the device */
   .smartphone:before {
@@ -575,325 +814,7 @@ article .elmnts:nth-child(1) {
 .smartphone img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-}
-
-
-
-
-
-
-
-
-
-/* 
-    [ swiper ] library component styles
-*/
-.swiper-container,
-.swiper-container2 {
-
-
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    
-    /* max-height: 300px; */
-
-    
-
-    /* padding: var(--sm); */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    background: #FFF;
-
-    
-    /* box shadow */
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
-    box-shadow: 0px 0px 10px 0px rgba(96, 99, 98, 0.829);
-    
-    overflow: hidden;
-    
-}
-.swiper-wrapper {
-    width: 100%;
-    height: 100%;
-    /* max-width: 288px;
-    min-height: 300px;
-    max-height: 300px; */
-
-}
-.swiper-slide {
-    /* display props [ flex ] */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    
-    background: #FFF;
-}
-
-.swiper-slide .elmnts {
-    /* display props [ flex ] */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    /* dimensions */
-    height: 100%;
-    width: 100%;
-
-    /* component props */
-    padding-left: var(--sm);
-    text-transform: capitalize;
-    
-    z-index: 3;
-
-    /* dev */
-    border: 2px solid var(--wireframe);
-    
-}
-/* swiper tech list */
-.swiper-slide {
-    height: 400px;
-    min-height: 400px;
-    max-height: 400px;
-}
-/* .swiper-pagination-bullets-dynamic {} */
-
-.swiper-pageomation-bullet-active {
-    /* background: black; */
-    background: none;
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-article .helper {
-    font-size: 1rem;
-    font-style: italic;
-    /* min-height: 100px; */
-
-    padding: var(--sm);
-    
-    margin-bottom: var(--lg);
-
-    /* dev */
-    /* border: 2px solid blue; */
-}
-
-#contact {
-    background: linear-gradient(45deg, #1a2f3f, #7094ce);
-}
-#contact .elmnts:nth-child(1) {
-    color: #FFF;
-}
-
-
-/* global list properties */
-.list {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    list-style-type: none;
-
-    
-}
-.list .items {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    height: 100%;
-    width: 100%;
-    /* font-family: var(--items); */
-}
-.list img {
-    
-    height: 100%;
-    max-height: 175px;
-    width: 100%;
-
-    /* dev */
-    border: 2px solid rgb(0, 0, 0);
-
-}
-.list {
-    padding: var(--sm);
-}
-.items {
-    position: relative;
-    /* padding: var(--sm); */
-}
-.list img {
-    margin: 0;
-    height: 100%;
-    width: 100%;
-}
-
-
-
-
-/* #contact .list .items:nth-child(3) {
-    display: none;
-} */
-
-
-
-
-.list {
-    min-height: 400px;
-    max-height: 400px;
-    background: none;
-}
-
-.title i {
-    font-size: 1.5rem;
-}
-
-/* sublists */
-.sublist {
-
-    /* display props [ flex - col - center - center ] */
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-
-    /* dimensions & spacing */
-    height: 100%;
-    width: 100%;
-
-    margin-top: var(--md);
-    
-    /* component props  */
-    text-align: center;
-    /* background: lightgray; */
-    
-    /* list props */
-    list-style-type: none;
-    
-    /* dev */
-    /* border: 2px solid purple; */
-
-}
-
-.sublist li {
-    text-align: left;
-    font-size: 0.9rem;
-    line-height: 1.6;
-
-    font-family: var(--items);
-    text-align: left;
-    text-transform: capitalize;
-
-    padding-bottom: var(--sm);
-    width: 100%;
-
-    /* dev */
-    /* border: 2px solid red; */
-}
-
-
-.sublist h4 {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: space-around;
-    text-decoration: underline;
-    padding-bottom: var(--md);
-
-    /* border: 2px solid red; */
-    width: 100%;
-    max-width: 200px;
-
-}
-
-.sublist i {
-    font-size: 1.75rem;
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* showcase image */
-.showcase {
-    position: relative;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: var(--sm);
-
-    height: 100%;
-    width: 100%;
-}
-.showcase button {
-    border: 1px solid #000;
-    background: transparent;
-    min-width: 100px;
-    font-size: 0.85rem;
-    letter-spacing: 0.17rem;
-    text-transform: uppercase;
-    padding: var(--sm);
-    margin-top: var(--md);
-
-    transition: all 0.3s ease-in;
-}
-.showcase button:hover {
-    background: #000;
-    color: #FFF;
 }
 
 /* 
@@ -1051,153 +972,6 @@ article .modal-btn {
 }
 
 
-
-
-
-/* landing */
-#introduction article .elmnts {
-    
-    height: 100%;
-    width: 100%;
-    max-height: 100%;
-}
-
-
-
-
-/* 
-    landing page card element
-*/
-.landing {
-
-    /* position props [ relative ] */
-    position: relative;
-
-    /* display props [ flex - column - center - center ] */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
-
-    /* padding: var(--sm); */
-
-}
-.landing .card {
-    
-    /* position props [ relative ] */
-    position: relative;
-
-
-    min-height: 450px;
-    height: 100%;
-    min-width: 300px;
-    width: 100%;
-
-    /* display props [ flex - flexstart - center ] */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    /* linear gradient */
-    background: linear-gradient(45deg, #1a2f3f, #7094ce);
-
-    /* padding: var(--sm); */
-}
-.landing .card img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    
-
-    opacity: 0.8;
-    width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-
-    overflow: hidden;
-
-
-    transition: 0.5s;
-
-    animation-name: slide-in;
-    animation-duration: 0.85s;
-    
-    animation-timing-function: ease-in;
-    animation-iteration-count: 1;
-    
-}
-@keyframes slide-in {
-    
-    0% {left: 150%}
-    100% {left: 50%}
-    
-    
-}
-/* .landing .card img::after {
-    left: 50%;
-} */
-
-.card .content {
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    height: 100%;
-    width: 100%;
-
-
-    /* display props [ flex - column - center - center ] */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-
-    padding: var(--sm);
-    text-align: center;
-
-    color: #FFF;
-
-    z-index: 2;
-}
-.card .content h2 {
-    font-size: 2rem;
-    letter-spacing: 0.12rem;
-    text-shadow: 2px 2px rgb(13, 5, 51);
-    
-}
-.card .content p {
-    line-height: 1.6;
-    padding-top: var(--md);
-    padding-bottom: var(--md);
-}
-.card .content button {
-
-    background: #FFF;
-    border: none;
-    border-radius: 3px;
-    color: rgb(26, 5, 75);
-    font-size: 1.04rem;
-    
-    font-weight: bold;
-    min-width: 100px;
-
-    text-transform: capitalize;
-    
-
-    padding: var(--sm);
-    
-}.card .content button a {
-    text-decoration: none;
-    color: rgb(26, 5, 75);
-}
-
 /* remove desktop elements */
 .desktop {display: none;}
 
@@ -1211,47 +985,12 @@ article .modal-btn {
 .mob {display: flex;}
 
 
-#contact .txt {
-    color: #FFF;
+/* animation [ SLIDE-IN ] */
+@keyframes slide-in {
+    
+    0% {left: 150%}
+    100% {left: 50%}
 }
-
-#contact h4 {
-    display: none;
-}
-article .helper {
-    font-size: 1.15rem;
-    font-family: var(--items);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1269,20 +1008,29 @@ article .helper {
 
 
 /* media query [ mobile & tablets ] */
-@media (min-width: 900px) {
+@media (min-width: 700px) {
+    
+    .swiper-slide {
+        min-height: 100%;
+        max-width: 100%;
+    }
+    
+}
 
+/* media query [ tablets, screen-readers & laptops ] */
+@media (min-width: 1000px) {
+    
     article .helper {
         padding: 0;
         margin: 0;
         padding: var(--sm);
     }
     
-    /* landing title */
+    /* global titles */
     h1 {
         font-family: var(--title);
     }
-
-
+    
     h2 {
         padding-bottom: 0;
     }
@@ -1294,29 +1042,22 @@ article .helper {
         text-transform: uppercase;
     }
     h4 {
-        text-transform: capitalize;
-        
         font-size: 1.2rem;
         letter-spacing: 0.12rem;
-
         font-family: var(--items);
         padding-bottom: var(--sm);
-
-        /* dev */
-        /* border: 2px solid red; */
+        text-transform: capitalize;
     }
-    h5 {
-
-        
-    }
+    h5 {}
     h6 {
         padding-bottom: 0;
     }
+
+    /* global content */
     nav h6 {
      font-size: 1.2rem;   
     }
     nav .txt {
-
         font-size: 0.75rem;
         text-align: left;
     }
@@ -1525,10 +1266,12 @@ article .helper {
         /* border: 2px solid red; */
     }
     
-
+    #contact .txt {
+        color: #000;
+    }
     #contact .list .items i {
 
-        font-size: 7rem;
+        font-size: 3rem;
     }
     #project .list .items img {
         position: relative;

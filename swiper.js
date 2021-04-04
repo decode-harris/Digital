@@ -23,8 +23,8 @@ var swiper = new Swiper('.swiper-container', {
     pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true,
-        background: 'black',
-        color: 'black',
+        background: '#000',
+        color: '#000',
     },
 
     // define page breakpoints
