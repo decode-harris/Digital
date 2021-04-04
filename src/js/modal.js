@@ -230,112 +230,6 @@ modalButtons.forEach(element => {
     })
 });
 
-// modal content id selectors & onclick events
-// const modal_coffee = document.querySelector('#modal-coffee');
-// modal_coffee.addEventListener('click', ()=> {
-    
-//     if (modal.classList != 'modal_active') {
-//         modal.style.display = 'flex';
-//         modal.classList = 'modal_active';
-
-//         // modal.style.overflow = 'hidden';
-        
-//         main.style.overflowY = 'hidden';
-//         modal_title.innerHTML = projects[0].title;
-//         modal_tag.innerHTML = projects[0].tag;
-
-//         modal_img_0.src = projects[0].img0;
-//         modal_img_1.src = projects[0].img1;
-//         modal_img_2.src = projects[0].img2;
-
-//         modal_info.innerHTML = projects[0].info;
-//         modal_tech.innerHTML = projects[0].tech;
-
-//         modal_tech_0.setAttribute('class', projects[0].tech0);
-//         modal_tech_1.setAttribute('class', projects[0].tech1);
-//         modal_tech_2.setAttribute('class', projects[0].tech2);
-
-//         repo.href = projects[0].repo;
-//         live.href = projects[0].href;
-//     }
-
-// });
-
-// modal content id selectors & onclick events
-// const modal_management = document.querySelector('#modal-management');
-// modal_management.addEventListener('click', ()=> {
-
-//     if (modal.classList != 'modal_active') {
-//         modal.style.display = 'flex';
-//         modal.classList = 'modal_active';
-
-//         modal_title.innerHTML = projects[1].title;
-//         modal_tag.innerHTML = projects[1].tag;
-
-//         modal_img_0.src = projects[1].img0;
-//         modal_img_1.src = projects[1].img1;
-//         modal_img_2.src = projects[1].img2;
-
-
-//         modal_info.innerHTML = projects[1].info;
-//         modal_tech.innerHTML = projects[1].tech;
-
-//         // modal_tech_0.setAttribute('class', projects[1].tech0);
-//         // modal_tech_1.setAttribute('class', projects[1].tech1);
-//         // modal_tech_2.setAttribute('class', projects[1].tech2);
-        
-//         repo.href = projects[1].repo;
-//         live.href = projects[1].href;
-//     }
-    
-// });
-
-// // modal content id selectors & onclick events
-// const modal_travel = document.querySelector('#modal-travel');
-// modal_travel.addEventListener('click', ()=> {
-//     if (modal.classList != 'modal_active') {
-//         modal.style.display = 'flex';
-//         modal.classList = 'modal_active';
-
-//         modal_title.innerHTML = projects[2].title;
-//         modal_tag.innerHTML = projects[2].tag;
-
-//         modal_img_0.src = projects[2].img0;
-//         modal_img_1.src = projects[2].img1;
-//         modal_img_2.src = projects[2].img2;
-
-
-//         modal_info.innerHTML = projects[2].info;
-//         modal_tech.innerHTML = projects[2].tech;
-
-//         repo.href = projects[2].repo;
-//         live.href = projects[2].href;
-//     }
-// });
-
-// // modal content id selectors & onclick events
-// const modal_animation = document.querySelector('#modal-animation');
-// modal_animation.addEventListener('click', ()=> {
-//     if (modal.classList != 'modal_active') {
-//         modal.style.display = 'flex';
-//         modal.classList = 'modal_active';
-
-//         modal_title.innerHTML = projects[3].title;
-//         modal_tag.innerHTML = projects[3].tag;
-
-//         modal_img_0.src = projects[3].img0;
-//         modal_img_1.src = projects[3].img1;
-//         modal_img_2.src = projects[3].img2;
-
-
-//         modal_info.innerHTML = projects[3].info;
-//         modal_tech.innerHTML = projects[3].tech;
-
-//         repo.href = projects[3].repo;
-//         live.href = projects[3].href;
-//     }
-// });
-
 // close modal component
 const modal_exit = document.querySelector('#modal-exit');
 modal_exit.addEventListener('click', ()=> {
@@ -354,8 +248,6 @@ modal_exit.addEventListener('click', ()=> {
         // test
         console.log('modal inactive');
     }
-
-    
 
 });
 
@@ -379,7 +271,3 @@ modal_live = document.querySelector('#modal-live');
 modal_repo = document.querySelector('#modal-repo');
 
 // https://github.com/decode-harris/planets
-
-
-
-

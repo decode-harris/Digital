@@ -144,6 +144,14 @@ function stateChange(e) {
         nav.style.width = '10vw';
         exit.style.display = 'none';
 
+        let icon = document.querySelectorAll('.icon');
+
+        icon.forEach(element => {
+            if (element.style.display != 'none') {
+                element.style.display = 'inline';
+            }    
+        });
+
         // apply default desktop class name
         nav.setAttribute('class', 'nav');
         

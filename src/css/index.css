@@ -1333,6 +1333,17 @@ article .modal-btn {
     #contact .elmnts:nth-child(1) {
         color: #000;
     }
+    #contact h5 {
+        display: inline;
+    }
+    #contact .icon {
+        display: inline;
+        border: none;
+    }
+
+    #contact .list li:last-child {
+        margin-bottom: 0;
+    }
 
     /* 
         article component
@@ -1474,6 +1485,9 @@ article .modal-btn {
         grid-column-end: 6;
         grid-row-start: 1;
         grid-row-end: 3;
+
+        justify-content: center;
+        align-items: center;
     }
 
     /* technical sublist */
