@@ -24,9 +24,6 @@ function stateChange(e) {
     
     if (e.matches) { // If media query matches
 
-        // apply default mobile display props
-        // nav.style.display = 'none';
-
         // change nav width to active [ 100% ] 
         nav.style.width = '0';
         exit.style.display = 'none';
@@ -62,27 +59,9 @@ function stateChange(e) {
                 menu.style.right = '10px';
 
                 // nav component props
-                nav.style.top = pos + 'px';
+                // nav.style.top = pos + 'px';
                 nav.style.zIndex = '1';
-
-                // test
-                // console.log('current position : ' + pos);
-                
-                // assign header position to fixed [ from relative ]
-                // menu.style.position = 'fixed';
-                // mode.style.position = 'fixed';
-
-                
-                // menu.style.background = 'var(--mode-background)';
-                // menu.style.zIndex = '4';
-
-                // header [ mode ] button position props
-                // mode.style.top = '0';
-                // mode.style.right = '0';
-                // mode.style.background = 'var(--mode-background)';
-                
-                // test 
-                // console.log('[ window Else ] :' + pos + 'px');
+            
             }
         
         }); // end [ window ] : scroll position listener
@@ -113,43 +92,20 @@ function stateChange(e) {
             // validate nav display props
             if (nav.style.width != '100%') {
                 
-                // apply mobile nav display props
-                // nav.style.display = 'flex';
-
                 // change nav width to active [ 100% ] 
                 nav.style.width = '100%';
 
-                // set mobile nav to active
-                // nav.setAttribute('class', 'active');
-                
                 // overlap menu btn with exit btn
                 exit.style.zIndex = 300;
             }
-            
-            // menu.style.background = 'rgba(20, 20, 20, 0.822)';
-            
-            
-            // if (nav.style.width != '100%') {
-                
-            //     // change nav width to active [ 100% ] 
-            //     nav.style.width = '100%';
-            // }
-            // else {
-            
-            //     // change icon class list to [ bars ] menu
-            //     icon.classList = 'fas fa-bars';
-
-            //     // change nav width back to default [ 0% ]
-            //     nav.style.width = '0%';
-            
-            // }
-            
+        
         });
 
         // mobile navigation exit event
         exit.addEventListener('click', ()=> {
 
             if (nav.style.display != 'none') {
+                
                 // nav.style.display = 'none';
 
                 nav.style.width = '0%';
@@ -157,17 +113,13 @@ function stateChange(e) {
 
                 // overlap menu btn with exit btn
                 exit.style.zIndex = 0;
-
-                // change icon class list to [ bars ] menu
-                // icon.classList = 'fas fa-bars';
-                
-            }
-
             
-
+            }
+            
             // test
             console.log('exit btn : none');
             
+            // remove exit button from display
             exit.style.display = 'none';
         });
 
@@ -186,14 +138,26 @@ function stateChange(e) {
         
         // for each loop [ links ]
         links.forEach(element => {
+
+            if (element.id === 'link-homepage') {
+                element.style.background = '#FFF';
+                element.style.color = '#000';
+            }
             
             element.addEventListener('click', ()=> {
+
+                // init reset elements
+                resetElements();
+
                 // validate nav display type
                 if (nav.style.width != '10vw') {
                     // nav.style.display = 'flex';
                     nav.style.width = '10vw';
                 }
 
+                element.style.background = '#FFF';
+                element.style.color = '#000';
+            
             });
         
         });
@@ -205,8 +169,20 @@ function stateChange(e) {
 };
   
 //   mobile media query
-var mob = window.matchMedia("(max-width: 700px)");
+var mob = window.matchMedia("(max-width: 900px)");
   
 stateChange(mob); // Call listener function at run time
 
 mob.addEventListener('change', stateChange); // Attach listener function on state changes
+
+
+
+// function [ reset elements ]
+resetElements = () => {
+
+    // reset desktop navigation link properties
+    links.forEach(element => {
+        element.style.background = 'none'
+        element.style.color = '#FFF';
+    });
+}
