@@ -49,24 +49,156 @@ nav, header, main, article, section, footer {
   width: 100%;
   padding: 10px;
   background: darkslategray;
+  position: relative;
+  z-index: 1;
+}
+.page nav, .page header, .page section, .page main, .page article, .page footer {
+  background: var(--light-main);
+}
+.page .title, .page .text, .page a, .page li {
+  color: var(--light-text);
+}
+.page main a {
+  color: var(--dark-text);
+}
+.page header a {
+  color: var(--dark-text);
+}
+.page article .elmnts {
+  border: 2px solid var(--light-text);
+}
+
+.darkmode nav, .darkmode aside, .darkmode header, .darkmode section, .darkmode main, .darkmode article, .darkmode footer {
+  background: var(--dark-main);
+}
+.darkmode .title, .darkmode .tagline, .darkmode .list-title, .darkmode .text, .darkmode a, .darkmode i, .darkmode li, .darkmode label {
+  color: var(--dark-text);
+}
+.darkmode article i,
+.darkmode aside i {
+  color: #5142de;
+}
+.darkmode aside .btn i {
+  color: var(--dark-text);
+}
+.darkmode input, .darkmode textarea {
+  background: darkslateblue;
+  color: var(--dark-text);
+}
+.darkmode article .elmnts {
+  border: 2px solid var(--dark-text);
 }
 
 nav {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
   height: 10vh;
-  padding-right: 25px;
-  background: #FFF;
-  margin-bottom: 10px;
+  padding: 10px;
+  z-index: 3;
+  overflow: hidden;
+  background: transparent;
+  padding: 10px;
 }
 nav .btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   width: 50px;
   background: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 25px;
+  z-index: 999;
 }
 nav i {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: #000;
+}
+
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 200ms ease;
+  background: #FFF;
+  z-index: 2;
+}
+aside .btn {
+  position: relative;
+}
+aside .elmnts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 25px;
+  height: 100%;
+  width: 100%;
+}
+aside .elmnts .title {
+  font-size: 1.5rem;
+}
+aside .elmnts .tagline {
+  font-size: 1.1rem;
+}
+aside .elmnts:nth-child(1) {
+  margin-top: 10vh;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+}
+aside .sub-elmnts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+aside .sub-elmnts:nth-child(2) {
+  align-items: flex-start;
+  padding-left: 25px;
+}
+aside .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 25px;
+}
+aside .list i {
+  margin-right: 15px;
+  color: #5142de;
+}
+aside .items {
+  list-style-type: none;
+  margin-bottom: 25px;
+}
+aside .items:nth-child(1) {
+  margin-top: 25px;
+}
+aside a {
+  font-size: 1.15rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #FFF;
+}
+aside .img {
+  border: none;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
 }
 
 header {
@@ -76,6 +208,7 @@ header {
   text-transform: capitalize;
   background: #FFF;
   margin-bottom: 10px;
+  z-index: 1;
 }
 header .title {
   font-size: 1.75rem;
@@ -144,7 +277,8 @@ main .items {
   justify-content: center;
   align-items: center;
   grid-row: span 2;
-  border: 1px solid darkslategray;
+  min-height: 175px;
+  position: relative;
 }
 main .items .btn {
   background: transparent;
@@ -158,7 +292,6 @@ main .items a {
   align-items: center;
   letter-spacing: 0.5px;
   text-decoration: none;
-  color: var(--light-text);
   text-transform: uppercase;
   height: 100%;
   width: 100%;
@@ -170,6 +303,23 @@ main .title {
 }
 main .btn {
   margin-top: 0;
+}
+main a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  border: none;
+  color: #FFF;
+}
+main .img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
 }
 
 #projects .items {
@@ -244,6 +394,7 @@ article i {
 }
 article .list-title {
   padding-left: 25px;
+  padding-top: 25px;
   font-size: 1.45rem;
   text-transform: capitalize;
   letter-spacing: 0.1rem;
@@ -506,6 +657,7 @@ footer .img {
     justify-content: center;
     align-items: center;
     margin-left: 0;
+    margin: 0 10px 0;
   }
   footer .elmnts:nth-child(1) {
     align-items: flex-start;
@@ -515,7 +667,7 @@ footer .img {
     margin-left: 25px;
   }
   footer form {
-    width: 350px;
+    width: 340px;
     height: 450px;
     width: 100%;
     border: 2px solid #000;

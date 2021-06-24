@@ -15,9 +15,11 @@
     <script defer src="index.js"></script>
 </head>
 <body>
-<!-- page -->
+
+    <!-- page -->
 <div class="page">
-    <!-- navigation [ nav ] -->
+    
+    <!-- nav [ nav ] -->
     <nav class="nav">
 
         <!-- button [ menu ] -->
@@ -27,70 +29,113 @@
             <!-- icon [ bars ] -->
         </button>
         <!-- button [ menu ] -->
-
-        <!-- nav [ menu ] -->
-        <div class="menu">
-        <!-- profile -->
-        <div class="profile">
-
-            <!-- profile image [ img-sml ] -->
-            <img src="" alt="" class="img">
-            <!-- profile image [ img-sml ] -->
-
-            <!-- profile [ title & tagline ] -->
-            <h5 class="title">christopher harris</h5>
-            <h6 class="tagline">frontend web developer</h6>
-            <!-- profile [ title & tagline ] -->
-
-        </div>
-        <!-- profile -->
-
-        <!-- list -->
-        <ul class="list">
-
-            <!-- items -->
-            <li class="items">
-                <!-- link -->
-                <a href="" class="link active">home</a>
-                <!-- link -->
-            </li>
-            <li class="items">
-                <!-- link -->
-                <a href="#introduction" class="link">about</a>
-                <!-- link -->
-            </li>
-            <li class="items">
-                <!-- link -->
-                <a href="#portfolio" class="link">portfolio</a>
-                <!-- link -->
-            </li>
-            <li class="items">
-                <!-- link -->
-                <a href="#skills" class="link">skills</a>
-                <!-- link -->
-            </li>
-            <li class="items">
-                <!-- link -->
-                <a href="#contact" class="link">contact</a>
-                <!-- link -->
-            </li>
-            <!-- items -->
-
-        </ul>
-        <!-- list -->
-
-        <!-- button [ mode ] -->
-        <button class="btn" id="mode">mode</button>
-        <!-- button [ mode ] -->
-
-        </div>
-        <!-- nav [ menu ] -->
-
+    
     </nav>
-    <!-- navigation [ nav ] -->
+    <!-- nav [ nav ] -->
+
+    <!-- aside [ navigation ] -->
+    <aside class="navigation">
+        
+        <!-- elmnts -->
+        <div class="elmnts">
+            <!-- sub-elmnts -->
+            <div class="sub-elmnts">
+                <!-- profile image [ img-sml ] -->
+                <img src="" alt="" class="img">
+                <!-- profile image [ img-sml ] -->
+            </div>
+            <div class="sub-elmnts">
+                <!-- profile [ title & tagline ] -->
+                <h5 class="title">christopher harris</h5>
+                <h6 class="tagline">frontend web developer</h6>
+                <!-- profile [ title & tagline ] -->    
+            </div>
+            <!-- sub-elmnts -->
+        </div>
+        <div class="elmnts">
+            <!-- list -->
+            <ul class="list">
+
+                <!-- items -->
+                <li class="items">
+                    <!-- link -->
+                    <a href="#header" class="link active">
+                        <!-- icon [ home ] -->
+                        <i class="fas fa-h-square"></i>
+                        <!-- icon [ home ] -->
+                        home
+                    </a>
+                    <!-- link -->
+                </li>
+                <li class="items">
+                    <!-- link -->
+                    <a href="#introduction" class="link">
+                        <!-- icon [ user ] -->
+                        <i class="far fa-user"></i>
+                        <!-- icon [ user ] -->
+                        about
+                    </a>
+                    <!-- link -->
+                </li>
+                <li class="items">
+                    <!-- link -->
+                    <a href="#portfolio" class="link">
+                        <!-- icon [ cubes ] -->
+                        <i class="fas fa-cubes"></i>
+                        <!-- icon [ cubes ] -->
+                        portfolio
+                    </a>
+                    <!-- link -->
+                </li>
+                <li class="items">
+                    <!-- link -->
+                    <a href="#skills" class="link">
+                        <!-- icon [ magic ] -->
+                        <i class="fas fa-magic"></i>
+                        <!-- icon [ magic ] -->
+                        skills
+                    </a>
+                    <!-- link -->
+                </li>
+                <li class="items">
+                    <!-- link -->
+                    <a href="#contact" class="link">
+                        <!-- icon [ comment ] -->
+                        <i class="far fa-comment-dots"></i>
+                        <!-- icon [ comment ] -->
+
+                        contact
+                    </a>
+                    <!-- link -->
+                </li>
+                <!-- items -->
+
+            </ul>
+            <!-- list -->
+
+        </div>
+        <div class="elmnts">
+            <!-- button [ mode ] -->
+            <button class="btn mode-light" id="mode">
+
+                <!-- icon [ off ] -->
+                <i class="fas fa-toggle-off"></i>
+                <!-- icon [ off ] -->
+
+                <!-- icon [ on ] -->
+                <!-- <i class="fas fa-toggle-on"></i> -->
+                <!-- icon [ on ] -->
+
+            </button>
+            <!-- button [ mode ] -->
+        </div>
+        <!-- elmnts -->
+    
+    </aside>
+    <!-- aside [ navigation ] -->
 
     <!-- header [ header ] -->
-    <header class="header">
+    <header class="header" id="header">
 
         <!-- elmnts -->
         <div class="elmnts">
@@ -168,26 +213,30 @@
             <ul class="list">
                 <!-- items -->
                 <li class="items">
-                    <a href="projects.html">project 01</a>
+                    <img src="img/1.jpg" alt="project : 01" class="img">
+                    <a href="projects.html">coffeeshop</a>
                 </li>
                 <li class="items">
-                    <a href="projects.html">project 02</a>
+                    <img src="img/2.jpg" alt="project : 02" class="img">
+                    <a href="projects.html">frontpage</a>
                 </li>
                 <li class="items">
-                    <a href="projects.html">project 03</a>
+                    <img src="img/3.jpg" alt="project : 03" class="img">
+                    <a href="projects.html">application</a>
                 </li>
                 <li class="items">
-                    <a href="projects.html">project 04</a>
+                    <img src="img/4.jpg" alt="project : 04" class="img">
+                    <a href="projects.html">gallery</a>
                 </li>
                 
                 <!-- container -->
                 <div class="container">
 
                     <li class="items">
-                        <a href="projects.html">project 05</a>
+                        <a href="projects.html">coming soon</a>
                     </li>
                     <li class="items">
-                        <a href="projects.html">project 06</a>
+                        <a href="projects.html">coming soon</a>
                     </li>
                     
                     <!-- items -->

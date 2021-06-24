@@ -33,6 +33,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 h1,h2,h3,h4,h5,h6 {font-family: var(--font-titles);}
 // global CSS
 .btn {
@@ -43,8 +44,6 @@ h1,h2,h3,h4,h5,h6 {font-family: var(--font-titles);}
     height: 40px;
     font-size: 0.95rem;
     text-transform: capitalize;
-    // -webkit-box-shadow: 5px 5px 3px 5px #000000; 
-    // box-shadow: 2px 2px 22px 12px #6d6d6d;
     font-weight: bold;
     background: rgb(81,66,222);
     background: linear-gradient(111deg, rgba(81,66,222,1) 0%, rgba(143,45,158,1) 100%);
@@ -71,6 +70,61 @@ nav, header, main, article, section, footer {
 
     padding: 10px;
     background: darkslategray;
+    position: relative;
+    z-index: 1;
+
+    // lightmode attributtes
+    nav, header, section, main, article, footer {
+        background: var(--light-main);
+    }
+
+    .title, .text, a, li {
+        color: var(--light-text)
+    }
+
+    main a {
+        color: var(--dark-text);
+    }
+    header a {
+        color: var(--dark-text);
+    }
+    article .elmnts {
+        border: 2px solid var(--light-text);
+    }
+
+}
+// darktmode attributtes
+.darkmode {
+
+    // semantic wrapper elements
+    nav, aside, header, section, main, article, footer {
+        background: var(--dark-main);
+    }
+
+    // content elements
+    .title, .tagline, .list-title, .text, a, i, li, label {
+        color: var(--dark-text);
+    }
+
+    article i,
+    aside i {
+        color: #5142de;
+    }
+    
+    aside .btn i {
+        color: var(--dark-text);
+    }
+
+    // form elements
+    input, textarea {
+        background: darkslateblue;
+        color: var(--dark-text);
+    }
+
+    article .elmnts {
+        border: 2px solid var(--dark-text);
+    }
+
 }
 
 // navigation [ nav ]
@@ -78,24 +132,141 @@ nav {
 
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
-    height: 10vh;
-    padding-right: 25px;
-    
+    align-items: center;
 
-    // dev
-    background: #FFF;
-    margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 10vh;
+
+    padding: 10px;
     
+    z-index: 3;
+    overflow: hidden;
+
+    // dev [ change to ( CLR ) variable
+    background: transparent;
+    padding: 10px;
+
+    
+    
+    // nav button [ menu ]
     .btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
         width: 50px;
         background: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-right: 25px;
+
+        z-index: 999;
 
     }
+    // nav button icon [ i ]
     i {
-        font-size: 1.25rem;
+        font-size: 1.35rem;
         color: #000;
     }
+
+}
+// aside [ navigation ] : hidden element ( mobile )
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 200ms ease;
+    background: #FFF;
+    z-index: 2;
+
+    .btn {
+        position: relative;
+    }
+
+    // aside layout [ elmnts ]
+    .elmnts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 25px;
+        height: 100%;
+        width: 100%;
+        
+        .title {
+            font-size: 1.5rem;
+        }
+        .tagline {
+            font-size: 1.1rem;
+        }
+    }
+    .elmnts:nth-child(1) {
+        margin-top: 10vh;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+        
+    }
+    // elmnts layout [ sub-elmnts ]
+    .sub-elmnts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .sub-elmnts:nth-child(2) {
+        align-items: flex-start;
+        padding-left: 25px;
+    }
+
+    // aside ul [ list ]
+    .list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 25px;
+        
+        i {
+            margin-right: 15px;
+            color: #5142de;
+        }
+    }
+    // aside ul li [ items ]
+    .items {
+        list-style-type: none;
+        margin-bottom: 25px;
+    }
+    .items:nth-child(1) {
+        margin-top: 25px;
+    }
+    a {
+        font-size: 1.15rem;
+        text-transform: capitalize;
+        text-decoration: none;
+
+        // dev : change to ( CLR ) variable
+        color: #FFF;
+    }
+    .img {
+        // border: 2px solid darkblue;
+        border: none;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+    
 }
 
 // header [ header ]
@@ -107,7 +278,7 @@ header {
     // dev
     background: #FFF;
     margin-bottom: 10px;
-
+    z-index: 1;
     // header element styles
     .title {
         font-size: 1.75rem;
@@ -193,8 +364,11 @@ main {
         justify-content: center;
         align-items: center;
         grid-row: span 2;
+        min-height: 175px;
+        
+        position: relative;
         // dev
-        border: 1px solid darkslategray;
+        // border: 1px solid darkslategray;
 
         .btn {
             background: transparent;
@@ -209,7 +383,6 @@ main {
             align-items: center;
             letter-spacing: 0.5px;
             text-decoration: none;
-            color: var(--light-text);
             text-transform: uppercase;
             height: 100%;
             width: 100%;
@@ -224,8 +397,33 @@ main {
     .btn {
         margin-top: 0;
     }
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        background: rgba($color: #000000, $alpha: 0.4);
+        border-radius: 10px;
+        border: none;
+        color: #FFF;
+        // background: red;
+    }
+    
+    .img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+
+        // -webkit-box-shadow: 2px 2px 1px 2px #bdbdbd; 
+        // box-shadow: 2px 2px 6px 3px #831f9d;
+    }
 
 }
+
+
 
 #projects {
     .items {
@@ -258,6 +456,8 @@ main {
 #projects-header {
     max-height: 50vh;
 }
+
+
 // article [ information ]
 article {
     display: flex;
@@ -311,6 +511,7 @@ article {
     // ul list [ list title ]
     .list-title {
         padding-left: 25px;
+        padding-top: 25px;
         font-size: 1.45rem;
         text-transform: capitalize;
         letter-spacing: 0.1rem;
@@ -481,6 +682,9 @@ footer {
 }
 // dev removal
 // main, header, article, section {display:none;}
+
+// dev removal 
+// header, section, article, footer {display: none;}
 .menu {display: none;}
 
 // media query [ tablet ] : 768px X 1024px
@@ -532,6 +736,7 @@ footer {
     // navigation [ nav
     main {
         gap: 20px;
+
         // dev
         border: var(--wireframe);
 
@@ -645,6 +850,8 @@ footer {
             justify-content: center;
             align-items: center;
             margin-left: 0;
+
+            margin: 0 10px 0;
             // border: 2px solid red;
         }
         .elmnts:nth-child(1) {
@@ -659,7 +866,7 @@ footer {
         // footer [ form ]
         form {
             
-            width: 350px;
+            width: 340px;
             height: 450px;
             width: 100%;
             border: 2px solid #000;
