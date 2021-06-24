@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Teko:wght@300&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8,7 +9,8 @@
 :root {
   --font-titles: "Staatliches", cursive;
   --font-text: "Open Sans Condensed", sans-serif;
-  --dark-main: #000;
+  --font-alt: "Teko", sans-serif;
+  --dark-main: rgb(22, 20, 24);
   --dark-text: #FFF;
   --dark-title: ;
   --light-main: #FFF;
@@ -21,7 +23,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-titles);
+  font-family: var(--font-alt);
 }
 
 .btn {
@@ -35,37 +37,47 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   background: #5142de;
   background: linear-gradient(111deg, #5142de 0%, #8f2d9e 100%);
+  background: #6abbf4;
+  background: linear-gradient(111deg, #6abbf4 0%, #47cdb7 100%);
+  background: #0c398b;
+  background: linear-gradient(111deg, #0c398b 0%, #26b3c3 100%);
   border: none;
   color: #FFF;
-}
-
-nav, header, main, article, section, footer {
-  background: #FFF;
-  margin-bottom: 10px;
 }
 
 .page {
   height: 100%;
   width: 100%;
+  height: 100vh;
   padding: 10px;
   background: darkslategray;
   position: relative;
   z-index: 1;
+  overflow: scroll;
 }
 .page nav, .page header, .page section, .page main, .page article, .page footer {
   background: var(--light-main);
 }
-.page .title, .page .text, .page a, .page li {
-  color: var(--light-text);
-}
 .page main a {
   color: var(--dark-text);
+  border: 1px solid darkslategray;
 }
 .page header a {
   color: var(--dark-text);
 }
 .page article .elmnts {
   border: 2px solid var(--light-text);
+}
+.page .title, .page .tagline, .page .list-title, .page li {
+  color: var(--light-text);
+}
+.page aside a {
+  color: var(--light-text);
+}
+
+nav, header, main, article, section, footer {
+  background: #FFF;
+  margin-bottom: 10px;
 }
 
 .darkmode nav, .darkmode aside, .darkmode header, .darkmode section, .darkmode main, .darkmode article, .darkmode footer {
@@ -76,17 +88,23 @@ nav, header, main, article, section, footer {
 }
 .darkmode article i,
 .darkmode aside i {
-  color: #5142de;
+  color: #0c398b;
 }
 .darkmode aside .btn i {
   color: var(--dark-text);
 }
 .darkmode input, .darkmode textarea {
-  background: darkslateblue;
+  background: #456c9e;
   color: var(--dark-text);
 }
 .darkmode article .elmnts {
   border: 2px solid var(--dark-text);
+}
+.darkmode .title, .darkmode .tagline, .darkmode .list-title, .darkmode li {
+  color: var(--dark-text);
+}
+.darkmode aside a {
+  color: var(--dark-text);
 }
 
 nav {
@@ -146,12 +164,6 @@ aside .elmnts {
   height: 100%;
   width: 100%;
 }
-aside .elmnts .title {
-  font-size: 1.5rem;
-}
-aside .elmnts .tagline {
-  font-size: 1.1rem;
-}
 aside .elmnts:nth-child(1) {
   margin-top: 10vh;
   flex-direction: row-reverse;
@@ -171,6 +183,17 @@ aside .sub-elmnts:nth-child(2) {
   align-items: flex-start;
   padding-left: 25px;
 }
+aside .title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+aside .tagline {
+  text-transform: capitalize;
+  text-decoration: underline;
+  letter-spacing: 0.1rem;
+  font-size: 0.85rem;
+}
 aside .list {
   display: flex;
   flex-direction: column;
@@ -180,10 +203,12 @@ aside .list {
 aside .list i {
   margin-right: 15px;
   color: #5142de;
+  color: #0c398b;
 }
 aside .items {
   list-style-type: none;
   margin-bottom: 25px;
+  font-family: var(--font-text);
 }
 aside .items:nth-child(1) {
   margin-top: 25px;
@@ -202,31 +227,32 @@ aside .img {
 }
 
 header {
-  height: calc(42.5vh * 2 );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
   width: 100%;
   padding: 10px;
   text-transform: capitalize;
-  background: #FFF;
-  margin-bottom: 10px;
   z-index: 1;
 }
 header .title {
-  font-size: 1.75rem;
+  font-size: 2.75rem;
 }
 header .tagline {
   color: #838282;
   text-decoration: underline;
-  font-size: 0.95rem;
-  margin-top: 25px;
-}
-header .img {
-  height: 150px;
-  width: 150px;
-  border: var(--debugging);
+  font-size: 1.35rem;
+  letter-spacing: 0.1rem;
 }
 header a {
   color: #FFF;
   text-decoration: none;
+}
+header .btn {
+  font-size: 0.75rem;
+  margin-left: 0;
 }
 
 main {
@@ -290,11 +316,13 @@ main .items a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  letter-spacing: 0.5px;
-  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+  text-decoration: underline;
   text-transform: uppercase;
   height: 100%;
   width: 100%;
+  font-family: var(--font-text);
 }
 main .title {
   font-size: 2.2rem;
@@ -370,7 +398,7 @@ article .elmnts {
   width: 100%;
 }
 article .elmnts:nth-child(1) {
-  margin-bottom: 25px;
+  border: none;
 }
 article .list {
   display: flex;
@@ -386,11 +414,18 @@ article .items {
   list-style-type: none;
   text-transform: capitalize;
   letter-spacing: 0.5px;
+  font-family: var(--font-text);
 }
 article i {
   margin-right: 10px;
   font-size: 1.2rem;
   color: #5142de;
+  color: #0c398b;
+}
+article .title {
+  font-size: 2.24rem;
+  text-transform: capitalize;
+  margin-top: 25px;
 }
 article .list-title {
   padding-left: 25px;
@@ -407,11 +442,19 @@ article .line {
   background: #000;
   background: #5142de;
   background: linear-gradient(111deg, #5142de 0%, #8f2d9e 100%);
+  background: #0c398b;
+  background: linear-gradient(111deg, #0c398b 0%, #26b3c3 100%);
   max-width: 175px;
 }
 
 section {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100%;
+  position: relative;
   padding: 10px;
 }
 section .title {
@@ -426,6 +469,7 @@ section .text {
   line-height: 1.6;
   padding-right: 50px;
   margin-bottom: 20px;
+  font-family: var(--font-text);
 }
 section .img {
   height: 150px;
@@ -435,26 +479,8 @@ section .img {
 section .btn {
   margin-top: 25px;
 }
-
-header,
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  border: var(--wireframe);
-}
-header .elmnts,
-section .elmnts {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-  width: 100%;
-  padding: 10px;
+section a {
+  color: #FFF;
 }
 
 footer {
@@ -502,6 +528,7 @@ footer label {
   margin-bottom: 5px;
   text-transform: capitalize;
   letter-spacing: 0.1rem;
+  font-family: var(--font-text);
 }
 footer input {
   border-radius: 10px;
@@ -530,6 +557,7 @@ footer .text {
   line-height: 1.6;
   padding-right: 50px;
   margin-bottom: 20px;
+  font-family: var(--font-text);
 }
 footer .img {
   height: 150px;
@@ -537,36 +565,94 @@ footer .img {
   border: var(--debugging);
 }
 
+.profile {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#profile-wrp {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: -25%;
+  border: 2px solid red;
+}
+
+.profile-img {
+  transform: translate(50%, -50%);
+  font-size: 5rem;
+  z-index: 1;
+  animation-name: spin;
+  animation-duration: 4.5s;
+  animation-iteration-count: infinite;
+}
+
+aside .profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+aside .profile-img {
+  transform: translate(10%);
+  border: 2px solid red;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .menu {
   display: none;
 }
 
 @media (min-width: 768px) {
+  aside {
+    height: 90vh;
+    margin-top: 10vh;
+  }
+
   header {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: center;
-    max-height: 85vh;
-    border: var(--wireframe);
+    height: 100vh;
   }
-  header .elmnts {
-    height: 100%;
-    width: 100%;
-    min-height: 100%;
-    padding-left: 0;
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(50px, auto);
   }
-  header .elmnts:nth-child(1) {
-    align-items: center;
+  section .profile {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    border: 2px solid red;
   }
-  header .elmnts:nth-child(2) {
-    margin-left: 25px;
+  section .title {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border: 2px solid darkblue;
   }
-  header .tagline {
-    margin-bottom: 5px;
+  section .text {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border: 2px solid red;
   }
-  header .img {
-    min-height: 200px;
+  section .btn {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    border: 2px solid orange;
   }
 
   main {

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Staatliches&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Teko:wght@300&display=swap');
 * {
     box-sizing: border-box;
     padding: 0;
@@ -15,8 +15,11 @@
     --font-titles: 'Staatliches', cursive;
     --font-text: 'Open Sans Condensed', sans-serif;
 
+    --font-alt: 'Teko', sans-serif;
+    
+
     // dark-mode
-    --dark-main: #000;
+    --dark-main: rgb(22, 20, 24);
     --dark-text: #FFF;
     --dark-title: ;
 
@@ -34,8 +37,12 @@ html {
 }
 
 
-h1,h2,h3,h4,h5,h6 {font-family: var(--font-titles);}
+
 // global CSS
+
+h1,h2,h3,h4,h5,h6 {font-family: var(--font-alt);}
+
+// colored background button
 .btn {
     margin-top: 25px;
     border-radius: 20px;
@@ -45,53 +52,77 @@ h1,h2,h3,h4,h5,h6 {font-family: var(--font-titles);}
     font-size: 0.95rem;
     text-transform: capitalize;
     font-weight: bold;
+    
+    // purple / pink
     background: rgb(81,66,222);
     background: linear-gradient(111deg, rgba(81,66,222,1) 0%, rgba(143,45,158,1) 100%);
+
+    // light blue / awua
+    background: rgb(106,187,244);
+    background: linear-gradient(111deg, rgba(106,187,244,1) 0%, rgba(71,205,183,1) 100%);
+
+    // light blue / dark blue
+    background: rgb(12,57,139);
+    background: linear-gradient(111deg, rgba(12,57,139,1) 0%, rgba(38,179,195,1) 100%);
 
     border: none;
 
     color: #FFF;
-
-
-
 }
 
-// global componet styles
-nav, header, main, article, section, footer {
-    // dev
-    background: #FFF;
-    margin-bottom: 10px;
-}
 
 // wrapper [ page ]
 .page {
     height: 100%;
     width: 100%;
-
+    height: 100vh;
     padding: 10px;
     background: darkslategray;
     position: relative;
     z-index: 1;
+    overflow: scroll;
+
 
     // lightmode attributtes
     nav, header, section, main, article, footer {
         background: var(--light-main);
     }
 
-    .title, .text, a, li {
-        color: var(--light-text)
-    }
+    
 
+    // main props
+    
     main a {
         color: var(--dark-text);
+        border: 1px solid darkslategray;
     }
+    // header props
     header a {
         color: var(--dark-text);
+        
     }
+
+    // article props
     article .elmnts {
         border: 2px solid var(--light-text);
     }
+    
+    // title, tagline & text props
+    .title, .tagline, .list-title, li {
+        color: var(--light-text)
+    }
 
+    // link props
+    aside a {
+        color: var(--light-text);
+    }
+
+}
+// global componet styles
+nav, header, main, article, section, footer {
+    // dev
+    background: #FFF;
+    margin-bottom: 10px;
 }
 // darktmode attributtes
 .darkmode {
@@ -108,7 +139,8 @@ nav, header, main, article, section, footer {
 
     article i,
     aside i {
-        color: #5142de;
+        // color: #5142de;
+        color: rgb(12,57,139);
     }
     
     aside .btn i {
@@ -117,12 +149,22 @@ nav, header, main, article, section, footer {
 
     // form elements
     input, textarea {
-        background: darkslateblue;
+        background: rgb(69, 108, 158);
         color: var(--dark-text);
     }
 
     article .elmnts {
         border: 2px solid var(--dark-text);
+    }
+
+    // title, tagline & text props
+    .title, .tagline, .list-title, li {
+        color: var(--dark-text)
+    }
+
+    // link props
+    aside a {
+        color: var(--dark-text);
     }
 
 }
@@ -201,13 +243,6 @@ aside {
         padding-left: 25px;
         height: 100%;
         width: 100%;
-        
-        .title {
-            font-size: 1.5rem;
-        }
-        .tagline {
-            font-size: 1.1rem;
-        }
     }
     .elmnts:nth-child(1) {
         margin-top: 10vh;
@@ -231,6 +266,18 @@ aside {
         padding-left: 25px;
     }
 
+    .title {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+    }
+    .tagline {
+        text-transform: capitalize;
+        text-decoration: underline;
+        letter-spacing: 0.1rem;
+        font-size: 0.85rem;
+    }
+
     // aside ul [ list ]
     .list {
         display: flex;
@@ -241,12 +288,14 @@ aside {
         i {
             margin-right: 15px;
             color: #5142de;
+            color: rgb(12,57,139);
         }
     }
     // aside ul li [ items ]
     .items {
         list-style-type: none;
         margin-bottom: 25px;
+        font-family: var(--font-text);
     }
     .items:nth-child(1) {
         margin-top: 25px;
@@ -255,7 +304,7 @@ aside {
         font-size: 1.15rem;
         text-transform: capitalize;
         text-decoration: none;
-
+        
         // dev : change to ( CLR ) variable
         color: #FFF;
     }
@@ -271,34 +320,34 @@ aside {
 
 // header [ header ]
 header {
-    height: calc(42.5vh * 2 );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
     width: 100%;
     padding: 10px;
     text-transform: capitalize;
-    // dev
-    background: #FFF;
-    margin-bottom: 10px;
     z-index: 1;
+    
     // header element styles
     .title {
-        font-size: 1.75rem;
+        font-size: 2.75rem;
     }
     .tagline {
         // greyed out [ grey ]
         color: rgb(131, 130, 130);
         text-decoration: underline;
-        font-size: 0.95rem;
-        margin-top: 25px;
-    }
-    .img {
-        height: 150px;
-        width: 150px;
-        // dev
-        border: var(--debugging);
-    }
+        font-size: 1.35rem;
+        letter-spacing: 0.1rem;
+        }
     a {
         color: #FFF;
         text-decoration: none;
+    }
+    .btn {
+        font-size: 0.75rem;
+        margin-left: 0;
     }
 }
 
@@ -381,11 +430,13 @@ main {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            letter-spacing: 0.5px;
-            text-decoration: none;
+            letter-spacing: 1px;
+            font-size: 1.25rem;
+            text-decoration: underline;
             text-transform: uppercase;
             height: 100%;
             width: 100%;
+            font-family: var(--font-text);
         }
     }
 
@@ -469,7 +520,7 @@ article {
     // dev
     background: #FFF;
     margin-bottom: 10px;
-    
+
     // information layout [ elmnts ]
     .elmnts {
 
@@ -484,7 +535,8 @@ article {
         width: 100%;
     }
     .elmnts:nth-child(1) {
-        margin-bottom: 25px;
+        // margin-bottom: 25px;
+        border: none;
     }
     // elmnts ul [ list ]
     .list {
@@ -501,12 +553,23 @@ article {
         list-style-type: none;
         text-transform: capitalize;
         letter-spacing: 0.5px;
+        font-family: var(--font-text);
     }
     i {
         margin-right: 10px;
         font-size: 1.2rem;
+
+        // light purple
         color: rgb(81,66,222);
 
+        // dark blue
+        color: rgb(12,57,139);
+
+    }
+    .title {
+        font-size: 2.24rem;
+        text-transform: capitalize;
+        margin-top: 25px;
     }
     // ul list [ list title ]
     .list-title {
@@ -526,14 +589,37 @@ article {
         background: rgb(81,66,222);
         background: linear-gradient(111deg, rgba(81,66,222,1) 0%, rgba(143,45,158,1) 100%);
 
+        // light blue / dark blue
+        background: rgb(12,57,139);
+        background: linear-gradient(111deg, rgba(12,57,139,1) 0%, rgba(38,179,195,1) 100%);
+
         max-width: 175px;
     }
+    
 }
 
 // section [ content ]
 section {
-    min-height: 100vh;
+    
+    // display props [ flex ]
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100%;
+    position: relative;
     padding: 10px;
+    
+    
+
+    .elmnts {
+        // dev
+        // border: 2px solid red;
+    }
+    .profile {
+
+    }
     
     // element styles
     .title {
@@ -548,6 +634,7 @@ section {
         line-height: 1.6;
         padding-right: 50px;    
         margin-bottom: 20px;
+        font-family: var(--font-text);
     }
     .img {
         height: 150px;
@@ -558,34 +645,12 @@ section {
     .btn {
         margin-top: 25px;
     }
-
-}
-
-// duplicate styles [ turn to global ]
-header,
-section {
-    // display props [ flex ]
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    // dev
-    border: var(--wireframe);
-
-    // container layout [ elmnts ]
-    .elmnts {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100%;
-        width: 100%;
-        padding: 10px;
+    a {
+        color: #FFF;
     }
-    
 }
+
+
 
 // footer [ footer ]
 footer {
@@ -639,6 +704,7 @@ footer {
         margin-bottom: 5px;
         text-transform: capitalize;
         letter-spacing: 0.1rem;
+        font-family: var(--font-text);
     }
     // form [ input ]
     input {
@@ -671,6 +737,7 @@ footer {
         line-height: 1.6;
         padding-right: 50px;    
         margin-bottom: 20px;
+        font-family: var(--font-text);
     }
     .img {
         height: 150px;
@@ -680,6 +747,60 @@ footer {
     }
     
 }
+
+
+.profile {
+        
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#profile-wrp {
+    
+    z-index: 2;
+    
+
+    position: absolute;
+    top: 50%;
+    left: -25%;
+
+    border: 2px solid red;
+}
+.profile-img {
+    
+    transform: translate(50%, -50%);
+    font-size: 5rem;
+    z-index: 1;
+
+    animation-name: spin;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+}
+
+aside .profile {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // dev
+    // border: 2px solid darkblue;
+}
+aside .profile-img {
+
+    transform: translate(10%);
+    border: 2px solid red;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 // dev removal
 // main, header, article, section {display:none;}
 
@@ -693,44 +814,52 @@ footer {
     // navigation [ nav ] component
     nav {}
 
+    aside {
+        height: 90vh;
+        margin-top: 10vh;
+    }
+
     // header [ header ] component
     header {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: center;
+        height: 100vh;
+    }
+    section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(50px, auto);
 
-        max-height: 85vh;
+        .profile {
+            grid-column-start: 2;
+            grid-column-end: 3;
 
-        // dev
-        border: var(--wireframe);
+            grid-row-start: 2;
+            border: 2px solid red;
+        }
+        .title {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
 
-        // container layout [ elmnts ]
-        .elmnts {
-            height: 100%;
-            width: 100%;
-            min-height: 100%;
-            padding-left: 0;
-            
-            
+            border: 2px solid darkblue;
         }
-        .elmnts:nth-child(1) {
-            align-items: center;
+        .text {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+
+            border: 2px solid red;
         }
-        .elmnts:nth-child(2) {
-            margin-left: 25px;    
+        .btn {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+
+            border: 2px solid orange;
         }
 
-        
-
-        .tagline {
-            margin-bottom: 5px;
-        }
-        // container [ img ]
-        .img {
-            min-height: 200px;
-        }
-        
     }
 
     // navigation [ nav

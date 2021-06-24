@@ -163,6 +163,8 @@ menu.addEventListener('click', ()=> {
         navigation.style.width = '100%';
         // assign menu icon class to close [ times ]
         menu_icon.classList = 'fas fa-times';
+
+        page.style.overflow = 'scroll';
     }
     else {
         // return the navigation width to default [ 0% ]
