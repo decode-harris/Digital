@@ -634,6 +634,116 @@ footer .btn {
 }
 
 
+/*
+
+    main [ project ] component
+    
+    external page styles ( make into global css )
+
+*/
+main#projects {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+
+    height: 100%;
+
+    background: #000;
+    // background: red;
+    .title {
+        margin: 0;
+        text-align: left;
+    }
+
+    // project ul [ list ] element
+    .list {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+        
+        // dev
+        // border: 2px solid #FFF;
+    }
+    // project ul li [ items ] element
+    .items {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 10px;
+        // border: 2px solid rgb(12,57,139);
+
+        min-height: 65vh;
+
+        position: relative;
+        z-index: 1;
+    }
+    .project-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30%;
+        width: 100%;
+        max-width: 100%;
+        background-attachment: fixed;
+        
+        z-index: 2;
+        opacity: 0.5;
+
+    }
+    .project-title {
+        font-size: 2.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        text-shadow: 3px 1px rgb(12,57,139);
+        color: #FFF;
+        border: 2px solid #fff;
+
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        z-index: 3;
+    }
+    .project-tagline {
+        font-size: 1.35rem;
+        text-transform: capitalize;
+        font-style: italic;
+        margin-top: 25px;
+        padding-left: 10%;
+        font-weight: bold;
+        color: #FFF;
+    }
+    
+    // main [ text ]
+    .text {
+        color: #FFF;
+        font-size: 1rem;
+        line-height: 1.5;
+        font-family: var(--font-text);
+        padding-left: 10%;
+        padding-right: 10%;
+        z-index: 3;
+        // dev
+        border: 2px solid #000;
+    }
+    .btn {
+        margin: 0;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-left: 10%;
+        border-radius: 0;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 0.7rem;
+    }
+}
+
 
 // dev removal
 // main, header, article, section {display:none;}
@@ -791,9 +901,6 @@ nav { display: flex;}
         align-items: flex-start;
         width: 20vw;
         
-        
-        
-
         border: 2px solid red;
 
         // display menu area [ menu ]

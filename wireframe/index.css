@@ -533,6 +533,95 @@ footer .btn {
   text-decoration: underline;
 }
 
+/*
+
+    main [ project ] component
+
+    external page styles ( make into global css )
+
+*/
+main#projects {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  height: 100%;
+  background: #000;
+}
+main#projects .title {
+  margin: 0;
+  text-align: left;
+}
+main#projects .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+main#projects .items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10px;
+  min-height: 65vh;
+  position: relative;
+  z-index: 1;
+}
+main#projects .project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30%;
+  width: 100%;
+  max-width: 100%;
+  background-attachment: fixed;
+  z-index: 2;
+  opacity: 0.5;
+}
+main#projects .project-title {
+  font-size: 2.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-shadow: 3px 1px #0c398b;
+  color: #FFF;
+  border: 2px solid #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  z-index: 3;
+}
+main#projects .project-tagline {
+  font-size: 1.35rem;
+  text-transform: capitalize;
+  font-style: italic;
+  margin-top: 25px;
+  padding-left: 10%;
+  font-weight: bold;
+  color: #FFF;
+}
+main#projects .text {
+  color: #FFF;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: var(--font-text);
+  padding-left: 10%;
+  padding-right: 10%;
+  z-index: 3;
+  border: 2px solid #000;
+}
+main#projects .btn {
+  margin: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 10%;
+  border-radius: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.7rem;
+}
+
 .menu {
   display: none;
 }
