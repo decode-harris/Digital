@@ -161,6 +161,8 @@ function mediaQueryListener() {
             if (nav.style.width != '100%') {
                 // apply a width style of 100% to the nav element
                 nav.style.width = '100%';
+                // apply a padding value to nav element
+                nav.style.padding = '10px';
                 // assign menu icon class to close [ times ]
                 menu_icon.classList = 'fas fa-times';
                 // apply the overflow [ scroll ] property to the page element
@@ -173,6 +175,8 @@ function mediaQueryListener() {
                 nav.style.width = '0%';
                 // return menu icon back to default [ bars ]
                 menu_icon.classList = 'fas fa-bars';
+                // remove the padding value from nav element
+                nav.style.padding = '0px';
             }
             // test [ listener ]
             console.log('MQL : active');
@@ -199,6 +203,8 @@ function mediaQueryListener() {
                 if (nav.style.width != '0%') {
                     // apply nav style to mobile default width [ 0% ]
                     nav.style.width = '0%';
+                    // remove the padding value from nav element
+                    nav.style.padding = '0px';
                     // return menu icon back to default [ bars ]
                     menu_icon.classList = 'fas fa-bars';
                 }
