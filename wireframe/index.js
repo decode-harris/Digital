@@ -81,8 +81,6 @@
 let page = document.querySelector('.page');
 // nav [ nav ] selector
 let nav = document.querySelector('#nav');
-// aside [ navigation ] selector
-let navigation = document.querySelector('.navigation');
 
 // media query listener [ 900px ]
 let mql = window.matchMedia('(min-width: 900px');
@@ -106,7 +104,7 @@ function mediaQueryListener() {
     if (mql.matches) {
         // test [ listener ]
         console.log('MQ : 900px');
-        navigation.style.width = '20vw';
+        nav.style.width = '20vw';
         /*
             [ navigation links ] : close aside element on click
 
@@ -118,16 +116,16 @@ function mediaQueryListener() {
 
         */
         // navigation ul li [ items ] all selector
-        let nav_items = document.querySelectorAll('.navigation .items');
+        let nav_items = document.querySelectorAll('#nav .items');
         // forEach [ nav items ]
         nav_items.forEach(element => {
             
             // click event [ nav items ] : mobile only
             element.addEventListener('click', ()=> {
-                // validate navigation width
-                if (navigation.style.width != '20vw') {
-                    // apply navigation style to mobile default width [ 0% ]
-                    navigation.style.width = '20vw';
+                // validate nav width
+                if (nav.style.width != '20vw') {
+                    // apply nav style to mobile default width [ 0% ]
+                    nav.style.width = '20vw';
                     
                 }
             });
@@ -138,7 +136,7 @@ function mediaQueryListener() {
     // if mql does not match media query [ 900px ]
     else {
         // apply mobile width [ 0% ] to navigation element
-        navigation.style.width = '0%';
+        nav.style.width = '0%';
         
         /* 
             menuProperties function
@@ -159,10 +157,10 @@ function mediaQueryListener() {
         // click event [ menu ] button
         menu.addEventListener('click', ()=> {
 
-            // valiadte width property of [ navigation ] element
-            if (navigation.style.width != '100%') {
-                // apply a width style of 100% to the navigation element
-                navigation.style.width = '100%';
+            // valiadte width property of [ nav ] element
+            if (nav.style.width != '100%') {
+                // apply a width style of 100% to the nav element
+                nav.style.width = '100%';
                 // assign menu icon class to close [ times ]
                 menu_icon.classList = 'fas fa-times';
                 // apply the overflow [ scroll ] property to the page element
@@ -171,8 +169,8 @@ function mediaQueryListener() {
                 return
             }
             else {
-                // return the navigation width to default [ 0% ]
-                navigation.style.width = '0%';
+                // return the nav width to default [ 0% ]
+                nav.style.width = '0%';
                 // return menu icon back to default [ bars ]
                 menu_icon.classList = 'fas fa-bars';
             }
@@ -191,16 +189,16 @@ function mediaQueryListener() {
 
         */
         // navigation ul li [ items ] all selector
-        let nav_items = document.querySelectorAll('.navigation .items');
+        let nav_items = document.querySelectorAll('#nav .items');
         // forEach [ nav items ]
         nav_items.forEach(element => {
             
             // click event [ nav items ] : mobile only
             element.addEventListener('click', ()=> {
-                // validate navigation width
-                if (navigation.style.width != '0%') {
-                    // apply navigation style to mobile default width [ 0% ]
-                    navigation.style.width = '0%';
+                // validate nav width
+                if (nav.style.width != '0%') {
+                    // apply nav style to mobile default width [ 0% ]
+                    nav.style.width = '0%';
                     // return menu icon back to default [ bars ]
                     menu_icon.classList = 'fas fa-bars';
                 }
@@ -233,29 +231,29 @@ function defaultPropreties() {
     // navigation.style.width = '0%';
 
     // hidden [ container ] element selector
-    let container = document.querySelector('.container');
+    // let container = document.querySelector('.container');
     // remove [ container from view ]
-    container.style.display = 'none';
+    // container.style.display = 'none';
 
     // select button [ more ]
-    let more = document.querySelector('#more');
+    // let more = document.querySelector('#more');
 
     // click event [ more ] button
-    more.addEventListener('click', ()=> {
-        // validate if the container is display [ grid ]
-        if (container.style.display != 'grid') {
-            // apply display style [ grid ] to container element
-            container.style.display = 'grid';
-            // change [ more ] button to match state
-            more.innerHTML = 'less';
-        }
-        else {
-            // revert [ more ] button back to default
-            more.innerHTML = 'more';
-            // revert [ container ] element back to default
-            container.style.display = 'none';
-        }
-    });
+    // more.addEventListener('click', ()=> {
+    //     // validate if the container is display [ grid ]
+    //     if (container.style.display != 'grid') {
+    //         // apply display style [ grid ] to container element
+    //         container.style.display = 'grid';
+    //         // change [ more ] button to match state
+    //         more.innerHTML = 'less';
+    //     }
+    //     else {
+    //         // revert [ more ] button back to default
+    //         more.innerHTML = 'more';
+    //         // revert [ container ] element back to default
+    //         container.style.display = 'none';
+    //     }
+    // });
 
 }
 // init [ hidden properties ] function

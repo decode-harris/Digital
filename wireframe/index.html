@@ -16,41 +16,18 @@
 </head>
 <body>
 
-    <!-- 
-
-        remove page
-        refactor header / nav / aside elements
-
-
-    -->
-    <!-- header -->
-    <!-- <header class="header"> -->
-
-        <!-- heading [ icon ] -->
-        <!-- <h3>ch</h3> -->
-        <!-- heading [ icon ] -->
-
-        <!-- button [ menu ] -->
-        <!-- <button class="btn" id="menu">
-            <i class="fas fa-bars"></i>
-        </button> -->
-        <!-- button [ menu ] -->
-
-    <!-- </header> -->
-    <!-- header -->
-
-    <!-- nav -->
-    <!-- <nav class="nav">
-        <ul class="list"></ul>
-    </nav> -->
-    <!-- nav -->
-    
-
-    <!-- page -->
+<!-- page -->
 <div class="page">
-    
-    <!-- nav [ nav ] -->
-    <nav class="nav" id="nav">
+
+    <!-- header [ header ] -->
+    <header class="header" id="header">
+        <!-- profile [ img ] -->
+        <div class="profile">
+            <!-- animated [ profile ] image container -->
+            <img src="img/profile.png" alt="" class="img profile-img">
+            <!-- animated [ profile ] image container -->
+        </div>
+        <!-- profile [ img ] -->
 
         <!-- button [ menu ] -->
         <button class="btn" id="menu">
@@ -59,164 +36,211 @@
             <!-- icon [ bars ] -->
         </button>
         <!-- button [ menu ] -->
+
+    </header>
+    <!-- header [ header ] -->
+    
+    <!-- nav [ nav ] -->
+    <nav class="nav" id="nav">
+
+        <!-- article [ content ] -->
+        <article class="content">
+
+            <!-- nav [ title & tagline ] -->
+            <h1 class="title">christopher harris</h1>
+            <h6 class="tagline">frontend web developer</h6>
+            <!-- nav [ title & tagline ] -->
+
+            <!-- list -->
+            <ul class="list">
+
+                <!-- items -->
+                <li class="items">
+                    <!-- link -->
+                    <a href="#landing" class="link active">
+                        <!-- icon [ home ] -->
+                        <i class="fas fa-h-square"></i>
+                        <!-- icon [ home ] -->
+                        homepage
+                    </a>
+                    <!-- link -->
+                </li>
+                <li class="items">
+                    <!-- link -->
+                    <a href="#introduction" class="link">
+                        <!-- icon [ user ] -->
+                        <i class="far fa-user"></i>
+                        <!-- icon [ user ] -->
+                        about me
+                    </a>
+                    <!-- link -->
+                </li>
+                <li class="items">
+                    <!-- link [ portfolio ] -->
+                    <a href="#portfolio" class="link">
+                        <!-- icon [ cubes ] -->
+                        <i class="fas fa-cubes"></i>
+                        <!-- icon [ cubes ] -->
+                        portfolio
+                    </a>
+                    <!-- link [ portfolio ] -->
+                </li>
+                <li class="items">
+                    <!-- link [ technincal ] -->
+                    <a href="#technical" class="link">
+                        <!-- icon [ magic ] -->
+                        <i class="fas fa-magic"></i>
+                        <!-- icon [ magic ] -->
+                        technical
+                    </a>
+                    <!-- link [ technincal ] -->
+                </li>
+                <li class="items">
+                    <!-- link -->
+                    <a href="#contact" class="link">
+                        <!-- icon [ comment ] -->
+                        <i class="far fa-comment-dots"></i>
+                        <!-- icon [ comment ] -->
+                        get in touch
+                    </a>
+                    <!-- link -->
+                </li>
+                <!-- items -->
+
+            </ul>
+            <!-- list -->
+
+            <!-- buttons -->
+            <div class="buttons">
+
+                <!-- button [ github ] -->
+                <button class="btn" id="github">
+                    <!-- external [ link ] -->
+                    <a href="https://github.com/decode-harris">
+                        <i class="fab fa-github"></i>
+                        
+                        github
+                    </a>
+                    <!-- external [ link ] -->
+                    </button>
+                <!-- button [ github ] -->
+
+                <!-- button [ email ] -->
+                <button class="btn">
+                    <!-- external [ link ] -->
+                    <a href="">
+                        <i class="fas fa-envelope"></i>
+                        email
+                    </a>
+                    <!-- external [ link ] -->
+                </button>
+                <!-- button [ email ] -->
+
+                <!-- button [ linkedin ] -->
+                <button class="btn">
+                    <!-- external [ link ] -->
+                    <a href="">
+                        <i class="fab fa-linkedin"></i>
+                        linkedin
+                    </a>
+                    <!-- external [ link ] -->
+                </button>
+                <!-- button [ linkedin ] -->
+
+            </div>
+            <!-- buttons -->
+
+        </article>
+        <!-- article [ content ] -->
     
     </nav>
     <!-- nav [ nav ] -->
 
-    <!-- aside [ navigation ] -->
-    <aside class="navigation">
-        
-        <!-- animated [ profile ] image -->
-        <div class="profile">
+    <!-- section [ wrapper ] -->
+    <section class="wrapper" id="landing">
+
+        <!-- article [ content ] -->
+        <article class="content">
+
+            <!-- container -->
+            <div class="container">
+                <div class="profile">
+                    <!-- profile [ image ] -->
+                    <img src="img/profile.png" alt="profile image" class="img profile-img">
+                <!-- profile [ image ] -->    
+                </div>
+                <!-- profile [ image ] -->
+                <img src="img/profile-image.jpg" alt="profile image" class="img profile-item">
+                <!-- profile [ image ] -->
+            </div>
+            <!-- container -->
             
-            <!-- animated [ profile ] image container -->
-            <img src="img/profile.png" alt="animated profile image" class="img profile-img">
-            <!-- animated [ profile ] image container -->
-        
-        </div>
-        <!-- animated [ profile ] image -->
-        
-        <!-- profile [ title & tagline ] -->
-        <h5 class="title">christopher harris</h5>
-        <h6 class="tagline">frontend web developer</h6>
-        <!-- profile [ title & tagline ] -->    
-        
-        <!-- list -->
-        <ul class="list">
 
-            <!-- items -->
-            <li class="items">
-                <!-- link -->
-                <a href="#header" class="link active">
-                    <!-- icon [ home ] -->
-                    <i class="fas fa-h-square"></i>
-                    <!-- icon [ home ] -->
-                    home
-                </a>
-                <!-- link -->
-            </li>
-            <li class="items">
-                <!-- link -->
-                <a href="#introduction" class="link">
-                    <!-- icon [ user ] -->
-                    <i class="far fa-user"></i>
-                    <!-- icon [ user ] -->
-                    about
-                </a>
-                <!-- link -->
-            </li>
-            <li class="items">
-                <!-- link -->
-                <a href="#portfolio" class="link">
-                    <!-- icon [ cubes ] -->
-                    <i class="fas fa-cubes"></i>
-                    <!-- icon [ cubes ] -->
-                    portfolio
-                </a>
-                <!-- link -->
-            </li>
-            <li class="items">
-                <!-- link -->
-                <a href="#skills" class="link">
-                    <!-- icon [ magic ] -->
-                    <i class="fas fa-magic"></i>
-                    <!-- icon [ magic ] -->
-                    skills
-                </a>
-                <!-- link -->
-            </li>
-            <li class="items">
-                <!-- link -->
-                <a href="#contact" class="link">
-                    <!-- icon [ comment ] -->
-                    <i class="far fa-comment-dots"></i>
-                    <!-- icon [ comment ] -->
-                    contact
-                </a>
-                <!-- link -->
-            </li>
-            <!-- items -->
-
-        </ul>
-        <!-- list -->
+            <!-- title & tagline -->
+            <h6 class="tagline">welcome! my name is </h6>
+            <h1 class="title">christopher harris</h1>
+            <!-- title & tagline -->
+            <!-- text -->
+            <p class="text">
+                <span class="lighter">Frontend Web Developer.</span> 
+                Specializing in vanilla Javascript with an interest
+                in System Support & Architecture.
+            </p>
+            <!-- text -->
             
-        <!-- button [ github ] -->
-        <button class="btn" id="github">
-
-            <!-- external [ link ] -->
-            <a href="https://github.com/decode-harris">
-                <!-- icon [ github ] -->
-                <i class="fab fa-github-square"></i>
-                <!-- icon [ github ] -->
-            </a>
-            <!-- external [ link ] -->
-            
-        </button>
-        <!-- button [ github ] -->
+        </article>
+        <!-- article [ content ] -->
         
-    
-    </aside>
-    <!-- aside [ navigation ] -->
+    </section>
+    <!-- section [ wrapper ] -->
 
-    <!-- header [ header ] -->
-    <header class="header" id="header">
+    <!-- section [ wrapper ] -->
+    <section class="wrapper" id="introduction">
 
-        <!-- title & tagline -->
-        <h6 class="tagline">christopher harris</h6>
-        <h1 class="title">frontend web developer</h1>
-        <!-- title & tagline -->
+        <!-- article [ content ] -->
+        <article class="content">
 
-        <!-- button [ btn ] -->
-        <button class="btn">
-            <!-- internal [ link ] -->
-            <a href="#introduction">
-                welcome
-            </a>
-            <!-- internal [ link ] -->
-        </button>
-        <!-- button [ btn ] -->
-    
-    </header>
-    <!-- header [ header ] -->
+            <!-- content title -->
+            <h2 class="title">about</h2>
+            <!-- content title -->
 
-    <!-- section [ content ] -->
-    <section class="content" id="introduction">
+            <!-- text -->
+            <p class="text">
+                I am a frontend web developer who enjoys developing
+                prototypes, wireframe layouts & web applications
+                to further enhance my knowledge in the field of 
+                web development.
+            </p>
+            <!-- text -->
 
-        <!-- profile [ png ] -->
-        <div class="profile">
+            <!-- text-sml -->
+            <p class="text-sml">
+                <!-- icon [ looking for work ] -->
+                <i class="fas fa-user-tie"></i>
+                <!-- icon [ looking for work ] -->
+                interested in software development & system support.
+                
+                <br>
 
-            <!-- animated [ profile ] image container -->
-            <img src="img/profile.png" alt="" class="img profile-img">
-            <!-- animated [ profile ] image container -->
+                <!-- icon [ graduate ] -->
+                <i class="fas fa-graduation-cap"></i>
+                <!-- icon [ graduate ] -->
+                advanced diploma of information technology
+
+                <br>
+
+                <!-- icon [ certificate ] -->
+                <i class="fas fa-certificate"></i>
+                <!-- icon [ certificate ] -->
+                certificate of responsive web development
+            </p>
+            <!-- text-sml -->
         
-        </div>
-        <!-- profile [ png ] -->
-        
-        <!-- content title -->
-        <h2 class="title">about</h2>
-        <!-- content title -->
-
-        <!-- text -->
-        <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Deleniti tempore ad expedita quaerat est quibusdam 
-            aboriosam. Impedit dolorum error accusantium nihil
-            consectetur nulla et sint.
-        </p>
-        <!-- text -->
-
-        <!-- button [ btn ] -->
-        <button class="btn">
-            <!-- internal [ link ] -->
-            <a href="#portfolio">
-                projects
-            </a>
-            <!-- internal [ link ] -->
-        </button>
-        <!-- button [ btn ] -->
+        </article>
+        <!-- article [ content ] -->
     
     </section>
-    <!-- section [ content ] -->
+    <!-- section [ wrapper ] -->
 
     <!-- main [ main ] -->
     <main class="main" id="portfolio">
@@ -224,186 +248,364 @@
         <!-- main [ title ] -->
         <h2 class="title">portfolio</h2>
         <!-- main [ title ] -->
-        
-        <!-- list -->
+
+        <!-- main ul [ list ] -->
         <ul class="list">
 
-            <!-- items [ display ] -->
+            <!-- ul li [ items ] -->
             <li class="items">
-                <img src="img/1.jpg" alt="project : 01" class="img">
-                <a href="projects.html">coffeeshop</a>
+
+                <!-- project [ image ] -->
+                <img src="img/bean-academy.jpg" alt="project : the bean academy" class="project-image">
+                <!-- project [ image ] -->
+
+                <!-- project [ title ] -->
+                <h3 class="project-title">cafe resonance</h3>
+                <!-- project [ title ] -->
+
+                <!-- project [ sublist ] -->
+                <ul class="sublist">
+                    <!-- [ subitems ] -->
+                    <li class="subitems">
+                        <!-- span [ javascript ] -->
+                        <span class="clr-javascript">
+                            <!-- icon [ js ] -->
+                            <i class="fab fa-js"></i>
+                            <!-- icon [ js ] -->
+                            <!-- p [ tech] -->
+                            <p class="tech">Javascript</p>
+                            <!-- p [ tech] -->
+                        </span>
+                        <!-- span [ javascript ] -->
+                    </li>
+                    <li class="subitems">
+                        <!-- span [ sass ] -->
+                        <span class="clr-sass">
+                            <!-- icon [ sass ] -->
+                            <i class="fab fa-sass"></i>
+                            <!-- icon [ sass ] -->
+                            <!-- p [ tech ] -->
+                            <p class="tech">Sass</p>
+                            <!-- p [ tech ] -->
+                        </span>
+                        <!-- span [ sass ] -->    
+                    </li>
+                    <!-- [ subitems ] -->
+                </ul>
+                <!-- project [ sublist ] -->
+
+                <!-- project [ tagline ] -->
+                <h6 class="project-tagline">coffee shop</h6>
+                <!-- project [ tagline ] -->
+                
+                <!-- project [ text ] -->
+                <p class="text">
+                    A single page website developed for a proposed cafe. 
+                    Featuring minimalistic straight-forward content &
+                    captivating imagery to drive the user closer to 
+                    making a purchase or remembering the specific
+                    website at a later time.
+                </p>
+                <!-- project [ text ] -->
+
+                <!-- project [ btn ] -->
+                <button class="btn" id="project_01">view website</button>
+                <!-- project [ btn ] -->
+
             </li>
             <li class="items">
-                <img src="img/2.jpg" alt="project : 02" class="img">
-                <a href="projects.html">frontpage</a>
+                <!-- project [ image ] -->
+                <img src="img/brainwave.jpeg" alt="project : brainwave" class="project-image">
+                <!-- project [ image ] -->
+                
+                <!-- project [ title ] -->
+                <h3 class="project-title">brainwave linear</h3>
+                <!-- project [ title ] -->
+
+                <!-- project [ sublist ] -->
+                <ul class="sublist">
+                    <!-- [ subitems ] -->
+                    <li class="subitems">
+                        <!-- span [ html ] -->
+                        <span class="clr-vue">
+                            <!-- icon [ html ] -->
+                            <i class="fab fa-vuejs"></i>
+                            <!-- icon [ html ] -->
+                            <!-- p [ tech ] -->
+                            <p class="tech">vue.js</p>
+                            <!-- p [ tech ] -->
+                        </span>
+                        <!-- span [ html ] -->
+                    </li>
+                    <li class="subitems">
+                        <!-- span [ sass ] -->
+                        <span class="clr-sass">
+                            <!-- icon [ sass ] -->
+                            <i class="fab fa-sass"></i>
+                            <!-- icon [ sass ] -->
+                            <!-- p [ tech ] -->
+                            <p class="tech">Sass</p>
+                            <!-- p [ tech ] -->
+                        </span>
+                        <!-- span [ sass ] -->
+                    </li>
+                    <!-- [ subitems ] -->
+                </ul>
+                <!-- project [ sublist ] -->
+
+                <!-- project [ tagline ] -->
+                <h6 class="project-tagline">advanced notetaking</h6>
+                <!-- project [ tagline ] -->
+
+                <!-- project [ text ] -->
+                <p class="text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Officia repellendus id tenetur cumque delectus sunt?
+                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Officia repellendus id tenetur cumque delectus sunt?
+                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                </p>
+                <!-- project [ text ] -->
+
+                <!-- project [ btn ] -->
+                <button class="btn" id="project_04">view website</button>
+                <!-- project [ btn ] -->
+
             </li>
             <li class="items">
-                <img src="img/3.jpg" alt="project : 03" class="img">
-                <a href="projects.html">application</a>
+
+                <img src="img/apothecary.jpeg" alt="project: apothecary" class="project-image">
+
+                <!-- project [ title & text ] -->
+                <h3 class="project-title">alchemist's scroll</h3>
+
+                <!-- project [ sublist ] -->
+                <ul class="sublist">
+                    <!-- [ subitems ] -->
+                    <li class="subitems">
+                        <!-- span [ javascript ] -->
+                        <span class="clr-javascript">
+                            <!-- icon [ js ] -->
+                            <i class="fab fa-js"></i>
+                            <!-- icon [ js ] -->
+                            <!-- p [ tech] -->
+                            <p class="tech">Javascript</p>
+                            <!-- p [ tech] -->
+                        </span>
+                        <!-- span [ javascript ] -->
+                    </li>
+                    <li class="subitems">
+                        <!-- span [ css ] -->
+                        <span class="clr-css">
+                            <!-- icon [ css ] -->
+                            <i class="fab fa-css3-alt"></i>
+                            <!-- icon [ css ] -->
+                            <!-- p [ tech ] -->
+                            <p class="tech">CSS</p>
+                            <!-- p [ tech ] -->
+                        </span>
+                        <!-- span [ css ] -->
+                    </li>
+                    <!-- [ subitems ] -->
+                </ul>
+                <!-- project [ sublist ] -->
+
+                <h6 class="project-tagline">apothecary workbench</h6>
+                <!-- project [ title & text ] -->
+
+                <!-- project [ text ] -->
+                <p class="text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Officia repellendus id tenetur cumque delectus sunt?
+                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Officia repellendus id tenetur cumque delectus sunt?
+                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                </p>
+                <!-- project [ text ] -->
+
+                <!-- project [ btn ] -->
+                <button class="btn" id="project_02">view website</button>
+                <!-- project [ btn ] -->
+
             </li>
-            <li class="items">
-                <img src="img/4.jpg" alt="project : 04" class="img">
-                <a href="projects.html">gallery</a>
-            </li>
-            <!-- items [ display ] -->
-            
-            <!-- container -->
-            <div class="container">
-                <!-- items [ hidden ] -->
-                <li class="items">
-                    <a href="projects.html">coming soon</a>
-                </li>
-                <li class="items">
-                    <a href="projects.html">coming soon</a>
-                </li>
-                <!-- items [ hidden ] -->
-            </div>
-            <!-- container -->
+           <!-- ul li [ items ] -->
 
         </ul>
-        <!-- list -->
-        
-        <!-- button [ more ] -->
-        <button class="btn" id="more">see more</button>
-        <!-- button [ more ] -->
-
-        
+        <!-- main ul [ list ] -->
     
     </main>
     <!-- main [ main ] -->
 
-    <!-- article [ information ] -->
-    <article class="information" id="skills">
 
-        <!-- content [ title ] -->
-        <h2 class="title">technical</h2>
-        <!-- content [ title ] -->
-        
-        <!-- list -->
-        <ul class="list">
-            <!-- list title -->
-            <h4 class="list-title">software</h4>
-            <!-- list title -->
+    <!-- section [ wrapper ] -->
+    <section class="wrapper" id="technical">
 
-            <!-- items -->
-            <li class="items">
-                <!-- icon -->
-                <i class="fas fa-vector-square"></i>
-                <!-- icon -->
-                wireframes & prototype
-            </li>
-            <li class="items">
-                <!-- icon -->
-                <i class="far fa-chart-bar"></i>
-                <!-- icon -->
-                google analytics
-            </li>
-            <li class="items">
-                <!-- icon -->
-                <i class="fas fa-fire"></i>
-                <!-- icon -->
-                firebase & firestore
-            </li>
-            <li class="items">
-                <!-- icon -->
-                <i class="fas fa-cog"></i>
-                <!-- icon -->
-                microsoft OS
-            </li>
-            <li class="items">
-                <!-- icon -->
-                <i class="fas fa-file"></i>
-                <!-- icon -->
-                office 365
-            </li>
-            <li class="items">
-                <!-- icon -->
-                <i class="fas fa-code-branch"></i>
-                <!-- icon -->
-                visual studio code
-            </li>
-            <!-- items -->
-        </ul>
-        <!-- list -->
+        <!-- article [ content ] -->
+        <article class="content">
 
-        <!-- list -->
-        <ul class="list">
-            <!-- list title -->
-            <h4 class="list-title">programming</h4>
-            <!-- list title -->
+            <!-- content [ title ] -->
+            <h2 class="title">technical</h2>
+            <!-- content [ title ] -->
+            
+            <!-- list -->
+            <ul class="list">
+                <!-- list title -->
+                <h4 class="list-title">software</h4>
+                <!-- list title -->
+    
+                <!-- items -->
+                <li class="items">
+                    <!-- icon -->
+                    <i class="fas fa-vector-square"></i>
+                    <!-- icon -->
+                    wireframes & prototype
+                </li>
+                <li class="items">
+                    <!-- icon -->
+                    <i class="far fa-chart-bar"></i>
+                    <!-- icon -->
+                    google analytics
+                </li>
+                <li class="items">
+                    <!-- icon -->
+                    <i class="fas fa-fire"></i>
+                    <!-- icon -->
+                    firebase & firestore
+                </li>
+                <li class="items">
+                    <!-- icon -->
+                    <i class="fas fa-cog"></i>
+                    <!-- icon -->
+                    microsoft OS
+                </li>
+                <li class="items">
+                    <!-- icon -->
+                    <i class="fas fa-file"></i>
+                    <!-- icon -->
+                    office 365
+                </li>
+                <li class="items">
+                    <!-- icon -->
+                    <i class="fas fa-code-branch"></i>
+                    <!-- icon -->
+                    visual studio code
+                </li>
+                <!-- items -->
+            </ul>
+            <!-- list -->
+    
+            <!-- list -->
+            <ul class="list">
+                <!-- list title -->
+                <h4 class="list-title">programming</h4>
+                <!-- list title -->
+    
+                <!-- items -->
+                <li class="items">
+                    HTML
+                    <div class="line"></div>
+                </li>
+                <li class="items">
+                    CSS
+                    <div class="line"></div>
+                </li>
+                <li class="items">
+                    Javascript
+                    <div class="line"></div>
+                </li>
+                <li class="items">
+                    Vue JS
+                    <div class="line"></div>
+                </li>
+                <!-- items -->
+            </ul>
+            <!-- list -->
+            
+        </article>
+        <!-- article [ content ] -->
 
-            <!-- items -->
-            <li class="items">
-                HTML
-                <div class="line"></div>
-            </li>
-            <li class="items">
-                CSS
-                <div class="line"></div>
-            </li>
-            <li class="items">
-                Javascript
-                <div class="line"></div>
-            </li>
-            <li class="items">
-                Vue JS
-                <div class="line"></div>
-            </li>
-            <!-- items -->
-        </ul>
-        <!-- list -->
-        
-    </article>
-    <!-- article [ information ] -->
-
+    </section>
+    <!-- section [ wrapper ] -->
+    
     <!-- footer [ footer ] -->
     <footer class="footer" id="contact">
 
-        <!-- content [ title ] -->
-        <h2 class="title">contact</h2>
-        <!-- content [ title ] -->
+        <!-- article [ content ] -->
+        <article class="content">
+            <!-- title -->
+            <h2 class="title">contact</h2>
+            <!-- title -->
+            
+            <!-- text -->
+            <p class="text">
+                <!-- lighter -->
+                <span class="lighter">
+                    Thank you for visiting my digital portfolio!
+                </span>
+                <!-- lighter -->
+                To get in touch with myself, please feel free to use any of the 
+                following methods featured below.
+            </p>
+            <!-- text -->
 
-        <!-- footer p [ text ] -->
-        <p class="text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing
-            elit. Quae eaque alias perspiciatis tempore commodi in.
-        </p>
-        <!-- footer p [ text ] -->
-        
-        <!-- contact form [ form ] -->
-        <form action="" class="form" id="form">
-            <!-- form [ control ] -->
-            <div class="control">
-                <label for="name">name</label>
-                <input type="text" name="name" id="name">
+            <!-- div [ buttons ] -->
+            <div class="buttons">
+                <!-- btn [ resume ] -->
+                <button class="btn" id="resume">resume</button>
+                <!-- btn [ resume ] -->
             </div>
-            <div class="control">
-                <label for="mail">email</label>
-                <input type="text" name="mail" id="mail">
-            </div>
-            <div class="control">
-                <label for="msg">message</label>
-                <textarea type="text" name="msg" id="msg"></textarea>
-            </div>
-            <div class="control">
-                <!-- button [ submit ] -->
-                <button class="btn" id="submit">submit</button>
-                <!-- button [ submit ] -->
-            </div>
-            <!-- form [ control ] -->
-        </form>
-        <!-- contact form [ form ] -->
-        
+            <!-- div [ buttons ] -->
+            
+
+            <!-- footer ul [ list ] -->
+            <ul class="list">
+
+                <!-- items -->
+                <li class="items">
+                    <!-- btn -->
+                    <button class="btn">
+                        <!-- link -->
+                        <a href="https://github.com/decode-harris">
+                            <i class="fab fa-github"></i>
+                            github
+                        </a>
+                        <!-- link -->
+                    </button>
+                    <!-- btn -->
+                </li>
+                <li class="items">
+                    <!-- btn -->
+                    <button class="btn">
+                        <!-- link -->
+                        <a href="">
+                            <i class="fas fa-envelope"></i>
+                            email
+                        </a>
+                        <!-- link -->
+                    </button>
+                    <!-- btn -->
+                </li>
+                <li class="items">
+                    <!-- btn -->
+                    <button class="btn">
+                        <!-- link -->
+                        <a href="">
+                            <i class="fab fa-linkedin"></i>
+                            linkedin
+                        </a>
+                        <!-- link -->
+                    </button>
+                    <!-- btn -->
+                </li>
+                <!-- items -->
+            </ul>
+            <!-- footer ul [ list ] -->
+
+        </article>
+        <!-- article [ content ] -->
+    
     </footer>
     <!-- footer [ footer ] -->
-
-    <!-- image network --><!-- convert to svg -->
-    <div class="network">
-        <!-- <img src="img/network.png" alt="transparent network image"> -->
-        <img src="img/network.png" alt="" class="img">
-        
-    </div>
-    <!-- image network --><!-- convert to svg -->
 
 </div>
 <!-- page -->
