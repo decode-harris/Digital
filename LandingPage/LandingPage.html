@@ -10,14 +10,148 @@
     <link rel="stylesheet" href="LandingPage.css">
 
     <!-- js -->
-    <script defer src="LandingPage.js"></script>
+    <script defer src="AnimationConcepts.js"></script>
+    <script defer src="NavigationMenu.js"></script>
+
+    <!-- icons library -->
+    <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
+
+    <!-- gsap : core ( module ) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+    <!-- gsap : plugin ( scroll trigger ) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+    
+
 </head>
 <body>
 
     <!-- page wrapper -->
-    <div class="page">
+    <div class="page" id="page">
 
-        
+        <!-- navigation component -->
+        <nav class="nav" id="nav">
+
+            <!-- navigation list -->
+            <ul class="list">
+                <!-- list items -->
+                <li class="items">
+                    <a class="links" href="#page" rel="noopener noreferrer">
+                        homepage
+                    </a>
+                </li>
+                <li class="items">
+                    <a class="links" href="#introduction" rel="noopener noreferrer">
+                        about me
+                    </a>
+                </li>
+                <li class="items">
+                    <a class="links" href="#projects" rel="noopener noreferrer">
+                        projects
+                    </a>
+                </li>
+                <li class="items">
+                    <a class="links" href="#contact" rel="noopener noreferrer">
+                        contact
+                    </a>
+                </li>
+                <!-- list items -->
+            </ul>
+            <!-- navigation list -->
+
+        </nav>
+        <!-- navigation component -->
+
+        <!-- navigation menu button -->
+        <button class="btn" id="menu">
+            <!-- menu icon [ bars ] -->
+            <i class="fa-solid fa-bars"></i>
+            <!-- menu icon [ bars ] -->
+        </button>
+        <!-- navigation menu button -->
+
+        <!-- section container [ Landing Page ] -->
+        <section class="container" id="landing">
+
+            <!-- header component -->
+            <header class="header">
+
+                <!-- landing title element -->
+                <h1 class="landing-title">
+                    greetings & welcome to the
+                    digital portfolio of
+                    <br>
+                    mr <span class="landing-name">Christopher Harris</span>.
+                </h1>
+                <!-- landing title element -->
+
+            </header>
+            <!-- header component -->
+
+            <!-- content article -->
+            <article class="content" id="introduction">
+
+                <!-- article title -->
+                <h2>About Me</h2>
+                <!-- article title -->
+
+                <!-- text content -->
+                <p class="text">
+                    I am a <span>Frontend Web Developer</span>,
+                    Digital Content Creator &
+                    <span>desktop support specialist</span> based out 
+                    of Melbourne, Australia.
+                </p>
+                <p class="text" style="display: none;">
+                    Having exposure to personal computers from an early age,
+                    I have accumulated over 20+ years of experience building,
+                    installing, debugging & reconfiguring desktop PC's. 
+                </p>
+                <!-- text content -->
+            </article>
+            <!-- content article -->
+
+        </section>
+        <!-- section container [ Landing Page ] -->
+
+        <!-- section container [ Projects Page ] -->
+        <section class="container" id="projects">
+
+            <!-- projects header component -->
+            <header class="header">
+
+                <!-- projects title -->
+                <h2 class="projects-title">Development</h2>
+                <!-- projects title -->
+
+                <!-- header text element -->
+                <p class="text">
+                    Here are some examples of 
+                    my
+                    <span>development work</span>,
+                    desktop applications & <span>design concepts</span>.
+                </p>
+                <!-- header text element -->
+            </header>
+            <!-- projects header component -->
+
+            <!-- main projects grid component -->
+            <main class="main">
+                <!-- projects list -->
+                <ul class="list">
+                    <!-- list items -->
+                    <li class="items"></li>
+                    <li class="items"></li>
+                    <li class="items"></li>
+                    <!-- list items -->
+                </ul>
+                <!-- projects list -->
+            </main>
+            <!-- main projects grid component -->
+        </section>
+        <!-- section container [ Projects Page ] -->
+    
     </div>
     <!-- page wrapper -->
 </body>
