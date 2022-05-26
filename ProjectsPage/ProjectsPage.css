@@ -47,7 +47,7 @@
     /* hide the overflowing animation elements inside the container */
     overflow: hidden;
 
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 /* Global Title Element [ h2 ] */
