@@ -1,0 +1,49 @@
+/*
+    Section Container Properties
+
+    Encapsulated inside the 'Main' & 'Aside' Components.
+    Provided properties will display content to the center
+    of the element.
+*/
+section {
+    /* provide display flex, assign content to center of container. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* provide dimensions & spacing to section container */
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    padding: 1rem;
+}
+/* 
+    Article Content Container
+
+    Encapsulated inside the 'Section' Container.
+    Provided properties will display content to the
+    top of the element, & position to the center along
+    the Y axis.
+*/
+article {
+    /* provide display flex, assign content to center & left of container. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+}
+#projects section {
+    background: var(--blueprint);
+}
+@media (min-width: 900px) {
+    article {
+        width: 100%;
+    }
+    #projects section {
+        /* set a max width for the section container. */
+        max-width: 60%;
+    }
+}

@@ -1,0 +1,36 @@
+.footer {
+    /* grid placement */
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    
+    /* provide display flex, display content center along X,Y axis. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* set dimensions & spacing properties */
+    height: 10vh;
+    padding: 0.25rem;
+
+    /* development border */
+    border: 2px solid #000;
+
+    position: relative;
+}
+.footer .signiture {
+    /* apply an imported google font family property ( text font ). */
+    font-family: var(--text-font);
+    text-align: center;
+    font-size: 0.85rem;
+
+    padding-top: 1rem;
+}
+.footer .btn {
+    position: absolute;
+    top: -40%;
+    background: #FFF;
+    z-index: 2;
+}

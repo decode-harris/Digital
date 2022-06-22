@@ -1,0 +1,84 @@
+/* 
+    Title & Tagline Properties
+        Contains the display & style properties for the
+        content headings & taglines. 
+*/
+/* Landing Page Title */
+h1 {
+    /* development border */
+    border: var(--wireframe);
+    font-size: 1.5rem;
+}
+/* Article Content Title */
+h2 {
+    /* development border */
+    border: var(--wireframe);
+
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+}
+/* List Project Title */
+h3 {
+    /* development border */
+    border: var(--wireframe);
+    
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+}
+/* Header Secondary Title */
+h4 {
+    text-transform: uppercase;
+    color: #000;
+}
+/* Article Content Tagline */
+h5 {
+    /* development border */
+    border: var(--wireframe);
+
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+
+    padding: 0.25rem;
+}
+/* List Project Tagline */
+h6 {
+    /* development border */
+    border: var(--wireframe);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+    
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--title-font);
+    color: var(--color-white);
+}
+
+/* Media Query : Laptop & Desktop Properties */
+@media (min-width: 900px) {
+    h1 {
+        font-size: 4rem;
+        max-width: 70%;
+
+        /* border: 2px solid red; */
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    h4 {
+        font-size: 1.45rem;
+    }
+    h5 {
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+    }
+    h6 {
+        font-size: 1.25rem;
+    }
+}

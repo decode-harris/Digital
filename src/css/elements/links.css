@@ -1,0 +1,16 @@
+/* Header Home/Return Button */
+#home a {
+    text-decoration: none;
+    color: var(--color-white);
+    transition: 100ms all ease-in;
+}
+#home a:hover {
+    letter-spacing: 2px;
+}
+
+
+/* Global External Link Properties */
+.text a {
+    color: var(--color-white);
+    padding-left: 1rem;
+}

@@ -1,0 +1,46 @@
+.preview {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 250px;
+    width: 100%;
+
+    font-family: var(--title-font);
+    font-weight: bold;
+    font-size: 1.35rem;
+    
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    
+    border: var(--border-white);
+    border-radius: 6px;
+    background-position: center;
+    background-size: cover;
+    /* background: var(--accent); */
+    background: var(--blueprint);
+}
+
+@media (min-width: 900px) {
+
+    /* project card preview image */
+    .preview {
+        height: 100%;
+        margin-right: 1rem;
+
+        /* background image properties */
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        transition: 200ms all ease;
+
+        /* reset background size on desktop devices */
+        background-size: auto cover;
+    }
+    .preview:hover {
+        background-position: bottom;
+        transition: 200ms all ease;
+    }
+
+}

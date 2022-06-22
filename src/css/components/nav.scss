@@ -1,0 +1,148 @@
+/* navigation component ( header ) */
+.nav {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 10vh;
+    right: -100vw;
+    bottom: 10vh;
+    width: 100%;
+
+    transition: 150ms all ease-in-out;
+
+    z-index: 1;
+    
+    font-family: var(--title-font);
+    background: var(--greyscale);
+
+    // Navigation List Component Properties
+    .list {
+        /* display flex property, center content along X,Y axis */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        /* provide dimension & spacing properties */
+        height: 40%;
+        width: 100%;
+        padding: 2rem;
+    
+        /* remove default list style properties */
+        list-style-type: none;
+        
+        /* color variable blueprint ( darkblue ). */
+        background: var(--blueprint);
+    }
+    // Navigation List Items Properties
+    .items {
+        margin-bottom: 0.5rem;
+        width: 100%;
+        max-width: 70%;
+        text-align: center;
+        padding: 0.5rem;
+    
+        /* border variable */
+        // border: var(--border-white);
+    }
+    // Navigation List Items Links Properties
+    .links {
+        /* apply full width of parent container */
+        min-height: 100%;
+        min-width: 100%;
+        font-size: 1rem;
+        text-transform: capitalize;
+        text-decoration: none;
+        letter-spacing: 1.5px;
+        /* color variable blueprint ( darkblue ). */
+        color: var(--color-white);
+    }
+    // Navigation - Second Child List
+    .list:nth-child(2) .items {
+        max-width: 30%;
+        border: var(--border-white);
+
+        transition: 150ms all ease-in-out;
+    }
+    .list:nth-child(2) .items:hover {
+        background: var(--accent);
+        transition: 150ms all ease-in-out;
+    }
+    // Navigation - Third Child List
+    .list:nth-child(3) .items {
+        background: var(--greyscale);
+        border: var(--border-white);
+    }
+
+}
+
+.nav-active {
+    right: 0;
+}
+/* navigation list( row) properties */
+.nav .row {
+    /* assign the direction from column to row. */
+    flex-direction: row;
+    /* space the row content evenly. */
+    justify-content: space-evenly;
+    height: 20%;
+}
+.nav .row .items {
+    /* provide a max width for the item elements */
+    max-width: 100px;
+}
+
+
+// Profile Image Placeholder Container
+.box {
+    height: 50px;
+    width: 50px;
+    padding: 0.5rem;
+    background: black;
+}
+.inner {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    background: white;
+}
+.nav h3 {
+    padding: 0;
+    margin: 0;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #FFF;
+    text-align: left;
+    margin-top: 0.5rem;
+    border: none;
+}
+.nav h6 {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    text-decoration: none;
+    margin-bottom: 0.1rem;
+}
+
+@media (min-width: 900px) {
+
+    // Navigation Component Properties
+    .nav { 
+        
+        .list {
+            max-width: 60%;
+        }
+        .items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+}

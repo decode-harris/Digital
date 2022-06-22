@@ -1,0 +1,38 @@
+/* Text Content Properties */
+.text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-align: left;
+
+    margin-bottom: 4rem;
+}
+/* Project Description Properties */
+.desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    padding: 0.25rem;
+}
+/* Global Text Content Properties */
+.text, .desc {
+    /* apply the imported google font ( quicksand ). */
+    font-family: var(--text-font);
+}
+/* Accent Color Style Property */
+.accent {
+    color: var(--accent);
+}
+
+@media (min-width: 900px) {
+
+    .text {
+        font-size: 1.25rem;
+        margin-bottom: 2.5rem;
+        max-width: 70%;
+
+        /* border: 2px solid red; */
+    }
+    .desc {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+}

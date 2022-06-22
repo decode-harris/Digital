@@ -1,0 +1,65 @@
+/* Design Projects List Properties */
+#prototypes .list {
+    /* 
+        Display as position grid & apply 6 columns to the list element.
+        Arrange the items into a moasiac pattern on mobile devices.
+    */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    max-height: 80vh;
+    /* remove the default list styles */
+    list-style-type: none;
+
+    border: var(--prototype);
+}
+#prototypes .items {
+    grid-column: span 1;
+    grid-row: span 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* reset the min height property */
+    min-height: 0;
+    height: 100%;
+    
+    /* color variable [ darkblue ] */
+    background: var(--blueprint);
+    
+    color: #FFF;
+    font-size: 1.35rem;
+
+    border: var(--prototype);
+
+    border: var(--border-white);
+    /* border: var(--border-dark); */
+}
+#prototypes .items:first-child {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+#prototypes .items:nth-child(2) {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+#prototypes .items:nth-child(3) {
+    grid-column: span 3;
+}
+#prototypes .items:nth-child(4) {
+    grid-column: span 3;
+}
+#prototypes .items:nth-child(5) {
+    grid-column: span 6;
+}
+
+@media (min-width: 900px) {
+    #prototypes .list {
+        /* set a max width for the projects list( grid ) element. */
+        max-width: 700px;
+    }
+}

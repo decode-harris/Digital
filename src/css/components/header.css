@@ -1,0 +1,34 @@
+/*
+    Header Component
+
+    Encapsulated inside the page wrapper grid element. 
+    Positioned at the top of the element & dimension
+    width is equal to device width.
+
+    Contains 
+        1.  Buttons x2
+                Work-Button & Menu-Button.
+            Button Contents
+                Icon Image & Span element.
+        2.  Title with Link
+                Links to Homepage element depending on state.
+*/
+
+.header {
+    /* grid placement */
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
+    /* provide display flex, space content between & center */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 1.25rem;
+    z-index: 1;
+
+    /* change to border variable - outline. */
+    border: 2px solid #000;
+}

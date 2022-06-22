@@ -1,0 +1,129 @@
+/* Global Button Properties */
+.btn {
+    /* provide the display of flex, center content along X,Y axis */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* set a height & width for the button element */
+    width: 45px;
+    height: 45px;
+
+    /* border variable */
+    border: var(--border-dark);
+    border: var(--border-white);
+    border-radius: 6px;
+    
+    /* set default background properties */
+    background: transparent;
+}
+.btn-wide {
+    
+    flex-direction: row;
+    justify-content: flex-start;
+
+    padding-left: 1rem;
+    width: 100%;
+    max-width: 70%;
+    
+    
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #FFF;
+
+    /* provide element with background color variable */
+    background: var(--accent);
+}
+/* Button Active Properties */
+.btn-active {
+    /* provide element with background color variable */
+    background: var(--accent);
+}
+
+
+/* project card button */
+.project .btn {
+    height: 40px;
+    width: 100%;
+    
+    font-size: 0.6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+    border: var(--border-white);
+    border-radius: 6px;
+    background: var(--accent);
+    color: #FFF;
+}
+
+/* Button Content Properties  */
+.btn i {
+    font-size: 0.75rem;
+    padding-bottom: 0.25rem;
+    color: var(--color-white);
+}
+.btn span {
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+.btn-wide i {
+    padding-right: 0.5rem;
+    color: var(--color-white);
+}
+.btn-wide span {
+    font-size: 0.15rem;
+    text-transform: uppercase;
+}
+
+@media (min-width: 900px) {
+
+    /* Global Button Properties */
+    .btn {
+        height: 60px;
+        width: 60px;
+    }
+    .btn-wide {
+        height: 45px;
+        width: 20%;
+    }
+
+    /* Button Content Properties */
+    .btn i {
+        font-size: 0.95rem;
+        padding-bottom: 0.5rem;
+    }
+    .btn-wide span {
+        text-transform: uppercase;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

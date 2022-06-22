@@ -1,0 +1,61 @@
+
+/*
+    Main Component
+
+    Encapsulated inside the page wrapper grid element.
+    Contains section containers & content articles.
+
+        Provide display property flex to main component.
+        Overflow main content, allow for scroll along Y axis.
+        Assign a fixed height & width for the main component.
+*/
+.main {
+    /* development border */
+    border: var(--wireframe);
+
+    /* grid placement */
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 6;
+
+    /* set a min-height for the container & side navigation element */
+    min-height: 80vh;
+    height: 80vh;
+    width: 90vw;
+
+    /* provide overflow hidden to the element, but allow for scroll functionality */
+    overflow-y: scroll;
+
+    /* // remove the scroll bar element */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    /* apply the scroll behaviour smooth to the main-section elements*/
+    scroll-behavior: smooth;
+
+    /* provide the grid component with a transition property */
+    transition: 150ms all ease-in;
+
+    /* 
+        provide display flex to the grid component, assign elements
+        in a column direction.
+    */
+    display: flex;
+    flex-direction: column;
+}
+.main::-webkit-scrollbar {
+    /* // remove the scroll bar element */
+    display: none;
+}
+
+@media (min-width: 900px) {
+
+    /* // Main Component */
+    main {
+        /* // set new width for main component */
+        width: 95vw;
+        padding: 5rem;
+    }
+
+}

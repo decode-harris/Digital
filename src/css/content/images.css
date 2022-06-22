@@ -1,0 +1,27 @@
+/* 
+    Project Preview Background Images.
+
+    Allocates the background image to the associated 
+    project preview image container.
+
+        Project Image preview is a flex container.
+        Project Design preview is a grid container.
+        Project App preview is a flex container.
+*/
+
+/* Project Preview Image Source */
+#project-image-1 {}
+#project-image-2 {}
+#project-image-3 {}
+
+/* Project Design Image Source */
+#design-image-1 {}
+#design-image-2 {}
+#design-image-3 {}
+#design-image-4 {}
+#design-image-5 {}
+
+/* Project Application Image Source */
+#app-image-2 {}
+#app-image-2 {}
+
