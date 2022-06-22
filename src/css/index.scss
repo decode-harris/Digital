@@ -1,4 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Poppins&display=swap');
+/* import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Quicksand:wght@300&display=swap');
+
+// import container properties
+@import './containers/containers.css';
+@import './containers/project.scss';
+@import './containers/design.css';
+
+/* import component properties */
+@import './components/nav.scss';
+@import './components/sidenav.css';
+@import './components/header.css';
+@import './components/main.css';
+@import './components/aside.css';
+@import './components/footer.css';
+
+/* import element properties */
+@import './elements/titles.css';
+@import './elements/text.css';
+@import './elements/buttons.css';
+@import './elements/links.css';
+
+/* import image source content */
+@import './content/images.css';
+@import './content/preview.css';
 
 /* CSS Reset */
 * {
@@ -6,577 +30,115 @@
     margin: 0;
     padding: 0;
 }
-
+/* CSS Variables */
 :root {
-    --type-font: 'Poppins', sans-serif;
-    --title-font: 'Cabin', sans-serif;
-    --menu-font: 'Heebo', sans-serif;
 
-    /* span text color variable */
-    --accent-color: rgb(20, 65, 148);
+    // background : dark blue
+    --blueprint: rgb(14, 28, 44);
+    
+    // background : grey scale
+    --greyscale: rgb(0, 0, 0);
+    --greyscale: rgb(41, 53, 72);
+    --greyscale: rgb(22, 22, 28);
+    --greyscale: rgba(14, 8, 8, 0.746);
 
-    /* global background color variable */
-    --darkest-blue: rgb(3, 3, 22);
+    /* accent color variable */
+    --accent: rgb(223, 168, 28);
+    --accent: rgb(223, 93, 28);
+    --accent: rgb(78, 178, 145);
 
-    /* footer background color variable */
-    --middle-blue: rgb(26, 26, 45);
+    /* imported google font families */
+    --title-font: 'Kanit', sans-serif;;
+    --text-font: 'Quicksand', sans-serif;
+
+    // border : dark grey
+    --border-dark: 2px solid darkslategrey;
+
+    // border white
+    --border-white: 2px solid whitesmoke;
+
+    // color white
+    --color-white: #FFF;
+
 }
 
-html,body {
-    scroll-behavior: smooth;
-}
+/* 
 
+    Page Wrapper
+
+    Grid based layout for the entire website.
+
+    Contains
+        1. Header Component
+        2. Side Navigation Component
+        3. Main Component
+        4. Aside Component
+        5. Footer Component
+*/
 .page {
+    /* 
+        apply the display of grid, create 6 columns to space
+        website content.
+    */
+    display: grid;
+    align-content: space-between;
+    grid-template-columns: repeat(6, 1fr);
+
+    /*
+        provide sizing & dimension properties to the page wrapper
+    */
+    height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+
+    /* 
+        provide the position relative property to the page
+        wrapper to act as the base point for out of page-flow
+        elements (animation).
+    */
     position: relative;
-}
 
-/* global container properties */
-.container {
-    background: var(--darkest-blue);
-
-    /* set a container height for the element while in development phase */
-    min-height: 100vh;
-    /* width: 100%; */
-
-    /* position the child content  */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    /* apply development purpose font properties */
-    font-family: var(--type-font);
-
-    /* hide the overflowing animation elements inside the container */
+    /* 
+        provide the overflow property of hidden to the page
+        wrapper. This will contain the page / application 
+        to a consistent size of all devices.
+    */
     overflow: hidden;
-}
 
-
-/* Global Title Element [ h1 ] */
-h1 {
-    font-size: 2.5rem;
+    /*
+        apply the background variable blueprint ( darkblue ) 
+        to the page wrapper. Also apply the text color to 
+        white.
+    */
+    background: var(--blueprint);
     color: #FFF;
-    text-transform: capitalize;
-    text-align: left;
-    font-weight: medium 500;
-    font-family: var(--title-font);
-}
-h1 span {
-    color: rgb(20, 65, 148);
 }
 
-/* Global Title Element [ h2 ] */
-h2 {
-    /* border: 2px solid limegreen; */
-
-    font-size: 2.2rem;
-    color: #FFF;
-    text-transform: capitalize;
-    text-decoration: underline;
-    margin-bottom: 1rem;
-    width: 100%;
-    padding: 0.5rem;
-}
-
-/* 
-
-    Global Title Element [ h4 ]
-
-    Project Title housed inside the main project list
-
+/*
+    Remove Desktop Content on Mobile Devices.
+    Display Mobile Content on Mobile Devices.
 */
-h4 {
-    color: #FFF;
-    font-size: 2.25rem;
-    text-transform: capitalize;
-    padding: 1rem;
-    text-align: center;
-}
+.mobile {display: block;}
+.desktop {display: none;}
 
-/* 
-    
-    Global Title Element [ h5 ]
-
-    Project tagline for project data elements synopsis
-
-*/
-h5 {
-    font-size: 1.25rem;
-    color: #FFF;
-    padding: 0.25rem;
-    text-align: center;
-}
-
-/* Global Text Content Element Properties */
-.text {
-    font-size: 2rem;
-    color: #FFF;
-    text-align: left;
-    text-align: center;
-    text-align: right;
-    line-height: 1.4;
-    padding: 1rem;
-}
-.text span {
-    color: var(--accent-color);
-}
-
-/* 
-
-    Navigation Component
-
-    Contains an un-ordered list element which contains
-    the list items with internal link elements.
-
-    Hidden to the left of the device on mobile platforms.
-    Engaged with a click event via the "menu" button.
-
-*/
-nav {
-    position: fixed;
-    top: 0;
-    left: -200vw;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background: var(--darkest-blue);
-    transition: 200ms all ease-in;
-}
-nav .list {
-    /* display the content in the center left position of the element */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 1rem;
-    /* remove default list properties */
-    list-style: none;
-    height: 40%;
-    width: 100%;
-}
-nav .items {
-    width: 100%;
-    padding: 1rem;
-}
-nav a {
-    font-family: var(--menu-font);
-    color: #FFF;
-    font-size: 1.75rem;
-    font-weight: bold;
-    letter-spacing: 0.25rem;
-    text-transform: capitalize;
-    text-decoration: none;
-}
-
-/* Navigation Menu Button */
-#menu {
-    /* position the button on the top right of the device */
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    height: 50px;
-    width: 50px;
-    z-index: 1;
-    background: var(--darkest-blue);
-    border: 1px solid #FFF;
-    border-radius: 8px;
-    color: #FFF;
-}
-#menu i {
-    color: #FFF;
-}
-
-/* Global Header Component Properties */
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1rem;
-}
-
-
-/* Global Content Article Properties */
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1rem;
-}
-
-
-#landing h2 {
-    text-align: right;
-}
-
-
-
-/* Projects Specific Content Properties */
-#projects h2 {
-    text-align: left;
-}
-#projects .text {
-    text-align: left;
-}
-#projects h6 {
-    color: #FFF;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.12rem;
-    text-decoration: underline;
-}
-#projects main .text {
-    margin-top: 2rem;
-    font-size: 1.15rem;
-    text-align: center;
-}
-/* 
-    Main Project Component Properties
-
-    Contains the un-ordered list element which 
-    houses the project development data.
-
-    Items inside the list ( project data ) include
-    two(2) title elements, a text description elemenet
-    & a preview image.
-
-*/
-main {
-    /* border: 2px solid red; */
-    padding: 1rem;
-
-    /* min-height: 100vh; */
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-main img {
-    /* border: 2px solid red; */
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    margin: 1rem;
-}
-
-/* Main Project List Properties */
-main .list {
-    padding: 0.5rem;
-}
-main .items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 10rem;
-    /* border: 2px solid red; */
-}
-
-
-/* Main Project Link  Properties */
-main a {
-    border: 1px solid #FFF;
-    color: #FFF;
-
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 40px;
-    width: 200px;
-    padding: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    text-decoration: none;
-}
-main i {
-    color: #FFF;
-    font-size: 2rem;
-}
-
-
-
-
-#contact .text {
-    text-align: left;
-}
-
-/* 
-    Contact Form Quick Mail
-
-    Contains a parent label element which wraps an input element &
-    a span element. Once clicked, the span will re-position above
-    the focused input field.
-
-    Also contains a similar setup involing a text area
-    element replacing the input element in the above scenario.
-
-*/
-form {
-    /* position the content inside the container towards the center via flex method */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 80%;
-    padding: 1.25rem;
-    /* move the form towards the top of the container element */
-    transform: translateY(-10vh);
-
-    /* === DEVELOPMENT BORDER === */
-    border: 2px solid #FFF;
-}
-form label {
-    position: relative;
-    border-bottom: 1px solid #000;
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-    text-transform: capitalize;
-    font-weight: bold;
-    width: 100%;
-}
-form input {
-    width: 100%;
-    height: 50px;
-    margin-top: 22px;
-    border: none;
-    background: var(--middle-blue);
-    padding: 0.5rem;
-    text-align: center;
-    color: #FFF;
-}
-form input::placeholder {
-    text-transform: capitalize;
-    font-size: 0.85rem;
-    text-align: center;
-    padding-left: 0.25rem;
-    opacity: 0;
-    color: #FFF;
-}
-form textarea {
-    height: 150px;
-    width: 100%;
-    background: var(--middle-blue);
-    border: none;
-    margin-top: 22px;
-    color: #FFF;
-    text-align: left;
-    padding-top: 4rem;
-    padding-left: 1rem;
-}
-form input:focus,
-form textarea:focus {
-    background: #FFF;
-    color: #000;
-    text-align: left;
-    border: none;
-}
-form span {
-    font-size: 0.95rem;
-    /* position the span element above the input element */
-    position: absolute;
-    top: 0;
-    left: 5px;
-    /* provide a transform towards the base of the element to hide the span element */
-    transform: translateY(30px);
-    /* provide a transition duration to control the flow of the animation */
-    transition-duration: 200ms;
-    color: #FFF;
-}
-
-/* when any input element is selected, the span element will transition to the top */
-label:focus-within > span,
-input:not(:placeholder-shown) textarea + span {
-    /* default text color for dark backgrounds */
-    color: #FFF;
-    color: var(--accent-color);
-    transform: translateY(0px);
-}
-/* Contact Form ( submit ) Button Properties */
-form .btn {
-    width: 150px;
-    height: 50px;
-    
-    margin-top: 20px;
-    font-size: 0.95rem;
-    text-transform: capitalize;
-    letter-spacing: 0.15rem;
-    background: transparent;
-    color: #FFF;
-    border: 1px solid #FFF;
-    border-radius: 8px;
-    
-    transition: 200ms all ease-in;
-}
-form .btn:hover {
-    transition: 200ms all ease-in;
-    background: var(--accent-color);
-}
-
-form h5 {
-    /* border: 2px solid red; */
-    color: #FFF;
-    text-decoration: underline;
-    font-size: 1.25rem;
-    padding: 1rem;
-    margin-bottom: 2rem;
-}
-
-/* 
-    Footer Container
-
-    Contains a site navigation button element, the
-    external links list elements & a signiture container.
-*/
-footer {
-    position: relative;
-    
-    /* provide a height for the footer container on mobile devices */
-    height: 35vh;
-    width: 100%;
-    /* display the content inside the footer to the center via flex method */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* footer background [ darkest blue ] */
-    background: var(--middle-blue);
-}
-/* Footer Un-Ordered List Properties */
-footer .list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    
-    /* place the list element towards the center of the footer */
-    /* margin-top: 10%;
-    margin-bottom: 10%; */
-    padding: 1rem;
-}
-.footer .items {
-    /* display the elements inside the item towards the center via flex method */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    /* background color [ darker grey blue ] */
-    background:rgb(36, 33, 48);
-}
-.footer .items i {
-    font-size: 1.35rem;
-}
-
-/* Footer Button ( top ) Properties */
-.footer .btn {
-    border: none;
-    /* position the button towards the top and center of the footer element */
-    position: absolute;
-    top: -25px;
-    height: 50px;
-    width: 50px;
-    padding: 0.5rem;
-    background: var(--accent-color);
-}
-footer i {
-    color:#FFF;
-    font-size: 1.35rem;
-}
-
-/* Footer Signiture Properties */
-footer .signiture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-footer h6 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: #FFF;
-    text-decoration: underline;
-}
-footer .text {
-    color:var(--accent-color);
-    font-family: var(--mainfont);
-    font-size: 1.2rem;
-}
-
-
-
-
-
-/* Media Query for Laptop - Desktop Devices */
-@media (min-width: 1000px) {
-
-    h5 {
-        padding-left: 1rem;
-        text-decoration: underline;
+@media (min-width: 900px) {
+    // flex specific container position properties
+    .reverse {
+        // reverse the direction of the row inside the container
+        flex-direction: row-reverse;
     }
-
-    /* provide a max width dimension for the semantic elements */
-    header,
-    article {
-        max-width: 1000px;
+    .center {
+        // position elements to the center of the container
+        align-items: center;
     }
-
-
-    /* provide desktop styles to the project data list */
-    main .list {
-        width: 100%;
-        max-width: 1000px;
-        
+    .offset {
+        // set the offset article elements to the end of the container
+        align-items: flex-end;
     }
-    main .items {
-        border: 2px solid #FFF;
-        border-radius: 10px;
-        align-items: flex-start;
-        justify-content: center;
-        position: relative;
-        padding: 2rem;
-        /* assign more space between the bottom of each items element */
-        margin-bottom: 30rem;
-        /* generated box shadow - alter to match current background color */
-        -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-    }
-    #projects main .text {
-        text-align: left;
-        margin-top: 0;
-        max-width: 500px;
-    }
-
-    main img {
-        position: absolute;
-        right: 10%;
-        border-radius: 0;
-        width: 300px;
-        border-radius: 8px;
-    }
-
-    /* position the article text in the contact container to the center of the screen on desktop devices */
-    #contact article .text {
-        text-align: center;
-    }
-
-
-    /* provide a max width for the contact form component */
-    form {
-        max-width: 700px;
-    }
-    /* provide a max width for the footer list component */
-    
-    footer .list {
-        max-width: 500px;
-    }
-
+    /*
+        Remove Mobile Content on Desktop Devices.
+        Display Desktop Content on Desktop Devices.
+    */
+    .mobile {display: none;}
+    .desktop {display: block;}
 }

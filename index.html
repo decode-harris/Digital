@@ -9,396 +9,661 @@
     <meta name="author" content="Christopher Harris">
     <meta name="developed" content="2022">
 
-    <!-- fresh -->
-    <meta name="" content="">
-
-    <!-- title -->
     <title>Christopher Harris</title>
-
+    
     <!-- css -->
     <link rel="stylesheet" href="src/css/index.css">
 
-    <!-- js -->
-    <script defer src="src/js/index.js"></script>
-
-    <!-- js : navigation menu -->
-    <script defer src="src/js/NavigationMenu.js"></script>
-
-    <!-- js : animation prototypes -->
-    <script defer src="src/js/AnimationConcepts.js"></script>
-
+    <!-- scripts -->
+    <script defer src="src/scripts/nav.js"></script>
+    <script defer src="src/scripts/sidenav.js"></script>
+    <script defer src="src/scripts/home.js"></script>
+    
+    <!-- refactor function to include secondary state ( projects). -->
+    <script defer src="src/scripts/scroll.js"></script>
+    
     <!-- icons library -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
-
-    <!-- gsap : core ( module ) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-
-    <!-- gsap : plugin ( scroll trigger ) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    
 </head>
 <body>
 
     <!-- page wrapper -->
-    <div class="page">
+    <div class="page" id="page">
+        
+        <!-- header component -->
+        <header class="header" id="header">
 
-        <!-- navigation component -->
-        <nav class="nav" id="nav">
+            <!-- work button -->
+            <button class="btn" id="work">
+                <!-- work icon -->
+                <i class="fa-solid fa-brain" id="logo"></i>
+                <!-- work icon -->
 
-            <!-- navigation list -->
-            <ul class="list">
+                <!-- span text -->
+                <span class="span">work</span>
+                <!-- span text -->
+            </button>
+            <!-- work button -->
+
+            <!-- header title -->
+            <h4 id="home">
+                <!-- homepage link -->
+                <a href="#landing">
+                    <!-- title text -->
+                    <span class="accent">Christopher</span> Harris
+                    <!-- title text -->
+                </a>
+                <!-- homepage link -->
+            </h4>
+            <!-- header title -->
+            
+            <!-- menu button -->
+            <button class="btn" id="menu">
+                <!-- menu icon [ bars ] -->
+                <i class="fa-solid fa-bars" id="icon"></i>
+                <!-- menu icon [ bars ] -->
+
+                <!-- menu test span -->
+                <span class="span">menu</span>
+                <!-- menu test span -->
+            </button>
+            <!-- menu button -->
+            
+            <!-- navigation component -->
+            <nav class="nav" id="nav">
+
+                <!-- profile content list -->
+                <ul class="list">
+                    <li class="items">
+                        <!-- profile image -->
+                        <div class="box">
+                            <!-- inner box-->
+                            <div class="inner"></div>
+                            <!-- inner box-->
+                        </div>
+                        <!-- profile image -->
+                        <h3><span class="accent">Christopher</span> Harris</h3>
+                    </li>
+                    <li class="items">
+                        <!-- profile taglines -->
+                        <h6>Frontend Web Developer.</h6>
+                        <h6>Desktop Support Specialist.</h6>
+                        <!-- profile taglines -->
+                    </li>
+                </ul>
+                <!-- profile content list -->
+                
+                <!-- internal navigation list -->
+                <ul class="list">
+                    <!-- list items -->
+                    <li class="items">
+                        <a href="#landing" class="links">home</a>
+                    </li>
+                    <li class="items">
+                        <a href="#introduction" class="links">about</a>
+                    </li>
+                    <li class="items">
+                        <a href="#development" class="links">work</a>
+                    </li>
+                    <li class="items">
+                        <a href="#contact" class="links">info</a>
+                    </li>
+                    <!-- list items -->
+                </ul>
+                <!-- internal navigation list -->
+
+                <!-- external navigation list -->
+                <ul class="list row">
+                    <!-- list items -->
+                    <li class="items">
+                        <!-- icon github -->
+                        <i class="fa-brands fa-github-alt"></i>
+                        <!-- icon github -->
+                    </li>
+                    <li class="items">
+                        <!-- icon discord -->
+                        <i class="fa-brands fa-discord"></i>
+                        <!-- icon discord -->
+                    </li>
+                    <!-- list items -->
+                </ul>
+                <!-- external navigation list -->
+
+            </nav>
+            <!-- navigation component -->
+        
+        </header>
+        <!-- header component -->
+
+        <!-- side navigation component -->
+        <nav class="sidenav" id="sidenav">
+
+            <!-- side navigation list [ portfolio ] -->
+            <ul class="list" id="sidenav-portfolio">
                 <!-- list items -->
                 <li class="items">
-                    <a class="links" href="#landing" rel="noopener noreferrer">
-                        homepage
+                    <a href="#landing">
+                        <div class="squares active"></div>
                     </a>
                 </li>
                 <li class="items">
-                    <a class="links" href="#introduction" rel="noopener noreferrer">
-                        about me
+                    <a href="#introduction">
+                        <div class="squares"></div>
                     </a>
                 </li>
                 <li class="items">
-                    <a class="links" href="#projects" rel="noopener noreferrer">
-                        projects
+                    <a href="#development">
+                        <div class="squares"></div>
                     </a>
                 </li>
                 <li class="items">
-                    <a class="links" href="#contact" rel="noopener noreferrer">
-                        contact
+                    <a href="#contact">
+                        <div class="squares"></div>
                     </a>
                 </li>
                 <!-- list items -->
             </ul>
-            <!-- navigation list -->
-
+            <!-- side navigation list [ portfolio ] -->
         </nav>
-        <!-- navigation component -->
+        <!-- side navigation component -->
 
-        <!-- navigation menu button -->
-        <button class="btn" id="menu">
-            <!-- menu icon [ bars ] -->
-            <i class="fa-solid fa-bars"></i>
-            <!-- menu icon [ bars ] -->
-        </button>
-        <!-- navigation menu button -->
+        <!-- main component : portfolio -->
+        <main class="main" id="portfolio">
+            
+            <!-- section container elements -->
+            <section class="container" id="landing">
 
-        <!-- section container [ Landing Page ] -->
-        <section class="container" id="landing">
+                <!-- content article component -->
+                <article class="content">
+                    <!-- content title : landing -->
+                    <h1>
+                        I am a Frontend <span class="accent">Web Developer</span>,
+                        Digital Content Creator & <span class="accent">Desktop Support</span>
+                        Specialist based out of
+                        <span class="accent">Melbourne</span>,
+                        <span class="accent">Australia</span>.
+                    </h1>
+                    <!-- content title : landing -->
+                </article>
+                <!-- content article component -->
 
-            <!-- header component -->
-            <header class="header">
+            </section>
+            <section class="container" id="introduction">
+                
+                <!-- content article component -->
+                <article class="content">
+                    <!-- article content title & tagline -->
+                    <h2><span class="accent">About</span> Myself</h2>
+                    <h5>Mr Christopher Harris.</h5>
+                    <!-- article content title & tagline -->
+                    <!-- content text element -->
+                    <p class="text">
+                        I am a passionate Frontend Web Developer wanting to deliver
+                        mobile-responsive & pixel perfect design patterns for websites.
+                        I strive to write clean & maintainable code bases for
+                        development scalability & testing purposes.
+                    </p>
+                    <!-- content text element -->
+                </article>
+                <!-- content article component -->
+            </section>
+            <section class="container" id="development">
+                <!-- article content -->
+                <article class="content">
 
-                <!-- landing title element -->
-                <h1 class="landing-title">
-                    greetings & welcome to the
-                    digital portfolio of
-                    <br>
-                    mr <span class="landing-name">Christopher Harris</span>.
-                </h1>
-                <!-- landing title element -->
+                    <!-- content title & tagline : development -->
+                    <h2>Web <span class="accent">Development</span></h2>
+                    <h5>Digital Mobile & Desktop Content.</h5>
+                    <!-- content title & tagline : development -->
+                    
+                    <!-- text content -->
+                    <p class="text">
+                        Below is a link to mobile-friendly and responsive web
+                        design prototypes, strucutured design concepts
+                        & desktop application development.
+                    </p>
+                    <!-- text content -->
 
-            </header>
-            <!-- header component -->
+                    <!-- open button ( projects ). -->
+                    <button class="btn btn-wide" id="open">
+                        <!-- icon : folder -->
+                        <i class="fa fa-folder-o" aria-hidden="true"></i>
+                        <!-- icon : folder -->
+                        <!-- view -->
+                        projects
+                    </button>
+                    <!-- open button ( projects ). -->
 
-            <!-- content article -->
-            <article class="content" id="introduction">
+                </article>
+                <!-- article content -->
+            </section>
+            <section class="container" id="contact">
+                <!-- article content -->
+                <article class="content">
+                    
+                    <!-- article content title & tagline -->
+                    <h2><span class="accent">Contact</span> Information</h2>
+                    <h5>Thank You for Visiting.</h5>
+                    <!-- article content title & tagline -->
+                    <!-- content text element -->
+                    <p class="text">
+                        If you would like to get in touch
+                        Feel free to use any of the options
+                        below to contact me.
+                    </p>
+                    <!-- content text element -->
+                    <!-- content link element -->
+                    <p class="text">
+                        <!-- font awesome icon : email -->
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <!-- font awesome icon : email -->
 
-                <!-- article title -->
-                <h2>About Me</h2>
-                <!-- article title -->
-
-                <!-- text content -->
-                <p class="text">
-                    I am a <span>Frontend Web Developer</span>,
-                    Digital Content Creator &
-                    <span>desktop support specialist</span> based out 
-                    of Melbourne, Australia.
-                </p>
-                <p class="text" style="display: none;">
-                    Having exposure to personal computers from an early age,
-                    I have accumulated over 20+ years of experience building,
-                    installing, debugging & reconfiguring desktop PC's. 
-                </p>
-                <!-- text content -->
-            </article>
-            <!-- content article -->
-
-        </section>
-        <!-- section container [ Landing Page ] -->
-
-        <!-- section container [ Projects Page ] -->
-        <section class="container" id="projects">
-
-            <!-- projects header component -->
-            <header class="header">
-
-                <!-- projects title -->
-                <h2 class="projects-title">Development</h2>
-                <!-- projects title -->
-
-                <!-- header text element -->
-                <p class="text">
-                    Here are some examples of 
-                    my
-                    <span>development work</span>,
-                    desktop applications & <span>design concepts</span>.
-                </p>
-                <!-- header text element -->
-            </header>
-            <!-- projects header component -->
-
-            <!-- main projects component -->
-            <main class="main">
-
-                <!-- projects list -->
-                <ul class="list">
-
-                    <!-- project items -->
-                    <li class="items">
-                        
-                        <h6>project</h6>
-
-                        <!-- project preview image -->
-                        <img src="src/img/coffeeshop.jpeg" alt="Coffee Shop Website Placeholder">
-                        <!-- project preview image -->
-
-                        <!-- project title & tagline -->
-                        <h4 class="project-title">Melbourne Coffee</h4>
-                        <h5 class="project-tagline">UX/UI Website Design</h5>
-                        <!-- project title & tagline -->
-
-                        <!-- project description -->
-                        <p class="text">
-                            A responsive web <span>design concept</span>
-                            involving grid placement properties to resize &
-                            reposition content depending on
-                            the screen dimensions of the user's device.
-                            <br>
-                            <br>
-                            Developed utilizing vanilla Javascript to provide 
-                            the <span>content functionality</span>
-                            of the products menu modal
-                            and customer reservation form.
-                        </p>
-                        <!-- project description -->
-
-                        <!-- link user to project website -->
-                        <a href="#" class="btn">
-                            View Website
-                            <!-- <i class="fa-solid fa-arrow-right"></i> -->
-                            <i class="fa-solid fa-caret-right"></i>
+                        <!-- === change text content to gmail link === -->
+                        <a href="mailto:decode.harris@gmail.com">
+                            decode.harris@gmail.com
                         </a>
-                        <!-- link user to project website -->
+                        <!-- === change text content to gmail link === -->
+                    </p>
+                    <!-- content link element -->
+
+                </article>
+                <!-- article content -->
+            </section>
+            <!-- section container elements -->
+        </main>
+        <!-- main component : portfolio -->
+
+        <!-- aside component : projects -->
+        <aside class="aside" id="projects">
+            <!-- section container [ showcase ] -->
+            <section class="container" id="showcase">
+                <!-- content article -->
+                <article class="content">
+
+                    <!-- content title & tagline : projects -->
+                    <h2><span class="accent">Web</span> Development</h2>
+                    <h5>Responsive Websites.</h5>
+                    <!-- content title & tagline : projects -->
+
+                    <!-- text content -->
+                    <p class="text">Designed & Developed Websites, Templating Systems,
+                        Management Dashboards, Mobile Application Concepts &
+                        accompanying codebase.
+                    </p>
+                    <!-- text content -->
+
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ showcase ] -->
+
+            <!-- section container [ project 1 ] -->
+            <section class="container">
+                <!-- content article -->
+                <article class="content display">
+
+                    <!-- project card component -->
+                    <div class="project">
+                        <!-- preview container -->
+                        <div class="preview" id="project-image-1">
+                            preview image
+                            <!-- preview image -->
+                            <!-- <img src="/src/img/coffeeshop.jpeg" alt="Coffee Shop Website Layout"> -->
+                            <!-- preview image -->
+                        </div>
+                        <!-- preview container -->
+
+                        <!-- project list -->
+                        <ul class="list">
+                            <!-- list items -->
+                            <li class="items">
+                                <!-- project title -->
+                                <h3 class="title">Development.</h3>
+                                <!-- project title -->
+                            </li>
+                            <li class="items">
+                                <!-- project tagline -->
+                                <h6 class="tagline">Cupa.</h6>
+                                <!-- project tagline -->
+                            </li>
+                            <li class="items">
+                                <!-- description -->
+                                <p class="desc">
+                                    <!-- mobile description -->
+                                    <span class="mobile">
+                                        Responsive Designed Cafe Prototype.
+                                    </span>
+                                    <!-- mobile description -->
+
+                                    <!-- desktop description -->
+                                    <span class="desktop">
+                                        A modern & minimalistic cafe website developed to enhanced
+                                        my knowledge of advanced styling and placement concepts.
+                                    </span>
+                                    <!-- desktop description -->
+                                </p>
+                                <!-- description -->
+                            </li>
+                            <li class="items">
+                                <!-- button live -->
+                                <button class="btn live">live website</button>
+                                <!-- button live -->
+                            </li>
+                            <!-- list items -->
+                        </ul>
+                        <!-- project list -->
+                    </div>
+                    <!-- project card component -->
+
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ project 1 ] -->
+
+            <!-- section container [ project 2 ] -->
+            <section class="container">
+
+                <!-- content article -->
+                <article class="content display">
+
+                    <!-- project card component -->
+                    <div class="project reverse">
+                        <!-- project preview -->
+                        <div class="preview" id="project-image-2">
+                            preview image
+                            <!-- <img src="" alt=""> -->
+                            <!-- preview image -->
+                        </div>
+                        <!-- project preview -->
+
+                        <!-- project list -->
+                        <ul class="list">
+                            <!-- list items -->
+                            <li class="items">
+                                <h3 class="title">Animation.</h3>
+                            </li>
+                            <li class="items">
+                                <h6 class="tagline">Designr.</h6>
+                            </li>
+                            <li class="items">
+                                <p class="desc">
+                                    <span class="mobile">Animated Landing Page.</span>
+                                    <span class="desktop">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, inventore.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, inventore.
+                                    </span>
+                                </p>
+                            </li>
+                            <li class="items">
+                                <button class="btn live">live website</button>
+                            </li>
+                            <!-- list items -->
+                        </ul>
+                        <!-- project list -->
+                    </div>
+                    <!-- project card component -->
                     
-                    </li>
-                    <!-- project items -->
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ project 2 ] -->
 
-                    <!-- project items -->
-                    <li class="items">
-                        
-                        <h6>project</h6>
+            <!-- section container [ project 3 ] -->
+            <section class="container">
+                <!-- content article -->
+                <article class="content display">
 
-                        <!-- project preview image -->
-                        <img src="src/img/architecture.jpeg" alt="Travel Itinerary Planner Placeholder">
-                        <!-- project preview image -->
+                    <!-- project card component -->
+                    <div class="project">
+                        <!-- preview container -->
+                        <div class="preview" id="project-image-3">
+                            preview image
+                            <!-- preview image -->
+                            <img src="" alt="">
+                            <!-- preview image -->
+                        </div>
+                        <!-- preview container -->
 
-                        <!-- project title & tagline -->
-                        <h4 class="project-title">Travel Itinerary</h4>
-                        <h5 class="project-tagline">Holiday Planning Application</h5>
-                        <!-- project title & tagline -->
-
-                        <!-- project description -->
-                        <p class="text">
-                            A mobile-first responsive web application developed to enhance
-                            my Javascript skills. This application can track dates & time,
-                            country & city, as well as transport information such as flight
-                            or train services.
-                            <br>
-                            <br>
-                            Originally developed with Javascript, but is currently being 
-                            ported over to Vue.Js for scalability purposes & future upgrade
-                            potential.
-                        </p>
-                        <!-- project description -->
-
-                        <!-- link user to project website -->
-                        <a href="#" class="btn">
-                            View Website
-                            <!-- <i class="fa-solid fa-arrow-right"></i> -->
-                            <i class="fa-solid fa-caret-right"></i>
-                        </a>
-                        <!-- link user to project website -->
+                        <!-- project list -->
+                        <ul class="list">
+                            <!-- list items -->
+                            <li class="items">
+                                <h3 class="title">Development.</h3>
+                            </li>
+                            <li class="items">
+                                <h6 class="tagline">Replica.</h6>
+                            </li>
+                            <li class="items">
+                                <p class="desc">
+                                    <span class="mobile">
+                                        Netflix Clone Website.
+                                    </span>
+                                    <span class="desktop">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, adipisci.
+                                    </span>
+                                    
+                                </p>
+                            </li>
+                            <li class="items">
+                                <button class="btn live">live website</button>
+                            </li>
+                            <!-- list items -->
+                        </ul>
+                        <!-- project list -->
                     
-                    </li>
-                    <!-- project items -->
-
-                    <!-- project items -->
-                    <li class="items">
-                        
-                        <h6>project</h6>
-
-                        <!-- project preview image -->
-                        <img src="src/img/finance.jpeg" alt="Personal Finance Application Placeholder">
-                        <!-- project preview image -->
-
-                        <!-- project title & tagline -->
-                        <h4 class="project-title">Personal <br> Finance</h4>
-                        <h5 class="project-tagline">Expense Tracking Application</h5>
-                        <!-- project title & tagline -->
-
-                        <!-- project description -->
-                        <p class="text">
-                            A personalized expense tracker developed to
-                            sort all bills & rental payment expenses into
-                            one minimalistic dashboard. Setup, edit & create
-                            a multitude of tracking options.
-                            <br>
-                            <br>
-                            Developed utilizing vanilla Javascript & a CSS pre-processor Sass.
-                        </p>
-                        <!-- project description -->
-
-                        <!-- link user to project website -->
-                        <a href="#" class="btn">
-                            View Website
-                            <!-- <i class="fa-solid fa-arrow-right"></i> -->
-                            <i class="fa-solid fa-caret-right"></i>
-                        </a>
-                        <!-- link user to project website -->
+                    </div>
+                    <!-- project card component -->
                     
-                    </li>
-                    <!-- project items -->
-                </ul>
-                <!-- projects list -->
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ project 3 ] -->
+                
+            <!-- section container [ design ] -->
+            <section class="container" id="design">
+                <!-- content article -->
+                <article class="content">
 
-            </main>
-            <!-- main projects component -->
+                    <!-- content title & tagline : design -->
+                    <h2>Digital <span class="accent">Design</span></h2>
+                    <h5>Application Structure.</h5>
+                    <!-- content title & tagline : design -->
 
-        </section>
-        <!-- section container [ Projects Page ] -->
+                    <!-- text content -->
+                    <p class="text">Research & Design methodologies, practices & concepts
+                        utilized for structure, layout & inspiration throughout the mobile
+                        application & websites design process.
+                    </p>
+                    <!-- text content -->
 
-        <!-- section container [ Contact Page ] -->
-        <section class="container" id="contact">
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ design ] -->
 
-            <!-- contact header -->
-            <header class="header">
+            <!-- section container [ prototypes ] -->
+            <section class="container">
+                <!-- content article -->
+                <article class="content center display" id="prototypes">
 
-                <!-- contact title -->
-                <h2>Contact</h2>
-                <!-- contact title -->
+                    <!-- design list -->
+                    <ul class="list">
+                        <li class="items">1</li>
+                        <li class="items">2</li>
+                        <li class="items">3</li>
+                        <li class="items">4</li>
+                        <li class="items">5</li>
+                    </ul>
+                    <!-- design list -->
 
-                <!-- contact text content -->
-                <p class="text">
-                    If you would like to
-                    <span>get in touch</span>, 
-                    please feel free to use any
-                    of the 
-                    <span>following options</span>
-                    provided below.
-                </p>
-                <!-- contact text content -->
-            </header>
-            <!-- contact header -->
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ prototypes ] -->
+            
+            <!-- section container [ concepts ] -->
+            <section class="container" id="concepts">
+                <!-- content article -->
+                <article class="content display">
 
-            <!-- contact form -->
-            <form action="" class="form">
+                    <!-- content title & tagline : app concepts -->
+                    <h2><span class="accent">Application</span> Concepts</h2>
+                    <h5>Mobile Responsive Prototypes.</h5>
+                    <!-- content title & tagline : app concepts -->
 
-                <h5>Send a Quick Hello</h5>
+                    <!-- text content -->
+                    <p class="text">
+                        Developed & Tested the core functionality of the prototype application.
+                        Styled utilizing the bootstrap CSS framework for fast development
+                        purposes.
+                    </p>
+                    <!-- text content -->
 
-                <!-- label for name input -->
-                <label for="name">
-                    <input type="text" id="name" placeholder="name">
-                    <span>name</span>
-                </label>
-                <!-- label for name input -->
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ application concepts ] -->
 
-                <!-- label for email input -->
-                <label for="email">
-                    <input type="text" id="email" placeholder="email">
-                    <span>email</span>
-                </label>
-                <!-- label for email input -->
+            <!-- section container [ application 1 ] -->
+            <section class="container">
+                <!-- content article -->
+                <article class="content display">
 
-                <!-- label for textarea -->
-                <label for="message">
-                    <textarea name="message" id="message" cols="1" rows="10"></textarea>
-                    <span>your message</span>
-                </label>
-                <!-- label for textarea -->
+                    <!-- project card component -->
+                    <div class="project">
+                        <!-- project preview -->
+                        <div class="preview">
+                            preview image
+                            <!-- preview image -->
+                            <img src="" alt="">
+                            <!-- preview image -->
+                        </div>
+                        <!-- project preview -->
 
-                <!-- submit button -->
-                <button class="btn" id="submit">submit</button>
-                <!-- submit button -->
-
-            </form>
-            <!-- contact form -->
-
-            <!-- contact content article -->
-            <article class="content">
-                <p class="text" id="footer-text">
-                    <span>Thank you</span>
-                     for visiting this page today. I hope to 
-                     have peaked your
-                     <span>interest</span>
-                      in some way.
-                     If so, dont hesitate to
-                     <span>get in touch</span>.
-                </p>
-            </article>
-            <!-- contact content article -->
-
-            <!-- contact footer -->
-            <footer class="footer">
-                <!-- back to top button -->
-                <button class="btn" id="top">
-                    <a href="#landing">
-                        <!-- up arrow icon -->
-                        <i class="fa-solid fa-arrow-up"></i>
-                        <!-- up arrow icon -->
-                    </a>
+                        <!-- project list -->
+                        <ul class="list">
+                            <li class="items">
+                                <h3 class="title">Application.</h3>
+                            </li>
+                            <li class="items">
+                                <h6 class="tagline">Plannr.</h6>
+                            </li>
+                            <li class="items">
+                                <p class="desc">
+                                    <span class="mobile">
+                                        Holiday Planning System.
+                                    </span>
+                                    <span class="desktop">
+                                        A personalized travel itinerary planning system
+                                        developed to provide an overview of countries,
+                                        cities, locations or destinations ideas.
+                                    </span>
+                                </p>
+                            </li>
+                            <li class="items">
+                                <button class="btn live">live codebase</button>
+                            </li>
+                        </ul>
+                        <!-- project list -->
+                    </div>
+                    <!-- project card component -->
                     
-                </button>
-                <!-- back to top button -->
-    
-                <!-- footer list -->
-                <ul class="list">
-    
-                    <!-- list items -->
-                    <li class="items">
-                        <!-- attach related external links -->
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ application 1 ] -->
+
+            <!-- section container [ application 2 ] -->
+            <section class="container">
+                <!-- content article -->
+                <article class="content display">
+
+                    <!-- project card component -->
+                    <div class="project reverse">
+                        <!-- preview container -->
+                        <div class="preview">
+                            preview image
+                            <!-- preview image -->
+                            <img src="" alt="">
+                            <!-- preview image -->
+                        </div>
+                        <!-- preview container -->
+
+                        <!-- project list -->
+                        <ul class="list">
+                            <li class="items">
+                                <h3 class="title">Application.</h3>
+                            </li>
+                            <li class="items">
+                                <h6 class="tagline">Trackr.</h6>
+                            </li>
+                            <li class="items">
+                                <p class="desc">
+                                    <span class="mobile">
+                                        Finance Expense Tracker.
+                                    </span>
+                                    <span class="desktop">
+                                        A personalized expense tracker developed to
+                                        sort all bills & rental payment expenses into
+                                        one minimalistic dashboard. Setup, edit & create
+                                        a multitude of tracking options.
+                                    </span>
+                                </p>
+                            </li>
+                            <li class="items">
+                                <button class="btn live">live codebase</button>
+                            </li>
+                        </ul>
+                        <!-- project list -->
+                    </div>
+                    <!-- project card component -->
+                    
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ application 2 ] -->
+
+            <!-- section container [ thank-you ] -->
+            <section class="container">
+                <!-- content article -->
+                <article class="content center">
+                    <!-- content title & tagline : app concepts -->
+                    <h2>Available at <span class="accent">Github</span></h2>
+                    <h5>Thank You For Visiting.</h5>
+                    <!-- content title & tagline : app concepts -->
+
+                    <!-- text content -->
+                    <p class="text">
+                        To view all programming work, please feel free to browse
+                        my github portfolio.
+                    </p>
+                    <!-- text content -->
+
+                    <p class="text">
                         <i class="fa-brands fa-github-alt"></i>
-                    </li>
-                    <li class="items">
-                        <i class="fa-solid fa-envelope"></i>
-                    </li>
-                    <li class="items">
-                        <i class="fa-brands fa-discord"></i>
-                    </li>
-                    <li class="items">
-                        <i class="fab fa-linkedin-in"></i>
-                        <!-- attach related external links -->
-                    </li>
-                    <!-- list items -->
-    
-                </ul>
-                <!-- footer list -->
-    
-                <!-- sign-off information -->
-                <div class="signiture">
-                    <h6>Christopher Harris</h6>
-                    <p class="text">&copy; 2022</p>
-                </div>
-                <!-- sign-off information -->
 
-            </footer>
-            <!-- contact footer -->
+                        <a href="https://github.com/decode-harris">
+                            <!-- github icon -->
+                            https://github.com/account
+                        </a>
+                    </p>
+                </article>
+                <!-- content article -->
+            </section>
+            <!-- section container [ thank-you ] -->
+        </aside>
+        <!-- aside component : projects -->
 
-        </section>
-        <!-- section container [ Contact Page ] -->
-    
+        <!-- footer component -->
+        <footer class="footer" id="footer">
+
+            <!-- website signiture -->
+            <p class="signiture">Developed By <span class="accent">Christopher Harris</span> &copy;</p>
+            <!-- website signiture -->
+        </footer>
+        <!-- footer component -->
     </div>
     <!-- page wrapper -->
-    
+
 </body>
 </html>
